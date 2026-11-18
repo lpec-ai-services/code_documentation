@@ -9,12 +9,16 @@ skills/
 ├── tripoli4/              # TRIPOLI-4® v12 user guide (CEA-R-6599, PDF)
 │   ├── SKILL.md           # when to use + how to navigate + topic → chapter map
 │   └── docs/              # generated: one .md per chapter, TOC.md, _meta.json
-└── tripoli5/              # TRIPOLI-5® docs (tripoli5.asnr.dev, Sphinx site)
+├── tripoli5/              # TRIPOLI-5® docs (tripoli5.asnr.dev, Sphinx site)
+│   ├── SKILL.md
+│   └── docs/              # generated: one .md per page, INDEX.md, _meta.json
+└── valjean/               # VALJEAN V&V framework (github.com/valjean-framework/valjean)
     ├── SKILL.md
-    └── docs/              # generated: one .md per page, INDEX.md, _meta.json
+    └── docs/              # generated from the Sphinx sources + docstrings
 tools/
 ├── pdf2md.py              # PDF manual  → chapter Markdown + TOC (uses the PDF bookmarks)
-└── sphinx2md.py           # Sphinx site → page Markdown + INDEX (uses searchindex.js)
+├── sphinx2md.py           # published Sphinx site → page Markdown + INDEX (searchindex.js or a local copy)
+└── sphinx_src2md.py       # Sphinx *sources* of a Python project → Markdown, API read with ast (no build, no import)
 templates/SKILL.md         # starting point for a new code
 sync.sh                    # (re)generate docs/ for one or all codes
 install.sh                 # symlink the skills into ~/.config/opencode/skills
@@ -25,13 +29,13 @@ install.sh                 # symlink the skills into ~/.config/opencode/skills
 ```bash
 git clone https://github.com/lpec-ai-services/code_documentation
 cd code_documentation
-pip install -r requirements.txt
+pip install -r requirements.txt     # + pandoc and git on PATH (used for valjean)
 
 ./sync.sh               # download + convert all docs (the TRIPOLI-4 PDF takes a few minutes)
 ./install.sh            # make the skills available to opencode globally
 ```
 
-Check the result in opencode: ask "which skills do you have?" — `tripoli4` and `tripoli5` should be listed.
+Check the result in opencode: ask "which skills do you have?" — `tripoli4`, `tripoli5` and `valjean` should be listed.
 
 **Alternative to install.sh** (opencode v2): list the folder in your config instead of symlinking:
 
@@ -54,7 +58,7 @@ Check the result in opencode: ask "which skills do you have?" — `tripoli4` and
 
 1. `mkdir -p skills/<name>/docs && cp templates/SKILL.md skills/<name>/`. The folder name must equal `name:` in the frontmatter.
 2. Write the `description` carefully. It is the only thing the agent sees when choosing a skill, so put in the code name, its aliases, the main topics, and which other codes it must not be confused with.
-3. Add a `sync_<name>()` function to `sync.sh`, using `tools/pdf2md.py` (PDF) or `tools/sphinx2md.py` (Sphinx site). Other formats (Doxygen, MkDocs, LaTeX) need a new converter in `tools/`. Plain Markdown docs can just be copied into `docs/`.
+3. Add a `sync_<name>()` function to `sync.sh`, using `tools/pdf2md.py` (PDF), `tools/sphinx2md.py` (published Sphinx site) or `tools/sphinx_src2md.py` (Python repo with Sphinx sources, see `sync_valjean`). Other formats (Doxygen, MkDocs, LaTeX) need a new converter in `tools/`. Plain Markdown docs can just be copied into `docs/`.
 4. `./sync.sh <name> && ./install.sh`.
 
 ## Design notes
