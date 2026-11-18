@@ -1,0 +1,279 @@
+"""Main demo page: builds a tabbed Panel application with one tab per example app."""
+
+import scivianna_example
+import scivianna_example.europe_grid.europe_grid as europe_grid
+from scivianna.icon import get_icon
+from scivianna.panel.demo import Demonstrator
+from scivianna_example.europe_grid.europe_grid import make_europe_panel as europe_example
+
+from scivianna.logging_config import get_logger
+logger = get_logger(__name__)
+
+try:
+    import medcoupling
+
+    import scivianna_example.med.split_item_example as split_item_example
+    from scivianna_example.med.split_item_example import get_panel as medcoupling_example
+
+    has_med = True
+except ImportError as e:
+    logger.info(f"Could not import medcoupling app, {e}, skipping demo medcoupling build")
+    has_med = False
+
+try:
+    from scivianna_example.med.demo_3d import get_panel as medcoupling_3d_example
+
+    has_3d = True
+except ImportError as e:
+    logger.info(f"Could not import 3D app, {e}, skipping demo 3D build")
+    has_3d = False
+
+try:
+    import rasterio
+
+    import scivianna_example.mandelbrot.mandelbrot as mandelbrot
+    from scivianna_example.mandelbrot.mandelbrot import make_panel as mandelbrot_example
+
+    has_mandelbrot = True
+except ImportError as e:
+    logger.info(f"Could not import mandelbrot app, {e}, skipping demo mandelbrot build")
+    has_mandelbrot = False
+
+try:
+    import scivianna_example.c3po_coupling.coupling as coupling
+    from scivianna_example.c3po_coupling.coupling import get_panel as coupling_example
+
+    has_coupling = True
+except ImportError as e:
+    logger.info(f"Could not import coupling app, {e}, skipping demo coupling build")
+    has_coupling = False
+
+try:
+    import scivianna_example.vtk_example.demo_3d as vtk_demo_3d
+    from scivianna_example.vtk_example.demo_3d import get_panel as vtk_3d_example
+
+    has_vtk = True
+except ImportError as e:
+    logger.info(f"Could not import VTK app, {e}, skipping demo VTK build")
+    has_vtk = False
+
+try:
+    import scivianna_example.graph.heat_network as heat_network
+    from scivianna_example.graph.heat_network import make_graph_panel as heat_network_example
+
+    has_heat_network = True
+except ImportError as e:
+    logger.info(f"Could not import heat network app, {e}, skipping demo heat network build")
+    has_heat_network = False
+
+
+from pathlib import Path
+
+import panel as pn
+import panel_material_ui as pmui
+
+
+# download at https://composables.com/icons/icon-libraries/material-symbols?q=dashboard
+def make_demo(return_slaves=False) -> pmui.Page:
+    """Build the demo page with one tab per available example app.
+
+    Each example is only included if its optional dependencies import cleanly;
+    every tab pairs the panel's main frame with its description text.
+    """
+    icons = {
+        "Help": get_icon("question_mark"),
+        "Europe example": get_icon("line_axis"),
+        "Medcoupling example": get_icon("dashboard"),
+        "Mandelbrot example": get_icon("grid_4x4"),
+        "Coupling example": get_icon("player-play"),
+        "Medcoupling 3D example": get_icon("view_in_ar"),
+        "VTK 3D example": get_icon("vtk"),
+        "Heat network example": get_icon("flow_graph"),
+    }
+
+    if return_slaves:
+        europe_panel, slaves_europe = europe_example(None, return_slaves=return_slaves)
+
+        if has_med:
+            medcoupling_panel, slaves_medcoupling = medcoupling_example(
+                None, return_slaves=return_slaves
+            )
+        else:
+            slaves_medcoupling = []
+
+        if has_3d:
+            medcoupling_3d_panel, slaves_medcoupling_3d = medcoupling_3d_example(
+                None, return_slaves=return_slaves
+            )
+        else:
+            slaves_medcoupling_3d = []
+
+        if has_mandelbrot:
+            mandelbrot_panel, slaves_mandelbrot = mandelbrot_example(
+                None, return_slaves=return_slaves
+            )
+        else:
+            slaves_mandelbrot = []
+
+        if has_coupling:
+            coupling_panel, slaves_coupling = coupling_example(
+                computation_time=0.01, return_slaves=return_slaves, start=False, use_server=False
+            )
+        else:
+            slaves_coupling = []
+
+        if has_vtk:
+            vtk_3d_panel, slaves_vtk_3d = vtk_3d_example(
+                None, return_slaves=return_slaves
+            )
+        else:
+            slaves_vtk_3d = []
+
+        if has_heat_network:
+            heat_network_panel = heat_network_example()
+            slaves_heat_network = [heat_network_panel.slave]
+        else:
+            slaves_heat_network = []
+
+    else:
+        europe_panel = europe_example(None)
+
+        if has_med:
+            medcoupling_panel = medcoupling_example(None)
+
+        if has_3d:
+            medcoupling_3d_panel = medcoupling_3d_example(None)
+
+        if has_mandelbrot:
+            mandelbrot_panel = mandelbrot_example(None)
+
+        if has_coupling:
+            coupling_panel = coupling_example(computation_time=0.01, start=False, use_server=False)
+
+        if has_vtk:
+            vtk_3d_panel = vtk_3d_example(None)
+
+        if has_heat_network:
+            heat_network_panel = heat_network_example()
+
+    with open(Path(europe_grid.__file__).parent / "description.md", "r") as f:
+        europe_with_description = pmui.Row(
+            europe_panel.main_frame, pmui.Typography(f.read(), width=300)
+        )
+
+    if has_med:
+        with open(Path(split_item_example.__file__).parent / "description.md", "r") as f:
+            medcoupling_with_description = pmui.Row(
+                medcoupling_panel.main_frame, pmui.Typography(f.read(), width=300)
+            )
+
+    if has_3d:
+        with open(Path(split_item_example.__file__).parent / "description_3d.md", "r") as f:
+            medcoupling_3d_with_description = pmui.Row(
+                medcoupling_3d_panel.main_frame, pmui.Typography(f.read(), width=300)
+            )
+
+    if has_mandelbrot:
+        with open(Path(mandelbrot.__file__).parent / "description.md", "r") as f:
+            mandelbrot_with_description = pmui.Row(
+                mandelbrot_panel.main_frame, pmui.Typography(f.read(), width=300)
+            )
+
+    if has_coupling:
+        with open(Path(coupling.__file__).parent / "description.md", "r") as f:
+            coupling_with_description = pmui.Row(
+                coupling_panel.main_frame, pmui.Typography(f.read(), width=300)
+            )
+
+    if has_vtk:
+        with open(Path(vtk_demo_3d.__file__).parent / "description.md", "r") as f:
+            vtk_3d_with_description = pmui.Row(
+                vtk_3d_panel.main_frame, pmui.Typography(f.read(), width=300)
+            )
+
+    if has_heat_network:
+        with open(Path(heat_network.__file__).parent / "description.md", "r") as f:
+            heat_network_with_description = pmui.Row(
+                heat_network_panel.main_frame,
+                pmui.Typography(f.read(), width=300)
+            )
+
+        def refit_heat_network(event):
+            if event.new and pn.state.curdoc is not None:
+                pn.state.curdoc.add_timeout_callback(
+                    heat_network_panel.plotter.fit_view,
+                    150,
+                )
+
+        # A trick is required here to re-fit the heat network when displaying,
+        # as reactflow computes the frame when its size is null as hidden
+        heat_network_with_description.param.watch(
+            refit_heat_network, "visible"
+        )
+
+    description_file = Path(scivianna_example.__file__).parent / "demo_description.md"
+
+    image = pn.pane.Image(
+        Path(scivianna_example.__file__).parent / "image/main_page.png", sizing_mode="stretch_both"
+    )
+
+    with open(description_file, "r") as f:
+        help = pn.Column(pmui.Typography(f.read()), image, sizing_mode="stretch_both")
+
+    guis = {
+        "Help": help,
+        "Europe example": europe_with_description,
+    }
+
+    if has_mandelbrot:
+        guis["Mandelbrot example"] = mandelbrot_with_description
+    if has_med:
+        guis["Medcoupling example"] = medcoupling_with_description
+    if has_coupling:
+        guis["Coupling example"] = coupling_with_description
+    if has_3d:
+        guis["Medcoupling 3D example"] = medcoupling_3d_with_description
+    if has_vtk:
+        guis["VTK 3D example"] = vtk_3d_with_description
+    if has_heat_network:
+        guis["Heat network example"] = heat_network_with_description
+
+    demo = Demonstrator(guis, icons)
+
+    if return_slaves:
+        return (
+            demo,
+            slaves_medcoupling
+            + slaves_europe
+            + slaves_mandelbrot
+            + slaves_coupling
+            + slaves_medcoupling_3d
+            + slaves_vtk_3d
+            + slaves_heat_network,
+        )
+    else:
+        return demo
+
+
+if __name__ == "__main__":
+    import socket
+
+    import panel as pn
+
+    ip_adress = socket.gethostbyname(socket.gethostname())
+
+    """
+        Catching a free port to provide to pn.serve
+    """
+    sock = socket.socket()
+    sock.bind((ip_adress, 0))
+    port = sock.getsockname()[1]
+    sock.close()
+
+    pn.serve(
+        make_demo,
+        address=ip_adress,
+        websocket_origin=f"{ip_adress}:{port}",
+        port=port,
+        threaded=True,
+    )

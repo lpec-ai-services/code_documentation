@@ -1,0 +1,14 @@
+{
+  "source": "https://github.com/cea-code-coupling/scivianna/tree/master/tutorials",
+  "version": "0.9.2 (master d040d75, 2026-11-16)",
+  "generated": "2026-11-18",
+  "pages": [
+    "0_introduction.md",
+    "1_simple_2d_panel.md",
+    "2_multiview_panels.md",
+    "3_panel_2d_1d_interactions.md",
+    "4_develop_interface.md",
+    "5_develop_extension.md",
+    "6_matplotlib_api.md"
+  ]
+}

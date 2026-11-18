@@ -1,0 +1,1860 @@
+# Index of pages
+
+Each entry: file — title, then its section headings.
+
+
+## (root)
+
+- `Python.md` — **Python Examples** (64 kB)
+  - VTK Classes Summary · Tutorials · Hello World · Simple Operations · Input and Output · Graph Formats · 3D File Formats · Image Format · Geometric Objects · Cells · Sources · Non Linear … (+42)
+
+## Python
+
+- `Python/Annotation/MultiLineText.md` — **MultiLineText** (9 kB)
+  - Description · Code
+- `Python/Annotation/TextOrigin.md` — **TextOrigin** (3 kB)
+  - Description · Code
+- `Python/Arrays/GetValues.md` — **GetValues** (1 kB)
+  - Description · Code
+- `Python/Arrays/RenameArray.md` — **RenameArray** (1 kB)
+  - Description · Code
+- `Python/CompositeData/CompositePolyDataMapper.md` — **CompositePolyDataMapper** (3 kB)
+  - Code
+- `Python/CompositeData/MultiBlockDataSet.md` — **MultiBlockDataSet** (3 kB)
+  - Code
+- `Python/CompositeData/OverlappingAMR.md` — **OverlappingAMR** (5 kB)
+  - Code
+- `Python/Coverage/PythonVTKClassesNotUsed.md` — **VTK Classes not used in the Examples** (285 kB)
+  - Python
+- `Python/Coverage/PythonVTKClassesUsed.md` — **VTK Classes used in the Examples** (181 kB)
+  - Python · Excluded classes · Classes used
+- `Python/DataManipulation/LineOnMesh.md` — **LineOnMesh** (7 kB)
+  - Description · Code
+- `Python/DataManipulation/MeshLabelImageColor.md` — **MeshLabelImageColor** (8 kB)
+  - Description · Code
+- `Python/ExplicitStructuredGrid/CreateESGrid.md` — **CreateESGrid** (5 kB)
+  - Description · Code
+- `Python/ExplicitStructuredGrid/LoadESGrid.md` — **LoadESGrid** (3 kB)
+  - Description · Code
+- `Python/Filtering/AppendFilter.md` — **AppendFilter** (4 kB)
+  - Description · Code
+- `Python/Filtering/CombinePolyData.md` — **CombinePolyData** (3 kB)
+  - Description · Code
+- `Python/Filtering/ConnectivityFilter.md` — **ConnectivityFilter** (3 kB)
+  - Code
+- `Python/Filtering/ConstrainedDelaunay2D.md` — **ConstrainedDelaunay2D** (4 kB)
+  - Description · Code
+- `Python/Filtering/Delaunay2D.md` — **Delaunay2D** (3 kB)
+  - Code
+- `Python/Filtering/GaussianSplat.md` — **GaussianSplat** (2 kB)
+  - Code
+- `Python/Filtering/Glyph2D.md` — **Glyph2D** (2 kB)
+  - Description · Code
+- `Python/Filtering/Glyph3D.md` — **Glyph3D** (2 kB)
+  - Description · Code
+- `Python/Filtering/IterativeClosestPoints.md` — **IterativeClosestPoints** (3 kB)
+  - Code
+- `Python/Filtering/PerlinNoise.md` — **PerlinNoise** (2 kB)
+  - Code
+- `Python/Filtering/TransformPolyData.md` — **TransformPolyData** (3 kB)
+  - Description · Code
+- `Python/Filtering/TriangulateTerrainMap.md` — **TriangulateTerrainMap** (3 kB)
+  - Description · Code
+- `Python/Filtering/VertexGlyphFilter.md` — **VertexGlyphFilter** (2 kB)
+  - Description · Code
+- `Python/Filtering/WarpTo.md` — **WarpTo** (2 kB)
+  - Code
+- `Python/GeometricObjects/Arrow.md` — **Arrow** (2 kB)
+  - Description · Code
+- `Python/GeometricObjects/Axes.md` — **Axes** (3 kB)
+  - Description · Code
+- `Python/GeometricObjects/Cell3DDemonstration.md` — **Cell3DDemonstration** (14 kB)
+  - Description · Code
+- `Python/GeometricObjects/CellTypeSource.md` — **CellTypeSource** (9 kB)
+  - Description · Code
+- `Python/GeometricObjects/Circle.md` — **Circle** (2 kB)
+  - Description · Code
+- `Python/GeometricObjects/ColoredLines.md` — **ColoredLines** (4 kB)
+  - Description · Code
+- `Python/GeometricObjects/Cone.md` — **Cone** (2 kB)
+  - Description · Code
+- `Python/GeometricObjects/ConvexPointSet.md` — **ConvexPointSet** (4 kB)
+  - Description · Code
+- `Python/GeometricObjects/Cube.md` — **Cube** (4 kB)
+  - Description · Code
+- `Python/GeometricObjects/Cube1.md` — **Cube1** (2 kB)
+  - Description · Code
+- `Python/GeometricObjects/Cylinder.md` — **Cylinder** (2 kB)
+  - Description · Code
+- `Python/GeometricObjects/CylinderExample.md` — **CylinderExample** (3 kB)
+  - Description · Code
+- `Python/GeometricObjects/Disk.md` — **Disk** (2 kB)
+  - Description · Code
+- `Python/GeometricObjects/Dodecahedron.md` — **Dodecahedron** (4 kB)
+  - Code
+- `Python/GeometricObjects/EarthSource.md` — **EarthSource** (3 kB)
+  - Code
+- `Python/GeometricObjects/EllipticalCylinder.md` — **EllipticalCylinder** (4 kB)
+  - Description · Code
+- `Python/GeometricObjects/EllipticalCylinderDemo.md` — **EllipticalCylinderDemo** (7 kB)
+  - Description · Code
+- `Python/GeometricObjects/Frustum.md` — **Frustum** (3 kB)
+  - Description · Code
+- `Python/GeometricObjects/GeometricObjectsDemo.md` — **GeometricObjectsDemo** (5 kB)
+  - Code
+- `Python/GeometricObjects/Hexahedron.md` — **Hexahedron** (3 kB)
+  - Description · Code
+- `Python/GeometricObjects/IsoparametricCellsDemo.md` — **IsoparametricCellsDemo** (20 kB)
+  - Description · Code
+- `Python/GeometricObjects/Line.md` — **Line** (2 kB)
+  - Description · Code
+- `Python/GeometricObjects/LinearCellsDemo.md` — **LinearCellsDemo** (29 kB)
+  - Description · Code
+- `Python/GeometricObjects/LongLine.md` — **LongLine** (3 kB)
+  - Description · Code
+- `Python/GeometricObjects/OrientedArrow.md` — **OrientedArrow** (6 kB)
+  - Description · Code
+- `Python/GeometricObjects/OrientedCylinder.md` — **OrientedCylinder** (6 kB)
+  - Description · Code
+- `Python/GeometricObjects/ParametricKuenDemo.md` — **ParametricKuenDemo** (9 kB)
+  - Description · Code
+- `Python/GeometricObjects/ParametricObjectsDemo.md` — **ParametricObjectsDemo** (16 kB)
+  - Description · Code
+- `Python/GeometricObjects/ParametricSuperEllipsoidDemo.md` — **ParametricSuperEllipsoidDemo** (6 kB)
+  - Code
+- `Python/GeometricObjects/ParametricSuperToroidDemo.md` — **ParametricSuperToroidDemo** (6 kB)
+  - Code
+- `Python/GeometricObjects/Plane.md` — **Plane** (2 kB)
+  - Description · Code
+- `Python/GeometricObjects/Planes.md` — **Planes** (5 kB)
+  - Code
+- `Python/GeometricObjects/PlanesIntersection.md` — **PlanesIntersection** (1 kB)
+  - Code
+- `Python/GeometricObjects/PlatonicSolids.md` — **PlatonicSolids** (7 kB)
+  - Description · Code
+- `Python/GeometricObjects/Point.md` — **Point** (2 kB)
+  - Description · Code
+- `Python/GeometricObjects/PolyLine.md` — **PolyLine** (3 kB)
+  - Description · Code
+- `Python/GeometricObjects/PolyLine1.md` — **PolyLine1** (4 kB)
+  - Code
+- `Python/GeometricObjects/Polygon.md` — **Polygon** (3 kB)
+  - Description · Code
+- `Python/GeometricObjects/PolygonIntersection.md` — **PolygonIntersection** (1 kB)
+  - Code
+- `Python/GeometricObjects/Polyhedron.md` — **Polyhedron** (3 kB)
+  - Code
+- `Python/GeometricObjects/PolyhedronAndHexahedron.md` — **PolyhedronAndHexahedron** (4 kB)
+  - Description · Code
+- `Python/GeometricObjects/Pyramid.md` — **Pyramid** (2 kB)
+  - Code
+- `Python/GeometricObjects/Quad.md` — **Quad** (2 kB)
+  - Code
+- `Python/GeometricObjects/QuadraticHexahedron.md` — **QuadraticHexahedron** (4 kB)
+  - Code
+- `Python/GeometricObjects/QuadraticHexahedronDemo.md` — **QuadraticHexahedronDemo** (7 kB)
+  - Description · Code
+- `Python/GeometricObjects/QuadraticTetra.md` — **QuadraticTetra** (4 kB)
+  - Description · Code
+- `Python/GeometricObjects/QuadraticTetraDemo.md` — **QuadraticTetraDemo** (7 kB)
+  - Description · Code
+- `Python/GeometricObjects/RegularPolygonSource.md` — **RegularPolygonSource** (2 kB)
+  - Description · Code
+- `Python/GeometricObjects/ShrinkCube.md` — **ShrinkCube** (3 kB)
+  - Description · Code
+- `Python/GeometricObjects/SourceObjectsDemo.md` — **SourceObjectsDemo** (5 kB)
+  - Description · Code
+- `Python/GeometricObjects/Sphere.md` — **Sphere** (2 kB)
+  - Description · Code
+- `Python/GeometricObjects/TessellatedBoxSource.md` — **TessellatedBoxSource** (3 kB)
+  - Description · Code
+- `Python/GeometricObjects/Tetrahedron.md` — **Tetrahedron** (3 kB)
+  - Description · Code
+- `Python/GeometricObjects/TextActor.md` — **TextActor** (2 kB)
+  - Code
+- `Python/GeometricObjects/Triangle.md` — **Triangle** (3 kB)
+  - Description · Code
+- `Python/GeometricObjects/TriangleStrip.md` — **TriangleStrip** (3 kB)
+  - Description · Code
+- `Python/GeometricObjects/Vertex.md` — **Vertex** (2 kB)
+  - Description · Code
+- `Python/Graphs/ColorEdges.md` — **ColorEdges** (2 kB)
+  - Code
+- `Python/Graphs/ColorVertexLabels.md` — **ColorVertexLabels** (2 kB)
+  - Code
+- `Python/Graphs/ColorVerticesLookupTable.md` — **ColorVerticesLookupTable** (2 kB)
+  - Code
+- `Python/Graphs/ConstructGraph.md` — **ConstructGraph** (2 kB)
+  - Description · Code
+- `Python/Graphs/ConstructTree.md` — **ConstructTree** (1 kB)
+  - Code
+- `Python/Graphs/CreateTree.md` — **CreateTree** (3 kB)
+  - Description · Code
+- `Python/Graphs/EdgeWeights.md` — **EdgeWeights** (2 kB)
+  - Description · Code
+- `Python/Graphs/GraphToPolyData.md` — **GraphToPolyData** (2 kB)
+  - Description · Code
+- `Python/Graphs/LabelVerticesAndEdges.md` — **LabelVerticesAndEdges** (3 kB)
+  - Description · Code
+- `Python/Graphs/NOVCAGraph.md` — **NOVCAGraph** (3 kB)
+  - Description · Code
+- `Python/Graphs/RandomGraphSource.md` — **RandomGraphSource** (2 kB)
+  - Code
+- `Python/Graphs/ScaleVertices.md` — **ScaleVertices** (3 kB)
+  - Description · Code
+- `Python/Graphs/SelectedVerticesAndEdges.md` — **SelectedVerticesAndEdges** (2 kB)
+  - Description · Code
+- `Python/Graphs/SideBySideGraphs.md` — **SideBySideGraphs** (3 kB)
+  - Code
+- `Python/Graphs/VisualizeDirectedGraph.md` — **VisualizeDirectedGraph** (3 kB)
+  - Code
+- `Python/Graphs/VisualizeGraph.md` — **VisualizeGraph** (1 kB)
+  - Description · Code
+- `Python/HyperTreeGrid/HyperTreeGridSource.md` — **HyperTreeGridSource** (4 kB)
+  - Code
+- `Python/IO/3DSImporter.md` — **3DSImporter** (2 kB)
+  - Description · Code
+- `Python/IO/CSVReadEdit.md` — **CSVReadEdit** (15 kB)
+  - Description · Code
+- `Python/IO/CSVReadEdit1.md` — **CSVReadEdit1** (15 kB)
+  - Description · Code
+- `Python/IO/HDRReader.md` — **HDRReader** (3 kB)
+  - Description · Code
+- `Python/IO/ImageWriter.md` — **ImageWriter** (4 kB)
+  - Description · Code
+- `Python/IO/PolyDataToImageDataConverter.md` — **PolyDataToImageDataConverter** (2 kB)
+  - Code
+- `Python/IO/ReadDICOM.md` — **ReadDICOM** (2 kB)
+  - Description · Code
+- `Python/IO/ReadDICOMSeries.md` — **ReadDICOMSeries** (7 kB)
+  - Description · Code
+- `Python/IO/ReadExodusData.md` — **ReadExodusData** (3 kB)
+  - Description · Code
+- `Python/IO/ReadImageData.md` — **ReadImageData** (2 kB)
+  - Description · Code
+- `Python/IO/ReadLegacyUnstructuredGrid.md` — **ReadLegacyUnstructuredGrid** (9 kB)
+  - Description · Code
+- `Python/IO/ReadPLOT3D.md` — **ReadPLOT3D** (3 kB)
+  - Code
+- `Python/IO/ReadPolyData.md` — **ReadPolyData** (2 kB)
+  - Description · Code
+- `Python/IO/ReadSLC.md` — **ReadSLC** (4 kB)
+  - Description · Code
+- `Python/IO/ReadSTL.md` — **ReadSTL** (2 kB)
+  - Description · Code
+- `Python/IO/ReadUnstructuredGrid.md` — **ReadUnstructuredGrid** (3 kB)
+  - Description · Code
+- `Python/IO/ReadVTP.md` — **ReadVTP** (2 kB)
+  - Code
+- `Python/IO/TemporalHDFReader.md` — **TemporalHDFReader** (3 kB)
+  - Description · Code
+- `Python/IO/WriteLegacyLinearCells.md` — **WriteLegacyLinearCells** (6 kB)
+  - Description · Code
+- `Python/IO/WritePLY.md` — **WritePLY** (3 kB)
+  - Description · Code
+- `Python/IO/WriteSTL.md` — **WriteSTL** (3 kB)
+  - Description · Code
+- `Python/IO/WriteTriangleToFile.md` — **WriteTriangleToFile** (1 kB)
+  - Code
+- `Python/IO/WriteXMLLinearCells.md` — **WriteXMLLinearCells** (6 kB)
+  - Description · Code
+- `Python/ImageData/ImageDataGeometryFilter.md` — **ImageDataGeometryFilter** (2 kB)
+  - Description · Code
+- `Python/ImageData/ImageNormalize.md` — **ImageNormalize** (3 kB)
+  - Code
+- `Python/ImageData/ImageWeightedSum.md` — **ImageWeightedSum** (4 kB)
+  - Description · Code
+- `Python/ImageData/SumVTKImages.md` — **SumVTKImages** (1 kB)
+  - Code
+- `Python/ImageData/WriteReadVtkImageData.md` — **WriteReadVtkImageData** (3 kB)
+  - Code
+- `Python/ImageProcessing/Attenuation.md` — **Attenuation** (5 kB)
+  - Description · Code
+- `Python/ImageProcessing/EnhanceEdges.md` — **EnhanceEdges** (7 kB)
+  - Description · Code
+- `Python/ImageProcessing/GaussianSmooth.md` — **GaussianSmooth** (4 kB)
+  - Description · Code
+- `Python/ImageProcessing/HybridMedianComparison.md` — **HybridMedianComparison** (8 kB)
+  - Description · Code
+- `Python/ImageProcessing/IdealHighPass.md` — **IdealHighPass** (5 kB)
+  - Description · Code
+- `Python/ImageProcessing/IsoSubsample.md` — **IsoSubsample** (6 kB)
+  - Description · Code
+- `Python/ImageProcessing/MedianComparison.md` — **MedianComparison** (8 kB)
+  - Description · Code
+- `Python/ImageProcessing/MorphologyComparison.md` — **MorphologyComparison** (9 kB)
+  - Description · Code
+- `Python/ImageProcessing/Pad.md` — **Pad** (5 kB)
+  - Description · Code
+- `Python/ImageProcessing/VTKSpectrum.md` — **VTKSpectrum** (5 kB)
+  - Description · Code
+- `Python/Images/Actor2D.md` — **Actor2D** (2 kB)
+  - Code
+- `Python/Images/BackgroundImage.md` — **BackgroundImage** (5 kB)
+  - Description · Code
+- `Python/Images/Cast.md` — **Cast** (2 kB)
+  - Description · Code
+- `Python/Images/ImageWarp.md` — **ImageWarp** (4 kB)
+  - Code
+- `Python/ImplicitFunctions/BooleanOperationImplicitFunctions.md` — **BooleanOperationImplicitFunctions** (3 kB)
+  - Description · Code
+- `Python/ImplicitFunctions/ImplicitQuadric.md` — **ImplicitQuadric** (2 kB)
+  - Description · Code
+- `Python/ImplicitFunctions/ImplicitSphere.md` — **ImplicitSphere** (3 kB)
+  - Description · Code
+- `Python/ImplicitFunctions/ImplicitSphere1.md` — **ImplicitSphere1** (3 kB)
+  - Description · Code
+- `Python/ImplicitFunctions/SampleFunction.md` — **SampleFunction** (3 kB)
+  - Code
+- `Python/InfoVis/ParallelCoordinatesExtraction.md` — **ParallelCoordinatesExtraction** (7 kB)
+  - Description · Code
+- `Python/InfoVis/ParallelCoordinatesView.md` — **ParallelCoordinatesView** (5 kB)
+  - Description · Code
+- `Python/InfoVis/SelectedGraphIDs.md` — **SelectedGraphIDs** (4 kB)
+  - Code
+- `Python/Interaction/CallBack.md` — **CallBack** (8 kB)
+  - Description · Code
+- `Python/Interaction/InteractorStyleTrackballActor.md` — **InteractorStyleTrackballActor** (2 kB)
+  - Description · Code
+- `Python/Interaction/InteractorStyleTrackballCamera.md` — **InteractorStyleTrackballCamera** (3 kB)
+  - Code
+- `Python/Interaction/MouseEvents.md` — **MouseEvents** (3 kB)
+  - Description · Code
+- `Python/Interaction/MouseEventsObserver.md` — **MouseEventsObserver** (3 kB)
+  - Description · Code
+- `Python/Medical/GenerateCubesFromLabels.md` — **GenerateCubesFromLabels** (6 kB)
+  - Description · Code
+- `Python/Medical/GenerateModelsFromLabels.md` — **GenerateModelsFromLabels** (7 kB)
+  - Description · Code
+- `Python/Medical/MedicalDemo1.md` — **MedicalDemo1** (7 kB)
+  - Description · Code
+- `Python/Medical/MedicalDemo2.md` — **MedicalDemo2** (9 kB)
+  - Description · Code
+- `Python/Medical/MedicalDemo3.md` — **MedicalDemo3** (13 kB)
+  - Description · Code
+- `Python/Medical/MedicalDemo4.md` — **MedicalDemo4** (7 kB)
+  - Description · Code
+- `Python/Medical/TissueLens.md` — **TissueLens** (9 kB)
+  - Description · Code
+- `Python/Meshes/BoundaryEdges.md` — **BoundaryEdges** (2 kB)
+  - Description · Code
+- `Python/Meshes/CapClip.md` — **CapClip** (6 kB)
+  - Description · Code
+- `Python/Meshes/ClipDataSetWithPolyData.md` — **ClipDataSetWithPolyData** (10 kB)
+  - Description · Code
+- `Python/Meshes/ClipDataSetWithPolyData1.md` — **ClipDataSetWithPolyData1** (6 kB)
+  - Description · Code
+- `Python/Meshes/ColoredElevationMap.md` — **ColoredElevationMap** (4 kB)
+  - Description · Code
+- `Python/Meshes/Decimation.md` — **Decimation** (8 kB)
+  - Description · Code
+- `Python/Meshes/DeformPointSet.md` — **DeformPointSet** (5 kB)
+  - Description · Code
+- `Python/Meshes/PointInterpolator.md` — **PointInterpolator** (5 kB)
+  - Description · Code
+- `Python/Meshes/SolidClip.md` — **SolidClip** (4 kB)
+  - Description · Code
+- `Python/Modelling/Bottle.md` — **Bottle** (4 kB)
+  - Code
+- `Python/Modelling/CappedSphere.md` — **CappedSphere** (7 kB)
+  - Description · Code
+- `Python/Modelling/ContourTriangulator.md` — **ContourTriangulator** (3 kB)
+  - Code
+- `Python/Modelling/DelaunayMesh.md` — **DelaunayMesh** (5 kB)
+  - Description · Code
+- `Python/Modelling/DiscreteMarchingCubes.md` — **DiscreteMarchingCubes** (6 kB)
+  - Description · Code
+- `Python/Modelling/ExtractLargestIsosurface.md` — **ExtractLargestIsosurface** (6 kB)
+  - Description · Code
+- `Python/Modelling/Finance.md` — **Finance** (9 kB)
+  - Description · Code
+- `Python/Modelling/FinanceFieldData.md` — **FinanceFieldData** (7 kB)
+  - Description · Code
+- `Python/Modelling/MarchingCubes.md` — **MarchingCubes** (6 kB)
+  - Description · Code
+- `Python/Modelling/SmoothDiscreteMarchingCubes.md` — **SmoothDiscreteMarchingCubes** (5 kB)
+  - Description · Code
+- `Python/Modelling/Spring.md` — **Spring** (3 kB)
+  - Code
+- `Python/Picking/CellPicking.md` — **CellPicking** (5 kB)
+  - Description · Code
+- `Python/Picking/HighlightPickedActor.md` — **HighlightPickedActor** (5 kB)
+  - Description · Code
+- `Python/Picking/HighlightWithSilhouette.md` — **HighlightWithSilhouette** (7 kB)
+  - Description · Code
+- `Python/Plotting/MultiplePlots.md` — **MultiplePlots** (5 kB)
+  - Description · Code
+- `Python/Plotting/ScatterPlot.md` — **ScatterPlot** (3 kB)
+  - Code
+- `Python/Plotting/SpiderPlot.md` — **SpiderPlot** (4 kB)
+  - Description · Code
+- `Python/Plotting/SurfacePlot.md` — **SurfacePlot** (3 kB)
+  - Code
+- `Python/PolyData/AlignTwoPolyDatas.md` — **AlignTwoPolyDatas** (17 kB)
+  - Description · Code
+- `Python/PolyData/BooleanOperationPolyDataFilter.md` — **BooleanOperationPolyDataFilter** (8 kB)
+  - Description · Code
+- `Python/PolyData/CellsInsideObject.md` — **CellsInsideObject** (10 kB)
+  - Description · Code
+- `Python/PolyData/ClosedSurface.md` — **ClosedSurface** (3 kB)
+  - Code
+- `Python/PolyData/ColoredTriangle.md` — **ColoredTriangle** (2 kB)
+  - Decription · Code
+- `Python/PolyData/ExtractPolyLinesFromPolyData.md` — **ExtractPolyLinesFromPolyData** (4 kB)
+  - Description · Code
+- `Python/PolyData/ExtractSelection.md` — **ExtractSelection** (5 kB)
+  - Description · Code
+- `Python/PolyData/ExtractSelectionUsingCells.md` — **ExtractSelectionUsingCells** (5 kB)
+  - Code
+- `Python/PolyData/FilledPolygon.md` — **FilledPolygon** (3 kB)
+  - Code
+- `Python/PolyData/ImplicitPolyDataDistance.md` — **ImplicitPolyDataDistance** (3 kB)
+  - Code
+- `Python/PolyData/IterateOverLines.md` — **IterateOverLines** (2 kB)
+  - Code
+- `Python/PolyData/Outline.md` — **Outline** (2 kB)
+  - Code
+- `Python/PolyData/PointSource.md` — **PointSource** (2 kB)
+  - Code
+- `Python/PolyData/PolyDataContourToImageData.md` — **PolyDataContourToImageData** (5 kB)
+  - Description · Code
+- `Python/PolyData/PolyDataToImageDataStencil.md` — **PolyDataToImageDataStencil** (4 kB)
+  - Description · Code
+- `Python/PolyData/RotationAroundLine.md` — **RotationAroundLine** (3 kB)
+  - Description · Code
+- `Python/PolyData/RuledSurfaceFilter.md` — **RuledSurfaceFilter** (3 kB)
+  - Code
+- `Python/PolyData/SmoothMeshGrid.md` — **SmoothMeshGrid** (6 kB)
+  - Description · Code
+- `Python/PolyData/SolidColoredTriangle.md` — **SolidColoredTriangle** (2 kB)
+  - Code
+- `Python/PolyData/TriangleColoredPoints.md` — **TriangleColoredPoints** (2 kB)
+  - Code
+- `Python/PolyData/TriangleCornerVertices.md` — **TriangleCornerVertices** (1 kB)
+  - Code
+- `Python/PolyData/TriangleCorners.md` — **TriangleCorners** (1 kB)
+  - Code
+- `Python/PolyData/TubeFilter.md` — **TubeFilter** (3 kB)
+  - Description · Code
+- `Python/PolyData/WarpVector.md` — **WarpVector** (3 kB)
+  - Description · Code
+- `Python/RectilinearGrid/RGrid.md` — **RGrid** (4 kB)
+  - Description · Code
+- `Python/RectilinearGrid/RectilinearGrid.md` — **RectilinearGrid** (2 kB)
+  - Description · Code
+- `Python/RectilinearGrid/VisualizeRectilinearGrid.md` — **VisualizeRectilinearGrid** (3 kB)
+  - Code
+- `Python/Rendering/AmbientSpheres.md` — **AmbientSpheres** (4 kB)
+  - Description · Code
+- `Python/Rendering/CameraBlur.md` — **CameraBlur** (3 kB)
+  - Code
+- `Python/Rendering/ColoredSphere.md` — **ColoredSphere** (3 kB)
+  - Description · Code
+- `Python/Rendering/Cone3.md` — **Cone3** (4 kB)
+  - Description · Code
+- `Python/Rendering/Cone4.md` — **Cone4** (4 kB)
+  - Description · Code
+- `Python/Rendering/DiffuseSpheres.md` — **DiffuseSpheres** (4 kB)
+  - Description · Code
+- `Python/Rendering/FlatVersusGouraud.md` — **FlatVersusGouraud** (7 kB)
+  - Description · Code
+- `Python/Rendering/GradientBackground.md` — **GradientBackground** (12 kB)
+  - Description · Code
+- `Python/Rendering/LayeredActors.md` — **LayeredActors** (7 kB)
+  - Description · Code
+- `Python/Rendering/Mace.md` — **Mace** (2 kB)
+  - Description · Code
+- `Python/Rendering/Model.md` — **Model** (3 kB)
+  - Code
+- `Python/Rendering/MotionBlur.md` — **MotionBlur** (4 kB)
+  - Description · Code
+- `Python/Rendering/OutlineGlowPass.md` — **OutlineGlowPass** (5 kB)
+  - Description · Code
+- `Python/Rendering/PBR_Anisotropy.md` — **PBR Anisotropy** (14 kB)
+  - Description · Code
+- `Python/Rendering/PBR_Clear_Coat.md` — **PBR Clear Coat** (14 kB)
+  - Description · Code
+- `Python/Rendering/PBR_Edge_Tint.md` — **PBR Edge Tint** (14 kB)
+  - Description · Code
+- `Python/Rendering/PBR_HDR_Environment.md` — **PBR HDR Environment** (12 kB)
+  - Description · Code
+- `Python/Rendering/PBR_Mapping.md` — **PBR Mapping** (14 kB)
+  - Description · Code
+- `Python/Rendering/PBR_Materials.md` — **PBR Materials** (14 kB)
+  - Description · Code
+- `Python/Rendering/PBR_Materials_Coat.md` — **PBR Materials Coat** (14 kB)
+  - Description · Code
+- `Python/Rendering/PBR_Skybox.md` — **PBR Skybox** (32 kB)
+  - Description · Options · Code
+- `Python/Rendering/PBR_Skybox_Anisotropy.md` — **PBR Skybox Anisotropy** (39 kB)
+  - Description · Options · Code
+- `Python/Rendering/PBR_Skybox_Texturing.md` — **PBR Skybox Texturing** (37 kB)
+  - Description · Options · Code
+- `Python/Rendering/Rainbow.md` — **Rainbow** (5 kB)
+  - Description · Code
+- `Python/Rendering/Rotations.md` — **Rotations** (7 kB)
+  - Description · Code
+- `Python/Rendering/RotationsA.md` — **RotationsA** (1 kB)
+  - Code
+- `Python/Rendering/RotationsB.md` — **RotationsB** (1 kB)
+  - Code
+- `Python/Rendering/RotationsC.md` — **RotationsC** (1 kB)
+  - Code
+- `Python/Rendering/RotationsD.md` — **RotationsD** (1 kB)
+  - Code
+- `Python/Rendering/Shadows.md` — **Shadows** (6 kB)
+  - Code
+- `Python/Rendering/SpecularSpheres.md` — **SpecularSpheres** (5 kB)
+  - Description · Code
+- `Python/Rendering/StippledLine.md` — **StippledLine** (4 kB)
+  - Description · Code
+- `Python/Rendering/StripFran.md` — **StripFran** (4 kB)
+  - Code
+- `Python/Rendering/TransformSphere.md` — **TransformSphere** (4 kB)
+  - Description · Code
+- `Python/Rendering/TransparentBackground.md` — **TransparentBackground** (5 kB)
+  - Description · Code
+- `Python/Rendering/WalkCow.md` — **WalkCow** (14 kB)
+  - Description · Code
+- `Python/Rendering/WalkCowA.md` — **WalkCowA** (1 kB)
+  - Code
+- `Python/Rendering/WalkCowB.md` — **WalkCowB** (1 kB)
+  - Code
+- `Python/SimpleOperations/DistanceBetweenPoints.md` — **DistanceBetweenPoints** (1 kB)
+  - Description · Code
+- `Python/Snippets.md` — **Snippets** (1 kB)
+  - Description · Available snippets
+- `Python/Snippets/CameraPosition.md` — **CameraPosition** (1 kB)
+  - Description · Implementation · Usage
+- `Python/Snippets/CheckVTKVersion.md` — **CheckVTKVersion** (1 kB)
+  - Description · Implementation · Typical usage
+- `Python/Snippets/GetProgramParameters.md` — **GetProgramParameters** (1 kB)
+  - Description · Implementation · Typical usage
+- `Python/Snippets/PointToGlyph.md` — **PointToGlyph** (1 kB)
+  - Description · Implementation · Usage
+- `Python/Snippets/ReadPolyData.md` — **ReadPolyData** (1 kB)
+  - Description · Implementation
+- `Python/Snippets/WriteImage.md` — **WriteImage** (2 kB)
+  - Description · Implementation · Usage
+- `Python/StructuredGrid/BlankPoint.md` — **BlankPoint** (3 kB)
+  - Code
+- `Python/StructuredGrid/SGrid.md` — **SGrid** (4 kB)
+  - Description · Code
+- `Python/StructuredPoints/Vol.md` — **Vol** (3 kB)
+  - Description · Code
+- `Python/Texture/AnimateVectors.md` — **AnimateVectors** (5 kB)
+  - Description · Code
+- `Python/Texture/TextureCutQuadric.md` — **TextureCutQuadric** (10 kB)
+  - Description · Code
+- `Python/Texture/TextureCutSphere.md` — **TextureCutSphere** (4 kB)
+  - Code
+- `Python/Texture/TexturePlane.md` — **TexturePlane** (3 kB)
+  - Code
+- `Python/Texture/TextureThreshold.md` — **TextureThreshold** (7 kB)
+  - Description · Code
+- `Python/Tutorial/Tutorial_Step1.md` — **Tutorial Step1** (4 kB)
+  - Description · Code
+- `Python/Tutorial/Tutorial_Step2.md` — **Tutorial Step2** (3 kB)
+  - Description · Code
+- `Python/Tutorial/Tutorial_Step3.md` — **Tutorial Step3** (4 kB)
+  - Description · Code
+- `Python/Tutorial/Tutorial_Step4.md` — **Tutorial Step4** (5 kB)
+  - Description · Code
+- `Python/Tutorial/Tutorial_Step5.md` — **Tutorial Step5** (5 kB)
+  - Description · Code
+- `Python/Tutorial/Tutorial_Step6.md` — **Tutorial Step6** (7 kB)
+  - Description · Code
+- `Python/UnstructuredGrid/ClipUnstructuredGridWithPlane.md` — **ClipUnstructuredGridWithPlane** (8 kB)
+  - Description · Code
+- `Python/UnstructuredGrid/ClipUnstructuredGridWithPlane2.md` — **ClipUnstructuredGridWithPlane2** (9 kB)
+  - Description · Code
+- `Python/UnstructuredGrid/UGrid.md` — **UGrid** (4 kB)
+  - Description · Code
+- `Python/Utilities/Animation.md` — **Animation** (3 kB)
+  - Description · Code
+- `Python/Utilities/CheckVTKVersion.md` — **CheckVTKVersion** (2 kB)
+  - Code
+- `Python/Utilities/ColorMapToLUT.md` — **ColorMapToLUT** (4 kB)
+  - Description · Code
+- `Python/Utilities/ColorNamePatches.md` — **ColorNamePatches** (27 kB)
+  - Description · Code
+- `Python/Utilities/ColorSeriesPatches.md` — **ColorSeriesPatches** (8 kB)
+  - Description · Code
+- `Python/Utilities/JSONColorMapToLUT.md` — **JSONColorMapToLUT** (22 kB)
+  - Description · Code
+- `Python/Utilities/LUTUtilities.md` — **LUTUtilities** (13 kB)
+  - Description · Code
+- `Python/Utilities/RescaleReverseLUT.md` — **RescaleReverseLUT** (11 kB)
+  - Description · Code
+- `Python/Utilities/ResetCameraOrientation.md` — **ResetCameraOrientation** (5 kB)
+  - Description · Code
+- `Python/Utilities/SaveSceneToFieldData.md` — **SaveSceneToFieldData** (7 kB)
+  - Description · Code
+- `Python/Utilities/SaveSceneToFile.md` — **SaveSceneToFile** (7 kB)
+  - Description · Code
+- `Python/Utilities/Screenshot.md` — **Screenshot** (2 kB)
+  - Code
+- `Python/Utilities/SelectExamples.md` — **SelectExamples** (7 kB)
+  - Description · Code
+- `Python/Utilities/ShareCamera.md` — **ShareCamera** (3 kB)
+  - Code
+- `Python/Utilities/VTKImportsForPython.md` — **VTKImportsForPython** (9 kB)
+  - Description · Code
+- `Python/Utilities/VTKModulesForCxx.md` — **VTKModulesForCxx** (8 kB)
+  - Description · Code
+- `Python/Utilities/VTKWithNumpy.md` — **VTKWithNumpy** (5 kB)
+  - Code
+- `Python/Utilities/Variant.md` — **Variant** (4 kB)
+  - Code
+- `Python/Utilities/XMLColorMapToLUT.md` — **XMLColorMapToLUT** (20 kB)
+  - Description · Code
+- `Python/Visualization/AlphaFrequency.md` — **AlphaFrequency** (3 kB)
+  - Code
+- `Python/Visualization/AnnotatedCubeActor.md` — **AnnotatedCubeActor** (3 kB)
+  - Description · Code
+- `Python/Visualization/AssignCellColorsFromLUT.md` — **AssignCellColorsFromLUT** (9 kB)
+  - Description · Code
+- `Python/Visualization/BillboardTextActor3D.md` — **BillboardTextActor3D** (4 kB)
+  - Code
+- `Python/Visualization/BlobbyLogo.md` — **BlobbyLogo** (6 kB)
+  - Description · Code
+- `Python/Visualization/Blow.md` — **Blow** (8 kB)
+  - Description · Code
+- `Python/Visualization/Camera.md` — **Camera** (2 kB)
+  - Code
+- `Python/Visualization/CameraModel1.md` — **CameraModel1** (11 kB)
+  - Description · Code
+- `Python/Visualization/CameraModel2.md` — **CameraModel2** (11 kB)
+  - Description · Code
+- `Python/Visualization/ClampGlyphSizes.md` — **ClampGlyphSizes** (5 kB)
+  - Code
+- `Python/Visualization/CollisionDetection.md` — **CollisionDetection** (7 kB)
+  - Description · Code
+- `Python/Visualization/ColorAnActor.md` — **ColorAnActor** (2 kB)
+  - Code
+- `Python/Visualization/ColoredAnnotatedCube.md` — **ColoredAnnotatedCube** (10 kB)
+  - Description · Code
+- `Python/Visualization/ComplexV.md` — **ComplexV** (4 kB)
+  - Description · Code
+- `Python/Visualization/CreateColorSeriesDemo.md` — **CreateColorSeriesDemo** (22 kB)
+  - Description · Code
+- `Python/Visualization/CubeAxesActor.md` — **CubeAxesActor** (4 kB)
+  - Code
+- `Python/Visualization/CurvatureBandsWithGlyphs.md` — **CurvatureBandsWithGlyphs** (39 kB)
+  - Description · Code
+- `Python/Visualization/Curvatures.md` — **Curvatures** (10 kB)
+  - Code
+- `Python/Visualization/CurvaturesAdjustEdges.md` — **CurvaturesAdjustEdges** (29 kB)
+  - Description · Code
+- `Python/Visualization/CurvaturesDemo.md` — **CurvaturesDemo** (17 kB)
+  - Description · Code
+- `Python/Visualization/DisplayCoordinateAxes.md` — **DisplayCoordinateAxes** (3 kB)
+  - Description · Code
+- `Python/Visualization/DisplayQuadricSurfaces.md` — **DisplayQuadricSurfaces** (6 kB)
+  - Description · Code
+- `Python/Visualization/ElevationBandsWithGlyphs.md` — **ElevationBandsWithGlyphs** (29 kB)
+  - Description · Code
+- `Python/Visualization/FrogBrain.md` — **FrogBrain** (10 kB)
+  - Description · Code
+- `Python/Visualization/FrogSlice.md` — **FrogSlice** (14 kB)
+  - Description · Code
+- `Python/Visualization/FroggieSurface.md` — **FroggieSurface** (32 kB)
+  - Description · Code
+- `Python/Visualization/FroggieView.md` — **FroggieView** (30 kB)
+  - Description · Code
+- `Python/Visualization/GlyphTable.md` — **GlyphTable** (4 kB)
+  - Code
+- `Python/Visualization/Hanoi.md` — **Hanoi** (15 kB)
+  - Description · Code
+- `Python/Visualization/HanoiInitial.md` — **HanoiInitial** (1 kB)
+  - Code
+- `Python/Visualization/HanoiIntermediate.md` — **HanoiIntermediate** (1 kB)
+  - Code
+- `Python/Visualization/HardwareSelector.md` — **HardwareSelector** (2 kB)
+  - Code
+- `Python/Visualization/Hawaii.md` — **Hawaii** (6 kB)
+  - Description · Code
+- `Python/Visualization/IsosurfaceSampling.md` — **IsosurfaceSampling** (6 kB)
+  - Description · Code
+- `Python/Visualization/Kitchen.md` — **Kitchen** (13 kB)
+  - Description · Code
+- `Python/Visualization/KochSnowflake.md` — **KochSnowflake** (7 kB)
+  - Description · Code
+- `Python/Visualization/LoopShrink.md` — **LoopShrink** (2 kB)
+  - Code
+- `Python/Visualization/Lorenz.md` — **Lorenz** (5 kB)
+  - Code
+- `Python/Visualization/MultipleRenderWindows.md` — **MultipleRenderWindows** (6 kB)
+  - Description · Code
+- `Python/Visualization/MultipleViewports.md` — **MultipleViewports** (3 kB)
+  - Description · Code
+- `Python/Visualization/NamedColors.md` — **NamedColors** (6 kB)
+  - Description · Code
+- `Python/Visualization/NormalsDemo.md` — **NormalsDemo** (6 kB)
+  - Description · Code
+- `Python/Visualization/OrientedGlyphs.md` — **OrientedGlyphs** (2 kB)
+  - Code
+- `Python/Visualization/PointDataSubdivision.md` — **PointDataSubdivision** (19 kB)
+  - Description · Code
+- `Python/Visualization/PointSize.md` — **PointSize** (2 kB)
+  - Code
+- `Python/Visualization/ProgrammableGlyphFilter.md` — **ProgrammableGlyphFilter** (3 kB)
+  - Code
+- `Python/Visualization/ProgrammableGlyphs.md` — **ProgrammableGlyphs** (3 kB)
+  - Code
+- `Python/Visualization/QuadricVisualization.md` — **QuadricVisualization** (6 kB)
+  - Description · Code
+- `Python/Visualization/ShadowsLightsDemo.md` — **ShadowsLightsDemo** (6 kB)
+  - Code
+- `Python/Visualization/SphereTexture.md` — **SphereTexture** (3 kB)
+  - Description · Code
+- `Python/Visualization/StreamLines.md` — **StreamLines** (3 kB)
+  - Code
+- `Python/Visualization/TextSource.md` — **TextSource** (2 kB)
+  - Code
+- `Python/Visualization/VectorText.md` — **VectorText** (2 kB)
+  - Code
+- `Python/Visualization/WindowTitle.md` — **WindowTitle** (2 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/AnatomicalOrientation.md` — **AnatomicalOrientation** (15 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/BluntStreamlines.md` — **BluntStreamlines** (6 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/CarotidFlow.md` — **CarotidFlow** (6 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/CarotidFlowGlyphs.md` — **CarotidFlowGlyphs** (4 kB)
+  - Code
+- `Python/VisualizationAlgorithms/ClipSphereCylinder.md` — **ClipSphereCylinder** (5 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/CombustorIsosurface.md` — **CombustorIsosurface** (3 kB)
+  - Code
+- `Python/VisualizationAlgorithms/ContourQuadric.md` — **ContourQuadric** (3 kB)
+  - Code
+- `Python/VisualizationAlgorithms/CreateBFont.md` — **CreateBFont** (3 kB)
+  - Code
+- `Python/VisualizationAlgorithms/CutStructuredGrid.md` — **CutStructuredGrid** (4 kB)
+  - Code
+- `Python/VisualizationAlgorithms/CutWithCutFunction.md` — **CutWithCutFunction** (4 kB)
+  - Code
+- `Python/VisualizationAlgorithms/CutWithScalars.md` — **CutWithScalars** (4 kB)
+  - Code
+- `Python/VisualizationAlgorithms/Cutter.md` — **Cutter** (3 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/DataSetSurface.md` — **DataSetSurface** (4 kB)
+  - Code
+- `Python/VisualizationAlgorithms/DecimateFran.md` — **DecimateFran** (5 kB)
+  - Code
+- `Python/VisualizationAlgorithms/DecimateHawaii.md` — **DecimateHawaii** (4 kB)
+  - Code
+- `Python/VisualizationAlgorithms/DisplacementPlot.md` — **DisplacementPlot** (6 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/ExponentialCosine.md` — **ExponentialCosine** (3 kB)
+  - Code
+- `Python/VisualizationAlgorithms/ExtractData.md` — **ExtractData** (4 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/FlyingHeadSlice.md` — **FlyingHeadSlice** (5 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/HeadBone.md` — **HeadBone** (5 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/HeadSlice.md` — **HeadSlice** (3 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/Hello.md` — **Hello** (4 kB)
+  - Code
+- `Python/VisualizationAlgorithms/HyperStreamline.md` — **HyperStreamline** (6 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/IceCream.md` — **IceCream** (5 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/ImageGradient.md` — **ImageGradient** (5 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/IronIsoSurface.md` — **IronIsoSurface** (3 kB)
+  - Code
+- `Python/VisualizationAlgorithms/LOx.md` — **LOx** (7 kB)
+  - Code
+- `Python/VisualizationAlgorithms/LOxGrid.md` — **LOxGrid** (7 kB)
+  - Code
+- `Python/VisualizationAlgorithms/LOxSeeds.md` — **LOxSeeds** (6 kB)
+  - Code
+- `Python/VisualizationAlgorithms/MarchingCases.md` — **MarchingCases** (21 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/MarchingCasesA.md` — **MarchingCasesA** (1 kB)
+  - Code
+- `Python/VisualizationAlgorithms/MarchingCasesB.md` — **MarchingCasesB** (1 kB)
+  - Code
+- `Python/VisualizationAlgorithms/MarchingCasesC.md` — **MarchingCasesC** (1 kB)
+  - Code
+- `Python/VisualizationAlgorithms/MarchingCasesD.md` — **MarchingCasesD** (1 kB)
+  - Code
+- `Python/VisualizationAlgorithms/Motor.md` — **Motor** (6 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/Office.md` — **Office** (16 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/OfficeA.md` — **OfficeA** (1 kB)
+  - Code
+- `Python/VisualizationAlgorithms/OfficeTube.md` — **OfficeTube** (16 kB)
+  - Code
+- `Python/VisualizationAlgorithms/PineRootConnectivity.md` — **PineRootConnectivity** (7 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/PineRootConnectivityA.md` — **PineRootConnectivityA** (1 kB)
+  - Code
+- `Python/VisualizationAlgorithms/PineRootDecimation.md` — **PineRootDecimation** (5 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/PlateVibration.md` — **PlateVibration** (4 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/ProbeCombustor.md` — **ProbeCombustor** (7 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/SingleSplat.md` — **SingleSplat** (4 kB)
+  - Code
+- `Python/VisualizationAlgorithms/SpikeFran.md` — **SpikeFran** (5 kB)
+  - Code
+- `Python/VisualizationAlgorithms/SplatFace.md` — **SplatFace** (4 kB)
+  - Code
+- `Python/VisualizationAlgorithms/Stocks.md` — **Stocks** (6 kB)
+  - Code
+- `Python/VisualizationAlgorithms/StreamlinesWithLineWidget.md` — **StreamlinesWithLineWidget** (9 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/TensorAxes.md` — **TensorAxes** (5 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/TensorEllipsoids.md` — **TensorEllipsoids** (5 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/VelocityProfile.md` — **VelocityProfile** (5 kB)
+  - Description · Code
+- `Python/VisualizationAlgorithms/WarpCombustor.md` — **WarpCombustor** (5 kB)
+  - Description · Code
+- `Python/VolumeRendering/PseudoVolumeRendering.md` — **PseudoVolumeRendering** (6 kB)
+  - Description · Code
+- `Python/VolumeRendering/SimpleRayCast.md` — **SimpleRayCast** (4 kB)
+  - Description · Code
+- `Python/Widgets/BalloonWidget.md` — **BalloonWidget** (3 kB)
+  - Code
+- `Python/Widgets/BoxWidget.md` — **BoxWidget** (3 kB)
+  - Description · Code
+- `Python/Widgets/CameraOrientationWidget.md` — **CameraOrientationWidget** (3 kB)
+  - Description · Code
+- `Python/Widgets/CompassWidget.md` — **CompassWidget** (5 kB)
+  - Description · Code
+- `Python/Widgets/ContourWidget.md` — **ContourWidget** (3 kB)
+  - Description · Code
+- `Python/Widgets/EmbedInPyQt.md` — **EmbedInPyQt** (2 kB)
+  - Description · Code
+- `Python/Widgets/EmbedInPyQt2.md` — **EmbedInPyQt2** (2 kB)
+  - Description · Code
+- `Python/Widgets/ImplicitPlaneWidget2.md` — **ImplicitPlaneWidget2** (5 kB)
+  - Description · Code
+- `Python/Widgets/OrientationMarkerWidget.md` — **OrientationMarkerWidget** (3 kB)
+  - Code
+- `Python/Widgets/OrientationMarkerWidget1.md` — **OrientationMarkerWidget1** (3 kB)
+  - Description · Code
+- `Python/Widgets/ScalarBarWidget.md` — **ScalarBarWidget** (3 kB)
+  - Description · Code
+- `Python/Widgets/SphereWidget.md` — **SphereWidget** (2 kB)
+  - Description · Code
+- `Python/Widgets/SplineWidget.md` — **SplineWidget** (4 kB)
+  - Description · Code
+- `Python/Widgets/TextWidget.md` — **TextWidget** (3 kB)
+  - Description · Code
+
+## (root)
+
+- `PythonHowTo.md` — **Python How To** (8 kB)
+  - Callback · Camera · Check the VTK Version · Coloring · Glyphing · Image · Multiple view ports and render windows · Physically Based Rendering · Polydata · Random · Render Windows · Searching for relevant examples? … (+2)
+- `PythonicAPI.md` — **PythonicAPI Examples** (75 kB)
+  - Upgrading an existing example to use the improved VTK Python interface · Adding a new example · VTK Classes Summary · Snippets · Tutorials · Hello World · Simple Operations · Input and Output · Graph Formats · 3D File Formats · Image Format · Geometric Objects … (+47)
+
+## PythonicAPI
+
+- `PythonicAPI/Animation/AnimateActors.md` — **AnimateActors** (5 kB)
+  - Code
+- `PythonicAPI/Animation/AnimateSphere.md` — **AnimateSphere** (4 kB)
+  - Description · Code
+- `PythonicAPI/Animation/AnimationScene.md` — **AnimationScene** (4 kB)
+  - Code
+- `PythonicAPI/Annotation/LegendScaleActor.md` — **LegendScaleActor** (3 kB)
+  - Description · Code
+- `PythonicAPI/Annotation/PolarAxesActor.md` — **PolarAxesActor** (3 kB)
+  - Code
+- `PythonicAPI/Annotation/TextOrigin.md` — **TextOrigin** (3 kB)
+  - Description · Code
+- `PythonicAPI/CompositeData/CompositePolyDataMapper.md` — **CompositePolyDataMapper** (3 kB)
+  - Code
+- `PythonicAPI/CompositeData/MultiBlockDataSet.md` — **MultiBlockDataSet** (3 kB)
+  - Code
+- `PythonicAPI/CompositeData/OverlappingAMR.md` — **OverlappingAMR** (4 kB)
+  - Code
+- `PythonicAPI/Coverage/PythonicAPIVTKClassesNotUsed.md` — **VTK Classes not used in the Examples** (263 kB)
+  - PythonicAPI
+- `PythonicAPI/Coverage/PythonicAPIVTKClassesUsed.md` — **VTK Classes used in the Examples** (248 kB)
+  - PythonicAPI · Excluded classes · Classes used
+- `PythonicAPI/DataManipulation/LineOnMesh.md` — **LineOnMesh** (7 kB)
+  - Description · Code
+- `PythonicAPI/DataManipulation/MeshLabelImageColor.md` — **MeshLabelImageColor** (7 kB)
+  - Description · Code
+- `PythonicAPI/DataStructures/DataStructureComparison.md` — **DataStructureComparison** (11 kB)
+  - Description · Code
+- `PythonicAPI/DataStructures/IncrementalOctreePointLocator.md` — **IncrementalOctreePointLocator** (2 kB)
+  - Code
+- `PythonicAPI/DataStructures/KDTree.md` — **KDTree** (2 kB)
+  - Description · Code
+- `PythonicAPI/DataStructures/KDTreeAccessPoints.md` — **KDTreeAccessPoints** (2 kB)
+  - Description · Code
+- `PythonicAPI/DataStructures/ModifiedBSPTreeExtractCells.md` — **ModifiedBSPTreeExtractCells** (4 kB)
+  - Code
+- `PythonicAPI/DataStructures/OBBTreeExtractCells.md` — **OBBTreeExtractCells** (4 kB)
+  - Code
+- `PythonicAPI/DataStructures/OBBTreeIntersectWithLine.md` — **OBBTreeIntersectWithLine** (2 kB)
+  - Code
+- `PythonicAPI/DataStructures/OctreeVisualize.md` — **OctreeVisualize** (13 kB)
+  - Code
+- `PythonicAPI/DataStructures/VisualizeKDTree.md` — **VisualizeKDTree** (13 kB)
+  - Description · Code
+- `PythonicAPI/DataStructures/VisualizeModifiedBSPTree.md` — **VisualizeModifiedBSPTree** (13 kB)
+  - Description · Code
+- `PythonicAPI/DataStructures/VisualizeOBBTree.md` — **VisualizeOBBTree** (14 kB)
+  - Description · Code
+- `PythonicAPI/ExplicitStructuredGrid/CreateESGrid.md` — **CreateESGrid** (5 kB)
+  - Description · Code
+- `PythonicAPI/ExplicitStructuredGrid/LoadESGrid.md` — **LoadESGrid** (4 kB)
+  - Description · Code
+- `PythonicAPI/Filtering/ConnectivityFilter.md` — **ConnectivityFilter** (2 kB)
+  - Code
+- `PythonicAPI/Filtering/ConstrainedDelaunay2D.md` — **ConstrainedDelaunay2D** (5 kB)
+  - Description · Code
+- `PythonicAPI/Filtering/Delaunay2D.md` — **Delaunay2D** (3 kB)
+  - Code
+- `PythonicAPI/Filtering/ExtractVisibleCells.md` — **ExtractVisibleCells** (4 kB)
+  - Code
+- `PythonicAPI/Filtering/Glyph2D.md` — **Glyph2D** (2 kB)
+  - Description · Code
+- `PythonicAPI/Filtering/PerlinNoise.md` — **PerlinNoise** (2 kB)
+  - Code
+- `PythonicAPI/Filtering/SpatioTemporalHarmonicsSource.md` — **SpatioTemporalHarmonicsSource** (3 kB)
+  - Description · Code
+- `PythonicAPI/Filtering/WarpTo.md` — **WarpTo** (2 kB)
+  - Code
+- `PythonicAPI/GeometricObjects/CellTypeSource.md` — **CellTypeSource** (13 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/ConesOnSphere.md` — **ConesOnSphere** (4 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/ConvexPointSet.md` — **ConvexPointSet** (4 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/CylinderExample.md` — **CylinderExample** (3 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/Dodecahedron.md` — **Dodecahedron** (4 kB)
+  - Code
+- `PythonicAPI/GeometricObjects/EarthSource.md` — **EarthSource** (8 kB)
+  - Code
+- `PythonicAPI/GeometricObjects/Frustum.md` — **Frustum** (3 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/GeometricObjectsDemo.md` — **GeometricObjectsDemo** (9 kB)
+  - Code
+- `PythonicAPI/GeometricObjects/GoldenBallSource.md` — **GoldenBallSource** (3 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/IsoparametricCellsDemo.md` — **IsoparametricCellsDemo** (27 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/LinearCellsDemo.md` — **LinearCellsDemo** (37 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/OrientedArrow.md` — **OrientedArrow** (6 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/OrientedCylinder.md` — **OrientedCylinder** (6 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/ParametricKuenDemo.md` — **ParametricKuenDemo** (10 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/ParametricObjectsDemo.md` — **ParametricObjectsDemo** (19 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/PipelineReuse.md` — **PipelineReuse** (2 kB)
+  - Code
+- `PythonicAPI/GeometricObjects/PlaneSourceDemo.md` — **PlaneSourceDemo** (7 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/Planes.md` — **Planes** (8 kB)
+  - Code
+- `PythonicAPI/GeometricObjects/PlanesIntersection.md` — **PlanesIntersection** (1 kB)
+  - Code
+- `PythonicAPI/GeometricObjects/PlatonicSolids.md` — **PlatonicSolids** (14 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/Polyhedron.md` — **Polyhedron** (3 kB)
+  - Code
+- `PythonicAPI/GeometricObjects/SourceObjectsDemo.md` — **SourceObjectsDemo** (9 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/SphereSource.md` — **SphereSource** (3 kB)
+  - Description · Code
+- `PythonicAPI/GeometricObjects/TessellatedBoxSource.md` — **TessellatedBoxSource** (3 kB)
+  - Description · Code
+- `PythonicAPI/Graphs/AdjacencyMatrixToEdgeTable.md` — **AdjacencyMatrixToEdgeTable** (2 kB)
+  - Code
+- `PythonicAPI/Graphs/AdjacentVertexIterator.md` — **AdjacentVertexIterator** (3 kB)
+  - Code
+- `PythonicAPI/Graphs/ConstructTree.md` — **ConstructTree** (1 kB)
+  - Code
+- `PythonicAPI/Graphs/CreateTree.md` — **CreateTree** (3 kB)
+  - Description · Code
+- `PythonicAPI/Graphs/DirectedGraphToMutableDirectedGraph.md` — **DirectedGraphToMutableDirectedGraph** (2 kB)
+  - Code
+- `PythonicAPI/Graphs/EdgeListIterator.md` — **EdgeListIterator** (1 kB)
+  - Code
+- `PythonicAPI/Graphs/GraphToPolyData.md` — **GraphToPolyData** (2 kB)
+  - Description · Code
+- `PythonicAPI/Graphs/InEdgeIterator.md` — **InEdgeIterator** (1 kB)
+  - Code
+- `PythonicAPI/Graphs/LabelVerticesAndEdges.md` — **LabelVerticesAndEdges** (3 kB)
+  - Description · Code
+- `PythonicAPI/Graphs/MutableDirectedGraphToDirectedGraph.md` — **MutableDirectedGraphToDirectedGraph** (2 kB)
+  - Code
+- `PythonicAPI/Graphs/OutEdgeIterator.md` — **OutEdgeIterator** (1 kB)
+  - Code
+- `PythonicAPI/Graphs/RandomGraphSource.md` — **RandomGraphSource** (2 kB)
+  - Code
+- `PythonicAPI/Graphs/ScaleVertices.md` — **ScaleVertices** (3 kB)
+  - Description · Code
+- `PythonicAPI/Graphs/SelectedVerticesAndEdges.md` — **SelectedVerticesAndEdges** (4 kB)
+  - Description · Code
+- `PythonicAPI/Graphs/SelectedVerticesAndEdgesObserver.md` — **SelectedVerticesAndEdgesObserver** (3 kB)
+  - Description · Code
+- `PythonicAPI/Graphs/SideBySideGraphs.md` — **SideBySideGraphs** (3 kB)
+  - Code
+- `PythonicAPI/Graphs/TreeToMutableDirectedGraph.md` — **TreeToMutableDirectedGraph** (2 kB)
+  - Code
+- `PythonicAPI/Graphs/VisualizeDirectedGraph.md` — **VisualizeDirectedGraph** (4 kB)
+  - Code
+- `PythonicAPI/HyperTreeGrid/HyperTreeGridSource.md` — **HyperTreeGridSource** (3 kB)
+  - Code
+- `PythonicAPI/IO/3DSImporter.md` — **3DSImporter** (2 kB)
+  - Description · Code
+- `PythonicAPI/IO/CSVReadEdit.md` — **CSVReadEdit** (18 kB)
+  - Description · Code
+- `PythonicAPI/IO/CSVReadEdit1.md` — **CSVReadEdit1** (18 kB)
+  - Description · Code
+- `PythonicAPI/IO/GenericDataObjectReader.md` — **GenericDataObjectReader** (1 kB)
+  - Code
+- `PythonicAPI/IO/HDRReader.md` — **HDRReader** (3 kB)
+  - Description · Code
+- `PythonicAPI/IO/ImportPolyDataScene.md` — **ImportPolyDataScene** (7 kB)
+  - Code
+- `PythonicAPI/IO/ImportToExport.md` — **ImportToExport** (8 kB)
+  - Description · Code
+- `PythonicAPI/IO/ParticleReader.md` — **ParticleReader** (2 kB)
+  - Description · Code
+- `PythonicAPI/IO/ReadAllPolyDataTypesDemo.md` — **ReadAllPolyDataTypesDemo** (14 kB)
+  - Code
+- `PythonicAPI/IO/ReadCML.md` — **ReadCML** (3 kB)
+  - Description · Code
+- `PythonicAPI/IO/ReadDICOM.md` — **ReadDICOM** (2 kB)
+  - Description · Code
+- `PythonicAPI/IO/ReadDICOMSeries.md` — **ReadDICOMSeries** (8 kB)
+  - Description · Code
+- `PythonicAPI/IO/ReadExodusData.md` — **ReadExodusData** (4 kB)
+  - Description · Code
+- `PythonicAPI/IO/ReadLegacyUnstructuredGrid.md` — **ReadLegacyUnstructuredGrid** (9 kB)
+  - Description · Code
+- `PythonicAPI/IO/ReadSLC.md` — **ReadSLC** (4 kB)
+  - Description · Code
+- `PythonicAPI/IO/TemporalHDFReader.md` — **TemporalHDFReader** (4 kB)
+  - Description · Code
+- `PythonicAPI/IO/WriteLegacyLinearCells.md` — **WriteLegacyLinearCells** (6 kB)
+  - Description · Code
+- `PythonicAPI/IO/WritePLY.md` — **WritePLY** (3 kB)
+  - Description · Code
+- `PythonicAPI/IO/WriteSTL.md` — **WriteSTL** (3 kB)
+  - Description · Code
+- `PythonicAPI/IO/WriteXMLLinearCells.md` — **WriteXMLLinearCells** (6 kB)
+  - Description · Code
+- `PythonicAPI/ImageData/ClipVolume.md` — **ClipVolume** (5 kB)
+  - Description · Code
+- `PythonicAPI/ImageData/ImageIterator.md` — **ImageIterator** (3 kB)
+  - Description · Code
+- `PythonicAPI/ImageData/ImageIteratorDemo.md` — **ImageIteratorDemo** (5 kB)
+  - Description · Code
+- `PythonicAPI/ImageData/ImageNormalize.md` — **ImageNormalize** (3 kB)
+  - Code
+- `PythonicAPI/ImageData/ImageTranslateExtent.md` — **ImageTranslateExtent** (4 kB)
+  - Description · Code
+- `PythonicAPI/ImageData/ImageWeightedSum.md` — **ImageWeightedSum** (4 kB)
+  - Description · Code
+- `PythonicAPI/ImageData/VoxelsOnBoundary.md` — **VoxelsOnBoundary** (6 kB)
+  - Description · Code
+- `PythonicAPI/ImageData/WriteReadVtkImageData.md` — **WriteReadVtkImageData** (3 kB)
+  - Code
+- `PythonicAPI/ImageProcessing/Attenuation.md` — **Attenuation** (5 kB)
+  - Description · Code
+- `PythonicAPI/ImageProcessing/EnhanceEdges.md` — **EnhanceEdges** (8 kB)
+  - Description · Code
+- `PythonicAPI/ImageProcessing/GaussianSmooth.md` — **GaussianSmooth** (4 kB)
+  - Description · Code
+- `PythonicAPI/ImageProcessing/HybridMedianComparison.md` — **HybridMedianComparison** (17 kB)
+  - Description · Code
+- `PythonicAPI/ImageProcessing/IdealHighPass.md` — **IdealHighPass** (5 kB)
+  - Description · Code
+- `PythonicAPI/ImageProcessing/IsoSubsample.md` — **IsoSubsample** (6 kB)
+  - Description · Code
+- `PythonicAPI/ImageProcessing/MorphologyComparison.md` — **MorphologyComparison** (16 kB)
+  - Description · Code
+- `PythonicAPI/ImageProcessing/Pad.md` — **Pad** (5 kB)
+  - Description · Code
+- `PythonicAPI/ImageProcessing/VTKSpectrum.md` — **VTKSpectrum** (5 kB)
+  - Description · Code
+- `PythonicAPI/Images/BackgroundImage.md` — **BackgroundImage** (5 kB)
+  - Description · Code
+- `PythonicAPI/Images/CannyEdgeDetector.md` — **CannyEdgeDetector** (5 kB)
+  - Code
+- `PythonicAPI/Images/CenterAnImage.md` — **CenterAnImage** (5 kB)
+  - Description · Code
+- `PythonicAPI/Images/CombiningRGBChannels.md` — **CombiningRGBChannels** (5 kB)
+  - Description · Code
+- `PythonicAPI/Images/DotProduct.md` — **DotProduct** (6 kB)
+  - Description · Code
+- `PythonicAPI/Images/ExtractComponents.md` — **ExtractComponents** (4 kB)
+  - Description · Code
+- `PythonicAPI/Images/ImageCityBlockDistance.md` — **ImageCityBlockDistance** (4 kB)
+  - Description · Code
+- `PythonicAPI/Images/ImageContinuousDilate3D.md` — **ImageContinuousDilate3D** (4 kB)
+  - Code
+- `PythonicAPI/Images/ImageContinuousErode3D.md` — **ImageContinuousErode3D** (4 kB)
+  - Code
+- `PythonicAPI/Images/ImageConvolve.md` — **ImageConvolve** (3 kB)
+  - Code
+- `PythonicAPI/Images/ImageCorrelation.md` — **ImageCorrelation** (4 kB)
+  - Code
+- `PythonicAPI/Images/ImageDifference.md` — **ImageDifference** (3 kB)
+  - Description · Code
+- `PythonicAPI/Images/ImageDivergence.md` — **ImageDivergence** (3 kB)
+  - Code
+- `PythonicAPI/Images/ImageEllipsoidSource.md` — **ImageEllipsoidSource** (2 kB)
+  - Code
+- `PythonicAPI/Images/ImageGradientMagnitude.md` — **ImageGradientMagnitude** (3 kB)
+  - Code
+- `PythonicAPI/Images/ImageGridSource.md` — **ImageGridSource** (2 kB)
+  - Code
+- `PythonicAPI/Images/ImageHistogram.md` — **ImageHistogram** (4 kB)
+  - Code
+- `PythonicAPI/Images/ImageMask.md` — **ImageMask** (4 kB)
+  - Description · Code
+- `PythonicAPI/Images/ImageNonMaximumSuppression.md` — **ImageNonMaximumSuppression** (4 kB)
+  - Code
+- `PythonicAPI/Images/ImageOpenClose3D.md` — **ImageOpenClose3D** (3 kB)
+  - Description · Code
+- `PythonicAPI/Images/ImageOrientation.md` — **ImageOrientation** (2 kB)
+  - Description · Code
+- `PythonicAPI/Images/ImagePermute.md` — **ImagePermute** (2 kB)
+  - Description · Code
+- `PythonicAPI/Images/ImageRange3D.md` — **ImageRange3D** (3 kB)
+  - Code
+- `PythonicAPI/Images/ImageSeparableConvolution.md` — **ImageSeparableConvolution** (4 kB)
+  - Description · Code
+- `PythonicAPI/Images/ImageSlice.md` — **ImageSlice** (2 kB)
+  - Code
+- `PythonicAPI/Images/ImageSobel2D.md` — **ImageSobel2D** (5 kB)
+  - Code
+- `PythonicAPI/Images/ImageStack.md` — **ImageStack** (3 kB)
+  - Code
+- `PythonicAPI/Images/ImageToPolyDataFilter.md` — **ImageToPolyDataFilter** (3 kB)
+  - Code
+- `PythonicAPI/Images/ImageVariance3D.md` — **ImageVariance3D** (3 kB)
+  - Code
+- `PythonicAPI/Images/ImageWarp.md` — **ImageWarp** (3 kB)
+  - Code
+- `PythonicAPI/Images/MarkKeypoints.md` — **MarkKeypoints** (5 kB)
+  - Code
+- `PythonicAPI/Images/RGBToHSI.md` — **RGBToHSI** (4 kB)
+  - Description · Code
+- `PythonicAPI/Images/RGBToHSV.md` — **RGBToHSV** (4 kB)
+  - Description · Code
+- `PythonicAPI/Images/RGBToYIQ.md` — **RGBToYIQ** (5 kB)
+  - Description · Code
+- `PythonicAPI/Images/ResizeImage.md` — **ResizeImage** (6 kB)
+  - Description · Code
+- `PythonicAPI/ImplicitFunctions/BooleanOperationImplicitFunctions.md` — **BooleanOperationImplicitFunctions** (3 kB)
+  - Description · Code
+- `PythonicAPI/ImplicitFunctions/ImplicitDataSet.md` — **ImplicitDataSet** (1 kB)
+  - Code
+- `PythonicAPI/ImplicitFunctions/ImplicitQuadric.md` — **ImplicitQuadric** (2 kB)
+  - Description · Code
+- `PythonicAPI/ImplicitFunctions/ImplicitSphere.md` — **ImplicitSphere** (3 kB)
+  - Description · Code
+- `PythonicAPI/ImplicitFunctions/ImplicitSphere1.md` — **ImplicitSphere1** (2 kB)
+  - Description · Code
+- `PythonicAPI/ImplicitFunctions/IsoContours.md` — **IsoContours** (7 kB)
+  - Code
+- `PythonicAPI/ImplicitFunctions/SampleFunction.md` — **SampleFunction** (3 kB)
+  - Code
+- `PythonicAPI/InfoVis/ArrayToTable.md` — **ArrayToTable** (1 kB)
+  - Code
+- `PythonicAPI/InfoVis/DelimitedTextWriter.md` — **DelimitedTextWriter** (2 kB)
+  - Description · Code
+- `PythonicAPI/InfoVis/KMeansClustering.md` — **KMeansClustering** (5 kB)
+  - Description · Code
+- `PythonicAPI/InfoVis/MutableGraphHelper.md` — **MutableGraphHelper** (2 kB)
+  - Code
+- `PythonicAPI/InfoVis/ParallelCoordinatesView.md` — **ParallelCoordinatesView** (4 kB)
+  - Description · Code
+- `PythonicAPI/InfoVis/PassThrough.md` — **PassThrough** (1 kB)
+  - Code
+- `PythonicAPI/InfoVis/XGMLReader.md` — **XGMLReader** (3 kB)
+  - Description · Code
+- `PythonicAPI/Interaction/Assembly.md` — **Assembly** (2 kB)
+  - Code
+- `PythonicAPI/Interaction/CallBack.md` — **CallBack** (10 kB)
+  - Description · Code
+- `PythonicAPI/Interaction/EllipticalButton.md` — **EllipticalButton** (6 kB)
+  - Description · Code
+- `PythonicAPI/Interaction/ImageClip.md` — **ImageClip** (7 kB)
+  - Description · Code
+- `PythonicAPI/Interaction/ImageRegion.md` — **ImageRegion** (7 kB)
+  - Description · Code
+- `PythonicAPI/Interaction/InteractorStyleTrackballActor.md` — **InteractorStyleTrackballActor** (2 kB)
+  - Description · Code
+- `PythonicAPI/Interaction/InteractorStyleTrackballCamera.md` — **InteractorStyleTrackballCamera** (2 kB)
+  - Code
+- `PythonicAPI/Interaction/MouseEvents.md` — **MouseEvents** (3 kB)
+  - Description · Code
+- `PythonicAPI/Interaction/MouseEventsObserver.md` — **MouseEventsObserver** (3 kB)
+  - Description · Code
+- `PythonicAPI/Interaction/RubberBand3D.md` — **RubberBand3D** (2 kB)
+  - Code
+- `PythonicAPI/Interaction/RubberBandZoom.md` — **RubberBandZoom** (2 kB)
+  - Code
+- `PythonicAPI/Interaction/StyleSwitch.md` — **StyleSwitch** (2 kB)
+  - Description · Code
+- `PythonicAPI/Lighting/Light.md` — **Light** (4 kB)
+  - Code
+- `PythonicAPI/Math/MatrixInverse.md` — **MatrixInverse** (1 kB)
+  - Code
+- `PythonicAPI/Math/MatrixTranspose.md` — **MatrixTranspose** (1 kB)
+  - Code
+- `PythonicAPI/Medical/GenerateCubesFromLabels.md` — **GenerateCubesFromLabels** (16 kB)
+  - Description · Code
+- `PythonicAPI/Medical/GenerateModelsFromLabels.md` — **GenerateModelsFromLabels** (6 kB)
+  - Description · Code
+- `PythonicAPI/Medical/MedicalDemo1.md` — **MedicalDemo1** (16 kB)
+  - Description · Code
+- `PythonicAPI/Medical/MedicalDemo2.md` — **MedicalDemo2** (17 kB)
+  - Description · Code
+- `PythonicAPI/Medical/MedicalDemo3.md` — **MedicalDemo3** (21 kB)
+  - Description · Code
+- `PythonicAPI/Medical/MedicalDemo4.md` — **MedicalDemo4** (19 kB)
+  - Description · Code
+- `PythonicAPI/Medical/TissueLens.md` — **TissueLens** (18 kB)
+  - Description · Code
+- `PythonicAPI/Meshes/ClipClosedSurface.md` — **ClipClosedSurface** (4 kB)
+  - Code
+- `PythonicAPI/Meshes/ClipDataSetWithPolyData.md` — **ClipDataSetWithPolyData** (10 kB)
+  - Description · Code
+- `PythonicAPI/Meshes/ClipDataSetWithPolyData1.md` — **ClipDataSetWithPolyData1** (6 kB)
+  - Description · Code
+- `PythonicAPI/Meshes/DeformPointSet.md` — **DeformPointSet** (5 kB)
+  - Description · Code
+- `PythonicAPI/Meshes/ElevationFilter.md` — **ElevationFilter** (4 kB)
+  - Code
+- `PythonicAPI/Meshes/FillHoles.md` — **FillHoles** (7 kB)
+  - Description · Code
+- `PythonicAPI/Meshes/FitToHeightMap.md` — **FitToHeightMap** (11 kB)
+  - Description · Code
+- `PythonicAPI/Meshes/IdentifyHoles.md` — **IdentifyHoles** (10 kB)
+  - Description · Code
+- `PythonicAPI/Meshes/InterpolateFieldDataDemo.md` — **InterpolateFieldDataDemo** (15 kB)
+  - Description · Code
+- `PythonicAPI/Meshes/MatrixMathFilter.md` — **MatrixMathFilter** (3 kB)
+  - Code
+- `PythonicAPI/Meshes/OBBDicer.md` — **OBBDicer** (7 kB)
+  - Description · Code
+- `PythonicAPI/Meshes/PointInterpolator.md` — **PointInterpolator** (5 kB)
+  - Description · Code
+- `PythonicAPI/Meshes/SolidClip.md` — **SolidClip** (3 kB)
+  - Description · Code
+- `PythonicAPI/Meshes/SplitPolyData.md` — **SplitPolyData** (6 kB)
+  - Description · Code
+- `PythonicAPI/Meshes/TableBasedClipDataSetWithPolyData2.md` — **TableBasedClipDataSetWithPolyData2** (6 kB)
+  - Description · Code
+- `PythonicAPI/Modelling/Bottle.md` — **Bottle** (3 kB)
+  - Code
+- `PythonicAPI/Modelling/CappedSphere.md` — **CappedSphere** (7 kB)
+  - Description · Code
+- `PythonicAPI/Modelling/ContourTriangulator.md` — **ContourTriangulator** (3 kB)
+  - Code
+- `PythonicAPI/Modelling/Delaunay3DDemo.md` — **Delaunay3DDemo** (20 kB)
+  - Description · Code
+- `PythonicAPI/Modelling/DelaunayMesh.md` — **DelaunayMesh** (4 kB)
+  - Description · Code
+- `PythonicAPI/Modelling/DiscreteFlyingEdges3D.md` — **DiscreteFlyingEdges3D** (7 kB)
+  - Description · Code
+- `PythonicAPI/Modelling/ExtractLargestIsosurface.md` — **ExtractLargestIsosurface** (6 kB)
+  - Description · Code
+- `PythonicAPI/Modelling/Finance.md` — **Finance** (8 kB)
+  - Description · Code
+- `PythonicAPI/Modelling/FinanceFieldData.md` — **FinanceFieldData** (7 kB)
+  - Description · Code
+- `PythonicAPI/Modelling/MarchingCubes.md` — **MarchingCubes** (5 kB)
+  - Description · Code
+- `PythonicAPI/Modelling/SmoothDiscreteFlyingEdges3D.md` — **SmoothDiscreteFlyingEdges3D** (7 kB)
+  - Description · Code
+- `PythonicAPI/Modelling/Spring.md` — **Spring** (3 kB)
+  - Code
+- `PythonicAPI/Parallel/ExodusIIWriter.md` — **ExodusIIWriter** (1 kB)
+  - Description · Code
+- `PythonicAPI/Picking/AreaPicking.md` — **AreaPicking** (3 kB)
+  - Description · Code
+- `PythonicAPI/Picking/CellPicking.md` — **CellPicking** (4 kB)
+  - Description · Code
+- `PythonicAPI/Picking/HighlightPickedActor.md` — **HighlightPickedActor** (6 kB)
+  - Description · Code
+- `PythonicAPI/Picking/HighlightSelection.md` — **HighlightSelection** (7 kB)
+  - Description · Code
+- `PythonicAPI/Picking/HighlightWithSilhouette.md` — **HighlightWithSilhouette** (6 kB)
+  - Description · Code
+- `PythonicAPI/Plotting/AreaPlot.md` — **AreaPlot** (4 kB)
+  - Description · Code
+- `PythonicAPI/Plotting/BoxChart.md` — **BoxChart** (4 kB)
+  - Description · Code
+- `PythonicAPI/Plotting/ChartMatrix.md` — **ChartMatrix** (6 kB)
+  - Description · Code
+- `PythonicAPI/Plotting/FunctionalBagPlot.md` — **FunctionalBagPlot** (4 kB)
+  - Description · Code
+- `PythonicAPI/Plotting/Histogram2D.md` — **Histogram2D** (3 kB)
+  - Description · Code
+- `PythonicAPI/Plotting/HistogramBarChart.md` — **HistogramBarChart** (5 kB)
+  - Code
+- `PythonicAPI/Plotting/LinePlot2D.md` — **LinePlot2D** (2 kB)
+  - Description · Code
+- `PythonicAPI/Plotting/LinePlot3D.md` — **LinePlot3D** (3 kB)
+  - Description · Code
+- `PythonicAPI/Plotting/MultiplePlots.md` — **MultiplePlots** (5 kB)
+  - Description · Code
+- `PythonicAPI/Plotting/ParallelCoordinates.md` — **ParallelCoordinates** (2 kB)
+  - Code
+- `PythonicAPI/Plotting/PieChart.md` — **PieChart** (2 kB)
+  - Code
+- `PythonicAPI/Plotting/PieChartActor.md` — **PieChartActor** (3 kB)
+  - Code
+- `PythonicAPI/Plotting/ScatterPlot.md` — **ScatterPlot** (2 kB)
+  - Code
+- `PythonicAPI/Plotting/SpiderPlot.md` — **SpiderPlot** (4 kB)
+  - Description · Code
+- `PythonicAPI/Plotting/StackedBar.md` — **StackedBar** (6 kB)
+  - Code
+- `PythonicAPI/Plotting/SurfacePlot.md` — **SurfacePlot** (3 kB)
+  - Code
+- `PythonicAPI/Points/DensifyPoints.md` — **DensifyPoints** (6 kB)
+  - Description · Code
+- `PythonicAPI/Points/ExtractClusters.md` — **ExtractClusters** (4 kB)
+  - Description · Code
+- `PythonicAPI/Points/ExtractPointsDemo.md` — **ExtractPointsDemo** (13 kB)
+  - Code
+- `PythonicAPI/Points/ExtractSurface.md` — **ExtractSurface** (7 kB)
+  - Description · Code
+- `PythonicAPI/Points/ExtractSurfaceDemo.md` — **ExtractSurfaceDemo** (9 kB)
+  - Description · Code
+- `PythonicAPI/Points/FitImplicitFunction.md` — **FitImplicitFunction** (3 kB)
+  - Code
+- `PythonicAPI/Points/MaskPointsFilter.md` — **MaskPointsFilter** (5 kB)
+  - Code
+- `PythonicAPI/Points/SignedDistance.md` — **SignedDistance** (8 kB)
+  - Description · Code
+- `PythonicAPI/Points/UnsignedDistance.md` — **UnsignedDistance** (8 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/AlignTwoPolyDatas.md` — **AlignTwoPolyDatas** (16 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/AttachAttributes.md` — **AttachAttributes** (1 kB)
+  - Code
+- `PythonicAPI/PolyData/BooleanPolyDataFilters.md` — **BooleanPolyDataFilters** (9 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/CellTreeLocator.md` — **CellTreeLocator** (5 kB)
+  - Code
+- `PythonicAPI/PolyData/CellsInsideObject.md` — **CellsInsideObject** (9 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/CenterOfMass.md` — **CenterOfMass** (1 kB)
+  - Code
+- `PythonicAPI/PolyData/ClosedSurface.md` — **ClosedSurface** (2 kB)
+  - Code
+- `PythonicAPI/PolyData/CombineImportedActors.md` — **CombineImportedActors** (7 kB)
+  - Code
+- `PythonicAPI/PolyData/DecimatePolyline.md` — **DecimatePolyline** (2 kB)
+  - Code
+- `PythonicAPI/PolyData/DijkstraGraphGeodesicPath.md` — **DijkstraGraphGeodesicPath** (2 kB)
+  - Code
+- `PythonicAPI/PolyData/DistancePolyDataFilter.md` — **DistancePolyDataFilter** (8 kB)
+  - Code
+- `PythonicAPI/PolyData/ExternalContour.md` — **ExternalContour** (6 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/ExtractPolyLinesFromPolyData.md` — **ExtractPolyLinesFromPolyData** (4 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/ExtractSelection.md` — **ExtractSelection** (5 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/ExtractSelectionOriginalId.md` — **ExtractSelectionOriginalId** (6 kB)
+  - Code
+- `PythonicAPI/PolyData/ExtractSelectionUsingCells.md` — **ExtractSelectionUsingCells** (5 kB)
+  - Code
+- `PythonicAPI/PolyData/ExtractSelectionUsingPoints.md` — **ExtractSelectionUsingPoints** (5 kB)
+  - Code
+- `PythonicAPI/PolyData/FitSplineToCutterOutput.md` — **FitSplineToCutterOutput** (6 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/GradientFilter.md` — **GradientFilter** (4 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/GreedyTerrainDecimation.md` — **GreedyTerrainDecimation** (2 kB)
+  - Code
+- `PythonicAPI/PolyData/HighlightBadCells.md` — **HighlightBadCells** (3 kB)
+  - Code
+- `PythonicAPI/PolyData/ImplicitDataSetClipping.md` — **ImplicitDataSetClipping** (6 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/ImplicitPolyDataDistance.md` — **ImplicitPolyDataDistance** (3 kB)
+  - Code
+- `PythonicAPI/PolyData/ImplicitSelectionLoop.md` — **ImplicitSelectionLoop** (4 kB)
+  - Code
+- `PythonicAPI/PolyData/IntersectionPolyDataFilter.md` — **IntersectionPolyDataFilter** (3 kB)
+  - Code
+- `PythonicAPI/PolyData/KochanekSplineDemo.md` — **KochanekSplineDemo** (13 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/MergeSelections.md` — **MergeSelections** (7 kB)
+  - Code
+- `PythonicAPI/PolyData/MeshQuality.md` — **MeshQuality** (4 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/MultiBlockMergeFilter.md` — **MultiBlockMergeFilter** (1 kB)
+  - Code
+- `PythonicAPI/PolyData/OrientedBoundingCylinder.md` — **OrientedBoundingCylinder** (13 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/Outline.md` — **Outline** (2 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/PolyDataContourToImageData.md` — **PolyDataContourToImageData** (5 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/PolyDataToImageDataStencil.md` — **PolyDataToImageDataStencil** (3 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/PolygonalSurfacePointPlacer.md` — **PolygonalSurfacePointPlacer** (2 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/ResamplePolyLine.md` — **ResamplePolyLine** (5 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/RuledSurfaceFilter.md` — **RuledSurfaceFilter** (3 kB)
+  - Code
+- `PythonicAPI/PolyData/Silhouette.md` — **Silhouette** (5 kB)
+  - Code
+- `PythonicAPI/PolyData/SmoothMeshGrid.md` — **SmoothMeshGrid** (11 kB)
+  - Description · Code
+- `PythonicAPI/PolyData/ThinPlateSplineTransform.md` — **ThinPlateSplineTransform** (4 kB)
+  - Code
+- `PythonicAPI/PolyData/VertexConnectivity.md` — **VertexConnectivity** (5 kB)
+  - Code
+- `PythonicAPI/PolyData/WarpVector.md` — **WarpVector** (3 kB)
+  - Description · Code
+- `PythonicAPI/RectilinearGrid/RGrid.md` — **RGrid** (4 kB)
+  - Description · Code
+- `PythonicAPI/RectilinearGrid/VisualizeRectilinearGrid.md` — **VisualizeRectilinearGrid** (2 kB)
+  - Code
+- `PythonicAPI/Rendering/ColoredSphere.md` — **ColoredSphere** (3 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/GradientBackground.md` — **GradientBackground** (16 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/InterpolateCamera.md` — **InterpolateCamera** (7 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/LayeredActors.md` — **LayeredActors** (7 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/MotionBlur.md` — **MotionBlur** (4 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/MultipleLayersAndWindows.md` — **MultipleLayersAndWindows** (7 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/OutlineGlowPass.md` — **OutlineGlowPass** (4 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/PBR_Anisotropy.md` — **PBR Anisotropy** (14 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/PBR_Clear_Coat.md` — **PBR Clear Coat** (14 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/PBR_Edge_Tint.md` — **PBR Edge Tint** (15 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/PBR_HDR_Environment.md` — **PBR HDR Environment** (13 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/PBR_Mapping.md` — **PBR Mapping** (14 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/PBR_Materials.md` — **PBR Materials** (14 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/PBR_Materials_Coat.md` — **PBR Materials Coat** (15 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/PBR_Skybox.md` — **PBR Skybox** (34 kB)
+  - Description · Options · Code
+- `PythonicAPI/Rendering/PBR_Skybox_Anisotropy.md` — **PBR Skybox Anisotropy** (40 kB)
+  - Description · Options · Code
+- `PythonicAPI/Rendering/PBR_Skybox_Texturing.md` — **PBR Skybox Texturing** (38 kB)
+  - Description · Options · Code
+- `PythonicAPI/Rendering/Shadows.md` — **Shadows** (6 kB)
+  - Code
+- `PythonicAPI/Rendering/StringToImageDemo.md` — **StringToImageDemo** (10 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/StripFran.md` — **StripFran** (3 kB)
+  - Code
+- `PythonicAPI/Rendering/TransformSphere.md` — **TransformSphere** (3 kB)
+  - Description · Code
+- `PythonicAPI/Rendering/TransparentBackground.md` — **TransparentBackground** (5 kB)
+  - Description · Code
+- `PythonicAPI/Shaders/MarbleShaderDemo.md` — **MarbleShaderDemo** (26 kB)
+  - Description · Code
+- `PythonicAPI/SimpleOperations/DistanceBetweenPoints.md` — **DistanceBetweenPoints** (1 kB)
+  - Description · Code
+- `PythonicAPI/SimpleOperations/DistancePointToLine.md` — **DistancePointToLine** (1 kB)
+  - Description · Code
+- `PythonicAPI/SimpleOperations/GaussianRandomNumber.md` — **GaussianRandomNumber** (1 kB)
+  - Description · Code
+- `PythonicAPI/SimpleOperations/PerspectiveTransform.md` — **PerspectiveTransform** (2 kB)
+  - Code
+- `PythonicAPI/Snippets.md` — **Snippets** (2 kB)
+  - Description · Available snippets
+- `PythonicAPI/Snippets/COWPlacement.md` — **COWPlacement** (6 kB)
+  - Description · Declaration Section · Implementation Section · Usage
+- `PythonicAPI/Snippets/Callbacks.md` — **Callbacks** (2 kB)
+  - Description · Implementation · Usage
+- `PythonicAPI/Snippets/CameraPosition.md` — **CameraPosition** (1 kB)
+  - Description · Implementation · Usage
+- `PythonicAPI/Snippets/CheckVTKVersion.md` — **CheckVTKVersion** (1 kB)
+  - Description · Implementation · Typical usage
+- `PythonicAPI/Snippets/DrawViewportBorder.md` — **DrawViewportBorder** (3 kB)
+  - Description · Implementation · Usage
+- `PythonicAPI/Snippets/GetProgramParameters.md` — **GetProgramParameters** (1 kB)
+  - Description · Implementation · Typical usage
+- `PythonicAPI/Snippets/GetTextPositions.md` — **GetTextPositions** (3 kB)
+  - Description · Implementation · Usage
+- `PythonicAPI/Snippets/Make2DSliderWidget.md` — **Make2DSliderWidget** (9 kB)
+  - Description · Implementation · Usage
+- `PythonicAPI/Snippets/Permute.md` — **Permute** (5 kB)
+  - Description · Implementation · Usage
+- `PythonicAPI/Snippets/PointToGlyph.md` — **PointToGlyph** (1 kB)
+  - Description · Implementation · Usage
+- `PythonicAPI/Snippets/ReadPolyData.md` — **ReadPolyData** (1 kB)
+  - Description · Implementation
+- `PythonicAPI/Snippets/ScreenshotCallback.md` — **ScreenshotCallback** (3 kB)
+  - Description · Implementation · Usage
+- `PythonicAPI/Snippets/Slider3D.md` — **Slider3D** (4 kB)
+  - Description · Implementation · Usage
+- `PythonicAPI/Snippets/VTKDataClasses.md` — **VTKDataClasses** (15 kB)
+  - Introduction · BandedPolyDataContourFilter · ButtonSource · ClipClosedSurface · ColorTransferFunction · ConnectivityFilter · Coordinate · Curvatures · Cutter · DataObjectToDataSetFilter · FieldDataToAttributeDataFilter · Glyph3D … (+26)
+- `PythonicAPI/Snippets/WriteImage.md` — **WriteImage** (2 kB)
+  - Description · Implementation · Usage
+- `PythonicAPI/StructuredGrid/BlankPoint.md` — **BlankPoint** (3 kB)
+  - Code
+- `PythonicAPI/StructuredGrid/SGrid.md` — **SGrid** (4 kB)
+  - Description · Code
+- `PythonicAPI/StructuredPoints/Vol.md` — **Vol** (3 kB)
+  - Description · Code
+- `PythonicAPI/Texture/AnimateVectors.md` — **AnimateVectors** (6 kB)
+  - Description · Code
+- `PythonicAPI/Texture/TextureCutQuadric.md` — **TextureCutQuadric** (9 kB)
+  - Description · Code
+- `PythonicAPI/Texture/TextureCutSphere.md` — **TextureCutSphere** (3 kB)
+  - Code
+- `PythonicAPI/Texture/TexturePlane.md` — **TexturePlane** (3 kB)
+  - Code
+- `PythonicAPI/Texture/TextureThreshold.md` — **TextureThreshold** (6 kB)
+  - Description · Code
+- `PythonicAPI/Texture/TexturedSphere.md` — **TexturedSphere** (4 kB)
+  - Code
+- `PythonicAPI/UnstructuredGrid/ClipUnstructuredGridWithPlane.md` — **ClipUnstructuredGridWithPlane** (7 kB)
+  - Description · Code
+- `PythonicAPI/UnstructuredGrid/ClipUnstructuredGridWithPlane2.md` — **ClipUnstructuredGridWithPlane2** (9 kB)
+  - Description · Code
+- `PythonicAPI/Utilities/Animation.md` — **Animation** (3 kB)
+  - Description · Code
+- `PythonicAPI/Utilities/ArrayCalculator.md` — **ArrayCalculator** (1 kB)
+  - Code
+- `PythonicAPI/Utilities/ArrayWriter.md` — **ArrayWriter** (1 kB)
+  - Code
+- `PythonicAPI/Utilities/BoundingBox.md` — **BoundingBox** (1 kB)
+  - Description · Code
+- `PythonicAPI/Utilities/BoundingBoxIntersection.md` — **BoundingBoxIntersection** (1 kB)
+  - Code
+- `PythonicAPI/Utilities/CheckVTKVersion.md` — **CheckVTKVersion** (2 kB)
+  - Code
+- `PythonicAPI/Utilities/ClassesInLang1NotInLang2.md` — **ClassesInLang1NotInLang2** (8 kB)
+  - Description · Code
+- `PythonicAPI/Utilities/ColorMapToLUT.md` — **ColorMapToLUT** (7 kB)
+  - Description · Code
+- `PythonicAPI/Utilities/DetermineActorType.md` — **DetermineActorType** (5 kB)
+  - Code
+- `PythonicAPI/Utilities/ExtractArrayComponent.md` — **ExtractArrayComponent** (1 kB)
+  - Code
+- `PythonicAPI/Utilities/FileOutputWindow.md` — **FileOutputWindow** (1 kB)
+  - Description · Code
+- `PythonicAPI/Utilities/JSONColorMapToLUT.md` — **JSONColorMapToLUT** (27 kB)
+  - Description · Code
+- `PythonicAPI/Utilities/MassProperties.md` — **MassProperties** (5 kB)
+  - Description · Code
+- `PythonicAPI/Utilities/OffScreenRendering.md` — **OffScreenRendering** (2 kB)
+  - Description · Code
+- `PythonicAPI/Utilities/PCADemo.md` — **PCADemo** (8 kB)
+  - Code
+- `PythonicAPI/Utilities/PCAStatistics.md` — **PCAStatistics** (3 kB)
+  - Code
+- `PythonicAPI/Utilities/RescaleReverseLUT.md` — **RescaleReverseLUT** (23 kB)
+  - Description · Code
+- `PythonicAPI/Utilities/ResetCameraOrientation.md` — **ResetCameraOrientation** (5 kB)
+  - Description · Code
+- `PythonicAPI/Utilities/SaveSceneToFieldData.md` — **SaveSceneToFieldData** (7 kB)
+  - Description · Code
+- `PythonicAPI/Utilities/SaveSceneToFile.md` — **SaveSceneToFile** (7 kB)
+  - Description · Code
+- `PythonicAPI/Utilities/Screenshot.md` — **Screenshot** (2 kB)
+  - Code
+- `PythonicAPI/Utilities/SelectExamples.md` — **SelectExamples** (7 kB)
+  - Description · Code
+- `PythonicAPI/Utilities/ShareCamera.md` — **ShareCamera** (3 kB)
+  - Code
+- `PythonicAPI/Utilities/VTKWithNumpy.md` — **VTKWithNumpy** (6 kB)
+  - Code
+- `PythonicAPI/Utilities/Variant.md` — **Variant** (4 kB)
+  - Code
+- `PythonicAPI/Utilities/XMLColorMapToLUT.md` — **XMLColorMapToLUT** (26 kB)
+  - Description · Code
+- `PythonicAPI/Video/OggTheora.md` — **OggTheora** (1 kB)
+  - Code
+- `PythonicAPI/Visualization/AnnotatedCubeActor.md` — **AnnotatedCubeActor** (3 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/AssignCellColorsFromLUT.md` — **AssignCellColorsFromLUT** (9 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/AxisActor.md` — **AxisActor** (3 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/BillboardTextActor3D.md` — **BillboardTextActor3D** (4 kB)
+  - Code
+- `PythonicAPI/Visualization/Blow.md` — **Blow** (8 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/BoxClipStructuredPoints.md` — **BoxClipStructuredPoints** (5 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/BoxClipUnstructuredGrid.md` — **BoxClipUnstructuredGrid** (5 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/CameraActor.md` — **CameraActor** (3 kB)
+  - Code
+- `PythonicAPI/Visualization/CameraModel1.md` — **CameraModel1** (10 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/CameraModel2.md` — **CameraModel2** (10 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/CaptionActor2D.md` — **CaptionActor2D** (5 kB)
+  - Code
+- `PythonicAPI/Visualization/CollisionDetection.md` — **CollisionDetection** (12 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/ColoredAnnotatedCube.md` — **ColoredAnnotatedCube** (11 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/CornerAnnotation.md` — **CornerAnnotation** (2 kB)
+  - Code
+- `PythonicAPI/Visualization/CorrectlyRenderTranslucentGeometry.md` — **CorrectlyRenderTranslucentGeometry** (15 kB)
+  - Description · Program Usage · Code
+- `PythonicAPI/Visualization/CubeAxesActor.md` — **CubeAxesActor** (3 kB)
+  - Code
+- `PythonicAPI/Visualization/CubeAxesActor2D.md` — **CubeAxesActor2D** (5 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/Cursor2D.md` — **Cursor2D** (2 kB)
+  - Code
+- `PythonicAPI/Visualization/Cursor3D.md` — **Cursor3D** (2 kB)
+  - Code
+- `PythonicAPI/Visualization/CurvatureBandsWithGlyphs.md` — **CurvatureBandsWithGlyphs** (57 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/Curvatures.md` — **Curvatures** (14 kB)
+  - Code
+- `PythonicAPI/Visualization/CurvaturesAdjustEdges.md` — **CurvaturesAdjustEdges** (45 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/CurvaturesDemo.md` — **CurvaturesDemo** (30 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/CurvaturesNormalsElevations.md` — **CurvaturesNormalsElevations** (58 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/DepthSortPolyData.md` — **DepthSortPolyData** (11 kB)
+  - Description · Program Usage · Code
+- `PythonicAPI/Visualization/DistanceToCamera.md` — **DistanceToCamera** (4 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/EdgePoints.md` — **EdgePoints** (4 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/ElevationBandsWithGlyphs.md` — **ElevationBandsWithGlyphs** (42 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/FastSplatter.md` — **FastSplatter** (3 kB)
+  - Code
+- `PythonicAPI/Visualization/FroggieSurface.md` — **FroggieSurface** (32 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/FroggieView.md` — **FroggieView** (34 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/Hanoi.md` — **Hanoi** (16 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/HanoiInitial.md` — **HanoiInitial** (1 kB)
+  - Code
+- `PythonicAPI/Visualization/HanoiIntermediate.md` — **HanoiIntermediate** (1 kB)
+  - Code
+- `PythonicAPI/Visualization/IsosurfaceSampling.md` — **IsosurfaceSampling** (4 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/Kitchen.md` — **Kitchen** (10 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/LODProp3D.md` — **LODProp3D** (4 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/LabelPlacementMapper.md` — **LabelPlacementMapper** (4 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/LabeledMesh.md` — **LabeledMesh** (6 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/LoopShrink.md` — **LoopShrink** (2 kB)
+  - Code
+- `PythonicAPI/Visualization/Lorenz.md` — **Lorenz** (5 kB)
+  - Code
+- `PythonicAPI/Visualization/MovableAxes.md` — **MovableAxes** (5 kB)
+  - Code
+- `PythonicAPI/Visualization/MultipleRenderWindows.md` — **MultipleRenderWindows** (5 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/MultipleViewports.md` — **MultipleViewports** (3 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/PointDataSubdivision.md` — **PointDataSubdivision** (26 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/ProgrammableGlyphFilter.md` — **ProgrammableGlyphFilter** (3 kB)
+  - Code
+- `PythonicAPI/Visualization/ProgrammableGlyphs.md` — **ProgrammableGlyphs** (3 kB)
+  - Code
+- `PythonicAPI/Visualization/ProteinRibbons.md` — **ProteinRibbons** (3 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/QuadricVisualization.md` — **QuadricVisualization** (6 kB)
+  - Description · Code
+- `PythonicAPI/Visualization/ReverseAccess.md` — **ReverseAccess** (2 kB)
+  - Code
+- `PythonicAPI/Visualization/ShadowsLightsDemo.md` — **ShadowsLightsDemo** (6 kB)
+  - Code
+- `PythonicAPI/Visualization/TransformActorCollection.md` — **TransformActorCollection** (3 kB)
+  - Code
+- `PythonicAPI/VisualizationAlgorithms/ClipSphereCylinder.md` — **ClipSphereCylinder** (5 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/CreateBFont.md` — **CreateBFont** (3 kB)
+  - Code
+- `PythonicAPI/VisualizationAlgorithms/DataSetSurface.md` — **DataSetSurface** (4 kB)
+  - Code
+- `PythonicAPI/VisualizationAlgorithms/DisplacementPlot.md` — **DisplacementPlot** (6 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/ExtractData.md` — **ExtractData** (4 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/FireFlow.md` — **FireFlow** (8 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/FireFlowDemo.md` — **FireFlowDemo** (16 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/FlyingHeadSlice.md` — **FlyingHeadSlice** (4 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/HeadBone.md` — **HeadBone** (3 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/HyperStreamline.md` — **HyperStreamline** (7 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/IceCream.md` — **IceCream** (5 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/ImageGradient.md` — **ImageGradient** (5 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/LOx.md` — **LOx** (7 kB)
+  - Code
+- `PythonicAPI/VisualizationAlgorithms/LOxGrid.md` — **LOxGrid** (7 kB)
+  - Code
+- `PythonicAPI/VisualizationAlgorithms/LOxSeeds.md` — **LOxSeeds** (6 kB)
+  - Code
+- `PythonicAPI/VisualizationAlgorithms/Motor.md` — **Motor** (5 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/Office.md` — **Office** (10 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/OfficeA.md` — **OfficeA** (1 kB)
+  - Code
+- `PythonicAPI/VisualizationAlgorithms/OfficeTube.md` — **OfficeTube** (10 kB)
+  - Code
+- `PythonicAPI/VisualizationAlgorithms/PineRootConnectivity.md` — **PineRootConnectivity** (7 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/PineRootConnectivityA.md` — **PineRootConnectivityA** (1 kB)
+  - Code
+- `PythonicAPI/VisualizationAlgorithms/PineRootDecimation.md` — **PineRootDecimation** (5 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/PlateVibration.md` — **PlateVibration** (3 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/StreamlinesWithLineWidget.md` — **StreamlinesWithLineWidget** (9 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/TensorEllipsoids.md` — **TensorEllipsoids** (5 kB)
+  - Description · Code
+- `PythonicAPI/VisualizationAlgorithms/WarpCombustor.md` — **WarpCombustor** (5 kB)
+  - Description · Code
+- `PythonicAPI/VolumeRendering/IntermixedUnstructuredGrid.md` — **IntermixedUnstructuredGrid** (5 kB)
+  - Code
+- `PythonicAPI/VolumeRendering/MinIntensityRendering.md` — **MinIntensityRendering** (3 kB)
+  - Code
+- `PythonicAPI/VolumeRendering/MultiBlockVolumeMapper.md` — **MultiBlockVolumeMapper** (3 kB)
+  - Code
+- `PythonicAPI/VolumeRendering/PseudoVolumeRendering.md` — **PseudoVolumeRendering** (6 kB)
+  - Description · Code
+- `PythonicAPI/VolumeRendering/RayCastIsosurface.md` — **RayCastIsosurface** (5 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/AffineWidget.md` — **AffineWidget** (4 kB)
+  - Code
+- `PythonicAPI/Widgets/AngleWidget.md` — **AngleWidget** (1 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/AngleWidget2D.md` — **AngleWidget2D** (2 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/BalloonWidget.md` — **BalloonWidget** (3 kB)
+  - Code
+- `PythonicAPI/Widgets/BiDimensionalWidget.md` — **BiDimensionalWidget** (4 kB)
+  - Code
+- `PythonicAPI/Widgets/BorderWidget.md` — **BorderWidget** (5 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/BoxWidget.md` — **BoxWidget** (4 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/BoxWidget2.md` — **BoxWidget2** (6 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/CameraOrientationWidget.md` — **CameraOrientationWidget** (13 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/CaptionWidget.md` — **CaptionWidget** (2 kB)
+  - Code
+- `PythonicAPI/Widgets/CheckerboardWidget.md` — **CheckerboardWidget** (3 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/CompassWidget.md` — **CompassWidget** (3 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/ContourWidget.md` — **ContourWidget** (4 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/DistanceWidget.md` — **DistanceWidget** (2 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/HoverWidget.md` — **HoverWidget** (2 kB)
+  - Code
+- `PythonicAPI/Widgets/ImagePlaneWidget.md` — **ImagePlaneWidget** (2 kB)
+  - Code
+- `PythonicAPI/Widgets/ImageTracerWidgetInsideContour.md` — **ImageTracerWidgetInsideContour** (4 kB)
+  - Code
+- `PythonicAPI/Widgets/ImageTracerWidgetNonPlanar.md` — **ImageTracerWidgetNonPlanar** (2 kB)
+  - Code
+- `PythonicAPI/Widgets/ImplicitAnnulusWidget.md` — **ImplicitAnnulusWidget** (7 kB)
+  - Code
+- `PythonicAPI/Widgets/ImplicitConeWidget.md` — **ImplicitConeWidget** (5 kB)
+  - Code
+- `PythonicAPI/Widgets/ImplicitPlaneWidget2.md` — **ImplicitPlaneWidget2** (4 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/LineWidget2.md` — **LineWidget2** (3 kB)
+  - Code
+- `PythonicAPI/Widgets/LogoWidget.md` — **LogoWidget** (3 kB)
+  - Code
+- `PythonicAPI/Widgets/PlaneWidget.md` — **PlaneWidget** (1 kB)
+  - Code
+- `PythonicAPI/Widgets/RadioButton.md` — **RadioButton** (7 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/RectilinearWipeWidget.md` — **RectilinearWipeWidget** (5 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/Slider2D.md` — **Slider2D** (10 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/Slider3D.md` — **Slider3D** (8 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/SphereWidget.md` — **SphereWidget** (2 kB)
+  - Description · Code
+- `PythonicAPI/Widgets/SplineWidget.md` — **SplineWidget** (3 kB)
+  - Description · Code
+
+## (root)
+
+- `PythonicAPIComments.md` — **Python API Comments** (11 kB)
+  - Introduction · An Overview of the New Syntax in Use · Initializing a VTK Class · Set/Get Properties of a VTK Class · Multiple connections in a pipeline · Multiple outputs from a pipeline · Selecting ports in a pipeline · Updating part of a pipeline · Reusing a pipeline · Grouping pipelines · How to handle #defines using data classes · Python functions and pipelines … (+4)
+- `VTKBook.md` — **VTK Textbook Updates** (3 kB)
+  - The Three Efforts · The Markdown Effort
+
+## VTKBook
+
+- `VTKBook/00Preface.md` — **Preface** (8 kB)
+- `VTKBook/01Chapter1.md` — **Chapter 1 - Introduction** (38 kB)
+  - 1.1 What Is Visualization? · Terminology · Examples of Visualization · 1.2 Why Visualize? · 1.3 Imaging, Computer Graphics, and Visualization · 1.4 Origins of Data Visualization · 1.5 Purpose of This Book · 1.6 What This Book Is Not · 1.7 Intended Audience · 1.8 How to Use This Book · 1.9 Software Considerations and Example Code · 1.10 Chapter-by-Chapter Overview … (+14)
+- `VTKBook/02Chapter2.md` — **Chapter 2 - Object-Oriented Design** (43 kB)
+  - 2.1 Introduction · 2.2 Goals of Good Software Design · 2.3 Object-Oriented Concepts · 2.4 Object-Oriented Terminology · What Is an Object? · Inheritance · 2.5 Object-Oriented Modelling and Design · The Object Model · The Dynamic Model · The Functional Model · 2.6 Object-Oriented Programming Languages · 2.7 Object-Oriented Visualization … (+4)
+- `VTKBook/03Chapter3.md` — **Chapter 3 - Computer Graphics Primer** (119 kB)
+  - 3.1 Introduction · A Physical Description of Rendering · Image-Order and Object-Order Methods · Surface versus Volume Rendering · Visualization Not Graphics · 3.2 Color · 3.3 Lights · 3.4 Surface Properties · 3.5 Cameras · 3.6 Coordinate Systems · 3.7 Coordinate Transformation · 3.8 Actor Geometry … (+17)
+- `VTKBook/04Chapter4.md` — **Chapter 4 - The Visualization Pipeline** (107 kB)
+  - 4.1 Overview · A Data Visualization Example · The Functional Model · The Visualization Model · The Object Model · 4.2 The Visualization Pipeline · Data Objects · Process Objects · 4.3 Pipeline Topology · Pipeline Connections · Loops · 4.4 Executing the Pipeline … (+28)
+- `VTKBook/05Chapter5.md` — **Chapter 5 - Data Representation** (99 kB)
+  - 5.1 Introduction · Characterizing Visualization Data · Design Criterion · 5.2 The Data Object · 5.3 The Dataset · 5.4 Cell Types · Linear Cells · NonLinear Types · 5.5 Attribute Data · Scalars · Vectors · Normals … (+27)
+- `VTKBook/06Chapter6.md` — **Chapter 6 - Fundamental Algorithms** (128 kB)
+  - 6.1 Introduction · Generality Versus Efficiency · 6.2 Scalar Algorithms · Color Mapping · Contouring · Scalar Generation · 6.3 Vector Algorithms · Hedgehogs and Oriented Glyphs · Warping · Displacement Plots · Time Animation · Streamlines … (+23)
+- `VTKBook/07Chapter7.md` — **Chapter 7 - Advanced Computer Graphics** (138 kB)
+  - 7.1 Transparency and Alpha Values · 7.2 Texture Mapping · 7.3 Volume Rendering · 7.4 Image-Order Volume Rendering · 7.5 Object-Order Volume Rendering · 7.6 Other Volume Rendering Methods · 7.7 Volume Classification · 7.8 Volumetric Illumination · 7.9 Regions of Interest · 7.10 Intermixing Volumes and Geometry · 7.11 Efficient Volume Rendering · 7.12 Interactive Volume Rendering … (+17)
+- `VTKBook/08Chapter8.md` — **Chapter 8 - Advanced Data Representation** (114 kB)
+  - 8.1 Coordinate Systems · Global Coordinate System · Dataset Coordinate System · Structured Coordinate System · 8.2 Interpolation Functions · General Form · Specific Forms · 8.3 Cell Tessellation · Basic Approach · Error Measures · Advanced Methods · 8.4 Coordinate Transformation … (+26)
+- `VTKBook/09Chapter9.md` — **Chapter 9 - Advanced Algorithms** (153 kB)
+  - 9.1 Scalar Algorithms · Dividing Cubes · Carpet Plots · Clipping With Scalar Fields · 9.2 Vector Algorithms · Streamribbons and Streamsurfaces · Stream Polygon · Vector Field Topology · 9.3 Tensor Algorithms · Hyperstreamlines · 9.4 Modelling Algorithms · Visualizing Geometry … (+23)
+- `VTKBook/10Chapter10.md` — **Chapter 10 - Image Processing** (50 kB)
+  - 10.1 Introduction · 10.2 Data Representation · Regions of Interest · Streaming and Caching · Attribute Data and Components · 10.3 Algorithms · Image Restoration · Nonlinear Smoothing · Low Frequency Artifacts · Image Enhancement · Frequency Domain · Image Segmentation … (+12)
+- `VTKBook/11Chapter11.md` — **Chapter 11 - Visualization on the Web** (49 kB)
+  - 11.1 Motivation · 11.2 Early Web Visualization · 11.3 Virtual Reality Modeling Language (VRML) · 11.4 A VRML Visualization Server · 11.5 Visualization with Java · 11.6 Java3D · 11.7 VRML, Java, and the EAI · 11.8 The Future of Web Visualization · 11.9 Chapter Summary · 11.10 Bibliographic Notes · 11.11 References
+- `VTKBook/12Chapter12.md` — **Chapter 12 - Applications** (93 kB)
+  - 12.1 3D Medical Imaging · 12.2 Creating Models from Segmented Volume Data · 12.3 Financial Visualization · 12.4 Implicit Modelling · 12.5 Computational Fluid Dynamics · 12.6 Finite Element Analysis · 12.7 Algorithm Visualization · 12.8 Chapter Summary · 12.9 Bibliographic Notes · 12.10 References · 12.11 Exercises
+- `VTKBook/13Glossary.md` — **Glossary** (42 kB)

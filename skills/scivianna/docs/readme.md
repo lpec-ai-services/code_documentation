@@ -1,0 +1,214 @@
+# Scivianna: SCIentific VIsualizer for simulAtioN aNAlysis
+
+Scivianna is an open-source Python simulation geometry and result visualizer based on Holoviz Panel. It provides a powerful and flexible environment for visualizing 1D plots and 2D geometries simultaneously, with support for real-time simulation result visualization through code coupling.
+
+## Installation
+
+Scivianna can be installed directly from PyPI using pip:
+
+```bash
+pip install scivianna
+```
+
+### Optional Dependencies
+
+Scivianna offers several optional dependency sets for specific features:
+
+```bash
+# Agent/LLM features
+pip install scivianna[agent]
+
+# Grid rasterisation
+pip install scivianna[grid]
+
+# PyVista 3D visualization
+pip install scivianna[3d]
+
+# Testing and development
+pip install scivianna[test]
+
+# Code coupling with C3PO
+pip install scivianna[coupling]
+
+# Graph visualization (ReactFlow canvas)
+pip install scivianna[graph]
+```
+
+## Quick Start
+
+### Basic Usage
+
+```python
+from scivianna.layout.gridstack import GridStackLayout
+from scivianna.panel.panel_2d import Panel2D
+from scivianna.slave import ComputeSlave
+
+# Create a slave with your data interface
+slave = ComputeSlave(YourInterface)
+
+# Create a visualization panel
+panel = Panel2D(slave, name="My Panel")
+
+# Display
+panel.show()
+```
+
+### Running the Demonstrator
+Scivianna includes a `scivianna_example` module with several demonstration cases.
+
+It can be opened online at:
+https://huggingface.co/spaces/tmoulignier/scivianna
+
+or by running:
+
+```python
+from scivianna_example.demo import make_demo
+
+demo = make_demo()
+demo.show()
+```
+
+
+## Key Features
+
+### 1. Simultaneous 1D, 2D, 3D and DataFrame Visualization
+
+Visualize line plots, 2D geometries, 3D VTK-based plots, and pandas DataFrames together in an integrated dashboard with inter-plot interactions.
+
+#### 1D plot - 2D plot - Table interactions
+![1D plot - 2D plot - Table interactions](https://github.com/user-attachments/assets/0c150034-2f1f-4d76-aebd-a5e9f26d92a1)
+
+#### 2D plot - 3D plot interactions
+![2D plot - 3D plot interactions](https://github.com/user-attachments/assets/38b839a0-ca65-4bf3-a3ad-d75e3a762aed)
+
+#### Multiple 2D plots interactions
+![Multiple 2D plots interactions](https://github.com/user-attachments/assets/eb046d71-2ab0-48fa-93a8-09657baf9edc)
+
+#### Grid based 2D plot
+![Grid based 2D plot](https://github.com/user-attachments/assets/66716616-872d-493c-9b77-b9640345cfdf)
+
+#### Multi-element graph plot
+![Multi-element graph plot](https://github.com/user-attachments/assets/777cf1d9-ba76-40c7-8cc4-626c303c3ef6)
+
+
+### 2. Real-Time Code Coupling
+Connect to simulations in real-time using the C3PO coupling platform and ICOCO interface. The visualizer can receive field updates during simulation execution.
+
+![Grid based 2D plot](https://github.com/user-attachments/assets/3095596e-78e6-4836-91a7-f135ddedd874)
+
+### 3. Generic Data Interfaces
+Scivianna provides flexible interfaces to read various data formats:
+- **MED** (Salome MED file format)
+- **VTK** (Visualization Toolkit files)
+- **GMSH** (.msh file format)
+- **CSV** (Structured time-series data)
+- **Custom interfaces** via `GenericInterface` base class
+
+### 4. Remote Server Access
+Access the visualizer from a distant computer using Panel's server/client architecture. Perfect for running simulations on HPC clusters while visualizing locally.
+
+### 5. Extensible Architecture
+
+Scivianna GUI is based on extensions used to parametrize plots. By default, extensions are provided to:
+- Edit plots coloring
+- Set up 1D axes
+- Load files
+- Edit plots using a AI assistant
+
+Additional extensions can be implemented to customize the GUI interactions using [panel](https://panel.holoviz.org/) ecosystem.
+
+![Extension demonstration](https://github.com/user-attachments/assets/54fb68ea-c140-46d1-afc5-ca703d2274d6)
+
+
+
+## Panel interactions
+
+Visualisation panels can interact with one another based on a update event parameter. This UpdateEvent class provide the following options:
+
+-   CLIC
+-   MOUSE_POSITION_CHANGE
+-   MOUSE_CELL_CHANGE
+-   PERIODIC
+-   RANGE_CHANGE
+-   AXES_CHANGE
+
+The behavior impacts differently based on the current panel type.
+
+### Sending panel
+
+| Event                 | Panel1D |                       Panel2D                       |                          Panel3D                          |                         PanelDataFrame                         |
+|-----------------------|:-------:|:---------------------------------------------------:|:---------------------------------------------------------:|:--------------------------------------------------------------:|
+| CLIC                  |    -    |       Sends mouse location and cell id on clic      |          Sends mouse location and cell id on clic         |                                -                               |
+| MOUSE_POSITION_CHANGE |    -    |    Sends mouse location and cell id on mouse move   |       Sends mouse location and cell id on mouse move      |                                -                               |
+| MOUSE_CELL_CHANGE     |    -    | Sends mouse location and cell id on hovered cell id |     Sends mouse location and cell id on hovered cell id   |                                -                               |
+| PERIODIC              |    -    |                          -                          |                             -                             |                                -                               |
+| RANGE_CHANGE          |    -    |       Sends frame center and size on zoom/drag      |                             -                             |                                -                               |
+| AXES_CHANGE           |    -    |            Sends new axes on axes change            |  Sends clip plane origin and axes on translation/rotation |                                -                               |
+
+### Receiving panel
+| Event                 |              Panel1D               |                 Panel2D                 |               Panel3D                |                         PanelDataFrame                          |
+|-----------------------|:----------------------------------:|:---------------------------------------:|:------------------------------------:|:---------------------------------------------------------------:|
+| CLIC                  | Updates at mouse location/cell id  | Updates moving origin to mouse location |   Moves clip plane to new origin     |         Recomputes dataframe at clicked cell/origin             |
+| MOUSE_POSITION_CHANGE | Updates at mouse location/cell id  | Updates moving origin to mouse location |   Moves clip plane to new origin     |            Recomputes dataframe at mouse position               |
+| MOUSE_CELL_CHANGE     | Updates at mouse location/cell id  | Updates moving origin to mouse location |   Moves clip plane to new origin     |           Recomputes dataframe on hovered cell change           |
+| PERIODIC              |  Updates at last location/cell id  |                    -                    |                  -                   |                                -                                |
+| RANGE_CHANGE          |                  -                 |       Updates for new origin/range      |  Moves clip plane to new origin      |                                -                                |
+| AXES_CHANGE           |                  -                 |       Updates for new origin/axes       | Moves clip plane to new origin/axes  |                                -                                |
+
+## Code Coupling with C3PO
+
+Scivianna integrates with the C3PO coupling tool through the ICOCO interface:
+
+```python
+from scivianna.coupling.icoco import LayoutProblem
+from scivianna.layout.gridstack import GridStackLayout
+
+# Create your layout
+layout = GridStackLayout(panels)
+
+# Create the coupling problem
+problem = LayoutProblem(layout, title="Coupled Simulation")
+
+# Use with C3PO
+# problem.initialize()
+# problem.setInputMEDDoubleField("panel_name@field_name", field_data)
+```
+
+## Requirements
+
+- Python >= 3.8, < 4
+- panel
+- holoviews
+- bokeh / jupyter_bokeh
+- matplotlib
+- numpy / pandas
+- shapely / geopandas
+- rasterio
+- icoco (for coupling features)
+- panel_material_ui
+
+## scivianna_example Module
+
+The `scivianna_example` module provides ready-to-use examples showcasing Scivianna's capabilities:
+
+### Available Examples
+
+| Example | Description |
+|---------|-------------|
+| **Europe Grid** | Plots an interactive Europe map displaying electricity production and consumption per country with weekly time-steps. Includes synchronized 1D time-series and DataFrame panels that update on hover. |
+| **Mandelbrot** | Computes the Mandelbrot set on a 2D grid and converts it to polygons for visualization. |
+| **Medcoupling** | Demonstrates MED file format handling with three synchronized views. Click in one view to offset others at the click location. (if medcoupling available) |
+| **Coupling example** | Plot of a coupled simulation to see time dependant data (if salome-c3po installed) |
+| **Medcoupling 3D** | 3D plot of a Medcoupling mesh interacting with a 2D plot. (if medcoupling and pyvista available) |
+| **VTK 3D** | 3D plot of a VTK mesh interacting with a 2D plot. (if pyvista available) |
+| **Heat network** | A small heat network where a generator feeds two factories through four pipes. Each node is a 2D plot colored on one global value range; drag nodes to rearrange the layout. (if scivianna-graph available) |
+
+
+## License
+
+Scivianna is developed by CEA (Commissariat à l'énergie atomique et aux énergies alternatives).
+
+## Contact
+
+- **Maintainer**: Thibault Moulignier
+- **Email**: Thibault.Moulignier@cea.fr

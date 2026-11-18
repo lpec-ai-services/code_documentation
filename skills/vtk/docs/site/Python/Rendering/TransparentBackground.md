@@ -1,0 +1,158 @@
+<!-- source: https://examples.vtk.org/site/Python/Rendering/TransparentBackground/ -->
+
+# TransparentBackground
+
+Repository source: [TransparentBackground](https://gitlab.kitware.com/vtk/vtk-examples/-/blob/master/src/Python/Rendering/TransparentBackground.py)
+
+[![figure](https://github.com/Kitware/vtk-examples/blob/gh-pages/src/Testing/Baseline/Python/Rendering/TestTransparentBackground.png?raw=true)](https://github.com/Kitware/vtk-examples/blob/gh-pages/src/Testing/Baseline/Python/Rendering/TestTransparentBackground.png?raw=true target=)
+
+### Description
+
+Demonstrates the use of two renderers. Notice that the second (and subsequent) renderers will have a transparent background.
+
+You can manipulate the object in the second layer/renderer whilst the objects in the first layer/renderer form the background.
+
+- Pressing **0** on the keyboard will let you manipulate the objects in layer 0.
+- Pressing **1** on the keyboard will let you manipulate the objects in layer 1.
+
+Info
+
+Also see the [LayeredActors.py](LayeredActors.md) example, where we have added an extra callback so that the non-active layer objects move in conjunction with the active layer objects.
+
+Other languages
+
+See ([Cxx](https://examples.vtk.org/site/Cxx/Rendering/TransparentBackground/)), ([PythonicAPI](../../PythonicAPI/Rendering/TransparentBackground.md))
+
+Question
+
+If you have a question about this example, please use the [VTK Discourse Forum](https://discourse.vtk.org/)
+
+### Code
+
+**TransparentBackground.py**
+
+```python
+#!/usr/bin/env python
+
+"""
+    1. Create a cube and cone source.
+    2. Render it with the cube in layer 0 and the cone in layer 1 of the render window.
+    3. Interact with it.
+    4. Notice that the cube and the cone are both visible and the layer 1 background is transparent.
+    5. Pressing '0' on the keyboard will let you manipulate the objects in layer 0.
+    6. Pressing '1' on the keyboard will let you manipulate the objects in layer 1.
+"""
+
+# noinspection PyUnresolvedReferences
+import vtkmodules.vtkInteractionStyle
+# noinspection PyUnresolvedReferences
+import vtkmodules.vtkRenderingOpenGL2
+from vtkmodules.vtkCommonColor import vtkNamedColors
+from vtkmodules.vtkFiltersSources import (
+    vtkConeSource,
+    vtkCubeSource
+)
+from vtkmodules.vtkRenderingCore import (
+    vtkActor,
+    vtkPolyDataMapper,
+    vtkRenderWindow,
+    vtkRenderWindowInteractor,
+    vtkRenderer
+)
+
+def GenerateAndDisplayCubeAndSphere():
+    colors = vtkNamedColors()
+
+    cubeSource = vtkCubeSource()
+    cubeSource.SetXLength(4.0)
+    cubeSource.SetYLength(9.0)
+    cubeSource.SetZLength(1.0)
+    cubeSource.SetCenter(0.0, 0.0, 0.0)
+
+    # Render the cube
+    cubeMapper = vtkPolyDataMapper()
+    cubeMapper.SetInputConnection(cubeSource.GetOutputPort())
+
+    cubeActor = vtkActor()
+    cubeActor.GetProperty().SetDiffuseColor(colors.GetColor3d("DarkGreen"))
+    cubeActor.SetMapper(cubeMapper)
+
+    coneSource = vtkConeSource()
+    coneSource.SetCenter(0.0, 0.0, 0.0)
+    coneSource.SetHeight(1.0)
+    coneSource.SetRadius(0.25)
+    coneSource.SetDirection(0.0, 1.0, 0.0)
+    coneSource.SetResolution(60)
+    coneSource.CappingOn()
+
+    # Render the cone
+    coneMapper = vtkPolyDataMapper()
+    coneMapper.SetInputConnection(coneSource.GetOutputPort())
+
+    coneActor = vtkActor()
+    coneActor.GetProperty().SetDiffuseColor(colors.GetColor3d("DarkTurquoise"))
+    # Make the cone slightly transparent for fun
+    coneActor.GetProperty().SetOpacity(0.75)
+    coneActor.SetMapper(coneMapper)
+
+    # The renderers, render window and interactor
+    renderers = list()
+    renWin = vtkRenderWindow()
+    for i in range(0, 2):
+        renderers.append(vtkRenderer())
+        renWin.AddRenderer(renderers[i])
+    renWin.SetSize(800, 800)
+
+    iren = vtkRenderWindowInteractor()
+    iren.SetRenderWindow(renWin)
+
+    # Layer 0 - background not transparent
+    renderers[0].SetBackground(colors.GetColor3d("Silver"))
+    renderers[0].AddActor(cubeActor)
+    renderers[0].SetLayer(0)
+    # Layer 1 - the background is transparent
+    #           so we only see the layer 0 background color
+    renderers[1].AddActor(coneActor)
+    renderers[1].SetLayer(1)
+    renderers[1].SetBackground(colors.GetColor3d("MidnightBlue"))
+
+    #  We have two layers
+    renWin.SetNumberOfLayers(2)
+    renWin.Render()
+    renWin.SetWindowName('TransparentBackground')
+
+    iren.AddObserver('KeyPressEvent', KeypressCallbackFunction)
+
+    iren.Start()
+
+def KeypressCallbackFunction(caller, ev):
+    iren = caller
+    renderers = iren.GetRenderWindow().GetRenderers()
+    if renderers.GetNumberOfItems() < 2:
+        print('We need at least two renderers, we have only', renderers.GetNumberOfItems())
+        return
+    renderers.InitTraversal()
+    # Top item
+    ren0 = renderers.GetNextItem()
+    # Bottom item
+    ren1 = renderers.GetNextItem()
+
+    key = iren.GetKeySym()
+
+    if key in ['0', 'KP_0']:
+        print('Pressed:', key)
+        iren.GetRenderWindow().GetInteractor().GetInteractorStyle().SetDefaultRenderer(ren0)
+        ren0.InteractiveOn()
+        ren1.InteractiveOff()
+    if key in ['1', 'KP_1']:
+        print('Pressed:', key)
+        iren.GetRenderWindow().GetInteractor().GetInteractorStyle().SetDefaultRenderer(ren1)
+        ren0.InteractiveOff()
+        ren1.InteractiveOn()
+
+def main():
+    GenerateAndDisplayCubeAndSphere()
+
+if __name__ == '__main__':
+    main()
+```

@@ -225,8 +225,23 @@ def api_markdown(pkg_root, modname, undoc):
 
 # ---------------------------------------------------------------- pages
 
+def take_md_includes(rst, here):
+    """`.. include:: file.md` (MyST parser) -> placeholder; returns (rst, [markdown])."""
+    found = []
+
+    def repl(m):
+        target = (here / m.group(1)).resolve()
+        found.append(target.read_text(encoding="utf-8", errors="replace")
+                     if target.exists() else f"*(included file {m.group(1)} not available)*")
+        return f"\nINCLUDEDMARKDOWNZQX{len(found) - 1}\n"
+    rst = re.sub(r"^\.\. include:: *(\S+\.md)\n((?:[ \t]+.*\n|[ \t]*\n)*)", repl,
+                 rst + "\n", flags=re.M)
+    return rst, found
+
+
 def convert_rst(path, pkg_root):
     rst = path.read_text(encoding="utf-8")
+    rst, md_includes = take_md_includes(rst, path.parent)
     rst = inline_literalincludes(rst, path.parent)
     rst = toctrees_to_lists(strip_directives(rst, DROP_DIRECTIVES))
     autos = []
@@ -239,6 +254,8 @@ def convert_rst(path, pkg_root):
     md = pandoc(roles_to_literals(rst))
     for i, (mod, undoc) in enumerate(autos):
         md = md.replace(f"{MARK}{i}", api_markdown(pkg_root, mod, undoc), 1)
+    for i, text in enumerate(md_includes):
+        md = md.replace(f"INCLUDEDMARKDOWNZQX{i}", text.strip(), 1)
     return md
 
 

@@ -30,7 +30,9 @@ skills/
 │   ├── SKILL.md, physics.md, methods.md
 │   └── docs/              # 200 pages + INDEX.md
 ├── salome-medcoupling/    # MEDCoupling/MEDLoader: developer guide (with all snippets), user guide, tutorial
-└── salome-gui/            # SALOME desktop / GUI user guide
+├── salome-gui/            # SALOME desktop / GUI user guide
+├── scivianna/             # CEA visualizer: AGENTS.md, tutorials, API (static), runnable examples
+└── vtk/                   # VTK in Python: 900 examples (classic + Pythonic API), VTK Textbook, user docs
 tools/
 ├── pdf2md.py              # PDF manual  → chapter Markdown + TOC (uses the PDF bookmarks)
 ├── sphinx2md.py           # published Sphinx site → page Markdown + INDEX (searchindex.js or a local copy)

@@ -117,10 +117,58 @@ sync_salome() {
   rm -rf "$tmp"
 }
 
+sync_scivianna() {
+  # Docs, tutorials, AGENTS.md and examples from the GitHub repo (no code is run;
+  # the API is read statically from the sources). SCIVIANNA_REF: branch or tag.
+  local ref="${SCIVIANNA_REF:-}" tmp; tmp="$(mktemp -d)"
+  git clone -q --depth 1 ${ref:+--branch "$ref"} https://github.com/cea-code-coupling/scivianna.git "$tmp/s"
+  ref="$(git -C "$tmp/s" rev-parse --abbrev-ref HEAD)"
+  local v; v="$(cat "$tmp/s/src/scivianna/VERSION" 2>/dev/null) ($ref $(git -C "$tmp/s" log -1 --format='%h, %cs'))"
+  local out="$ROOT/skills/scivianna" url=https://github.com/cea-code-coupling/scivianna
+  "$PY" "$ROOT/tools/sphinx_src2md.py" --src "$tmp/s/docs/source" --pkg-root "$tmp/s/src" \
+    --out "$out/docs" --exclude 'tutorials/*' --source-url "$url" --version "$v"
+  "$PY" "$ROOT/tools/sphinx_src2md.py" --src "$tmp/s/tutorials" --pkg-root "$tmp/s/src" \
+    --out "$out/docs/tutorials" --source-url "$url/tree/$ref/tutorials" --version "$v"
+  cp "$tmp/s/AGENTS.md" "$tmp/s/readme.md" "$out/docs/"
+  cp "$tmp/s/src/scivianna/agent/instructions.md" "$out/docs/agent_instructions.md"
+  rm -rf "$out/examples" && mkdir -p "$out/examples"
+  (cd "$tmp/s/src/scivianna_example" && find . \( -name '*.md' -o -name '*.py' \) -exec cp --parents {} "$out/examples/" \;)
+  rm -rf "$tmp"
+  echo "Update the version line in skills/scivianna/SKILL.md if it changed: $v"
+}
+
+sync_vtk() {
+  # 1. VTK user documentation (Documentation/docs in the VTK repo)
+  # 2. examples.vtk.org Python examples, Pythonic API examples and the VTK Textbook,
+  #    from the published site (gh-pages branch of the GitHub mirror; ~450 MB of
+  #    HTML is fetched, images skipped). Conversion takes several minutes.
+  local tmp; tmp="$(mktemp -d)"
+  git clone -q --depth 1 --filter=blob:none --sparse https://github.com/Kitware/VTK.git "$tmp/vtk"
+  git -C "$tmp/vtk" sparse-checkout set --no-cone '/Documentation/docs/'
+  local v; v="master ($(git -C "$tmp/vtk" log -1 --format='%h, %cs'))"
+  "$PY" "$ROOT/tools/mdtree2md.py" --src "$tmp/vtk/Documentation/docs" --out "$ROOT/skills/vtk/docs/user" \
+    --source-url https://github.com/Kitware/VTK/tree/master/Documentation/docs --version "$v"
+  git clone -q --depth 1 --filter=blob:none --no-checkout https://github.com/Kitware/vtk-examples.git "$tmp/ex"
+  git -C "$tmp/ex" sparse-checkout init --no-cone
+  printf '%s\n' '/site/Python/' '/site/PythonicAPI/' '/site/PythonHowTo/' '/site/PythonicAPIComments/' \
+    '/site/VTKBook/' '!/site/**/*.png' '!/site/**/*.jpg' '!/site/**/*.gif' '!/site/**/*.vtp' '!/site/**/*.vtk' \
+    > "$tmp/ex/.git/info/sparse-checkout"
+  git -C "$tmp/ex" checkout -q
+  local ve; ve="vtk-examples gh-pages ($(git -C "$tmp/ex" log -1 --format='%h, %cs'))"
+  "$PY" "$ROOT/tools/sphinx2md.py" --base https://examples.vtk.org/site/ --local "$tmp/ex/site" \
+    --out "$ROOT/skills/vtk/docs/site" --dir-urls --code-lang python
+  "$PY" - "$ROOT/skills/vtk/docs/site/_meta.json" "$ve" <<'PYEOF'
+import json, sys
+m = json.load(open(sys.argv[1])); m["version"] = sys.argv[2]
+json.dump(m, open(sys.argv[1], "w"), indent=2)
+PYEOF
+  rm -rf "$tmp"
+}
+
 # Add new codes here: sync_<name>() { ... } — see README.md.
 
 targets=("$@")
-[ ${#targets[@]} -eq 0 ] && targets=(tripoli4 tripoli5 valjean tfel_mfront salome)
+[ ${#targets[@]} -eq 0 ] && targets=(tripoli4 tripoli5 valjean tfel_mfront salome scivianna vtk)
 for t in "${targets[@]}"; do
   echo "== $t =="
   "sync_$t"

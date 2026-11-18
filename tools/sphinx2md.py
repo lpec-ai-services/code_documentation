@@ -32,8 +32,14 @@ SKIP = re.compile(r"(^|/)(CMakeLists|sphinx_build_warnings|genindex|search|py-mo
 
 
 class Converter(MarkdownConverter):
+    default_lang = ""
+
     def convert_pre(self, el, text, *args, **kwargs):
         lang = ""
+        code = el.find("code")
+        for c in (code.get("class", []) if code else []) or []:
+            if c.startswith("language-"):
+                lang = c[len("language-"):]
         for parent in el.parents:
             for c in parent.get("class", []) or []:
                 if c.startswith("highlight-") and c != "highlight-default":
@@ -41,6 +47,7 @@ class Converter(MarkdownConverter):
                     break
             if lang or parent.name in ("section", "body"):
                 break
+        lang = lang or self.default_lang
         code = el.get_text()
         return f"\n```{lang}\n{code.rstrip()}\n```\n"
 
@@ -76,7 +83,14 @@ def main_content(soup):
     return soup.body or soup
 
 
-def convert_page(html, docname, page_url):
+def out_name(docname, dir_urls):
+    """MkDocs-style folder pages: a/b/index -> a/b (root index stays index)."""
+    if dir_urls and docname.endswith("/index"):
+        return docname[: -len("/index")]
+    return docname
+
+
+def convert_page(html, docname, page_url, dir_urls=False, known=None, base=""):
     soup = BeautifulSoup(html, "html.parser")
     node = main_content(soup)
     for junk in node.select("a.headerlink, script, style, div.rst-footer-buttons, "
@@ -104,13 +118,28 @@ def convert_page(html, docname, page_url):
     for a in node.find_all("a", title=True):
         del a["title"]
     # relative links between pages: foo/bar.html#x -> foo/bar.md#x
+    import posixpath
+    here_old = posixpath.dirname(docname)
+    here_new = posixpath.dirname(out_name(docname, dir_urls))
     for a in node.find_all("a", href=True):
         href = a["href"]
         if urlparse(href).scheme or href.startswith("#"):
             continue
         path, _, frag = href.partition("#")
-        if path.endswith(".html"):
-            a["href"] = path[:-5] + ".md" + (f"#{frag}" if frag else "")
+        frag = f"#{frag}" if frag else ""
+        if dir_urls:
+            target = posixpath.normpath(posixpath.join(here_old, path or "."))
+            target = target[:-5] if target.endswith(".html") else target
+            if not target.endswith("index"):
+                target = posixpath.join(target, "index")
+            if known is not None and target not in known:
+                live = "" if target == "index" else out_name(target, True) + "/"
+                a["href"] = urljoin(base, live) + frag
+                continue
+            rel = posixpath.relpath(out_name(target, True) + ".md", here_new or ".")
+            a["href"] = rel + frag
+        elif path.endswith(".html"):
+            a["href"] = path[:-5] + ".md" + frag
     title_el = node.find(["h1", "h2"])
     title = title_el.get_text(" ", strip=True) if title_el else docname
     headings = [h.get_text(" ", strip=True) for h in node.find_all(["h2", "h3"])]
@@ -130,6 +159,10 @@ def main():
                                     "folder instead of fetching --base")
     ap.add_argument("--out", required=True)
     ap.add_argument("--delay", type=float, default=0.2, help="seconds between requests")
+    ap.add_argument("--dir-urls", action="store_true",
+                    help="MkDocs-style site: folder/index.html pages become folder.md; "
+                         "links to pages not converted point to the live site")
+    ap.add_argument("--code-lang", default="", help="language for code blocks without one")
     args = ap.parse_args()
 
     base = args.base if args.base.endswith("/") else args.base + "/"
@@ -159,16 +192,20 @@ def main():
             return fetch(s, urljoin(base, d + ".html"))
         print(f"{len(docnames)} pages from {base}")
 
+    Converter.default_lang = args.code_lang
+    known = set(docnames)
     index = []
     for d in docnames:
         html = get(d)
         if html is None:
             print(f"  skip (404) {d}")
             continue
-        title, headings, md = convert_page(html, d, urljoin(base, d + ".html"))
+        page_url = urljoin(base, out_name(d, True) + "/") if args.dir_urls else urljoin(base, d + ".html")
+        title, headings, md = convert_page(html, d, page_url, args.dir_urls, known, base)
+        d = out_name(d, args.dir_urls)
         dest = out / f"{d}.md"
         dest.parent.mkdir(parents=True, exist_ok=True)
-        dest.write_text(f"<!-- source: {urljoin(base, d + '.html')} -->\n\n{md}",
+        dest.write_text(f"<!-- source: {page_url} -->\n\n{md}",
                         encoding="utf-8")
         index.append((d, title, headings, len(md)))
         print(f"  {d}.md")
