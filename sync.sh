@@ -3,15 +3,15 @@
 #   ./sync.sh                 # all codes
 #   ./sync.sh tripoli4        # one code
 #   T5_VERSION=dev ./sync.sh tripoli5   # other T5 version (latest-release, v0.3.0, dev…)
-#   T4_FAST=1 ./sync.sh tripoli4        # plain-text extraction (faster, less structure)
+#   T4_MARKDOWN=1 ./sync.sh tripoli4    # pymupdf4llm output instead of cleaned text
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 PY="${PYTHON:-python3}"
 
 sync_tripoli4() {
   local url="https://www.cea.fr/energies/tripoli-4/Documents/user_guide_T412_CEA_R_6599_final.pdf"
-  "$PY" "$ROOT/tools/pdf2md.py" --url "$url" --out "$ROOT/skills/tripoli4/docs" \
-    ${T4_FAST:+--fast}
+  "$PY" "$ROOT/tools/pdf2md.py" --url "$url" --out "$ROOT/skills/tripoli4/docs" --front-matter-pages 20 --table-pages 552-562 \
+    ${T4_MARKDOWN:+--markdown}
 }
 
 sync_tripoli5() {

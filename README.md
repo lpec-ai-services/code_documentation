@@ -47,7 +47,7 @@ Check the result in opencode: ask "which skills do you have?" — `tripoli4` and
   From a downloaded copy of the site (`wget -m -np https://tripoli5.asnr.dev/documentation/latest-release/`):
   `python3 tools/sphinx2md.py --base https://tripoli5.asnr.dev/documentation/latest-release/ --local tripoli5.asnr.dev/documentation/latest-release --out skills/tripoli5/docs`.
   Update the version line in `skills/tripoli5/SKILL.md`.
-- New TRIPOLI-4 guide: update the URL in `sync.sh`, then `./sync.sh tripoli4`.
+- New TRIPOLI-4 guide: update the URL in `sync.sh`, then `./sync.sh tripoli4`. From a local copy: `python3 tools/pdf2md.py --pdf guide.pdf --out skills/tripoli4/docs --front-matter-pages 20 --table-pages 552-562` (page options are specific to the v12 guide, so check them for a new edition).
 - Commit the regenerated `docs/` so colleagues get them with a `git pull`, without having to sync themselves.
 
 ## Adding a code
