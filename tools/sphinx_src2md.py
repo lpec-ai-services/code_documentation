@@ -52,6 +52,62 @@ def strip_directives(rst, names):
     return "\n".join(out)
 
 
+def inline_literalincludes(rst, here):
+    """`.. literalinclude:: file` -> code block with the file's content.
+
+    Supports :start-after:, :end-before:, :lines: and :language:. Paths are
+    relative to the .rst file; files that cannot be found are left as a note.
+    """
+    out, lines, i = [], rst.splitlines(), 0
+    while i < len(lines):
+        m = re.match(r"(\s*)\.\. literalinclude::\s*(\S+)", lines[i])
+        if not m:
+            out.append(lines[i])
+            i += 1
+            continue
+        indent, target = m.group(1), m.group(2)
+        opts, i = {}, i + 1
+        while i < len(lines) and re.match(r"\s+:([\w-]+):\s*(.*)", lines[i]):
+            k, v = re.match(r"\s+:([\w-]+):\s*(.*)", lines[i]).groups()
+            opts[k] = v.strip()
+            i += 1
+        path = (here / target).resolve()
+        lang = opts.get("language") or {"py": "python", "cxx": "cpp", "cpp": "cpp",
+                                        "c": "c", "h": "cpp"}.get(path.suffix[1:], "")
+        if not path.exists():
+            out += ["", f"{indent}*(code from {target} not available)*", ""]
+            continue
+        src = path.read_text(encoding="utf-8", errors="replace").splitlines()
+        missing = None
+        if "start-after" in opts:
+            k = next((n for n, l in enumerate(src) if opts["start-after"] in l), None)
+            if k is None:
+                missing = opts["start-after"]
+            src = src[k + 1:] if k is not None else []
+        if "end-before" in opts and src:
+            k = next((n for n, l in enumerate(src) if opts["end-before"] in l), None)
+            src = src[:k] if k is not None else src
+        if missing:
+            out += ["", f"{indent}(example ``{missing}`` not found in {path.name}: "
+                        "broken reference in the upstream docs)", ""]
+            continue
+        if "lines" in opts:
+            keep = set()
+            for part in opts["lines"].split(","):
+                a, _, b = part.partition("-")
+                keep.update(range(int(a), int(b or a) + 1))
+            src = [l for n, l in enumerate(src, 1) if n in keep]
+        while src and not src[0].strip():
+            src.pop(0)
+        while src and not src[-1].strip():
+            src.pop()
+        import textwrap
+        body = textwrap.dedent("\n".join(src)).splitlines()
+        out += ["", f"{indent}.. code-block:: {lang or 'text'}", ""]
+        out += [f"{indent}   {l}" if l.strip() else "" for l in body] + [""]
+    return "\n".join(out)
+
+
 def toctrees_to_lists(rst):
     """`.. toctree::` -> bullet list of links to the converted pages."""
     out, inside = [], False
@@ -171,6 +227,7 @@ def api_markdown(pkg_root, modname, undoc):
 
 def convert_rst(path, pkg_root):
     rst = path.read_text(encoding="utf-8")
+    rst = inline_literalincludes(rst, path.parent)
     rst = toctrees_to_lists(strip_directives(rst, DROP_DIRECTIVES))
     autos = []
 

@@ -1,0 +1,16 @@
+<!-- source: appendix/porting_icoco.dox -->
+
+# Porting ICoCo code/scripts from version 9.6 to version 9.7 (and above)
+
+From version 9.7 of MEDCoupling
+- the C++ class <b>ICoCo::MEDField</b> has been renamed into
+<b>ICoCo::MEDDoubleField</b>. This is to make a clear distinction with the newly created <b>ICoCo::MEDIntField</b>.
+- the method ICoCo::MEDDoubleField::getField() has been renamed into ICoCo::MEDDoubleField::getMCField() and
+a new method ICoCo::MEDDoubleField::setMCField() has been added.
+
+In Python, we keep the namespace in front of the name, and hence the two classes
+are respectively called <b>ICoCoMEDDoubleField</b> and <b>ICoCoMEDIntField</b>.
+
+The APIs of the various [Data Exchange Channel - DEC](reference/distrib/parallel.md) have also been updated accordingly.
+
+See also the page icoco.

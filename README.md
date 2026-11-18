@@ -26,15 +26,18 @@ skills/
 │   ├── SKILL.md, physics.md, methods.md
 │   ├── docs/              # 266 pages + INDEX.md, release-notes/
 │   └── examples/          # gallery .mfront / .mtest implementations
-└── manta/                 # MANTA code skill (Sphinx site, user docs + demos, no Doxygen)
-    ├── SKILL.md, physics.md, methods.md
-    └── docs/              # 200 pages + INDEX.md
+├── manta/                 # MANTA code skill (Sphinx site, user docs + demos, no Doxygen)
+│   ├── SKILL.md, physics.md, methods.md
+│   └── docs/              # 200 pages + INDEX.md
+├── salome-medcoupling/    # MEDCoupling/MEDLoader: developer guide (with all snippets), user guide, tutorial
+└── salome-gui/            # SALOME desktop / GUI user guide
 tools/
 ├── pdf2md.py              # PDF manual  → chapter Markdown + TOC (uses the PDF bookmarks)
 ├── sphinx2md.py           # published Sphinx site → page Markdown + INDEX (searchindex.js or a local copy)
 ├── sphinx_src2md.py       # Sphinx *sources* of a Python project → Markdown, API read with ast (no build, no import)
 ├── pdfbook2md.py          # book delivered as one PDF per chapter → one folder per chapter + book TOC
 ├── mdtree2md.py           # Markdown docs kept in a repo → skill docs + INDEX (links .html → .md)
+├── dox2md.py              # hand-written Doxygen pages (.dox/.doc) → Markdown, \snippet resolved from sources
 ├── glyphmaps/             # per-font symbol fixes for publisher PDFs (e.g. Elsevier AdvP fonts)
 └── hal_harvest.py         # incremental harvester of HAL metadata + open-access PDFs (see below)
 templates/SKILL.md         # starting point for a new code

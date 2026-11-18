@@ -1,0 +1,85 @@
+# Index of pages
+
+Each entry: file — its page title(s) and sections.
+
+- `appendix/appendix.md` — **Appendix** (1 kB)
+- `appendix/glossary.md` — **Glossary, concepts and definitions** (3 kB)
+- `appendix/install.md` — **Configuring and Installing MED from sources** (1 kB)
+- `appendix/interpkernel.md` — **Interpolation kernel - Implementation notes** (4 kB)
+  - Introduction · Main architecture of interpolation kernel. · class MeshType · class MatrixType
+- `appendix/med-file.md` — **Notes on the MED file format** (1 kB)
+  - Introduction · What does it look like?
+- `appendix/porting.md` — **Porting code/scripts from version 7 to 8** (4 kB)
+  - How to migrate · Namespace change and MEDLoader high level API · Name changes - Reference list
+- `appendix/porting_icoco.md` — **Porting ICoCo code/scripts from version 9.6 to version 9.7 (and above)** (1 kB)
+- `appendix/references.md` — **References** (1 kB)
+- `examples/examples.md` — **Code examples** (1 kB)
+- `faq.md` — **FAQ - Frequently asked questions** (5 kB)
+  - Questions · Answers · General questions · MEDCoupling scripts in Python · Projection, interpolation, remapping · C++ specific questions
+- `index.md` — **Welcome to MEDCoupling!** (2 kB)
+  - Contents
+- `reference/arrays/arrays.md` — **Arrays of data** (16 kB)
+  - Introduction · Basics concepts of the DataArrays. · Name · Raw data, tuples and components of DataArrays. · Information on components name. · DataArrays and TimeLabel. · Building an array from scratch · Copy DataArrays · Deep copy of DataArray · Shallow copy of DataArray … (+8)
+- `reference/arrays/numbering.md` — **Array indexing and numbering** (4 kB)
+  - Old-to-new mode · New-to-old mode · Indirect indexing
+- `reference/cpp/MEDCouplingTimeLabel.md` — **Time label in MEDCoupling** (1 kB)
+- `reference/cpp/cpp.md` — **Note for C++ developers** (1 kB)
+- `reference/distrib/corba-distrib.md` — **Distribution in MEDCoupling using CORBA** (1 kB)
+- `reference/distrib/distrib.md` — **Distribution and parallelism in MEDCoupling** (1 kB)
+- `reference/distrib/parallel.md` — **Parallelism** (4 kB)
+  - Building blocks · Data Exchange Channel - DEC
+- `reference/fields/MEDCouplingFields.md` — **Fields** (3 kB)
+  - Field concept · Spatial discretization concept · Temporal discretization concept · Building a field from scratch · Create a tensor field with 9 components on cells with no time step · Create a scalar field on nodes with no time step · Create a 2 components-vector field on cells with one time step and no interval · Create a 3 components-vector field on nodes with a time interval where field remains constant on this time interval · Operations on Fields
+- `reference/fields/discretization.md` — **Spatial and temporal discretizations** (2 kB)
+  - Spatial discretization · Temporal discretization
+- `reference/fields/fields.md` — **Fields** (1 kB)
+- `reference/interpolation/Geometric2D.md` — **Geometric2D Intersector** (9 kB)
+  - Introduction · Naming conventions · Basic concepts · Boolean operation algorithm · Basics · Step1 : splitting. · Step2 : Edges localization. · Step3 : Result polygon building. · Underlying algorithms · Absolute localization algorithm … (+4)
+- `reference/interpolation/NatureOfField.md` — **Nature of a field** (3 kB)
+  - Overview: intensive and extensive field · Usage
+- `reference/interpolation/barycoords.md` — **Barycentric coordinates algorithm** (1 kB)
+- `reference/interpolation/interpolation.md` — **Interpolation** (1 kB)
+- `reference/interpolation/interptheory.md` — **Detailed explanations for cell-based (P0) fields** (11 kB)
+  - Conservative interpolation · Mesh overlapping · Linear conservative remapping of P0 (cell based) fields · cell-cell (P0->P0) conservative remapping of intensive fields · cell-cell (P0->P0) conservative remapping of extensive fields · Summary · Illustration of a non overlapping P0P0 interpolation · IntensiveMaximum case · ExtensiveMaximum case · ExtensiveConservation case … (+1)
+- `reference/interpolation/intersec-specifics.md` — **Specificities of 2D and 3D intersectors** (8 kB)
+  - Special features of 2D intersectors · P0->P0 : PlanarIntersector. · P0->P0 intersectors features. · Special features of 3D surface intersectors · Special features of 3D volumes intersectors · P0->P0 : TargetIntersector · P0->P0 intersectors features.
+- `reference/interpolation/intersectors.md` — **Intersectors and point locators** (1 kB)
+- `reference/interpolation/intro-interp.md` — **Interpolation presentation** (2 kB)
+  - Overview · Key elements of the API
+- `reference/interpolation/mapped_bary.md` — **Mapped barycentric coordinates algorithm** (2 kB)
+  - Dimension 2 · Dimension 3
+- `reference/interpolation/remapper.md` — **The remapper class.** (1 kB)
+  - High-level usage · Middle-level usage
+- `reference/medcoupling.md` — **Core data structures (MEDCoupling)** (1 kB)
+- `reference/medloader/MEDLoader.md` — **Static functions offering the "basic" API to read and write MED files** (1 kB)
+- `reference/medloader/MEDLoaderAdvancedAPI.md` — **Advanced MEDLoader API** (11 kB)
+  - Some of basics of advanced API · Dealing with Meshes with advanced API. · Reading a mesh. · Writing a mesh. · Dealing with Fields with advanced API. · Reading a field · Writing a field · Simplified class diagram of the advanced API
+- `reference/medloader/MEDLoaderBasicAPI.md` — **Basic MEDLoader API** (11 kB)
+  - Retrieving tiny global information from MED files using basic API · Reading and writing meshes in MED files using basic API · Part of meshes in MED files · Reading a field at one time step in MED files · Reading several field time steps at a time in MED files · Writing a MED file with MEDLoader · Writing one mesh in a MED file with MEDLoader · Writing several meshes in a MED file with MEDLoader · Writing one time step of a field in a MED file with MEDLoader · Writing several time steps of a field in a MED file with MEDLoader
+- `reference/medloader/intro-medloader.md` — **Overview** (8 kB)
+  - Introduction · Two approaches · Basic API approach · Advanced API approach · Cohabitation of the two approaches · Main concepts of MED files · Basics in MED files · Vocabulary used in MEDLoader · Relative mesh dimension in meshes · Relative mesh dimension in fields … (+1)
+- `reference/medloader/medloader1.md` — **MEDLoader: Writing, reading MED files** (1 kB)
+- `reference/meshes/MEDCouplingCMesh.md` — **Cartesian mesh** (1 kB)
+  - Standard building of a cartesian mesh from scratch
+- `reference/meshes/MEDCouplingExtruded.md` — **3D extruded mesh** (1 kB)
+- `reference/meshes/MEDCouplingPointSet.md` — **Point set mesh** (1 kB)
+- `reference/meshes/MEDCouplingUMesh.md` — **Unstructured mesh** (3 kB)
+  - Standard building of an unstructured mesh  from scratch · How MEDCouplingUMesh stores its nodal connectivity · Advanced building of an unstructured mesh  from scratch
+- `reference/meshes/meshes.md` — **Meshes** (2 kB)
+- `reference/misc/MEDCouplingFieldTemplates.md` — **Field templates in MEDCoupling** (1 kB)
+- `reference/misc/icoco.md` — **The ICoCo API** (1 kB)
+- `reference/misc/misc.md` — **Miscellaneous - Specialized interfaces and tools** (1 kB)
+- `reference/misc/swig_mpi.md` — **Passing a MPI communicator to a SWIG-ed interface** (1 kB)
+- `reference/misc/tools.md` — **Tools on MED file** (3 kB)
+  - Introduction · MEDPartitioner tool · RENUMBER tool
+- `reference/reference.md` — **Reference manual** (1 kB)
+- `start/functionalities.md` — **Available functionalities** (2 kB)
+  - Direct operations on fields · Field creation · Partial modifications · Local arithmetic · Operations on scalars · Operations on vectors or second order tensors · Interpolation · Global operations · Others
+- `start/intro-start.md` — **What can I do with MED?** (2 kB)
+- `start/library.md` — **The MED constellation: MEDCoupling, MEDLoader, MED file, etc ...** (3 kB)
+  - Who's who? · Architecture
+- `start/python-api.md` — **A word on the Python API** (1 kB)
+- `start/start.md` — **Getting started** (1 kB)
+- `start/terminology.md` — **Terminology - Meshes, fields, interpolation** (2 kB)
+  - Meshes and fields · Interpolation
+- `tutorial.md` — **Tutorial - MEDCoupling/MEDLoader in Python** (1 kB)

@@ -1,0 +1,31 @@
+<!-- source: start/python-api.dox -->
+
+# A word on the Python API
+
+The Python API is highly similar to the C++ one. The main modules to import are:
+- <B>MEDCoupling</B>
+- <B>MEDLoader</B> (with mainly the static [MEDLoader class](reference/medloader/MEDLoader.md) within this module)
+
+The following intuitive rules have been used to map the C++ objects to the Python ones:
+- std::vector become standard Python lists, see for example py_mcdataarrayint_setpartofvalues where the function
+MEDCoupling::DataArray::setInfoOnComponents() is used.
+- the return values of C++ functions (usually passed as last arguments in the C++ prototype) are
+returned directly as a tuple, see for example the Python usage of MEDCoupling::MEDCouplingUMesh::getReverseNodalConnectivity() in cpp_mcumesh_getReverseNodalConnectivity. The
+initial prototype where the return values are passed as argument can however still be used, provided you instantiate
+the returned objects first.
+- the indexing mechanism is greatly simplified in Python, and offers similar functionalities to what NumPy
+provides thanks to the ':' (column) operator. Once can for example refer to part of an array with something like
+
+```py
+import MEDCoupling as mc
+d = mc.DataArrayInt([(1,2), (3,4), (5,6)], 3, 2)   # an array of 3 tuples with 2 components
+print d[:,1]                                       # show only second component of the array: 2,4,6
+```
+
+Finally for the most common objects (DataArray, MEDCouplingUMesh, etc ...) one can direclty access the
+Doxygen documentation in the interactive Python interpreter using the built-in help function from Python:
+
+```py
+import MEDCoupling as mc
+help(mc.DataArrayDouble.getNumberOfTuples)
+```

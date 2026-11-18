@@ -1,0 +1,13 @@
+{
+  "source": "https://github.com/SalomePlatform/medcoupling/tree/master/doc/user",
+  "version": "master (31648b1, 2026-11-02)",
+  "generated": "2026-11-18",
+  "pages": [
+    "basic_concepts.md",
+    "data_analysis.md",
+    "data_conversion.md",
+    "data_movement.md",
+    "data_optimization.md",
+    "index.md"
+  ]
+}

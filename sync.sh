@@ -88,10 +88,39 @@ sync_manta() {
   fi
 }
 
+sync_salome() {
+  # MEDCoupling (developer guide in Doxygen pages + user guide + tutorial) and
+  # the SALOME GUI user guide, from the GitHub mirrors of SALOME (sources only).
+  local ref="${SALOME_REF:-master}" tmp; tmp="$(mktemp -d)"
+  git clone -q --depth 1 --branch "$ref" --filter=blob:none --sparse \
+    https://github.com/SalomePlatform/medcoupling.git "$tmp/mc"
+  git -C "$tmp/mc" sparse-checkout set --no-cone '/doc/' \
+    '/src/**/MEDCouplingExamplesTest.cxx' '/src/**/MEDCouplingExamplesTest.py' \
+    '/src/**/MEDLoaderExamplesTest.py' '/src/**/UsersGuideExamplesTest*.py' \
+    '/src/**/TestMEDCouplingIterativeStatistics.py'
+  git clone -q --depth 1 --branch "$ref" --filter=blob:none --sparse \
+    https://github.com/SalomePlatform/gui.git "$tmp/gui"
+  git -C "$tmp/gui" sparse-checkout set --no-cone '/doc/'
+  local v; v="$ref ($(git -C "$tmp/mc" log -1 --format='%h, %cs'))"
+  local vg; vg="$ref ($(git -C "$tmp/gui" log -1 --format='%h, %cs'))"
+  local mc="$ROOT/skills/salome-medcoupling/docs" url=https://github.com/SalomePlatform
+  "$PY" "$ROOT/tools/dox2md.py" --src "$tmp/mc/doc/developer/doxygen/doxfiles" --out "$mc/developer" \
+    --snippets "$tmp/mc/src" --source-url "$url/medcoupling/tree/$ref/doc/developer" --version "$v"
+  "$PY" "$ROOT/tools/sphinx_src2md.py" --src "$tmp/mc/doc/user/input" --pkg-root "$tmp/mc" \
+    --out "$mc/user" --source-url "$url/medcoupling/tree/$ref/doc/user" --version "$v"
+  "$PY" "$ROOT/tools/sphinx_src2md.py" --src "$tmp/mc/doc/tutorial" --pkg-root "$tmp/mc" \
+    --out "$mc/tutorial" --exclude '*_fr.rst' --source-url "$url/medcoupling/tree/$ref/doc/tutorial" --version "$v"
+  "$PY" "$ROOT/tools/sphinx_src2md.py" --src "$tmp/gui/doc/salome/gui/input" --pkg-root "$tmp/gui" \
+    --out "$ROOT/skills/salome-gui/docs" --source-url "$url/gui/tree/$ref/doc/salome/gui" --version "$vg"
+  "$PY" "$ROOT/tools/dox2md.py" --src "$tmp/gui/doc/salome/tui/input" --ext .doc \
+    --out "$ROOT/skills/salome-gui/docs/architecture" --source-url "$url/gui/tree/$ref/doc/salome/tui"
+  rm -rf "$tmp"
+}
+
 # Add new codes here: sync_<name>() { ... } — see README.md.
 
 targets=("$@")
-[ ${#targets[@]} -eq 0 ] && targets=(tripoli4 tripoli5 valjean tfel_mfront)
+[ ${#targets[@]} -eq 0 ] && targets=(tripoli4 tripoli5 valjean tfel_mfront salome)
 for t in "${targets[@]}"; do
   echo "== $t =="
   "sync_$t"

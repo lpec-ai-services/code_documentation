@@ -1,0 +1,16 @@
+<!-- source: reference/distrib/corba-distrib.dox -->
+
+# Distribution in MEDCoupling using CORBA
+
+The following classes allow to publish [MEDCoupling objects](reference/medcoupling.md) on the CORBA bus.
+They are provided in the SALOME MED module that contains elements for the integration of MEDCoupling in SALOME.
+They are directly related to the equivalent class in MEDCoupling, without the string `Servant` at the end of the
+name:
+
+- DataArrayDoubleServant
+- DataArrayIntServant
+- MEDCouplingUMeshServant
+- MEDCouplingCMeshServant
+- MEDCouplingFieldDoubleServant
+
+ TODO: complete the list.

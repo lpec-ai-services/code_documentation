@@ -1,0 +1,19 @@
+<!-- source: reference/fields/fields.dox -->
+
+# Fields
+
+A field in MEDCoupli,g represents some physical quantity associated with the spatial domain.
+This is not a continuous description of the physical quantity over the domain, and hence a field has
+a finite set of values, associated to some constituents of the mesh (nodes, cells, or more complicated).
+
+At a low level, a field is a [Arrays of data](reference/arrays/arrays.md) DataArray associated to a given mesh. A field can have more than one
+component (vector or tensor field), for example the 3 components v_x, v_y, vz of a velocity field.
+
+- [Spatial and temporal discretizations](discretization.md)
+- [Fields](MEDCouplingFields.md)
+
+Finally, and for interpolation purposes only, one needs to define the nature of a field (is it an extensive
+field, like mass, or an intensive field, like temperature, etc ...). This is covered thoroughly in the
+interpolation pages:
+
+- [Nature of a field](reference/interpolation/NatureOfField.md)
