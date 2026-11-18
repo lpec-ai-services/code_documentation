@@ -35,7 +35,8 @@ tools/
 ├── sphinx_src2md.py       # Sphinx *sources* of a Python project → Markdown, API read with ast (no build, no import)
 ├── pdfbook2md.py          # book delivered as one PDF per chapter → one folder per chapter + book TOC
 ├── mdtree2md.py           # Markdown docs kept in a repo → skill docs + INDEX (links .html → .md)
-└── glyphmaps/             # per-font symbol fixes for publisher PDFs (e.g. Elsevier AdvP fonts)
+├── glyphmaps/             # per-font symbol fixes for publisher PDFs (e.g. Elsevier AdvP fonts)
+└── hal_harvest.py         # incremental harvester of HAL metadata + open-access PDFs (see below)
 templates/SKILL.md         # starting point for a new code
 sync.sh                    # (re)generate docs/ for one or all codes
 install.sh                 # symlink the skills into ~/.config/opencode/skills
@@ -76,6 +77,30 @@ Check the result in opencode: ask "which skills do you have?" — `tripoli4`, `t
 `neutronics` and `thermal-hydraulics` are topic skills, not code skills. Its maps (`physics.md`, `methods.md`) and `equations.md` are written by hand, and only `sources/` is generated. To add a document: convert it with `tools/pdf2md.py` into `sources/<name>/` (PDFs without bookmarks: use `--chapter-sizes/--section-sizes`, the heading font sizes). Then add its topics to the maps. The source PDF is not stored here. Regenerate with `NEUTRONICS_METHODES_PDF=/path/to.pdf ./sync.sh neutronics` and `TH_BOOK_DIR=… TH_IAEA_TRS498_PDF=… ./sync.sh thermal_hydraulics`.
 
 `pdf2md.py` options for difficult PDFs: `--glyph-map` (symbol fonts that decode to wrong characters; check against rendered pages before adding a font), `--max-pages` (split oversized sections), `--heading-regex` (headings not set in a distinct font). Undecodable symbols are written as "□".
+
+## Harvesting HAL
+
+`tools/hal_harvest.py` downloads HAL (hal.science) metadata and open-access PDFs through the public HAL API, into a folder **outside this repo** (it can reach terabytes). The catalogue is a SQLite file, so runs can be interrupted and resumed. Each later run fetches only what was added or modified since the previous complete run with the same filters.
+
+```bash
+# 1. size it first: nothing is saved
+python3 tools/hal_harvest.py count --since 1900-01-01 --with-file
+
+# 2. first run from a date (all of HAL with an open-access PDF)
+python3 tools/hal_harvest.py run --out ~/hal --since 1900-01-01 --with-file --mailto you@lab.fr
+
+# 3. later updates: same command without --since
+python3 tools/hal_harvest.py run --out ~/hal --with-file --mailto you@lab.fr
+
+# narrower scopes combine: --portal cea, --domain phys.nucl, --type THESE, --lang fr, --query '...'
+python3 tools/hal_harvest.py stats  --out ~/hal
+python3 tools/hal_harvest.py export --out ~/hal      # catalogue.jsonl (metadata + local PDF path)
+```
+
+- Dates filter `modifiedDate_tdate` by default, so new versions are caught. A new version is saved next to the old one (`<halId>v2.pdf`).
+- `--no-pdf` harvests metadata only. The PDFs are fetched by a later run.
+- Failed downloads are kept and retried with `--retry-failed`. Embargoed files are skipped.
+- Defaults are polite: one request every 0.5 s and 2 download workers. Licences vary per document (`licence_s` in the catalogue).
 
 ## Adding a code
 
