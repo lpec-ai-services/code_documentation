@@ -195,17 +195,17 @@ sont successivement présentés.
 
 ## La discrétisation de l’espace des phases
 
-La connaissance du flux angulaire = (), E, 
+La connaissance du flux angulaire = ()□, E, □
 →), défini dans la
 section précédente, permet d’accéder à d’autres grandeurs
-d’intérêt à évaluer.Parmi celles-ci, le flux scalaire ? (), /) joue
+d’intérêt à évaluer.Parmi celles-ci, le flux scalaire ? ()□, /) joue
 un rôle fondamental, car c’est à partir de celui-ci que sont calculés
 les différents taux de réaction dont la connaissance est
 indispensable pour calculer un réacteur nucléaire.
 La résolution déterministe de l’équation de Boltzmann stationnaire
 a recours à la discrétisation de toutes les variables de
-l’espace des phases, à savoir l’espace ), l’énergie E et la
-direction 
+l’espace des phases, à savoir l’espace )□, l’énergie E et la
+direction □
 →.L’usage est de discrétiser d’abord la variable énergie
 et, ensuite, les variables de direction et d’espace.
 Le domaine en énergie des neutrons allant de 0 à 20 MeV
@@ -219,10 +219,10 @@ adoptées pour représenter la variation importante des
 sections efficaces neutroniques dans les résonances. Dans
 la suite un groupe quelconque du domaine en énergie sera
 noté T.
-La discrétisation angulaire (variable 
+La discrétisation angulaire (variable □
 →) comporte généralement
 de l’ordre de 100 à 1 000 directions dans le but d’obtenir
-une bonne description du flux angulaire. On note 
+une bonne description du flux angulaire. On note □
 →
 < la nème
 direction de la discrétisation angulaire.
@@ -230,40 +230,40 @@ Dans un réacteur nucléaire, la taille du système est de l’ordre
 du mètre, et la taille des hétérogénéités locales (l’épaisseur
 de la gaine du combustible, la longueur caractéristique du gradient
 de flux dans le crayon, etc.) est de l’ordre du millimètre.
-Il faut, par conséquent, découper l’espace (variable )) en 103
+Il faut, par conséquent, découper l’espace (variable )□) en 103
 mailles par dimension, ce qui donne 109 mailles spatiales. On
 note 4 une maille quelconque du domaine spatial.
 L’application d’une telle discrétisation à l’équation du transport
 conduit à remplacer les dérivées par des différences finies,
 par exemple, et les intégrales par des sommes discrètes ou
-formules de quadrature. Au flux angulaire = (), E, 
+formules de quadrature. Au flux angulaire = ()□, E, □
 →) se substituent
 les formes discrétisées =4
-T(
+T(□
 →
 <), =T
-4–1/2(
+4–1/2(□
 →
 <) et
 =T
-4+1/2(
+4+1/2(□
 →
 <) qui représentent le flux angulaire des neutrons
 dans le groupe d’énergie T, au milieu de l’intervalle 4 et aux
 bornes notées (4 – 1/2) et (4 + 1/2) de cet intervalle et dans la
-direction 
+direction □
 →
 <. En raison du caractère linéaire de l’équation du
 transport, la discrétisation du flux angulaire conduit à l’obtention
 d’un système d’équations linéaires dont les =4
-T(
+T(□
 →
 <),
 =T
-4–1/2(
+4–1/2(□
 →
 <) et =T
-4+1/2(
+4+1/2(□
 →
 <) sont les inconnues à déterminer.Pour
 pouvoir effectivement résoudre ce système, il convient de disposer
@@ -384,7 +384,7 @@ Méthodes numériques de résolution de l’équation du transport
 Libre parcours moyen et discrétisations en espace et en énergie
 Le libre parcours moyen d’un neutron dans la matière est la distance
 moyenne qu’il parcourt avant d’interagir. Celle-ci dépend
-de la densité de noyaux-cibles N()), et de la section efficace
+de la densité de noyaux-cibles N()□), et de la section efficace
 microscopique d’interaction σ (/):
 Le libre parcours moyen est l’inverse de la section efficace
 macroscopique totale et dépend donc, en un point donné, de
@@ -474,13 +474,13 @@ nombre de points utilisés pour représenter la variation ponctuelle
 en énergie des sections efficaces dans les calculs
 Monte-Carlo de référence (plusieurs dizaines, voire plusieurs
 centaines de milliers de points).
-On appelle flux angulaire multigroupe 'T(), 
+On appelle flux angulaire multigroupe 'T()□, □
 →) l’intégrale
-du flux angulaire ponctuel ' (), /, 
+du flux angulaire ponctuel ' ()□, /, □
 →) dans le groupe, c’està
 -dire :
-De même, on appelle flux scalaire multigroupe 'T()) l’intégrale
-du flux scalaire ponctuel ' (), /) dans le groupe, c’està
+De même, on appelle flux scalaire multigroupe 'T()□) l’intégrale
+du flux scalaire ponctuel ' ()□, /) dans le groupe, c’està
 -dire :
 
 <!-- page 65 (PDF 23) -->
@@ -494,16 +494,16 @@ pour le flux angulaire :
 Ces équations ne contiendraient pas d’approximation si on définissait
 les sections efficaces multigroupes σC
 T et les sections
-efficaces multigroupes de transfert* σP,C(T→T, 
-→→
+efficaces multigroupes de transfert* σP,C(T□→T, □
+→□→□
 →)
 comme des moyennes pondérées par le flux angulaire ponctuel
-en énergie ψ (), E, 
+en énergie ψ ()□, E, □
 →), ce qui impliquerait une dépendance
 en espace et en angle de ces sections efficaces multigroupes
 . En pratique, pour s’affranchir de la dépendance
 angulaire, ces sections efficaces sont pondérées par le flux
-scalaire ? (), E), ce qui conduit à des sections efficaces multigroupes
+scalaire ? ()□, E), ce qui conduit à des sections efficaces multigroupes
 ne dépendant que de l’espace. Par exemple, la section
 efficace multigroupe totale est définie par :
 (2)
@@ -537,15 +537,15 @@ T
 q, est donc
 obtenue en écrivant la préservation des taux de réaction :
 (3)
-Dans l’équation (3), ?(),) représente le flux scalaire au point
-) et à la léthargie u, ?T()) le flux scalaire multigroupe au point
-), dans le groupe T.
+Dans l’équation (3), ?()□,) représente le flux scalaire au point
+)□ et à la léthargie u, ?T()□) le flux scalaire multigroupe au point
+)□, dans le groupe T.
 Les taux de réaction sont des grandeurs qui dépendent de
 l’espace, par l’intermédiaire du flux (sauf dans le cas d’un
 milieu homogène infini). Il en est donc de même pour les sections
 efficaces multigroupes σ
 T
-q()).
+q()□).
 En toute rigueur, il n’est donc pas possible de définir une fois
 pour toutes les sections efficaces multigroupes des noyaux et
 de créer des bibliothèques de sections efficaces multigroupes
@@ -554,23 +554,23 @@ L’équation (3) montre toute la complexité de l’obtention de ces
 sections.
 • Les taux de réaction ponctuels à préserver (membre de
 droite de l’équation (3)) sont inconnus puisque le flux ponctuel
-? (), ) est inconnu ;
-• Le flux multigroupe ?T ()) est solution de l’équation multigroupe
+? ()□, ) est inconnu ;
+• Le flux multigroupe ?T ()□) est solution de l’équation multigroupe
 de Boltzmann dont on cherche à calculer les données
 (sections efficaces multigroupes σ
 T
-q ())) ;
+q ()□)) ;
 • Les sections efficaces ponctuelles σ() peuvent avoir un
 comportement résonnant en fonction de la léthargie.
 Il est naturel d’essayer de simplifier l’équation (3) en utilisant,
-à la place du flux réel inconnu ? (), ), un spectre de pondération
+à la place du flux réel inconnu ? ()□, ), un spectre de pondération
 connu (représentatif du réacteur à traiter) qui soit indépendant
 de l’espace : ?l(). C’est ce qui est fait lors de la
 création des bibliothèques de données multigroupes (voir infra,
 p. 33-35).
 Nous pouvons donc distinguer deux méthodes d’obtention des
 sections efficaces multigroupe :
-• Celles utilisant le flux réel ? (), ),
+• Celles utilisant le flux réel ? ()□, ),
 - Les sections efficaces multigroupes sont appelées « sections
 efficaces multigroupes autoprotégées* ».
 - Elles sont données par l’équation (3).
@@ -685,7 +685,7 @@ diffusion des noyaux plus légers, comme le sodium ou le fer.
 
 Comme le montre l’équation (3), le calcul des sections efficaces
 multigroupe autoprotégées d’un noyau résonnant passe
-par l’estimation du flux réel ? (), ) qui dépend des variables
+par l’estimation du flux réel ? ()□, ) qui dépend des variables
 d’espace et d’énergie. Or, le domaine en énergie pour lequel
 les noyaux présentent des résonances est essentiellement le
 domaine du ralentissement (de quelques centaines de keV à
@@ -938,12 +938,12 @@ de résonances.
 Dans le cas du traitement des mélanges, on a utilisé le modèle
 TR qui approche l’opérateur r0m par :
 (8)
-Dans cette expression, πI (T, T) est la probabilité moyenne
+Dans cette expression, πI (T□, T) est la probabilité moyenne
 pour le neutron d’être diffusé par le noyau résonnant I du
 
 <!-- page 70 (PDF 28) -->
-groupe T dans le groupe T et σs0IφT est le taux moyen de
-diffusion du noyau résonnant I dans le groupe T.
+groupe T□ dans le groupe T et □σs0Iφ□T□ est le taux moyen de
+diffusion du noyau résonnant I dans le groupe T□.
 La modélisation « TR » a une propriété fondamentale qui est
 utilisée dans la suite : plus le maillage multigroupe est fin, plus
 la modélisation « TR » écrite sur ce maillage est précise.
@@ -1015,7 +1015,7 @@ pas connues, elles doivent être calculées « au vol ».
 L’exemple présenté ici est tiré de l’étude du benchmark international
 ATRIUM-10 MOX. Il s’agit du calcul d’un assemblage
 de réacteur à eau bouillante. Les grandeurs physiques calculées
-sont le facteur de multiplication effectif des neutrons, CLL,
+sont le facteur de multiplication effectif des neutrons, C□LL,
 et les taux de réaction d’absorption pour différents nucléides
 résonnants : uranium 238, plutonium 239, plutonium 240 et
 plutonium 241. La démarche de validation repose sur la comparaison
@@ -1073,7 +1073,7 @@ Eau monophasique
 Tableau 11
 Coefficients de multiplication effectifs TRIPOLI-4®
 et APOLLO2 pour un assemblage ATRIUM-10 MOX
-CLL
+C□LL
 σ TRIPOLI-4® Écart en pcm*
 TRIPOLI-4®
 1,14016
@@ -1185,7 +1185,7 @@ du calcul de flux.
 
 ## La discrétisation en angle pour un groupe d’énergie donné
 
-La discrétisation liée à la variable direction 
+La discrétisation liée à la variable direction □
 →de l’espace des
 phases est appelée « discrétisation en angle ». Elle tire parti
 de l’isotropie des matériaux traversés, déjà signalée.
@@ -1200,7 +1200,7 @@ sphériques.
 ### La méthode SN
 
 La méthode SN consiste à choisir un ensemble de directions
-discrètes dans 4π stéradians : {
+discrètes dans 4π stéradians : {□
 →
 <; < = 1, N} et à écrire l’équation
 du transport pour ces directions. Si l’on considère l’équation
@@ -1210,7 +1210,7 @@ on peut écrire :
 Pour évaluer l’intégrale sur les angles, on utilise une formule
 de quadrature du type :
 (12)
-En ayant ainsi choisi les N directions 
+En ayant ainsi choisi les N directions □
 →
 < et les N poids w<, on
 peut écrire N fois l’équation (11) pour < =1,…N, et avoir un
@@ -1279,7 +1279,7 @@ efficaces représentées par des tables de probabilités,
 permettant ainsi d’améliorer significativement le calcul de propagation
 des neutrons en fonction de leur énergie [8] dans des
 configurations à forte atténuation du flux des neutrons.
-Quelques références historiques
+□Quelques références historiques
 [1] G. C. WICK, “Über ebene Diffusionsproblem”, Zs. f. Phys., 121,
 702, 1943.
 [2] S. CHANDRASEKHAR, Radiative Transfer, Oxford, Clarendon Press,
@@ -1395,8 +1395,8 @@ en géométrie plane, alors la solution SPN est aussi solution
 de l’équation du transport. Cette hypothèse se justifie, par
 exemple, pour un calcul homogène quand on se trouve loin
 des interfaces entre les différents milieux.
-On considère un système de coordonnées local (4, , C).
-La direction 
+On considère un système de coordonnées local (4□, □, C□).
+La direction □
 →peut alors s’écrire :
 où μ est le cosinus de l’angle polaire et φ est l’angle azimutal.
 On fait l’hypothèse que, dans ce système, la solution a une
@@ -1405,11 +1405,11 @@ de symétrie plane) et qu’elle a également une faible dépendance
 en h et en i. En introduisant un facteur  quantifiant
 cette faible variation, et en passant à la limite ( →0), on
 obtient une équation du type transport 1D dans le système
-local.Cependant dans ce système local, la direction 
+local.Cependant dans ce système local, la direction □
 →dépend
 de l’espace (puisque ce système varie en espace), ce qui n’est
 pas le cas dans l’équation du transport. Il faut donc faire l’hypothèse
-supplémentaire que le système local (4, , C) varie
+supplémentaire que le système local (4□, □, C□) varie
 lentement en espace (variation quantifiée par le coefficient ).
 Avec cette hypothèse, le terme de fuite s’écrit :
 On obtient ainsi un problème local en géométrie plane qui peut
@@ -1468,31 +1468,31 @@ flux scalaire.
 La voie classique pour dériver l’équation de la diffusion de
 l’équation de Boltzmann passe par un développement de la
 dépendance angulaire du flux dans un groupe en énergie T,
-=T(), 
+=T()□, □
 →) sur la base des harmoniques sphériques.
 L’approximation consiste à tronquer le développement aux
 deux premiers termes, en supposant que les sources sont isotropes
 dans le système du laboratoire :
 (14)
-('T()) et
+('T()□) et
 représentent les deux premiers moments du
 flux angulaire).
 
 <!-- page 76 (PDF 34) -->
 L’équation (14) a une interprétation physique correspondant à
 l’hypothèse d’une dépendance faible (au plus linéaire) du flux
-en fonction de la direction 
+en fonction de la direction □
 →. Si l’on introduit cette approximation
 dans l’équation de Boltzmann, on obtient, après diverses
 manipulations, l’équation suivante à laquelle satisfait le flux
-scalaire ?T()) :
+scalaire ?T()□) :
 (15)
 Les termes sont définis comme suit :
 • –
 : courant de neutrons qui est proportionnel
 au gradient du flux ; c’est la loi de Fick :
 (16)
-Dg ()) : coefficient de diffusion donné par l’expression :
+Dg ()□) : coefficient de diffusion donné par l’expression :
 (17)
 : section efficace de transport dans le groupe T
 définie par :
@@ -1502,19 +1502,19 @@ laboratoire,
 vaut 0 et la section efficace de transport
 est simplement la section efficace totale.
 Σ
-T()) : section efficace macroscopique de diffusion dans
+T()□) : section efficace macroscopique de diffusion dans
 le groupe T.
 • Σ
-T()) : section de disparition du groupe T définie par :
+T()□) : section de disparition du groupe T définie par :
 • q
-T ()) : terme source.
+T ()□) : terme source.
 Une deuxième manière d’aboutir à l’équation de la diffusion,
 en partant d’une forme intégrale de l’équation de
 Boltzmann, consiste à supposer que les sources et les chocs
 sont isotropes dans le système du laboratoire, et que le flux
-scalaire ?T()) et la section macroscopique totale sont faiblement
+scalaire ?T()□) et la section macroscopique totale sont faiblement
 dépendant de l’espace. On développe alors le flux scalaire
-?T()) en série deTaylor en espace en l’arrêtant au premier
+?T()□) en série deTaylor en espace en l’arrêtant au premier
 ordre :
 (18)
 Après quelques transformations, on retrouve l’équation de la
@@ -1535,9 +1535,9 @@ section efficace macroscopique totale).
 Quels avantages présente l’équation de la diffusion, par rapport
 à l’équation du transport ?
 En premier lieu, on est passé d’un espace des phases à 6
-dimensions (), E, 
+dimensions ()□, E, □
 →) à un espace des phases à 4 dimensions
-(), /). Selon l’estimation que l’on avait donnée auparavant,
+()□, /). Selon l’estimation que l’on avait donnée auparavant,
 cela peut réduire d’un facteur cent à mille le nombre de degrés
 de liberté d’une résolution numérique.
 Par ailleurs, l’équation de la diffusion, que l’on rencontre dans
@@ -1602,8 +1602,8 @@ dans la suite l’indice sur le groupe.
 L’équation de la diffusion à source dans un groupe donné
 s’écrit :
 (19)
-où ' ()) représente le flux scalaire (indépendant de la variable
-angulaire), Σr ()) la section de disparition du groupe et q ()) le
+où ' ()□) représente le flux scalaire (indépendant de la variable
+angulaire), Σr ()□) la section de disparition du groupe et q ()□) le
 terme source.
 Dans la suite, et par un souci de simplification, on ne fera pas
 intervenir les conditions aux limites au bord du domaine de
@@ -1711,7 +1711,7 @@ supposant Λj (h) connu, donne une expression analytique
 de φj (h) qui, une fois dérivée selon h, donnera une valeur
 de
 • L’équation de bilan permet, enfin, de calculer les valeurs du
-flux intégré dans les mailles ?.
+flux intégré dans les mailles ?□.
 Les inconnues introduites dans cette formulation sont les fuites
 transverses à l’interface des mailles, et le flux dans les mailles.
 Cette formulation s’apparente à la formulation mixte en approximation
@@ -1752,13 +1752,13 @@ maillage spatial {h4, 4 = 0 à N + 1} dont les points sont supposés
 la distance entre deux points contigus.
 Pour la méthode des éléments finis d’ordre C, on introduit
 le sous espace discret Vh de V défini par :
-où k est l’espace des polynômes de degré C. On note (w)
+où □k est l’espace des polynômes de degré C. On note (w□)
 une base de Vh.
 La formulation discrète du problème est :
 Trouver ?h ∈Vh tel que :
 Il est ensuite relativement aisé de transformer ce problème en
 un système matriciel A∅= Q où les inconnues sont les coordonnées
-du flux ?h dans la base (w).
+du flux ?h dans la base (w□).
 La formulation discrète se généralise évidemment à trois dimensions
 , avec un découpage du domaine ℛen polygones réguliers
 (parallélépipèdes rectangles, prismes, pyramides…) à bords
@@ -1806,7 +1806,7 @@ problème.
 ### La formulation mixte du problème
 
 En revenant à la formulation continue du problème donné par
-l’équation (21), on introduit l’inconnue auxiliaire p qui représente
+l’équation (21), on introduit l’inconnue auxiliaire p□ qui représente
 le courant :
 La formulation variationnelle mixte du problème ainsi écrit est :
 Trouver
@@ -1882,14 +1882,14 @@ tubes guides, etc.), sans pour autant passer par un maillage,
 ce qui demanderait un grand nombre de mailles pour respecter
 les volumes fissiles (on sait qu’au premier ordre, une erreur
 de 1 % dans le volume du crayon peut induire une erreur de
-l’ordre de 1 000 pcm sur le CLL).
+l’ordre de 1 000 pcm sur le C□LL).
 
 ### La méthode des éléments finis
 
 On considère à présent l’équation de transport à source dans
 un groupe donné :
 (22)
-où  (), 
+où  ()□, □
 →) regroupe les termes source de l’équation.
 On peut écrire deux formulations variationnelles du problème
 de transport à source, l’une du second ordre se rapprochant
@@ -1900,7 +1900,7 @@ diffusion, l’autre du premier ordre issue de l’équation (22).
 
 On suppose dans ce paragraphe que l’équation de transport
 est déjà discrétisée en angle via la méthode SN.Les équations
-sont donc écrites pour une suite discrète de valeurs de 
+sont donc écrites pour une suite discrète de valeurs de □
 →.
 Nous avons décrit précédemment les méthodes aux « éléments
 finis » de résolution d’une équation du second ordre,
@@ -1908,8 +1908,8 @@ l’équation de la diffusion.
 Une façon simple de se ramener à ce type d’équation est de
 définir les inconnues suivantes :
 dénommées respectivement « flux pair » et « flux impair ».
-En écrivant l’équation de transport pour les directions 
-→et –
+En écrivant l’équation de transport pour les directions □
+→et –□
 →
 et en sommant (resp. soustrayant) ces deux équations, on
 peut écrire le système d’équations, appelé « formulation pairimpair
@@ -1953,12 +1953,12 @@ L’absence de continuité du flux impose le choix de la discrétisation
 imposer la continuité du flux aux interfaces entre deux mailles
 adjacentes.
 La formulation discrète s’écrit sur la maille K :
-Γ représente une quelconque face « éclairée » de la maille
-(voir fig.33), n est la normale à Γ, w est une fonction de base,
+Γ□ représente une quelconque face « éclairée » de la maille
+(voir fig.33), n□□ est la normale à Γ□, w est une fonction de base,
 c’est-à-dire un polynôme dont le degré dépend de l’ordre d’approximation
 demandé.Le flux sur les faces des mailles n’étant
 pas défini, l’intégrale de surface fait intervenir le saut de discontinuité
-du flux sur les faces éclairées : =
+du flux sur les faces éclairées : =□
 + est le flux amont
 
 <!-- page 82 (PDF 40) -->
@@ -1967,10 +1967,10 @@ du flux sur les faces éclairées : =
 de la maille K restreint à la face Γe.
 Ces équations sont résolues successivement sur chaque
 maille selon un front de propagation propre à chaque direction
-
+□
 →.
 À titre d’illustration, supposons le domaine ℛmaillé en triangles
-. La direction 
+. La direction □
 →est une direction fixée par la méthode
 SN. On suppose une approximation linéaire du flux (l est un
 polynôme de degré au plus 1). Sur ABC (fig. 33), le flux =
@@ -2039,7 +2039,7 @@ schéma multi-niveau APOLLO2-A mis en œuvre par AREVA,
 en partenariat avec le CEA pour le calcul industriel de réacteurs
 à eau sous pression et à eau bouillante [11].
 Fig. 33.Visualisation de la résolution sur le triangle ABC pour une
-direction 
+direction □
 →donnée. Les faces « éclairées » sont les faces AC et AB.
 =
 –
@@ -2056,7 +2056,7 @@ direction 
 A
 B
 C
-
+□
 →
 
 <!-- page 83 (PDF 41) -->
@@ -2066,7 +2066,7 @@ l’index est omis afin de simplifier les notations.Dans ce groupe,
 l’équation intégro-différentielle multigroupe de Boltzmann
 s’écrit :
 (23)
-où q (r, 
+où q (r□, □
 →) regroupe les termes de source de l’équation.
 
 ### Discrétisation en espace et en angle
@@ -2085,16 +2085,16 @@ discrètes (SN) consiste à choisir un ensemble fini de
 directions discrètes et de poids associés :
 Les inconnues du problème deviennent les valeurs que le flux
 angulaire prend en ces directions discrètes. De surcroît, l’intégration
-angulaire d’une fonction L(
+angulaire d’une fonction L(□
 →) arbitraire se fait en
 employant la formule de quadrature :
 Fig. 34. Méthode des caractéristiques : discrétisation en espace
 et en angle.
 S
-
+□
 →
 k
-
+□
 →
 ⊥
 P⊥k
@@ -2103,34 +2103,34 @@ Ii
 k
 ¨
 Di
-P
-P
+P□
+P□□
 (25)
-Pour chaque direction angulaire 
+Pour chaque direction angulaire □
 →, un ensemble de lignes
 caractéristiques interceptant les frontières des régions discrétisées
 du domaine fournit un ensemble discret de points entre
 lesquels l’approximation de régions homogènes (24) peut être
 faite.
-Soit 
-→la direction de la droite caractéristique C, 
+Soit □
+→la direction de la droite caractéristique C, □
 →
 ⊥sa direction
 perpendiculaire. Tous les points de la droite caractéristique
-C peuvent s’écrire sous la forme : ) = P⊥k
+C peuvent s’écrire sous la forme : )□ = P⊥k□
 →
-⊥+ P
+⊥+ P□
 →où P⊥k
 caractérise la trajectoire C et où s, qui représente l’abscisse
 curviligne le long d’une courbe caractéristique, varie.Pour simplifier
-, on note )0k = s⊥k
+, on note )□0k = s⊥k□
 →
 ⊥.
 La forme caractéristique de l’équation de transport sur la droite
 caractéristique C est la suivante :
 (26)
 Dans le cas des neutrons, les courbes caractéristiques sont
-des lignes droites colinéaires à 
+des lignes droites colinéaires à □
 →.
 
 ### Intégration le long d’une caractéristique
@@ -2138,9 +2138,9 @@ des lignes droites colinéaires à 
 Équation de transmission
 Par intégration sur une région de calcul Di le long de la droite
 caractéristique k, la solution analytique de l’équation caractéristique
-(26) en un point quelconque )0k + P
+(26) en un point quelconque )□0k + P□
 →s’obtient en fonction
-de la solution analytique au point d’entrée )0k + s
+de la solution analytique au point d’entrée )□0k + s□□
 →par
 l’équation suivante :
 (27)
@@ -2151,18 +2151,18 @@ le terme source q sont spatialement constants dans la région
 de calcul D4, l’équation (27) devient :
 (29)
 En choisissant comme point courant le point de sortie
-()0C + s
+()□0C + s□□□
 →) de la région D4, on peut donc écrire :
 (30)
 
 <!-- page 84 (PDF 42) -->
 où I4
-k = s – s
+k = s□□ – s□
 L’équation (30) est appelée « équation de transmission».
 Équation de bilan
 Pour obtenir une information moyenne sur l’ensemble de la ligne
 caractéristique, il suffit de « moyenner » l’équation (29) sur le
-parcours optique en faisant varier s entre s et s pour obtenir:
+parcours optique en faisant varier s entre s□ et s□□ pour obtenir:
 (31)
 Cette équation, appelée « équation de bilan», permet d’obtenir
 des valeurs de flux « moyennées » le long d’une trajectoire
@@ -2172,10 +2172,10 @@ du nombre de neutrons dans le système.
 ### Intégration transverse
 
 Pour traiter la coordonnée transverse s⊥, nous devons définir,
-pour chaque direction 
+pour chaque direction □
 →un maillage dans la direction transverse
 . Une fois ce maillage défini (mailles Ak sur la figure 34),
-nous traçons l’ensemble des trajectoires C de direction 
+nous traçons l’ensemble des trajectoires C de direction □
 →passant
 par le centre des mailles transverses. L’ensemble des trajectoires
 ainsi obtenues est appelé « traçage ».
@@ -2186,12 +2186,12 @@ régions traversées et longueurs d’intersections correspondantes
 les informations géométriques nécessaires au solveur.
 Les équations précédentes (30) et (31) permettent d’obtenir
 les variations du flux angulaire le long d’une ligne caractéristique
-de direction 
+de direction □
 →. Pour obtenir le flux angulaire moyen sur
 l’ensemble des régions, il faut prendre en compte la variable
-transverse s⊥le long de 
+transverse s⊥le long de □
 →
-⊥, direction perpendiculaire à 
+⊥, direction perpendiculaire à □
 →.
 Sur la région discrétisée Di de volume Vi, le flux angulaire
 moyen ψ© 4 s’exprime comme :
@@ -2206,7 +2206,7 @@ k La valeur moyenne ψ© 4 sur la région D4
 peut donc être approchée par la formule suivante :
 (32)
 La sommation est faite sur les lignes caractéristiques C qui
-sont parallèles à 
+sont parallèles à □
 →et qui interceptent la région D4.
 
 ### Conditions aux limites
@@ -2288,7 +2288,7 @@ scheme”, Annals of Nuclear Energy, vol. 36, pp. 46-59, 2010.
 physics code: methodology and validation”, Proc Int Conf on
 Advances in Reactor Physics to Power the Nuclear Renaissance
 (PHYSOR 2010), Pittsburgh, PA, USA, May, 9-14, 2010.
-Bibliographie
+□Bibliographie
 Formalisme d’autoprotection
 LIVOLANT (M.), JEANPIERRE (F. ), Autoprotection des résonances dans
 les réacteurs nucléaires, Rapport CEA-R-4533-1974.
@@ -2323,7 +2323,7 @@ R- 6114, 2006.
 frontière est ouverte et de « trajectoires cycliques », lorsque
 la frontière est fermée (fig. 35). Un traitement approfondi de
 ces conditions aux limites est disponible dans la référence [7].
-Références
+□Références
 [1] B. DAVISON, J. B. SKYPES, Neutron Transport Theory, Oxford,
 Clarendon Press, 1957.
 [2] J. J. DUDERSTADT, W. R. MARTIN, Transport Theory, New York, John
@@ -2412,7 +2412,7 @@ majeure à l’analyse
 et à la géométrie différentielle.
 L’étape suivante est sa généralisation à trois dimensions d’espace
 .
-Références
+□Références
 [1] Abhandlungen der Gesellshaft der Wissenshaften zu Göttingen,
 Mathematisch- physikalishe Klasse 8, pp. 43 -65 (1858-59).
 [2] J. ACOUST, “Remarks on Riemann’s method of characteristics”,

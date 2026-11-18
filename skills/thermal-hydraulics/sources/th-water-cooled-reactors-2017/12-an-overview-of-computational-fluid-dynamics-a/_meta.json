@@ -1,0 +1,24 @@
+{
+  "source": "/home/claude/src/th/zip/12---An-overview-of-computational-fluid-dy_2017_Thermal-Hydraulics-of-Water-.pdf",
+  "generated": "2026-11-18",
+  "pages": 101,
+  "chapters": [
+    "00-nomenclature.md",
+    "01-chapter-foreword.md",
+    "02-part-1-computational-fluid-dynamics-for-nuclear-th.md",
+    "03-part-2-insights-into-computational-fluid-dynamics.md",
+    "04-part-2-insights-into-computational-fluid-dynamics.md",
+    "05-part-2-insights-into-computational-fluid-dynamics.md",
+    "06-part-2-insights-into-computational-fluid-dynamics.md",
+    "07-part-2-insights-into-computational-fluid-dynamics.md",
+    "08-part-2-insights-into-computational-fluid-dynamics.md",
+    "09-part-2-insights-into-computational-fluid-dynamics.md",
+    "10-part-2-insights-into-computational-fluid-dynamics.md",
+    "11-part-2-insights-into-computational-fluid-dynamics.md",
+    "12-part-2-insights-into-computational-fluid-dynamics.md",
+    "13-part-2-insights-into-computational-fluid-dynamics.md",
+    "14-part-2-insights-into-computational-fluid-dynamics.md",
+    "15-part-2-insights-into-computational-fluid-dynamics.md"
+  ],
+  "converter": "pymupdf text"
+}

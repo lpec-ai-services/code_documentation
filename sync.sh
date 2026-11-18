@@ -44,6 +44,21 @@ sync_neutronics() {
     --footer-y 770 --page-offset 42
 }
 
+sync_thermal_hydraulics() {
+  # Local sources: the publisher's per-chapter PDFs and the IAEA report.
+  # SKILL.md, physics.md, methods.md and equations.md are written by hand.
+  local book="${TH_BOOK_DIR:?set TH_BOOK_DIR=/path/to/unzipped/thermal_hydraulics_of_water_cooled_nuclear_reactors}"
+  local iaea="${TH_IAEA_TRS498_PDF:?set TH_IAEA_TRS498_PDF=/path/to/p15861-DOC-010-498_web.pdf}"
+  local out="$ROOT/skills/thermal-hydraulics/sources"
+  "$PY" "$ROOT/tools/pdfbook2md.py" --dir "$book" --out "$out/th-water-cooled-reactors-2017" \
+    --extra Preface --extra Subject-Index \
+    --title "Thermal Hydraulics of Water-Cooled Nuclear Reactors (F. D'Auria ed., Woodhead/Elsevier, 2017)" \
+    -- --glyph-map "$ROOT/tools/glyphmaps/elsevier-advp.json" --max-pages 20
+  "$PY" "$ROOT/tools/pdf2md.py" --pdf "$iaea" --out "$out/iaea-trs-498-fast-reactors" \
+    --chapter-sizes 12.5 --subsection-sizes 10.5 --footer-y 610 --front-matter-pages 8 \
+    --heading-regex '2:^\d+\.\d+\.\s+[A-Z][A-Z0-9 ,;:()\-–/&’]+$'
+}
+
 # Add new codes here: sync_<name>() { ... } — see README.md.
 
 targets=("$@")

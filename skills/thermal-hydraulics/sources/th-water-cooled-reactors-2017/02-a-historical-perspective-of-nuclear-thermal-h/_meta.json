@@ -1,0 +1,14 @@
+{
+  "source": "/home/claude/src/th/zip/2---A-historical-perspective-of-nuclea_2017_Thermal-Hydraulics-of-Water-Cool.pdf",
+  "generated": "2026-11-18",
+  "pages": 47,
+  "chapters": [
+    "00-front-matter.md",
+    "01-introduction.md",
+    "02-history-for-sys-th-and-trends.md",
+    "03-the-perspectives-for-sys-th.md",
+    "04-conclusions.md",
+    "05-references.md"
+  ],
+  "converter": "pymupdf text"
+}

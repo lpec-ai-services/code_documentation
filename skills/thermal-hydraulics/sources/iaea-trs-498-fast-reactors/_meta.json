@@ -1,0 +1,24 @@
+{
+  "source": "/home/claude/src/th/iaea.pdf",
+  "generated": "2026-11-18",
+  "pages": 110,
+  "chapters": [
+    "00-front-matter.md",
+    "01-contents.md",
+    "02-1-introduction.md",
+    "03-2-introduction-to-thermal-hydraulics-of-fast-react.md",
+    "04-3-fundamental-thermal-hydraulics.md",
+    "05-4-test-facilities-and-experimental-thermal-hydraul.md",
+    "06-5-computational-modelling-and-simulation.md",
+    "07-6-thermal-hydraulics-of-accidents-and-transients-i.md",
+    "08-7-multiscale-and-multiphysics-modelling.md",
+    "09-8-verification-validation-and-uncertainty-analysis.md",
+    "10-9-legacy-reactor-data-and-needs-for-experimental-v.md",
+    "11-10-modern-thermal-hydraulics-tools-in-licensing.md",
+    "12-11-conclusions.md",
+    "13-references.md",
+    "14-abbreviations.md",
+    "15-contributors-to-drafting-and-review.md"
+  ],
+  "converter": "pymupdf text"
+}

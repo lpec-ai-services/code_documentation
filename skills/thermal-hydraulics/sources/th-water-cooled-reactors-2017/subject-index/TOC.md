@@ -1,0 +1,28 @@
+# Table of contents
+
+Each entry: title → file (PDF page). Grep the file for the title, or for `<!-- page N -->`.
+
+- A → `00-a.md` (p. 1153, PDF 1)
+- B → `01-b.md` (p. 1155, PDF 3)
+- C → `02-c.md` (p. 1157, PDF 5)
+- D → `03-d.md` (p. 1160, PDF 8)
+- E → `04-e.md` (p. 1161, PDF 9)
+- F → `04-e.md` (p. 1161, PDF 9)
+- G → `05-g.md` (p. 1162, PDF 10)
+- H → `05-g.md` (p. 1162, PDF 10)
+- I → `06-i.md` (p. 1163, PDF 11)
+- J → `07-j.md` (p. 1164, PDF 12)
+- K → `07-j.md` (p. 1164, PDF 12)
+- L → `07-j.md` (p. 1164, PDF 12)
+- M → `08-m.md` (p. 1165, PDF 13)
+- N → `09-n.md` (p. 1166, PDF 14)
+- O → `10-o.md` (p. 1168, PDF 16)
+- P → `11-p.md` (p. 1169, PDF 17)
+- Q → `12-q.md` (p. 1170, PDF 18)
+- R → `12-q.md` (p. 1170, PDF 18)
+- S → `13-s.md` (p. 1171, PDF 19)
+- T → `14-t.md` (p. 1174, PDF 22)
+- U → `15-u.md` (p. 1177, PDF 25)
+- V → `15-u.md` (p. 1177, PDF 25)
+- W → `15-u.md` (p. 1177, PDF 25)
+- Z → `16-z.md` (p. 1178, PDF 26)

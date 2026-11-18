@@ -29,7 +29,7 @@ Many questions need both, e.g. "why does a Monte Carlo k_eff converge slowly in 
 ## How to answer
 
 1. Pick the branch, then find the topic in its map. Grep `sources/` for French terms (e.g. `autoprotection`, `léthargie`, `itération de la puissance`, `neutrons retardés`).
-2. Read the source passage. In the source text, inline symbols are unreliable: ")" may stand for r, "/" for E′, "?" for φ. Take any formula from `equations.md`, or say it is not transcribed and cite the page.
+2. Read the source passage. In the source text, inline symbols are unreliable: ")" may stand for r, "/" for E′, "?" for φ, and "□" marks a symbol that could not be decoded. Take any formula from `equations.md`, or say it is not transcribed and cite the page.
 3. Cite the document and its **printed page** (`<!-- page N (PDF M) -->` markers give both), e.g. "(CEA, *Les méthodes de la neutronique*, p. 83)".
 4. Answer in the user's language, keeping standard notation (ψ angular flux, φ scalar flux, Σ macroscopic and σ microscopic cross sections, N_k concentrations).
 5. Point to code skills when relevant. Monte Carlo practice is in `tripoli4` / `tripoli5`. Comparing calculations and statistical tests is in `valjean`.

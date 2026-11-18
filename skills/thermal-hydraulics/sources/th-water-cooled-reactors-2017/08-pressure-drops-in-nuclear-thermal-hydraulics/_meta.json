@@ -1,0 +1,18 @@
+{
+  "source": "/home/claude/src/th/zip/8---Pressure-drops-in-nuclear-thermal-hydraul_2017_Thermal-Hydraulics-of-Wat.pdf",
+  "generated": "2026-11-18",
+  "pages": 55,
+  "chapters": [
+    "00-nomenclature.md",
+    "01-list-of-symbols.md",
+    "02-introduction.md",
+    "03-pressure-drop-components.md",
+    "04-relations-between-pressure-drops-phenomena-and-acc.md",
+    "05-relations-between-pressure-drops-phenomena-and-acc.md",
+    "06-modeling-of-pressure-drops-and-applications-in-th.md",
+    "07-measurement-techniques.md",
+    "08-envisaged-development-in-the-area-of-pressure-drop.md",
+    "09-conclusions.md"
+  ],
+  "converter": "pymupdf text"
+}

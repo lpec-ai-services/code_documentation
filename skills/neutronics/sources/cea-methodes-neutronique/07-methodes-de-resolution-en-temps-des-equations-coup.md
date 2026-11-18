@@ -10,13 +10,13 @@ On prend l’exemple d’un réacteur à neutrons thermiques et on
 ne considére dans un premier temps, que la population des
 neutrons prompts qui représentent plus de 99 % de la population
 totale des neutrons (neutrons prompts + neutrons retardés
-). La durée de vie moyenne, , d’un neutron dans le
-domaine d’énergie thermique est de l’ordre de  ≈10–5 s.
+). La durée de vie moyenne, □, d’un neutron dans le
+domaine d’énergie thermique est de l’ordre de □ ≈10–5 s.
 On montre alors que le flux de neutrons en tout point du cœur
 du réacteur évolue exponentiellement en fonction du temps
 comme
 où δk est l’excédent du facteur de multiplication
-des neutrons, par rapport à l’unité : δC = CLL –1. On définit la
+des neutrons, par rapport à l’unité : δC = C□LL –1. On définit la
 réactivité*, notée ρ, par
 . L’état stable
 ou critique* du réacteur correspond à δC = 0 ou ρ = 0.
@@ -110,18 +110,18 @@ et du spectre de fission. Sous ces hypothèses, l’équation
 (1) se réécrit :
 (3)
 On utilise les notations simplifiées suivantes :
-• <  <(), E, 
+• < □ <()□, E, □
 →, ,)
-• χp  χp,C0 (/) : spectre énergétique d’émission des neutrons
+• χp □ χp,C0 (/) : spectre énergétique d’émission des neutrons
 prompts de fission.
-• χd,4  χd,4 (/) : spectre énergétique des neutrons retardés
+• χd,4 □ χd,4 (/) : spectre énergétique des neutrons retardés
 de la famille 4.
-• β4  β4
+• β4 □ β4
 : fraction de neutrons retardés de la famille 4.
-• λ4  λ4
+• λ4 □ λ4
 : constante de décroissance de la famille 4.
-• C4  C4
-(), ,) :concentration des précurseurs de la famille 4.
+• C4 □ C4
+()□, ,) :concentration des précurseurs de la famille 4.
 • β = Σ4 β4 : fraction totale de neutrons retardés.
 • 1 – β : fraction de neutrons prompts.
 On définit les grandeurs suivantes :
@@ -166,7 +166,7 @@ production et le terme de disparition et de transfert des neutrons
 normalisé par le terme de production.
 • temps moyen de reproduction des neutrons dans le réacteur
 :
-[Λ]LL est de l’ordre de 25 microsecondes dans un réacteur de
+[Λ]□LL est de l’ordre de 25 microsecondes dans un réacteur de
 puissance à neutrons thermiques.
 Les deux équations (11) et (12) prennent alors les formes
 simples suivantes :
@@ -195,7 +195,7 @@ les références [2] et [3].
 Les équations (13) et (14) permettent de déterminer l’évolution
 temporelle, en fonction de la réactivité, du nombre pondéré
 de neutrons et de précurseurs dans le réacteur. Les quantités
-[ρ]LL, [βi]LL et [Λ]LL intervenant dans ces équations sont
+[ρ]□LL, [βi]□LL et [Λ]□LL intervenant dans ces équations sont
 généralement déterminées en remplaçant dans leurs définition
 respectivement l et < par <+
 0 et <0, ce qui nécessite la résolution
@@ -218,8 +218,8 @@ un même point d’espace et que tous les neutrons ont le même
 vecteur vitesse.
 L’évolution du nombre total de neutrons dépend de trois types
 de paramètres :
-• Le facteur de multiplication effectif CLL ;
-• le temps de vie moyen des neutrons dans le réacteur  ;
+• Le facteur de multiplication effectif C□LL ;
+• le temps de vie moyen des neutrons dans le réacteur □ ;
 • les paramètres de neutrons retardés.
 On a vu, au paragraphe établissant les équations de la cinétique
 spatiale (supra, p. 59 et 60) que les précurseurs de neutrons
@@ -265,10 +265,10 @@ On remarque que ce système a la
 même forme que celui donné par les
 équations générales (13) et (14), les
 quantités effectives paramétrant ces
-équations, [ρ]LL, [β4]LL et [Λ]LL, étant
+équations, [ρ]□LL, [β4]□LL et [Λ]□LL, étant
 ici remplacées par les grandeurs ρ, 2, et
 . Cette dernière grandeur, généralement
-notée *, correspond au temps
+notée □*, correspond au temps
 de vie des neutrons dans un réacteur
 critique.
 Tableau 17
@@ -338,9 +338,9 @@ d’ordres de grandeur permettent d’expliciter l’expression de la
 plus grande racine de l’équation de Nordheim, notée ω0. De
 manière approchée :
 Cette expression peut encore s’écrire :
-où CLL (1 – β) représente la contribution des seuls neutrons
+où C□LL (1 – β) représente la contribution des seuls neutrons
 prompts au facteur de multiplication.
-Cette formule montre que si CLL (1 – 2) > 1 (ou ρ > 2), le réacteur
+Cette formule montre que si C□LL (1 – 2) > 1 (ou ρ > 2), le réacteur
 diverge en neutrons prompts seulement, la population de
 neutrons se multipliant alors avec la période :
 donc extrêmement rapidement, selon la loi :
@@ -370,7 +370,7 @@ réactivité négative.
 - β
 ρ < 0
 L(ω)
-*
+□*
 
 <!-- page 120 (PDF 78) -->
 selon la loi :
@@ -405,7 +405,7 @@ On travaille ici avec un spectre de fission prompt moyen indépendant
 de l’énergie du neutron incident, un nombre moyen
 de neutrons prompts émis et des familles de précurseurs indépendantes
 du système fissile.
-Après intégration de l’équation (2), la concentration C (), t) du
+Après intégration de l’équation (2), la concentration C ()□, t) du
 précurseur 4 s’exprime en fonction du flux scalaire par :
 (20)
 La résolution d’une telle équation est très coûteuse du fait
@@ -430,10 +430,10 @@ fonction de la puissance disponible sur les ordinateurs.
 
 Le premier modèle simplificateur repose sur la discrétisation
 angulaire. On utilise le plus souvent un opérateur de diffusion
-(–
-→.D
+(–□
+→.D□
 →) pour lequel l’inconnue devient le flux scalaire :
-?(), E, ,). Plus récemment, on a introduit l’opérateur SPN
+?()□, E, ,). Plus récemment, on a introduit l’opérateur SPN
 (voir supra, p.74) pour lequel l’inconnue est alors un ensemble
 d’harmoniques parmi lesquels le flux scalaire et le courant. À
 l’heure actuelle, grâce à la puissance des nouvelles machines
@@ -462,12 +462,12 @@ en espace et en temps avec une fonction de forme
 dépendant de l’espace et éventuellement du temps et une
 fonction d’amplitude dépendant du temps et éventuellement
 de l’espace :
-?(), E, ,) =  (), E, ,) L (), E, ,)
+?()□, E, ,) =  ()□, E, ,) L ()□, E, ,)
 (21)
 La méthode peut être vue comme une séparation des variations
 rapides et lentes du flux (par rapport au temps). Ainsi
-(), E, ,) est une fonction qui représente le comportement
-rapide en temps, et L(), E, ,) est un flux de forme (en
+()□, E, ,) est une fonction qui représente le comportement
+rapide en temps, et L()□, E, ,) est un flux de forme (en
 n/cm2/s) qui varie lentement en fonction du temps.
 
 ### La méthode quasi statique (QS)
@@ -475,8 +475,8 @@ n/cm2/s) qui varie lentement en fonction du temps.
 Le principe de la méthode quasi statique a été proposé par
 Henry en 1958. Dans ce modèle, seule l’amplitude  (,) est
 calculée en fonction du temps et la forme L est conservée à sa
-valeur initiale L (), E, t0) :
-?(), E, ,) =  (,) L (), E, t0)
+valeur initiale L ()□, E, t0) :
+?()□, E, ,) =  (,) L ()□, E, t0)
 L’amplitude, ne dépendant que du temps, est solution d’une
 équation de cinétique ponctuelle dont les coefficients s’obtiennent
 par projection de la forme sur une fonction de pondération
@@ -493,14 +493,14 @@ statique est une hypothèse forte. Rapidement, on la fit donc
 est d’introduire une dépendance lente en temps notée g pour
 la forme, tout en conservant une amplitude ponctuelle à variation
 rapide :
- (), E, ,) =  (,) et L (), E, ,) = L (), E, g)
+ ()□, E, ,) =  (,) et L ()□, E, ,) = L ()□, E, g)
 Il faut cependant, du fait de la dépendance de L en temps,
 ajouter une condition de normalisation pour garantir l’unicité
 de la factorisation. Usuellement, dans la méthode IQS, on
 impose :
 Cette condition valide a posteriori l’hypothèse de variation
 lente en temps de la fonction de forme. Des fonctions de pondération
-autres que le flux adjoint ?*(), E, t0) sont possibles.
+autres que le flux adjoint ?*()□, E, t0) sont possibles.
 Cependant, on montre, par un raisonnement variationnel,
 qu’en utilisant le flux adjoint initial on minimise l’erreur sur le
 calcul.
@@ -634,24 +634,24 @@ devient, en supposant ÀT constante sur un pas de temps :
 Fig. 54. Schéma de principe des modélisations en quasi statique, quasi statique amélioré et multi-échelle.
 Du quasi statique au multi-échelle
 QS
-? (), ,) =
+? ()□, ,) =
  (,)
 ×
-LT ())
-indépendant de )
+LT ()□)
+indépendant de )□
 indépendant de t
 IQS
-? (), ,) =
+? ()□, ,) =
  (,)
 ×
-LT (), T)
-indépendant de )
+LT ()□, T)
+indépendant de )□
 grossier en temps
 ME
-? (), ,) =
+? ()□, ,) =
 T (&→, ,)
 ×
-LT (), T)
+LT ()□, T)
 grossier en espace
 grossier en temps
 T0=t0
@@ -723,7 +723,7 @@ forme :
 On remplace les
 par leur représentation dans l’équation
 de la cinétique, intégrée sur le pas de temps. Après multiplication
-par des fonctions poids - ()) (méthode de Galerkin), on
+par des fonctions poids - ()□) (méthode de Galerkin), on
 intègre sur le domaine complet en espace.On obtient alors un
 système matriciel d’ordre (×q (( étant le nombre de nœuds
 dans la base d’éléments finis et q le nombre de groupes
@@ -761,7 +761,7 @@ du flux angulaire. Le balayage en angle est parallélisé.
 Un exemple d’application de la cinétique 3D est donné dans
 cette monographie dans le cas de l’accident de rupture d’un
 tube générateur de vapeur (voir infra, p. 225).
-Références
+□Références
 [1] J. LEWINS, Nuclear Reactor Kinetics and Control, Oxford, Pergamon
 Press, 1978.
 [2] B. L. SJENITZER and J. E. HOOGENBOOM, “A Monte Carlo method for

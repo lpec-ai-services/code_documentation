@@ -1,0 +1,17 @@
+{
+  "source": "/home/claude/src/th/zip/9---Constitutive-equatio_2017_Thermal-Hydraulics-of-Water-Cooled-Nuclear-Rea.pdf",
+  "generated": "2026-11-18",
+  "pages": 46,
+  "chapters": [
+    "00-chapter-foreword.md",
+    "01-two-fluid-equations-and-constitutive-equations.md",
+    "02-flow-regime-map.md",
+    "03-interfacial-heat-and-mass-transfer.md",
+    "04-interfacial-drag.md",
+    "05-wall-heat-transfer.md",
+    "06-wall-friction.md",
+    "07-validation-of-constitutive-equations.md",
+    "08-summary-remarks.md"
+  ],
+  "converter": "pymupdf text"
+}

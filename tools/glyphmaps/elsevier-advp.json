@@ -1,0 +1,8 @@
+{
+  "_comment": "Symbol fonts of Elsevier/Woodhead PDFs (AdvP*). Verified on 'Thermal Hydraulics of Water-Cooled Nuclear Reactors' (2017) against rendered pages.",
+  "AdvP4C4E74": {"¼": "=", "\u0001": "−", "\u0003": "·", "\u0005": "≡", "!": "⃗"},
+  "AdvP4C4E51": {"@": "∂"},
+  "AdvP3D986E": {"—": "∇"},
+  "AdvP4C4E59": {"\u0002": "⟨", "\u0003": "⟩"},
+  "AdvP4C4E46": {"\b": "(", "\u000b": ")", "\t": "", "\n": ""}
+}

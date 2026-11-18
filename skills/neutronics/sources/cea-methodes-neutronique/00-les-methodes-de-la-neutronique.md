@@ -51,9 +51,9 @@ Pour préciser le lien entre ces deux niveaux de description
 de l’état d’un système physique, on considére un système
 physique constitué de N particules. Chaque particule i de cet
 ensemble est caractérisée, à un instant donné t, par sa position
-)4(t) et sa vitesse v4(t). On note ΓN(t) l’ensemble des
+)□4(t) et sa vitesse v□4(t). On note ΓN(t) l’ensemble des
 positions et des vitesses des N particules à l’instant t :
-ΓN(t)  {)4(,), v4(,)}4=1,N où les )4(,) et les v4(,) sont gouvernées
+ΓN(t) □ {)□4(,), v□4(,)}4=1,N où les )□4(,) et les v□4(,) sont gouvernées
 par les lois de la mécanique. Soit G une grandeur physique
 macroscopique caractérisant le système et donc
 dépendant de son état : à un instant , fixé la grandeur G
@@ -119,7 +119,7 @@ pratique, avec une simulation naturelle probabiliste, pour une
 simple raison de statistique : la probabilité pour qu’une particule
 simulée donne lieu à un événement en un point donné
 de l’espace est quasiment nulle.
-Références
+□Références
 [1] J. J. DUDERSTADT, W. R. MARTIN, Transport Theory, New York, John
 Wiley & Sons, USA, 1979.
 [2] L.BOLTZMANN, « Weitere Studien über das Wärmegleicgewicht unter

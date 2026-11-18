@@ -68,16 +68,16 @@ une zone  circonscrite de l’espace des phases. Par définition
 , R () s’écrit :
 (1)
 où ψ (-) est le flux angulaire des neutrons au point - de l’espace
-des phases, défini par le triplet (), /, 
+des phases, défini par le triplet ()□, /, □
 →), et sR (-) est la
 fonction réponse ou sensibilité qui caractérise la grandeur
-R () : sR (-) = 1 pour le calcul du flux et sR (-) = Σ (), /) pour
+R () : sR (-) = 1 pour le calcul du flux et sR (-) = Σ ()□, /) pour
 le calcul d’un taux de réaction macroscopique, par exemple.
 La densité de collision des neutrons entrant en collision au
 point P a pour expression :
 (2)
-où Σ (), /) = Σ (-) représente la section efficace neutronique
-macroscopique totale au point ) et à l’énergie / du neutron.
+où Σ ()□, /) = Σ (-) représente la section efficace neutronique
+macroscopique totale au point )□ et à l’énergie / du neutron.
 Il est commode ici de réécrire l’expression donnant R () en
 introduisant la densité de collision des neutrons entrant en collision
 :
@@ -89,36 +89,36 @@ la forme compacte ci-après:
 Les méthodes de la neutronique
 
 <!-- page 90 (PDF 48) -->
-où K (-→-) : est le noyau de l’opérateur intégral de transport
-qui fait passer la particule du point - au point - de l’espace
+où K (-□→-) : est le noyau de l’opérateur intégral de transport
+qui fait passer la particule du point -□ au point - de l’espace
 des phases D couvert par le système physique étudié.
 Cet opérateur intégral est le produit de deux opérateurs déplacement
 et collision dont les noyaux sont notés respectivement
-: T ()→), E, 
-→) et C (), /→E, 
-→→
+: T ()□□→)□, E, □
+→) et C ()□, /□→E, □
+→□→□
 →) :
-• Le noyau de l’opérateur déplacement T ()→), E, 
+• Le noyau de l’opérateur déplacement T ()□□→)□, E, □
 →) :
 (5)
-avec : ) = ) + s
+avec : )□ = )□□ + s□□
 →.
-En interprétant la section efficace macroscopique Σ (), /)
+En interprétant la section efficace macroscopique Σ ()□, /)
 comme une densité de probabilité (probabilité d’interaction par
 unité de longueur [en cm-1]) l’expression (5) s’interprète
 comme le produit de la probabilité,
 pour le neutron de ne pas avoir de collision sur le trajet de longueur
-s par la probabilité Σ (), /) ds d’avoir une collision sur le
+s par la probabilité Σ ()□, /) ds d’avoir une collision sur le
 trajet élémentaire compris entre s et s + ds. Autrement dit,
 s’interprète comme la
 densité de probabilité pour le neutron de franchir la distance
-s = |) – )| sans subir de collision et d’avoir une collision en ).
-• Le noyau de l’opérateur collision : C (), /→E, 
-→→
+s = |)□ – )□□| sans subir de collision et d’avoir une collision en )□.
+• Le noyau de l’opérateur collision : C ()□, /□→E, □
+→□→□
 →)
 (6)
-où Σs (), /→/, 
-→→
+où Σs ()□, /□→/, □
+→□→□
 →) est la section efficace macroscopique
 différentielle de diffusion des neutrons en énergie et en direction
 .
@@ -225,15 +225,15 @@ associée
 (13)
 L’intervalle de confiance est défini par :
 (14)
-où  est un réel positif, c () étant calculé pour une densité de
+où □ est un réel positif, c (□) étant calculé pour une densité de
 probabilité gaussienne, compte tenu du théorème central limite.
 Il est d’usage d’utiliser les valeurs suivantes de e et les valeurs
 correspondantes de l’intervalle de confiance :
-•  = ε­©N (), N() = 0,689 (68,9 % de confiance)
-•  = 2ε­©N (), N() = 0,954 (95,4 % de confiance)
-•  = 3ε­©N (), N() = 0,997 (99,7 % de confiance).
+• □ = ε­©N (), N(□) = 0,689 (68,9 % de confiance)
+• □ = 2ε­©N (), N(□) = 0,954 (95,4 % de confiance)
+• □ = 3ε­©N (), N(□) = 0,997 (99,7 % de confiance).
 En particulier, dans le domaine de la sûreté-criticité, la valeur
-calculée du facteur de multiplication effectif CLLest donnée a
+calculée du facteur de multiplication effectif C□LLest donnée a
 minima à 3ε­©N ().
 La figure 37, ci-dessous, schématise l’algorithme de la simulation
 de l’histoire de particules (le jeu) se propageant dans la
@@ -332,23 +332,23 @@ diffusion, si l’interaction choisie est une diffusion. Considérant
 un milieu constitué d’un mélange homogène de nucléides j,
 le noyau de l’opérateur de collision s’écrit :
 (20)
-•σsj (/) : section efficace microscopique de diffusion totale à
-l’énergie E relative au nucléide j.
-•σj (/) : section efficace microscopique totale à l’énergie /
+•σsj (/□) : section efficace microscopique de diffusion totale à
+l’énergie E□ relative au nucléide j.
+•σj (/□) : section efficace microscopique totale à l’énergie /□
 relative au nucléide j.
-•σ4j (/) : section efficace microscopique de diffusion totale à
-l’énergie / relative à la réaction nucléaire de type 4 (diffusion
+•σ4j (/□) : section efficace microscopique de diffusion totale à
+l’énergie /□ relative à la réaction nucléaire de type 4 (diffusion
 élastique, diffusions inélastiques, [n, 2n], fission) sur le noyau
 atomique j.
-•Σ (), /) : section efficace macroscopique totale au point )
-à l’énergie / relative au nucléide j.
-•Σ (), /) = Σj Σj (), /) : section efficace macroscopique totale
+•Σ ()□, /□) : section efficace macroscopique totale au point )□
+à l’énergie /□ relative au nucléide j.
+•Σ ()□, /□) = Σj Σj ()□, /□) : section efficace macroscopique totale
 du milieu de propagation des neutrons, mélange homogène
-des nucléides j, au point ) à l’énergie /.
+des nucléides j, au point )□ à l’énergie /□.
 •ν4j : multiplicité des neutrons produits lors de l’interaction 4 sur
 le nucléide j : réaction (n, 2n)… fission.
-•L4 (E→E, 
-→→
+•L4 (E□→E, □
+→□→□
 →) : densité de probabilité de renvoi en énergie
 et en angle de la particule lors l’interaction de type 4 sur le
 nucléide j.
@@ -363,8 +363,8 @@ la simulation Monte-Carlo :
 : probabilité de non absorption (ou de survie) du neutron.
 •
 : probabilité de choix du type de diffusion.
-• L4 (/→E, 
-→→
+• L4 (/□→E, □
+→□→□
 →) : densité de probabilité de renvoi en énergie
 et en angle de la particule lors de l’interaction de type 4 sur
 le nucléide j.
@@ -529,7 +529,7 @@ Mersenne est un nombre premier pouvant se mettre sous la forme
 Des recherches sont menées pour construire un générateur quantique
 de nombres parfaitement aléatoires : Quantum Random
 Number Generator, QRNG, [19].
-Références
+□Références
 [1] G. MARSAGLIA, and A. ZAMAN, “A new Class of Random Number
 Generators”, The Annals of Applied Mathematics, Vol. 1, no 3, 1991.
 [2] G. MARSAGLIA, “Random numbers for C: The END?” electronic billboard
@@ -562,7 +562,7 @@ totale,
 Ce procédé justifie que le rapport
 soit appelé « facteur
 de capture implicite ».
-Comme σsj (/) < σj (/), le poids l du neutron diminue au
+Comme σsj (/□) < σj (/□), le poids l du neutron diminue au
 fur et à mesure des collisions qu’il subit et tend vers zéro,
 lorsque le nombre de collisions tend vers l’infini. En effet,
 considérons, pour simplifier, le transport monocinétique dans
@@ -689,8 +689,8 @@ de fission produits.
 •
 : à chaque interaction sur un noyau fissile, le nombre
 de neutrons de fission est comptabilisé.
-• l9ΣL : à chaque parcours dans le milieu fissile
-(de longueur ), on « encaisse » la valeur prise par cette
+• l□9ΣL : à chaque parcours dans le milieu fissile
+(de longueur □), on « encaisse » la valeur prise par cette
 expression.
 Estimateurs de grandeurs physiques
 dans une simulation Monte-Carlo
@@ -699,28 +699,28 @@ et celui du courant de particules franchissant une surface
 donnée :
 Estimateurs volumiques du flux
 Corde
-l
+l□
 Collision
 Estimateur surfacique du flux
 Estimateur (surfacique) du courant
 l
 Estimateur ponctuel du flux
 l : poids du neutron avant collision.
- : parcours du neutron entre deux collisions.
+□ : parcours du neutron entre deux collisions.
 Σ : section efficace macroscopique totale du milieu dans
 lequel le neutron se propage à une énergie donnée /.
 Σs : section efficace macroscopique de diffusion du milieu dans
 lequel le neutron se propage à une énergie donnée /.
 ΣL: section efficace macroscopique de fission du milieu dans
 lequel le neutron se propage à une énergie donnée /.
-
+□
 →: est la direction de propagation du neutron.
-< : normale à la surface considérée.
+<□ : normale à la surface considérée.
 ˜Σ : parcours optique entre le point de collision et le point de
 calcul du flux :
-où s est la distance entre le point de collision ) = ) – P
+où s est la distance entre le point de collision )□□ = )□ – P□
 →et
-le point de calcul ).
+le point de calcul )□.
 L’estimation volumique du flux est effectuée dans un volume V
 donné de l’espace en « encaissant » (attribution du score) les
 valeurs prises par les estimateurs correspondants, lors de
@@ -907,7 +907,7 @@ Nombre de particules
 Un calcul critique*, tel qu’il a été défini
 supra, p. 56 (équation 3), vise à déterminer
 le facteur de multiplication*
-effectif CLL, grandeur physique globale
+effectif C□LL, grandeur physique globale
 relative à l’ensemble du système fissile
 étudié. Comme dans l’approche déterministe
 , on met en œuvre la méthode
@@ -940,7 +940,7 @@ d’une manière qui décroît avec le nombre d’itérations. À l’itération
 (24)
 où :
 C1 : est la première valeur propre correspondant à la valeur
-exacte du facteur de multiplication effectif CLL,
+exacte du facteur de multiplication effectif C□LL,
 C2 : est la deuxième valeur propre,
 1 : est le premier vecteur propre correspondant au mode fondamental
 .
@@ -948,7 +948,7 @@ Les expressions (23) et (24) indiquent que la convergence
 dépend d’abord du rapport
 des deux premières valeurs
 propres de l’état critique, appelé « rapport de dominance » :
-Fig. 41. Calcul du facteur de multiplication effectif, CLL, par la méthode d’itération de la
+Fig. 41. Calcul du facteur de multiplication effectif, C□LL, par la méthode d’itération de la
 puissance. Algorithmes déterministe à un groupe d’énergie (à gauche, source : J.J. Duderstadt,
 L. J. Hamilton, Nuclear reactor Analysis, John Wikey & Sons, 1976, p. 219) et probabiliste Monte-
 Carlo (à droite).
@@ -960,20 +960,20 @@ et
 de la source initiale de neutrons permettant d’engager le processus de résolution itératif.
 M? =
 F?
-CLL
-CLL
+C□LL
+C□LL
 Mφ(n+1) =
 Q(n)
 Q(n+1) = F?(n+1)
 < εa et
 < εb
-k(n+1) = Q(n+1)())d3)
-Q(n)())d3)
+k(n+1) = □Q(n+1)())d3)
+□Q(n)())d3)
 k(n+1) – k(n)
 k(n)
 k(n)
 k(n+1)
-M = –.grad? + Σ?
+M = –□.grad? + Σ?
 Q(0) et k(0)
 F = vΣL ?
 S(n+1) – S(n)
@@ -1007,13 +1007,13 @@ facteur de multiplication effectif converge « plus vite » que le
 flux de neutrons (ou que la distribution de source des neutrons
 qui lui est proportionnelle).
 La figure 42 représente une configuration de calcul connue
-sous le nom de « Calcul du CLL du monde » constituée d’unités
+sous le nom de « Calcul du C□LL du monde » constituée d’unités
 fissiles sphériques, celle du centre étant la plus réactive.
-La figure 43 montre l’évolution de son CLL en fonction du
+La figure 43 montre l’évolution de son C□LL en fonction du
 nombre de batchs, pour différentes distributions initiales de la
 source de neutrons. On constate que l’atteinte de la convergence
 est plus ou moins « rapide » selon le cas. L’estimation
-du CLL est faite en « moyennant » les valeurs de CLL qui sont
+du C□LL est faite en « moyennant » les valeurs de C□LL qui sont
 obtenues pour chacun des batchs simulés après l’atteinte de
 l’équilibre de la population des neutrons. L’atteinte de l’équilibre
 ou atteinte de la stationnarité est le stade d’évolution de
@@ -1026,8 +1026,8 @@ C1
 
 <!-- page 100 (PDF 58) -->
 La figure 44 montre un exemple d’histogramme des valeurs
-du CLL obtenues par la simulation Monte-Carlo.
-Afin de vérifier que la distribution des valeurs du CLL obtenues
+du C□LL obtenues par la simulation Monte-Carlo.
+Afin de vérifier que la distribution des valeurs du C□LL obtenues
 à chaque génération suit bien une loi normale, plusieurs tests
 statistiques sont aujourd’hui proposés dans les codes de
 transport Monte-Carlo, tels ceux de Kolmogorov ou de Cramer
@@ -1039,7 +1039,7 @@ Carlo, sous trois angles :
 • Le diagnostic de la stationnarité de la population des neutrons
 dans le système fissile étudié ;
 • le calcul sans biais du facteur de multiplication des neutrons
-(CLL) et de leur distribution ainsi que des variances respectives
+(C□LL) et de leur distribution ainsi que des variances respectives
 associées ;
 • l’accélération de la convergence.
 
@@ -1051,7 +1051,7 @@ source du batch (< + 1), ce qui induit une corrélation
 statistique entre l’ensemble des batchs simulés. L’enjeu de
 l’atteinte de la stationnarité de la population des neutrons est
 l’estimation sans biais du facteur de multiplication des neutrons
-(CLL) et du flux des neutrons. Cette estimation sans
+(C□LL) et du flux des neutrons. Cette estimation sans
 biais sera garantie si les conditions d’application du théorème
 central limite sont réalisées, c’est-à-dire si les batchs
 de neutrons sont statistiquement indépendants. Mais comment
@@ -1073,7 +1073,7 @@ l’illustre la figure 45 (page suivante).
 1,15
 1,20
 1,25
-Fig. 43. Convergence du CLL en fonction du nombre de batchs
+Fig. 43. Convergence du C□LL en fonction du nombre de batchs
 et pour différentes configurations de la source initiale (arbitraire)
 des neutrons : source initiale placée dans la sphère centrale la plus
 réactive, source initiale placée dans une sphère située en périphérie,
@@ -1088,7 +1088,7 @@ Nombre de batchs
 1,12
 1,14
 1,16
-Fig. 44. Exemple d’histogramme du CLL obtenu par la simulation
+Fig. 44. Exemple d’histogramme du C□LL obtenu par la simulation
 Monte-Carlo du système critique schématisé sur la figure 42.
 L’histogramme obtenu après un nombre suffisant de cycles simulés
 a la forme gaussienne attendue. Les cycles précédant l’atteinte
@@ -1096,7 +1096,7 @@ de l’équilibre ne sont pas pris en compte.
 keff
 Nombre de valeurs du keff comprises dans un intervalle
 Fig. 42. Problème n° 4 du « OECD/NEA source convergence
-benchmark (Whiteside’s problem, “CLL of the world”) » [7].
+benchmark (Whiteside’s problem, “C□LL of the world”) » [7].
 80 cm
 U metal
 R = 8,71 cm
@@ -1122,7 +1122,7 @@ Cela est dû à la corrélation entre cycles imposée par la
 méthode de l’itération de la puissance qui induit une propagation
 des fluctuations statistiques d’un batch aux suivants. Les
 formules (11), (12) et (13) appliquées au calcul des valeurs
-moyennes du CLL et du flux de neutrons, ainsi qu’aux
+moyennes du C□LL et du flux de neutrons, ainsi qu’aux
 variances associées, ne sont plus appropriées, et l’on montre
 qu’elles doivent être remplacées par des expressions prenant
 en compte les différents modes propres du système fissile étudié
@@ -1207,7 +1207,7 @@ montre le court développement mathématique présenté dans
 Fig. 45. Détection de la stationnarité de la source de neutrons par
 un calcul de l’entropie de Boltzmann. On observe une stabilisation
 relative de l’entropie pour un nombre de batchs de l’ordre de 50
-(courbe du bas). L’estimation du CLL est alors faite en « moyennant »
+(courbe du bas). L’estimation du C□LL est alors faite en « moyennant »
 les estimations obtenues pour tous les batchs à partir du 50e [11].
 Keff
 Entropie
@@ -1229,7 +1229,7 @@ Le principe de la « transformation exponentielle », repose sur un
 changement de variable qui fait passer du flux naturel = (-) au
 flux biaisé =*(-), par l’intermédiaire d’une fonction O(-) arbitraire :
 (27)
-où P est un point de l’espace des phases (), E, 
+où P est un point de l’espace des phases ()□, E, □
 →).
 La fonction I (-) a pour rôle de définir les domaines de l’espace
 des phases qui sont importants vis-à-vis du résultat cherché.
@@ -1296,16 +1296,16 @@ la méthode de Monte-Carlo illustrée dans le cas de la propagation
 de neutrons (ou de gammas) dans un mur de protection. Sur cet
 exemple, la fonction d’importance I(-) a été choisie de telle sorte
 que les surfaces d’équi-importance soient planes, la direction
-d’intérêt 
+d’intérêt □
 →
 0 leur étant, par définition, en tout point perpendiculaire.
 Source de particules
 Région
 des résultats
 Surfaces d’équi-importance planes
-
+□
 →
-
+□
 →
 
 <!-- page 103 (PDF 61) -->
@@ -1313,20 +1313,20 @@ En effet, à la densité naturelle du choix du parcours s, L(s) on
 substitue la densité biaisée L*(s). D’après l’expression de
 6* (-), on constate que :
 • L*(s) allonge en moyenne les parcours s lorsque les particules
-vont dans la direction d’intérêt 
+vont dans la direction d’intérêt □
 →
 0 (-) :
-
+□
 →
-0 (-).
+0 (-).□
 →(-) > 0 et 6*(-) < Σ (-)
 • L*(s) raccourcit en moyenne les parcours des particules qui
-vont en sens inverse de la direction d’intérêt 
+vont en sens inverse de la direction d’intérêt □
 →
 0 (-) :
-et 
+et □
 →
-0 (-).
+0 (-).□
 →(-) > 0 et 6*(-) < Σ (-)
 Conformément à ce qui a été dit plus haut, le poids de la particule
 devra prendre en compte ce changement de loi du tirage
@@ -1442,7 +1442,7 @@ techniques à base de réseaux de neurones* [24].
 Dans le cadre de la physique des réacteurs nucléaires, la
 méthode de Monte-Carlo appliquée au transport des neutrons
 permet de traiter aussi bien des problèmes de physique du
-cœur (calcul de CLL, distribution de puissance dans le cœur…)
+cœur (calcul de C□LL, distribution de puissance dans le cœur…)
 que ceux de radioprotection (calcul à source fixe : détermination
 de flux, d’échauffements, de débits de dose…) engendrés
 par la propagation des neutrons sur des distances variables
@@ -1538,7 +1538,7 @@ de transport des neutrons par la méthode de Monte-Carlo
 – ZEUS, POKER – sont écrits au CEA, dans les années 60 [7,
 8, 9]. Leur successeur, TRIPOLI*, voit sa première version sortir
 dans le courant des années 70 [13].
-Quelques références historiques
+□Quelques références historiques
 [1] Comte de BUFFON, Essai d’arithmétique morale, dans Histoire
 Naturelle générale et particulière, Supplément, Tome Quatrième, pp.
 95-105, 1777 (http://www.buffon.cnrs.fr/). En fait, ce travail mathématique

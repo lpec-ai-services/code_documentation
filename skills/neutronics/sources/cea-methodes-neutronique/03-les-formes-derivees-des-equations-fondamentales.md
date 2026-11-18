@@ -32,9 +32,9 @@ s’être assuré du bien-fondé de cette hypothèse.
 
 On est, par conséquent, conduit à résoudre l’équation :
 (1)
-• ν,C (/) : nombre moyen de neutrons (prompts et retardés)
+• ν,C (/□) : nombre moyen de neutrons (prompts et retardés)
 émis de manière isotrope à la suite d’une fission induite sur
-un noyau C par un neutron incident d’énergie /.
+un noyau C par un neutron incident d’énergie /□.
 L’équation (1) décrit un équilibre parfait entre productions et
 disparitions des neutrons, qui seul peut conduire à un état stationnaire
 .
@@ -52,28 +52,28 @@ déduire de l’équation (1) établie dans le chapitre traitant des
 équations fondamentales de la neutronique, soit s’établir
 directement.
 La figure 20 (page suivante) montre que le flux angulaire
-= (), E, 
+= ()□, E, □
 →) cherché au point de l’espace des phases
-(), E, 
+()□, E, □
 →) résulte de deux termes :
-• Les neutrons émis en )= )– s
+• Les neutrons émis en )□□= )□– s□
 →à l’énergie E et dans la
-direction 
-→, S ()– s
-→, E, 
+direction □
+→, S ()□– s□
+→, E, □
 →). Ces neutrons ont une probabilité
-d’arriver en (), E, 
+d’arriver en ()□, E, □
 →) sans
 subir de collision. En intégrant sur toutes les distances s
-séparant le point d’émission ) et le point ) d’arrivée, on
+séparant le point d’émission )□□ et le point )□ d’arrivée, on
 obtient le premier terme qui contribue au flux angulaire
-= (), E, 
+= ()□, E, □
 →) :
-• les neutrons d’énergie / et de direction 
-→ qui subissent une
-diffusion en )= )– s
+• les neutrons d’énergie /□ et de direction □
+→□ qui subissent une
+diffusion en )□□= )□– s□
 →qui leur confère une énergie / et une
-direction 
+direction □
 →:
 Les méthodes de la neutronique
 
@@ -85,15 +85,15 @@ l’état réel du système (critique, sur-critique ou sous-critique),
 on modifie l’équation (1) en divisant les sources de fission par
 un facteur qui permet de rétablir l’équilibre entre productions et
 disparitions.Ce facteur est appelé « facteur de multiplication
-effectif*» ou CLL. L’équation (1) devient alors l’équation (3),
+effectif*» ou C□LL. L’équation (1) devient alors l’équation (3),
 qui est une équation aux valeurs propres.On peut montrer que
-CLL est la plus grande valeur propre et que = (), E, 
+C□LL est la plus grande valeur propre et que = ()□, E, □
 →) est la
 fonction propre associée.
 On appelle (3) le problème critique associé et la solution
-= (), E, 
+= ()□, E, □
 →) est dénommée flux critique. On peut aussi montrer
-que le CLL introduit dans l’équation s’accorde avec la définition
+que le C□LL introduit dans l’équation s’accorde avec la définition
 de facteur de multiplication comme le rapport entre les
 neutrons de génération (4 + 1) et les neutrons de génération 4.
 Le problème aux valeurs propres (3) est résolu par une
@@ -107,42 +107,42 @@ itératif :
 (4)
 En régime stationnaire, l’équation intégrale du transport s’écrit donc :
 (2)
-Fig. 20. Établissement de l’équation intégrale de Boltzmann en régime stationnaire. Le flux angulaire = (), E, 
+Fig. 20. Établissement de l’équation intégrale de Boltzmann en régime stationnaire. Le flux angulaire = ()□, E, □
 →) résulte des neutrons provenant
-de la source S ()– s
-→, E, 
-→) et de la source de diffusion Σs ()– s
-→, /→E, 
-→→
-→) = ()– s
-→, /, 
-→).
-Par le même raisonnement que précédemment, on obtient le second terme qui contribue au flux angulaire ψ (), E, 
+de la source S ()□– s□
+→, E, □
+→) et de la source de diffusion Σs ()□– s□
+→, /□→E, □
+→□→□
+→) = ()□– s□
+→□, /□, □
+→□).
+Par le même raisonnement que précédemment, on obtient le second terme qui contribue au flux angulaire ψ ()□, E, □
 →) :
-)= )– P
+)□□= )□– P□
 →
-(/, 
-→)
-s =|) – )|
+(/□, □
+→□)
+s =|)□ – )□□|
 s : distance à franchir sans subir de collision
 probabilité associée :
 Point source ou point de diffusion
 Point de calcul du flux angulaire
-= (), /, 
+= ()□, /, □
 →)
 Neutrons source
-S ()– P
-→, E, 
+S ()□– P□
+→, E, □
 →)
 Flux de neutrons incidents
-= ()–s
-→, /
-→)
+= ()□–s□
+→, /□□
+→□)
 Neutrons diffusés
-(E, 
+(E, □
 →)
-)
-
+)□
+□
 →
 (3)
 
@@ -152,25 +152,25 @@ Tableau 9
 Analogie formelle entre le transport en régime stationnaire et la transmutation
 Transport stationnaire
 Évolution en un point
-Espace : )
+Espace : )□
 Temps : t
 Énergie : E (variable continue)
 Espèce de nucléide : C (variable discrète)
-Direction : 
+Direction : □
 →
 Irréversibilité du temps : t > 0
-Flux en phase : = (), E, 
+Flux en phase : = ()□, E, □
 →)
-Concentration en radionucléides : NC (), ,)
-Section efficace macroscopique totale : Σ (), /)
-Taux de transmutation microscopique total : μC ())
-Densité de collision : ζ (), E, 
-→) = Σ (), E) = (), E, 
+Concentration en radionucléides : NC ()□, ,)
+Section efficace macroscopique totale : Σ ()□, /)
+Taux de transmutation microscopique total : μC ()□)
+Densité de collision : ζ ()□, E, □
+→) = Σ ()□, E) = ()□, E, □
 →)
-Activité généralisée : AC (), ,) = μC ()) NC (), ,)
-Source de neutrons : S (), E, 
+Activité généralisée : AC ()□, ,) = μC ()□) NC ()□, ,)
+Source de neutrons : S ()□, E, □
 →)
-Activité source : S = UC(), ,)
+Activité source : S = UC()□, ,)
 Équation intégrale du transport : ζ = TCζ + TS
 Équation intégrale de la transmutation : A = TCA + TS
 T opérateur intégral de déplacement en espace :
@@ -178,7 +178,7 @@ T opérateur intégral de déplacement en temps :
 C opérateur de diffusion :
 C opérateur de transmutation : CA vecteur dont
 la Ce composante est donnée par :
-Références
+□Références
 P. H. WILSON, “Analog Monte Carlo Methods for Simulating Isotopic
 Inventories
 in
@@ -193,18 +193,18 @@ for Monte-Carlo simulation. Application to perturbation calculations
 ”, Annals of Nuclear Energy, 35, pp. 2156-2159, 2008.
 Dans le cas où le flux provoquant les transmutations de nucléides est indépendant du temps, les équations de Bateman peuvent
 être réécrites sous la forme intégrale suivante :
-• μC()) = λC +̋
-C())
-• μC←I()) = λC←I +̋
-C←I ())
-• UC(),,) : taux de production du nucléide C au point ) et à l’instant ,.
+• μC()□) = λC +̋
+C()□)
+• μC←I()□) = λC←I +̋
+C←I ()□)
+• UC()□,,□) : taux de production du nucléide C au point )□ et à l’instant ,□.
 On définit l’« activité généralisée » de l’ensemble des nucléides comme le vecteur dont la composante k est donnée par la relation :
 L’« activité généralisée » satisfait l’équation intégrale suivante :
-En faisant apparaître la densité de collision ζ (), E, 
-→) = Σ (), E) ψ (), E, 
+En faisant apparaître la densité de collision ζ ()□, E, □
+→) = Σ ()□, E) ψ ()□, E, □
 →), l’équation intégrale de Boltzman en régime stationnaire
 pour un problème à source fixe dans un milieu non multiplicateur s’écrit :
-L’analogie formelle entre le transport en régime stationnaire et la transmutation en un point ) donné est explicitée dans le tableau
+L’analogie formelle entre le transport en régime stationnaire et la transmutation en un point )□ donné est explicitée dans le tableau
 ci-dessous :
 
 <!-- page 58 (PDF 16) -->
@@ -255,12 +255,12 @@ On considère un détecteur C occupant une zone d’espace Z,
 caractérisé par une fonction réponse ou sensibilité sk (section
 efficace macroscopique, par exemple). La réponse associée au
 flux scalaire de neutrons ? (-), où P représente le couple de
-variables (), /), s’écrit :
+variables ()□, /), s’écrit :
 (1)
-Le flux ? (-) résulte d’une source de neutrons S(-) circonscrite
-dans un domaine  de l’espace.Supposons que l’on veuille étudier
+Le flux ? (-) résulte d’une source de neutrons S(-□) circonscrite
+dans un domaine □ de l’espace.Supposons que l’on veuille étudier
 le comportement de la réponse Rk() en fonction de
-diverses distributions de sources S(-). Il est toujours possible
+diverses distributions de sources S(-□). Il est toujours possible
 de faire un calcul de transport pour chacune des distributions de
 sources à considérer. Une autre voie de calcul consiste à
 résoudre l’équation adjointe du transport en prenant pour terme
@@ -274,10 +274,10 @@ transport adjoint et de convoluer le flux adjoint obtenu avec les différentes
 distributions de sources envisagées pour déterminer les
 réponses RC() correspondantes.
 On notera le lien du flux adjoint avec les fonctions de Green
-G(-→-) :
+G(-□→-) :
 et donc en comparant avec (2) :
 (3)
-Références
+□Références
 [1] P. REUSS, Précis de neutronique, p. 370, Les Ulis, EDP
 Sciences/INSTN, 2003.
 [2] J. LEWINS, Importance – The Adjoint Function, Pergamon Press,
@@ -293,9 +293,9 @@ succession de problèmes à source fixe, jusqu’à la convergence
 numérique.
 L’équation (3) nécessite une résolution numérique souvent
 complexe, en raison du nombre très élevé d’inconnues, lié à
-la dimension 6 de l’espace des phases (), E, 
+la dimension 6 de l’espace des phases ()□, E, □
 →). Elle a pour
-solution le flux angulaire = (), E, 
+solution le flux angulaire = ()□, E, □
 →), alors que l’on pourrait
 se contenter de la connaissance du flux scalaire pour calculer
 les taux de fission.
@@ -347,19 +347,19 @@ neutrons retardés, est leur décroissance radioactive par la voie
 (2–, <).En négligeant les autres causes de variation, on obtient,
 pour un précurseur p de l’ensemble - l’équation suivante :
 (5)
-C’est un bilan au point ) et à l’instant t d’un quelconque
+C’est un bilan au point )□ et à l’instant t d’un quelconque
 nucléide précurseur p. Dans cette équation,
 • λd,p : constante partielle de décroissance radioactive du
 nucléide p, correspondant à la voie (2–, <),
-• νt,C (E) : nombre total moyen de neutrons émis lors d’une fission
-induite par un neutron incident d’énergie / sur le
+• νt,C (E□) : nombre total moyen de neutrons émis lors d’une fission
+induite par un neutron incident d’énergie /□ sur le
 nucléide C,
 • 2p
-(C)νt,C (/) : nombre de neutrons retardés issus d’un précurseur
-p né de la fission induite à l’énergie / sur le nucléide C,
-• NC ()) 2p
+(C)νt,C (/□) : nombre de neutrons retardés issus d’un précurseur
+p né de la fission induite à l’énergie /□ sur le nucléide C,
+• NC ()□) 2p
 (C) ∫0
-∞d/ νt,C (/) σL,C (/) ' (), /, ,) : production du
+∞d/□ νt,C (/□) σL,C (/□) ' ()□, /□, ,) : production du
 précurseur p par fission induite sur le nucléide C, sachant
 qu’à un neutron retardé émis correspond un noyau précurseur
 formé.

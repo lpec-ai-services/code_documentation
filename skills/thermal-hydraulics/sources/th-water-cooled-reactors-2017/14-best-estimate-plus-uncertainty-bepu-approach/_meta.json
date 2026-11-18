@@ -1,0 +1,16 @@
+{
+  "source": "/home/claude/src/th/zip/14---Best-Estimate-Plus-Uncertainty--BEPU-_2017_Thermal-Hydraulics-of-Water-.pdf",
+  "generated": "2026-11-18",
+  "pages": 46,
+  "chapters": [
+    "00-acronyms.md",
+    "01-chapter-foreword.md",
+    "02-introduction.md",
+    "03-bases-and-background.md",
+    "04-elements-and-structure-of-bepu-for-the-accident-an.md",
+    "05-bepu-perspectives-in-safety-licensing-demonstratio.md",
+    "06-conclusions.md",
+    "07-acknowledgments.md"
+  ],
+  "converter": "pymupdf text"
+}

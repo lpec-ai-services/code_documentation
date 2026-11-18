@@ -15,16 +15,19 @@ skills/
 ├── valjean/               # VALJEAN V&V framework (github.com/valjean-framework/valjean)
 │   ├── SKILL.md
 │   └── docs/              # generated from the Sphinx sources + docstrings
-└── neutronics/            # knowledge skill (not a code): physics vs simulation methods
-    ├── SKILL.md           # router: physics question or methods question?
-    ├── physics.md         # topic map: equations, criticality, kinetics, phenomena
-    ├── methods.md         # topic map: deterministic, Monte Carlo, depletion, kinetics solvers, schemes
-    ├── equations.md       # key equations in LaTeX, transcribed from the source pages
-    └── sources/           # one folder per document (generated text + TOC)
+├── neutronics/            # knowledge skill (not a code): physics vs simulation methods
+│   ├── SKILL.md           # router: physics question or methods question?
+│   ├── physics.md         # topic map: equations, criticality, kinetics, phenomena
+│   ├── methods.md         # topic map: deterministic, Monte Carlo, depletion, kinetics solvers, schemes
+│   ├── equations.md       # key equations in LaTeX, transcribed from the source pages
+│   └── sources/           # one folder per document (generated text + TOC)
+└── thermal-hydraulics/    # knowledge skill, same layout (water-cooled + fast reactors)
 tools/
 ├── pdf2md.py              # PDF manual  → chapter Markdown + TOC (uses the PDF bookmarks)
 ├── sphinx2md.py           # published Sphinx site → page Markdown + INDEX (searchindex.js or a local copy)
-└── sphinx_src2md.py       # Sphinx *sources* of a Python project → Markdown, API read with ast (no build, no import)
+├── sphinx_src2md.py       # Sphinx *sources* of a Python project → Markdown, API read with ast (no build, no import)
+├── pdfbook2md.py          # book delivered as one PDF per chapter → one folder per chapter + book TOC
+└── glyphmaps/             # per-font symbol fixes for publisher PDFs (e.g. Elsevier AdvP fonts)
 templates/SKILL.md         # starting point for a new code
 sync.sh                    # (re)generate docs/ for one or all codes
 install.sh                 # symlink the skills into ~/.config/opencode/skills
@@ -62,7 +65,9 @@ Check the result in opencode: ask "which skills do you have?" — `tripoli4`, `t
 
 ## Knowledge skills
 
-`neutronics` is a topic skill, not a code skill. Its maps (`physics.md`, `methods.md`) and `equations.md` are written by hand, and only `sources/` is generated. To add a document: convert it with `tools/pdf2md.py` into `sources/<name>/` (PDFs without bookmarks: use `--chapter-sizes/--section-sizes`, the heading font sizes). Then add its topics to the maps. The source PDF is not stored here. Regenerate with `NEUTRONICS_METHODES_PDF=/path/to.pdf ./sync.sh neutronics`.
+`neutronics` and `thermal-hydraulics` are topic skills, not code skills. Its maps (`physics.md`, `methods.md`) and `equations.md` are written by hand, and only `sources/` is generated. To add a document: convert it with `tools/pdf2md.py` into `sources/<name>/` (PDFs without bookmarks: use `--chapter-sizes/--section-sizes`, the heading font sizes). Then add its topics to the maps. The source PDF is not stored here. Regenerate with `NEUTRONICS_METHODES_PDF=/path/to.pdf ./sync.sh neutronics` and `TH_BOOK_DIR=… TH_IAEA_TRS498_PDF=… ./sync.sh thermal_hydraulics`.
+
+`pdf2md.py` options for difficult PDFs: `--glyph-map` (symbol fonts that decode to wrong characters; check against rendered pages before adding a font), `--max-pages` (split oversized sections), `--heading-regex` (headings not set in a distinct font). Undecodable symbols are written as "□".
 
 ## Adding a code
 

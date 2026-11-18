@@ -379,7 +379,7 @@ le réacteur avant l’arrêt ; contrairement à l’effet xénon, il n’y a
 pas de passage par un maximum d’anti-réactivité. La quantité
 de samarium ne diminue que lorsque le réacteur redémarre,
 par absorption neutronique.
-Références
+□Références
 [1] A. SANTAMARINA et al., The JEFF-3.1.1 Nuclear Data Library –
 Validation Results from JEF-2.2 to JEFF-3.1.1, JEFF Report 22,
 OECD 2009 NEA no 6807, 2009.
@@ -553,7 +553,7 @@ de
 Chimie
 du
 Brookhaven National Laboratory, aux États-Unis [6].
-Références
+□Références
 [1] E. RUTHERFORD, F. SODDY, “Radioactive Change”, Philosophical
 Magazine and Journal of Science, Jan-Jun, pp. 576-591, 1903.
 [2] http://www.larecherche.fr/idees/histoire-science/quel-age-a-terre-

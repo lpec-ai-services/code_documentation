@@ -1,0 +1,19 @@
+{
+  "source": "/home/claude/src/th/zip/3---Parameters-and-concep_2017_Thermal-Hydraulics-of-Water-Cooled-Nuclear-Re.pdf",
+  "generated": "2026-11-18",
+  "pages": 53,
+  "chapters": [
+    "00-general-remarks-on-parameters-and-concepts.md",
+    "01-concepts-involved-in-two-phase-flow-developments.md",
+    "02-concepts-involved-in-heat-transfer-developments.md",
+    "03-additional-concepts-involved-in-analytical-thermal.md",
+    "04-additional-concepts-involved-in-experimental-therm.md",
+    "05-concepts-connected-with-db-and-licensing-basis.md",
+    "06-general-safety-concepts.md",
+    "07-concepts-related-to-dsa.md",
+    "08-concepts-connected-with-modern-accident-analysis.md",
+    "09-concepts-related-to-other-uses-of-thermal-hydrauli.md",
+    "10-references.md"
+  ],
+  "converter": "pymupdf text"
+}

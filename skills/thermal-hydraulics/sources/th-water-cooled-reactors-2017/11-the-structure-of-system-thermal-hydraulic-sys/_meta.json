@@ -1,0 +1,26 @@
+{
+  "source": "/home/claude/src/th/zip/11---The-structure-of-system-thermal-hydraulic_2017_Thermal-Hydraulics-of-Wa.pdf",
+  "generated": "2026-11-18",
+  "pages": 89,
+  "chapters": [
+    "00-front-matter.md",
+    "01-introduction-to-system-codes.md",
+    "02-the-requirements-and-the-domain-of-simulation.md",
+    "03-key-features-of-system-codes.md",
+    "04-the-nodalization-concept.md",
+    "05-the-numerical-solution-methods.md",
+    "06-the-relation-between-sys-th-code-and-containment.md",
+    "07-the-relation-between-sys-th-code-component-codes-a.md",
+    "08-predicting-break-flow-and-choked-flow.md",
+    "09-predicting-two-phase-flow-in-horizontal-pipes-incl.md",
+    "10-the-use-of-flow-regime-maps.md",
+    "11-developing-and-validating-closure-relations.md",
+    "12-predicting-ccfl.md",
+    "13-upscaling-capabilities-of-system-codes.md",
+    "14-predictive-capabilities-of-sys-th-codes.md",
+    "15-drift-flux-two-fluid-and-tia-in-system-codes.md",
+    "16-three-field-models-in-system-codes.md",
+    "17-references.md"
+  ],
+  "converter": "pymupdf text"
+}

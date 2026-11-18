@@ -1,0 +1,25 @@
+{
+  "source": "/home/claude/src/th/zip/Subject-Index_2017_Thermal-Hydraulics-of-Water-Cooled-Nuclear-Reactors.pdf",
+  "generated": "2026-11-18",
+  "pages": 26,
+  "chapters": [
+    "00-a.md",
+    "01-b.md",
+    "02-c.md",
+    "03-d.md",
+    "04-e.md",
+    "05-g.md",
+    "06-i.md",
+    "07-j.md",
+    "08-m.md",
+    "09-n.md",
+    "10-o.md",
+    "11-p.md",
+    "12-q.md",
+    "13-s.md",
+    "14-t.md",
+    "15-u.md",
+    "16-z.md"
+  ],
+  "converter": "pymupdf text"
+}

@@ -1,0 +1,18 @@
+{
+  "source": "/home/claude/src/th/zip/16---Thermal-hydraulics-aspects-of-ke_2017_Thermal-Hydraulics-of-Water-Coole.pdf",
+  "generated": "2026-11-18",
+  "pages": 53,
+  "chapters": [
+    "00-acronyms.md",
+    "01-chapter-foreword.md",
+    "02-an-overview-of-nuclear-accidents.md",
+    "03-the-npp-systems-and-the-nuclear-events.md",
+    "04-the-npp-systems-and-the-nuclear-events-selected-pe.md",
+    "05-the-npp-systems-and-the-nuclear-events-the-outline.md",
+    "06-the-thermal-hydraulics-aspects-of-the-nuclear-even.md",
+    "07-conclusions.md",
+    "08-acknowledgments.md",
+    "09-references.md"
+  ],
+  "converter": "pymupdf text"
+}

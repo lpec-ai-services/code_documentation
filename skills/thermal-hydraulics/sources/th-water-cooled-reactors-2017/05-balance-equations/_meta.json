@@ -1,0 +1,24 @@
+{
+  "source": "/home/claude/src/th/zip/5---Balance-equations_2017_Thermal-Hydraulics-of-Water-Cooled-Nuclear-Reacto.pdf",
+  "generated": "2026-11-18",
+  "pages": 78,
+  "chapters": [
+    "00-nomenclature.md",
+    "01-chapter-foreword.md",
+    "02-introduction-to-balance-equations.md",
+    "03-the-various-approaches-to-single-phase-modeling.md",
+    "04-the-time-averaged-single-phase-equations.md",
+    "05-the-space-time-averaged-1-d-equations-for-single-p.md",
+    "06-the-various-approaches-to-two-phase-flow-modeling.md",
+    "07-time-averaged-two-fluid-equations.md",
+    "08-the-space-averaged-1-d-equations-for-two-phase-flo.md",
+    "09-the-time-space-averaged-1-d-equations-for-two-phas.md",
+    "10-the-1-d-two-fluid-equations-as-used-in-system-code.md",
+    "11-some-simplified-two-phase-models-hem-drift-flux-mo.md",
+    "12-characteristic-velocities-and-hyperbolicity.md",
+    "13-transport-of-interfacial-area-and-polydispersion-m.md",
+    "14-3-field-models-in-system-codes.md",
+    "15-summary-remarks.md"
+  ],
+  "converter": "pymupdf text"
+}

@@ -1,0 +1,11 @@
+{
+  "source": "/home/claude/src/th/zip/1---Introduction_2017_Thermal-Hydraulics-of-Water-Cooled-Nuclear-Reactors.pdf",
+  "generated": "2026-11-18",
+  "pages": 40,
+  "chapters": [
+    "00-nomenclature.md",
+    "01-chapter-foreword.md",
+    "02-glossary.md"
+  ],
+  "converter": "pymupdf text"
+}

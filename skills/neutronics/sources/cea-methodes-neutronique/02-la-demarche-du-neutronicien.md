@@ -18,7 +18,7 @@ de fonctionnement d’un cœur de réacteur nucléaire ;
 • le nombre élevé de variables dont dépendent les équations :
 elles sont au nombre de sept ;
 • le caractère évolutif, souligné plus haut, des sections efficaces
-macroscopiques, Σ (), E, ,) = N (), ,) σ (E, ,), qui varient
+macroscopiques, Σ ()□, E, ,) = N ()□, ,) σ (E, ,), qui varient
 dans le temps, avec des échelles très différentes :
 - quand la température du système évolue (par une excursion
 de puissance, par exemple) la densité du milieu varie,
@@ -326,7 +326,7 @@ Depuis quelques années, les calculs Monte-Carlo fournissent
 des résultats de référence qui offrent la possibilité d’une « validation
 numérique » des méthodes ci-dessus. Cela est détaillé
 infra, p. 165-170.
-Références
+□Références
 [1] R. SANCHEZ, J. MONDOT, Z. STANKOVSKI, A, COSSIC, I. ZMIJAREVIC,
 “APOLLO2: a user oriented, portable, modular code for multigroup
 transport assembly calculations”, Nuclear Science and Engineering,

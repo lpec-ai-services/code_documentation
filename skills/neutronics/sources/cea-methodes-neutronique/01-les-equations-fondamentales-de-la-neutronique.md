@@ -64,28 +64,28 @@ du
 neutron
 en
 proton
-(< →e +– + ν̅) peut être négligée, dans la mesure où son
+(< →e +□– + ν̅□) peut être négligée, dans la mesure où son
 temps de vie dans le réacteur, avant d’être absorbé, est
 beaucoup plus faible que son temps de décroissance. En
 effet, son temps de vie est compris entre 10-5 et 10-3
 secondes selon les filières et sa période de décroissance
 radioactive est de l’ordre de 10 minutes.
 L’équation de Boltzmann exprime le bilan du nombre des neutrons
-dans un volume élémentaire D ≡d).dE.d
+dans un volume élémentaire D ≡d)□.dE.d□
 →autour du
-point -≡(), E, →) de l’espace des phases et dans l’intervalle
+point -≡()□, E, □→) de l’espace des phases et dans l’intervalle
 de temps élémentaire dt, autour de l’instant t.
 Six termes sont impliqués dans ce bilan :
 a) La disparition algébrique des neutrons du domaine D par
 fuite à travers les surfaces délimitant le volume élémentaire
-autour du point ) (bilan net des neutrons entrant et sortant)
+autour du point )□ (bilan net des neutrons entrant et sortant)
 dans l’intervalle de temps dt :
-• =(), E, →, ,) : flux en phase en (), E, →, ,) [voir introduction].
+• =()□, E, □→, ,) : flux en phase en ()□, E, □→, ,) [voir introduction].
 b) La disparition des neutrons du domaine D, par absorption et
 diffusion, les absorptions faisant disparaître les neutrons et les
 diffusions les faisant passer à une autre énergie et les envoyant
 dans une autre direction, dans l’intervalle de temps dt :
-• NC(),,) : concentration des nucléides C au point ) et à l’instant
+• NC()□,,) : concentration des nucléides C au point )□ et à l’instant
 t,
 • σC(/) : section efficace microscopique totale du nucléide C
 pour un neutron incident d’énergie E.
@@ -96,14 +96,14 @@ c) L’arrivée de neutrons dans le domaine D résultant des diffusions
 . Il s’agit des neutrons qui, avant la collision, étaient à
 une autre énergie et se déplaçaient dans une autre direction,
 et qui sortent de la collision à l’énergie E et dans la direction
-
+□
 →dans l’intervalle de temps dt :
-• σs,C(/→E, 
-→→
+• σs,C(/□→E, □
+→□→□
 →) : section efficace microscopique de transfert
-faisant passer le neutron de l’énergie / à l’énergie E et
-de la direction 
-→ à la direction 
+faisant passer le neutron de l’énergie /□ à l’énergie E et
+de la direction □
+→□ à la direction □
 →, lors d’une diffusion sur un
 nucléide C.La nature isotrope des matériaux vis-à-vis des neutrons
 implique que dans le processus de diffusion, pour un
@@ -112,10 +112,10 @@ d’émergence qui forment un cône de révolution autour de l’axe
 défini par la direction d’incidence, sont toutes équiprobables.
 C’est la raison pour laquelle les sections efficaces différentielles
 de diffusion peuvent être réécrites avec un produit scalaire
-: σs,C(/→E, 
-→→
-→) = σs,C(/→/, 
-→. 
+: σs,C(/□→E, □
+→□→□
+→) = σs,C(/□→/, □
+→□. □
 →).
 Pour les méthodes de traitement de l’équation du transport, il
 est usuel de représenter ces sections efficaces différentielles
@@ -124,15 +124,15 @@ de Legendre P<(μ) :
 d) La source de neutrons prompts* émis par fission induite
 ou par fission spontanée dans le domaine D et dans l’intervalle
 de temps dt :
-• σL,C(E) : section efficace microscopique de fission du
-nucléide C, pour un neutron incident d’énergie /,
-• νp,C(E) : nombre moyen de neutrons prompts émis à la suite
+• σL,C(E□) : section efficace microscopique de fission du
+nucléide C, pour un neutron incident d’énergie /□,
+• νp,C(E□) : nombre moyen de neutrons prompts émis à la suite
 d’une fission induite sur un noyau C par un neutron incident
-d’énergie /,
-• χp,C(E→/) : spectre en énergie des neutrons prompts émis
+d’énergie /□,
+• χp,C(E□→/) : spectre en énergie des neutrons prompts émis
 de manière isotrope à la suite d’une fission induite sur un
-noyau k par un neutron incident d’énergie E,
-• ?(), /, ,) : flux scalaire en (), /, ,) [voir introduction],
+noyau k par un neutron incident d’énergie E□,
+• ?()□, /□, ,) : flux scalaire en ()□, /□, ,) [voir introduction],
 • νp,Ls,C : nombre moyen de neutrons prompts émis par fission
 spontanée du nucléide C,
 • λLs,C : constante de décroissance radioactive de fission spontanée
@@ -169,31 +169,31 @@ des neutrons) et la direction des neutrons. Cette distinction est
 réalisée en introduisant le vecteur unitaire bâti sur le vecteur
 vitesse :
 Au final, la densité (qualifiée de « densité en phase ») est notée
-< (), /, 
+< ()□, /, □
 →, ,).Elle permet d’exprimer le nombre moyen de neutrons
 compris, à l’instant ,, dans un volume élémentaire d’un
 espace à six dimensions appelé l’« espace des phases*».
 De surcroît, il est souvent plus aisé de travailler avec la grandeur
-= (), /, 
-→, ,) = *< (), /, 
+= ()□, /, □
+→, ,) = *< ()□, /, □
 →, ,), appelée « flux angulaire» ou
 « flux en phase », qui représente le nombre de neutrons d’énergie
-E traversant à l’instant t, au point ), une surface unitaire perpendiculaire
-à la direction de propagation 
+E traversant à l’instant t, au point )□, une surface unitaire perpendiculaire
+à la direction de propagation □
 →. On définit aussi le
-flux scalaire φ (), E, ,) comme l’intégrale sur toutes les directions
-du flux angulaire : ' (), /, ,) = |4S = (), /, 
-→, ,)u
+flux scalaire φ ()□, E, ,) comme l’intégrale sur toutes les directions
+du flux angulaire : ' ()□, /, ,) = |4S = ()□, /, □
+→, ,)u□
 →.
 L’intérêt de connaître le flux scalaire est que le nombre de réactions
 nucléaires produites par unité de volume et de temps,
-appelé « taux de réaction*», noté ~(), E, ,), est calculé comme
+appelé « taux de réaction*», noté ~()□, E, ,), est calculé comme
 le produit du flux scalaire et de la section efficace macroscopique
 correspondant à la réaction nucléaire considérée, de section
 efficace microscopique σ(/) :
-~ (), /, ,) = ( (), ,)%(/)'(), /, ,) = 6 (), /, ,)'(), /, ,)
-où N(),,) représente la concentration du nucléide cible des neutrons
-au point ) et à l’instant ,.
+~ ()□, /, ,) = ( ()□, ,)%(/)'()□, /, ,) = 6 ()□, /, ,)'()□, /, ,)
+où N()□,,) représente la concentration du nucléide cible des neutrons
+au point )□ et à l’instant ,.
 
 <!-- page 47 (PDF 5) -->
 l’émission immédiate d’un neutron. Comme la décroissance
@@ -209,13 +209,13 @@ La variation du flux en phase dans le temps :
 est égale à la somme algébrique des six quantités précédemment
 recensées. Cette égalité conduit à l’équation intégro-différentielle
 de Boltzmann satisfaite par le flux angulaire des
-neutrons, = (), /, 
+neutrons, = ()□, /, □
 →, ,) :
 (1)
 Cette écriture de l’équation de Boltzmann est générale, car
 elle ne préjuge pas de la nature des nucléides. C’est ainsi
 que, dans son application à une configuration physique donnée
-, la section efficace de fission σL,C(/), par exemple, prendra
+, la section efficace de fission σL,C(/□), par exemple, prendra
 une valeur nulle, si le nucléide k n’est pas fissile, ou que
 la constante partielle de décroissance λd,C prendra une
 valeur nulle si le nucléide C n’est pas précurseurs de neutrons
@@ -241,14 +241,14 @@ E par les réactions (α, <) engendrées par les particules alpha
 • λα,k : constante de décroissance radioactive α du noyau C.
 b) La source de neutrons provenant de réactions photonucléaires
 (γ, <), (γ, 2<), (γ, L), etc. :
-• σγ,q,C(/γ→E,
-→γ→
+• σγ,q,C(/□γ→E,□
+→□γ→□
 →) : section efficace différentielle de production
-de neutrons à l’énergie E dans la direction 
+de neutrons à l’énergie E dans la direction □
 →par la
 réaction photonucléaire de type q du nucléide C,
-• =$(), /$, 
-→γ, ,) : flux de gammas (particules neutres) dont
+• =$()□, /□$, □
+→□γ, ,) : flux de gammas (particules neutres) dont
 l’obtention se fait également en résolvant une équation de propagation
 analogue à celle établie pour les neutrons.On notera
 que :
@@ -324,7 +324,7 @@ Ludwig Boltzmann met fin à ses jours le 5 septembre 1906 à
 Duino, près de la ville de Trieste où il passait des vacances. La
 postérité lui donnera formidablement raison, au-delà, sans
 doute, de ce qu’il était en mesure d’imaginer.
-Quelques références
+□Quelques références
 [1] L. BOLTZMANN, « Weitere Studien über das Wärmegleichgewicht
 unter Gasmoilekülen », Wiener Berichte, 66, pp. 275-370, 1872.
 [2] L. BOLTZMANN, Leçons sur la théorie des gaz, Parties I et II, édition
@@ -358,7 +358,7 @@ Source : http://fr.wikipedia.org/wiki/Ludwig_Boltzmann#Biographie
 
 <!-- page 49 (PDF 7) -->
 L’expression de la variation par unité de temps du nombre de
-nucléides NC (),t), au point ) et au temps , conduit à un système
+nucléides NC ()□,t), au point )□ et au temps , conduit à un système
 d’équations différentielles couplées, appelées « équations
 d’évolution» :
 (2)
@@ -375,7 +375,7 @@ l’équation
 de
 Boltzmann (1) et de celles de Bateman (2) montre qu’elles
 sont couplées, formant un système neutroniquement fermé.
-Bibliographie
+□Bibliographie
 [1] BATEMAN (H.), “The solution of a system of differential equations
 occurring in the theory of radioactive transformations”, Proceedings
 Cambridge Philosophical Society, vol. 15, pp. 423-427, 1910.
@@ -386,13 +386,13 @@ Département de modélisation des systèmes et structures
 ## Les équations de Bateman généralisées : évolution des nucléides
 
 Les équations générales gouvernant l’évolution temporelle de
-la concentration N k(),,) des noyaux atomiques des
+la concentration N k()□,,) des noyaux atomiques des
 nucléides C, au cours de l’irradiation, dérivent du bilan au point
-), et dans l’intervalle de temps élémentaire dt autour de l’instant
+)□, et dans l’intervalle de temps élémentaire dt autour de l’instant
 t, des nucléides C qui :
 a) apparaissent par réactions nucléaires :
 •̋
-C←I (),,) : taux de réaction microscopique relatif à la formation
+C←I ()□,,) : taux de réaction microscopique relatif à la formation
 du nucléide C à partir du nucléide I :
 • σq,C←I (/) : section efficace microscopique de la réaction q
 induite par neutron d’énergie / sur le nucléide m conduisant
@@ -402,7 +402,7 @@ b) apparaissent par désintégration radioactive :
 de type I vers le nucléide C considéré,
 c) disparaissent par réactions nucléaires :
 •̋
-k (),,) : taux de réaction microscopique relatif à la disparition
+k ()□,,) : taux de réaction microscopique relatif à la disparition
 du nucléide C :
 • σq,k (/) : section efficace microscopique de la réaction q
 induite par neutron d’énergie E sur le nucléide C, conduisant
