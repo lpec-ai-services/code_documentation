@@ -1,0 +1,61 @@
+# code_documentation
+
+Documentation of simulation codes, packaged as **agent skills** for [opencode](https://opencode.ai/docs/skills) (they also work with Claude Code and any tool that reads `SKILL.md`).
+
+Each code is one skill. The agent sees only the skill's name and description, and loads the skill (then reads its docs) when a question is about that code.
+
+```
+skills/
+├── tripoli4/              # TRIPOLI-4® v12 user guide (CEA-R-6599, PDF)
+│   ├── SKILL.md           # when to use + how to navigate + topic → chapter map
+│   └── docs/              # generated: one .md per chapter, TOC.md, _meta.json
+└── tripoli5/              # TRIPOLI-5® docs (tripoli5.asnr.dev, Sphinx site)
+    ├── SKILL.md
+    └── docs/              # generated: one .md per page, INDEX.md, _meta.json
+tools/
+├── pdf2md.py              # PDF manual  → chapter Markdown + TOC (uses the PDF bookmarks)
+└── sphinx2md.py           # Sphinx site → page Markdown + INDEX (uses searchindex.js)
+templates/SKILL.md         # starting point for a new code
+sync.sh                    # (re)generate docs/ for one or all codes
+install.sh                 # symlink the skills into ~/.config/opencode/skills
+```
+
+## Setup
+
+```bash
+git clone https://github.com/lpec-ai-services/code_documentation
+cd code_documentation
+pip install -r requirements.txt
+
+./sync.sh               # download + convert all docs (the TRIPOLI-4 PDF takes a few minutes)
+./install.sh            # make the skills available to opencode globally
+```
+
+Check the result in opencode: ask "which skills do you have?" — `tripoli4` and `tripoli5` should be listed.
+
+**Alternative to install.sh** (opencode v2): list the folder in your config instead of symlinking:
+
+```json
+{ "skills": ["~/path/to/code_documentation/skills"] }
+```
+
+**Per project only:** symlink or copy a skill into `<project>/.opencode/skills/<name>/`.
+
+## Updating
+
+- New TRIPOLI-5 release: `./sync.sh tripoli5` (or `T5_VERSION=v0.3.0 ./sync.sh tripoli5`, `T5_VERSION=dev …`).
+- New TRIPOLI-4 guide: update the URL in `sync.sh`, then `./sync.sh tripoli4`.
+- Commit the regenerated `docs/` so colleagues get them with a `git pull`, without having to sync themselves.
+
+## Adding a code
+
+1. `mkdir -p skills/<name>/docs && cp templates/SKILL.md skills/<name>/`. The folder name must equal `name:` in the frontmatter.
+2. Write the `description` carefully. It is the only thing the agent sees when choosing a skill, so put in the code name, its aliases, the main topics, and which other codes it must not be confused with.
+3. Add a `sync_<name>()` function to `sync.sh`, using `tools/pdf2md.py` (PDF) or `tools/sphinx2md.py` (Sphinx site). Other formats (Doxygen, MkDocs, LaTeX) need a new converter in `tools/`. Plain Markdown docs can just be copied into `docs/`.
+4. `./sync.sh <name> && ./install.sh`.
+
+## Design notes
+
+- **No vector database.** Agents search `docs/` with grep and read files directly, which is more precise for keyword and API lookups. If a code's docs become too large for that, add a search script inside its skill folder and mention it in `SKILL.md`. Nothing else has to change.
+- **Not tied to a model.** Skills are plain Markdown, so any model used in opencode can use them.
+- The converted documents remain the property of their authors (CEA, ASNR). Keep this repository's visibility consistent with their distribution terms.
