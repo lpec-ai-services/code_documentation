@@ -10,6 +10,8 @@ rewritten to the local .md files. Also writes:
 
 Usage:
   python3 tools/sphinx2md.py --base https://host/docs/latest/ --out skills/foo/docs
+  python3 tools/sphinx2md.py --base https://host/docs/latest/ --local mirror/docs/latest \
+      --out skills/foo/docs        # from a downloaded copy (wget -m)
 Requires: pip install requests beautifulsoup4 markdownify
 """
 import argparse
@@ -25,6 +27,7 @@ import requests
 from bs4 import BeautifulSoup
 from markdownify import MarkdownConverter
 
+MAX_OUTPUT_LINES = 60
 SKIP = re.compile(r"(^|/)(CMakeLists|sphinx_build_warnings|genindex|search|py-modindex)$")
 
 
@@ -73,12 +76,32 @@ def main_content(soup):
     return soup.body or soup
 
 
-def convert_page(html, docname, docnames):
+def convert_page(html, docname, page_url):
     soup = BeautifulSoup(html, "html.parser")
     node = main_content(soup)
     for junk in node.select("a.headerlink, script, style, div.rst-footer-buttons, "
                             "nav, footer, .prompt, .copybtn"):
         junk.decompose()
+    # notebook outputs (run logs) can be thousands of lines: keep head and tail
+    for pre in node.select("div.nboutput pre, div.cell_output pre, div.output pre"):
+        lines = pre.get_text().splitlines()
+        if len(lines) > MAX_OUTPUT_LINES:
+            keep = lines[:20] + [f"… [{len(lines) - 30} lines of output omitted] …"] + lines[-10:]
+            pre.string = "\n".join(keep)
+    # images are not copied: link them to the published site
+    for img in node.find_all("img", src=True):
+        img["src"] = urljoin(page_url, img["src"])
+        if not img.get("alt") or "/" in img.get("alt", ""):
+            img["alt"] = "figure"
+    # API signatures: drop the cross-reference links on every type name
+    for dt_el in node.find_all("dt"):
+        for a in dt_el.find_all("a"):
+            a.unwrap()
+    # numpydoc "name<span class=classifier>type</span>" -> "name : type"
+    for c in node.select("span.classifier"):
+        c.insert_before(" : ")
+    for a in node.find_all("a", title=True):
+        del a["title"]
     # relative links between pages: foo/bar.html#x -> foo/bar.md#x
     for a in node.find_all("a", href=True):
         href = a["href"]
@@ -90,7 +113,9 @@ def convert_page(html, docname, docnames):
     title_el = node.find(["h1", "h2"])
     title = title_el.get_text(" ", strip=True) if title_el else docname
     headings = [h.get_text(" ", strip=True) for h in node.find_all(["h2", "h3"])]
-    md = Converter(heading_style="ATX", bullets="-").convert_soup(node)
+    # no escaping: agents must be able to grep set_output_file, k_B, *args…
+    md = Converter(heading_style="ATX", bullets="-", escape_underscores=False,
+                   escape_asterisks=False, escape_misc=False).convert_soup(node)
     md = re.sub(r"\n{3,}", "\n\n", md).strip() + "\n"
     return title, headings, md
 
@@ -98,7 +123,10 @@ def convert_page(html, docname, docnames):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--base", required=True, help="root URL of the Sphinx site")
+    ap.add_argument("--base", required=True,
+                    help="root URL of the Sphinx site (also used in citations)")
+    ap.add_argument("--local", help="convert a downloaded copy of the site in this "
+                                    "folder instead of fetching --base")
     ap.add_argument("--out", required=True)
     ap.add_argument("--delay", type=float, default=0.2, help="seconds between requests")
     args = ap.parse_args()
@@ -109,18 +137,34 @@ def main():
     for old in out.rglob("*.md"):
         old.unlink()
 
-    s = requests.Session()
-    s.headers["User-Agent"] = "code-docs-skills sync"
-    docnames = [d for d in load_docnames(s, base) if not SKIP.search(d)]
-    print(f"{len(docnames)} pages from {base}")
+    if args.local:
+        # offline mode: a downloaded copy of the site (e.g. wget -m)
+        root = Path(args.local)
+        docnames = sorted(p.relative_to(root).with_suffix("").as_posix()
+                          for p in root.rglob("*.html") if "_static" not in p.parts)
+        docnames = [d for d in docnames if not SKIP.search(d)]
+
+        def get(d):
+            f = root / f"{d}.html"
+            return f.read_text(encoding="utf-8", errors="replace") if f.exists() else None
+        args.delay = 0
+        print(f"{len(docnames)} pages from {root} (cited as {base})")
+    else:
+        s = requests.Session()
+        s.headers["User-Agent"] = "code-docs-skills sync"
+        docnames = [d for d in load_docnames(s, base) if not SKIP.search(d)]
+
+        def get(d):
+            return fetch(s, urljoin(base, d + ".html"))
+        print(f"{len(docnames)} pages from {base}")
 
     index = []
     for d in docnames:
-        html = fetch(s, urljoin(base, d + ".html"))
+        html = get(d)
         if html is None:
             print(f"  skip (404) {d}")
             continue
-        title, headings, md = convert_page(html, d, set(docnames))
+        title, headings, md = convert_page(html, d, urljoin(base, d + ".html"))
         dest = out / f"{d}.md"
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(f"<!-- source: {urljoin(base, d + '.html')} -->\n\n{md}",

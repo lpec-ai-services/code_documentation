@@ -11,6 +11,10 @@ The published TRIPOLI-5 documentation is in `docs/`, converted to Markdown, one 
 - `docs/_meta.json` records the version synced (the source URL contains `latest-release`, `vX.Y.Z` or `dev`) and the date. Mention the version when it matters.
 - Each page starts with `<!-- source: URL -->`. Give that URL as a citation.
 
+Docs currently synced: **TRIPOLI-5 v0.3.0** (latest release). Long simulation logs in example outputs are truncated (`… lines of output omitted …`), and figures link to the published site.
+
+**Scores:** since 0.3.0 the original score system is deprecated in favour of the new one. Base new inputs on `examples/features/new_scores.md`, not `score.md`, unless the user is on an older version.
+
 If `docs/` has only a `.gitkeep` file, the docs haven't been synced. Tell the user to run `./sync.sh tripoli5` at the root of the code_documentation repo. Don't answer API questions from memory.
 
 ## Layout of docs/
