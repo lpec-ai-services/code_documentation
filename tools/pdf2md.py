@@ -164,7 +164,7 @@ def span_text(span, gmap):
 
 
 def font_page(page, chap_sizes, sec_sizes, footer_y=None, tol=0.3, sub_sizes=(),
-              gmap=None, regexes=()):
+              gmap=None, regexes=(), code_fonts=(), code_lang="", drop=None):
     """Page text where lines set in heading font sizes become headings.
 
     For PDFs without bookmarks. Returns (text, [(level, title)]).
@@ -173,6 +173,15 @@ def font_page(page, chap_sizes, sec_sizes, footer_y=None, tol=0.3, sub_sizes=(),
     out, heads = [], []
     gmap = gmap or {}
     pending = None  # (level, [parts])
+    code = []  # (x0, char_width, text) of consecutive monospace lines
+
+    def flush_code():
+        if not code:
+            return
+        left = min(x for x, _, _ in code)
+        body = [" " * max(0, round((x - left) / w)) + t for x, w, t in code]
+        out.append(f"\n```{code_lang}\n" + "\n".join(body) + "\n```\n")
+        code.clear()
 
     def flush():
         nonlocal pending
@@ -190,6 +199,16 @@ def font_page(page, chap_sizes, sec_sizes, footer_y=None, tol=0.3, sub_sizes=(),
             if not spans:
                 continue
             text = "".join(span_text(sp, gmap) for sp in l["spans"])
+            if drop is not None and drop.search(text.strip()):
+                continue
+            if code_fonts and all(any(c in sp["font"] for c in code_fonts) for sp in spans):
+                flush()
+                first = spans[0]
+                w = (first["bbox"][2] - first["bbox"][0]) / max(1, len(first["text"]))
+                lead = len(first["text"]) - len(first["text"].lstrip(" "))
+                code.append((first["bbox"][0] - lead * w, w or 1, text.strip()))
+                continue
+            flush_code()
             size = max(sp["size"] for sp in spans)
             level = 1 if any(abs(size - c) < tol for c in chap_sizes) else \
                 2 if any(abs(size - c) < tol for c in sec_sizes) else 0
@@ -216,6 +235,7 @@ def font_page(page, chap_sizes, sec_sizes, footer_y=None, tol=0.3, sub_sizes=(),
                 flush()
                 out.append(text)
     flush()
+    flush_code()
     return "\n".join(out), heads
 
 
@@ -267,7 +287,11 @@ def build_chapters(doc, split_level=None, front_pages=0, toc=None):
 
 
 def split_large(chapters, toc, level, max_pages):
-    """Split chapters longer than max_pages at the next outline level(s)."""
+    """Split chapters longer than max_pages at the next outline level.
+
+    Consecutive sub-sections are grouped while the group stays within
+    max_pages; a sub-section that is itself too long is split further.
+    """
     if not max_pages:
         return chapters
     out = []
@@ -276,7 +300,6 @@ def split_large(chapters, toc, level, max_pages):
         lvl = ch.get("level", level)
         kids = [(t.strip(), p - 1) for l, t, p in toc
                 if l == lvl + 1 and ch["start"] <= p - 1 <= ch["end"]]
-        # keep only strictly increasing starts
         uniq = []
         for t, p in kids:
             if not uniq or p > uniq[-1][1]:
@@ -286,13 +309,31 @@ def split_large(chapters, toc, level, max_pages):
             continue
         parts = []
         if uniq[0][1] > ch["start"]:
-            parts.append({"title": ch["title"], "start": ch["start"],
-                          "end": uniq[0][1] - 1, "level": lvl + 1})
+            parts.append({"title": ch["title"], "start": ch["start"], "end": uniq[0][1] - 1,
+                          "level": lvl + 1, "short": ch.get("short", ch["title"]),
+                          "root": ch.get("root", ch["title"])})
         for i, (t, p) in enumerate(uniq):
             end = uniq[i + 1][1] - 1 if i + 1 < len(uniq) else ch["end"]
-            parts.append({"title": f"{ch['title']} — {t}", "start": p,
-                          "end": max(p, end), "level": lvl + 1})
-        out.extend(split_large(parts, toc, level, max_pages))
+            parts.append({"title": f"{ch['title']} — {t}", "start": p, "end": max(p, end),
+                          "level": lvl + 1, "short": t, "root": ch.get("root", ch["title"])})
+        # group small consecutive parts
+        groups = []
+        for part in parts:
+            size = part["end"] - part["start"] + 1
+            g = groups[-1] if groups else None
+            if g and size <= max_pages and g["end"] - g["start"] + 1 + size <= max_pages \
+                    and g.get("groupable") and part["start"] <= g["end"] + 1:
+                g["end"] = part["end"]
+                g["members"].append(part["short"])
+                continue
+            groups.append(dict(part, members=[part["short"]], groupable=size <= max_pages))
+        for g in groups:
+            if len(g["members"]) > 1:
+                g["title"] = f"{ch['title']} — {g['members'][0]} … {g['members'][-1]}"
+                g["short"] = g["members"][0]
+            g.pop("groupable")
+            g.pop("members")
+        out.extend(split_large(groups, toc, level, max_pages))
     return out
 
 
@@ -322,6 +363,12 @@ def main():
     ap.add_argument("--glyph-map",
                     help="JSON {font: {glyph: replacement}} fixing symbol fonts "
                          "(e.g. tools/glyphmaps/elsevier-advp.json)")
+    ap.add_argument("--code-fonts", action="append", default=[],
+                    help="font name fragment of code (e.g. Mono): such lines become fenced "
+                         "code blocks with indentation rebuilt from their x-position")
+    ap.add_argument("--code-lang", default="", help="language tag for those code blocks")
+    ap.add_argument("--drop-regex", help="drop text lines matching this regex "
+                                         "(e.g. 'continued from previous page')")
     ap.add_argument("--footer-y", type=float,
                     help="drop text lines starting below this y (page footers)")
     ap.add_argument("--page-offset", type=int, default=0,
@@ -349,6 +396,8 @@ def main():
     gmap = json.loads(Path(args.glyph_map).read_text()) if args.glyph_map else {}
     regexes = [(int(r.split(":", 1)[0]), re.compile(r.split(":", 1)[1]))
                for r in args.heading_regex]
+    drop = re.compile(args.drop_regex) if args.drop_regex else None
+    fp_opts = dict(code_fonts=tuple(args.code_fonts), code_lang=args.code_lang, drop=drop)
     font_texts = {}
     synth_toc = None
     if chap_sizes:
@@ -357,12 +406,12 @@ def main():
         for i, page in enumerate(doc):
             text, heads = font_page(page, chap_sizes, sec_sizes, args.footer_y,
                                     sub_sizes=parse_sizes(args.subsection_sizes),
-                                    gmap=gmap, regexes=regexes)
+                                    gmap=gmap, regexes=regexes, **fp_opts)
             font_texts[i] = text
             synth += [[lvl, t, i + 1] for lvl, t in heads]
         synth_toc = synth
-    elif gmap:
-        # bookmarks exist: glyph-fixed text, headings inserted from the outline
+    elif gmap or args.code_fonts or drop:
+        # bookmarks exist: font-aware text, headings inserted from the outline
         for i, page in enumerate(doc):
             font_texts[i] = None
     chapters, toc, level = build_chapters(doc, args.split_level, args.front_matter_pages,
@@ -372,7 +421,13 @@ def main():
 
     page_to_file = {}
     for i, ch in enumerate(chapters):
-        ch["file"] = f"{i:02d}-{slugify(ch['title'])}.md"
+        num = f"{i:02d}" if len(chapters) < 100 else f"{i:03d}"
+        root, short = ch.get("root"), ch.get("short", ch["title"])
+        if root and slugify(short) != slugify(root):
+            root_slug = re.sub(r"^(the|a|an)-|-(module|chapter)$", "", slugify(root, 30))
+            ch["file"] = f"{num}-{root_slug}--{slugify(short, 40)}.md"
+        else:
+            ch["file"] = f"{num}-{slugify(short)}.md"
         for p in range(ch["start"], ch["end"] + 1):
             page_to_file[p] = ch["file"]
 
@@ -386,8 +441,8 @@ def main():
         pages = range(ch["start"], ch["end"] + 1)
         if chap_sizes:  # headings already in place
             texts = {p: clean_text(font_texts[p], running, []) for p in pages}
-        elif gmap:
-            texts = {p: clean_text(font_page(doc[p], [], [], args.footer_y, gmap=gmap)[0],
+        elif gmap or args.code_fonts or drop:
+            texts = {p: clean_text(font_page(doc[p], [], [], args.footer_y, gmap=gmap, **fp_opts)[0],
                                    running, heads_by_page.get(p, []))
                      for p in pages}
         else:

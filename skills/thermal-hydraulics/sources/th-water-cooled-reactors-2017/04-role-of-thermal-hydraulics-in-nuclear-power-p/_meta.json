@@ -4,10 +4,9 @@
   "pages": 24,
   "chapters": [
     "00-nomenclature.md",
-    "01-chapter-foreword-introduction.md",
-    "02-chapter-foreword-the-thermal-hydraulic-analysis-en.md",
-    "03-chapter-foreword-demonstration-of-thermal-hydrauli.md",
-    "04-references.md"
+    "01-chapter-foreword--introduction.md",
+    "02-chapter-foreword--demonstration-of-thermal-hydraulic-analy.md",
+    "03-references.md"
   ],
   "converter": "pymupdf text"
 }

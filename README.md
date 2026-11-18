@@ -32,7 +32,8 @@ skills/
 ├── salome-medcoupling/    # MEDCoupling/MEDLoader: developer guide (with all snippets), user guide, tutorial
 ├── salome-gui/            # SALOME desktop / GUI user guide
 ├── scivianna/             # CEA visualizer: AGENTS.md, tutorials, API (static), runnable examples
-└── vtk/                   # VTK in Python: 900 examples (classic + Pythonic API), VTK Textbook, user docs
+├── vtk/                   # VTK in Python: 900 examples (classic + Pythonic API), VTK Textbook, user docs
+└── uranie/                # Uranie user manual (Python): modules + 985 runnable code blocks
 tools/
 ├── pdf2md.py              # PDF manual  → chapter Markdown + TOC (uses the PDF bookmarks)
 ├── sphinx2md.py           # published Sphinx site → page Markdown + INDEX (searchindex.js or a local copy)
@@ -81,7 +82,9 @@ Check the result in opencode: ask "which skills do you have?" — `tripoli4`, `t
 
 `neutronics` and `thermal-hydraulics` are topic skills, not code skills. Its maps (`physics.md`, `methods.md`) and `equations.md` are written by hand, and only `sources/` is generated. To add a document: convert it with `tools/pdf2md.py` into `sources/<name>/` (PDFs without bookmarks: use `--chapter-sizes/--section-sizes`, the heading font sizes). Then add its topics to the maps. The source PDF is not stored here. Regenerate with `NEUTRONICS_METHODES_PDF=/path/to.pdf ./sync.sh neutronics` and `TH_BOOK_DIR=… TH_IAEA_TRS498_PDF=… ./sync.sh thermal_hydraulics`.
 
-`pdf2md.py` options for difficult PDFs: `--glyph-map` (symbol fonts that decode to wrong characters; check against rendered pages before adding a font), `--max-pages` (split oversized sections), `--heading-regex` (headings not set in a distinct font). Undecodable symbols are written as "□".
+Uranie: `URANIE_MANUAL_PDF=/path/to/userManual_Py.pdf ./sync.sh uranie`.
+
+`pdf2md.py` options for difficult PDFs: `--code-fonts Mono` (monospace lines become fenced code with indentation rebuilt from x-positions), `--drop-regex` (repeated noise lines), `--glyph-map` (symbol fonts that decode to wrong characters; check against rendered pages before adding a font), `--max-pages` (split oversized sections), `--heading-regex` (headings not set in a distinct font). Undecodable symbols are written as "□".
 
 ## Harvesting HAL
 

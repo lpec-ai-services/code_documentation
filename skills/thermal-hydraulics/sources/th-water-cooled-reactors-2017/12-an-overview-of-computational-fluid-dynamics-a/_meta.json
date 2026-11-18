@@ -6,19 +6,14 @@
     "00-nomenclature.md",
     "01-chapter-foreword.md",
     "02-part-1-computational-fluid-dynamics-for-nuclear-th.md",
-    "03-part-2-insights-into-computational-fluid-dynamics.md",
-    "04-part-2-insights-into-computational-fluid-dynamics.md",
-    "05-part-2-insights-into-computational-fluid-dynamics.md",
-    "06-part-2-insights-into-computational-fluid-dynamics.md",
-    "07-part-2-insights-into-computational-fluid-dynamics.md",
-    "08-part-2-insights-into-computational-fluid-dynamics.md",
-    "09-part-2-insights-into-computational-fluid-dynamics.md",
-    "10-part-2-insights-into-computational-fluid-dynamics.md",
-    "11-part-2-insights-into-computational-fluid-dynamics.md",
-    "12-part-2-insights-into-computational-fluid-dynamics.md",
-    "13-part-2-insights-into-computational-fluid-dynamics.md",
-    "14-part-2-insights-into-computational-fluid-dynamics.md",
-    "15-part-2-insights-into-computational-fluid-dynamics.md"
+    "03-part-2-insights-into-computati--cfd-related-elements-and-definitions.md",
+    "04-part-2-insights-into-computati--cfd-methods.md",
+    "05-part-2-insights-into-computati--applications-of-cfdexamples.md",
+    "06-part-2-insights-into-computati--introductory-remarks.md",
+    "07-part-2-insights-into-computati--phenomenological-issues.md",
+    "08-part-2-insights-into-computati--efficiency-of-turbulence-modeling.md",
+    "09-part-2-insights-into-computati--cfd-coupling.md",
+    "10-part-2-insights-into-computati--references.md"
   ],
   "converter": "pymupdf text"
 }

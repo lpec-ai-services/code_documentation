@@ -165,6 +165,15 @@ PYEOF
   rm -rf "$tmp"
 }
 
+sync_uranie() {
+  # From the local PDF of the Uranie UserManual Python (no stable download URL).
+  # SKILL.md is written by hand.
+  local pdf="${URANIE_MANUAL_PDF:?set URANIE_MANUAL_PDF=/path/to/userManual_Py.pdf}"
+  "$PY" "$ROOT/tools/pdf2md.py" --pdf "$pdf" --out "$ROOT/skills/uranie/docs" \
+    --code-fonts Mono --code-lang python --footer-y 730 --max-pages 20 \
+    --drop-regex '^\((continued from previous page|continues on next page)\)$|^CHAPTER$|^(ONE|TWO|THREE|FOUR|FIVE|SIX|SEVEN|EIGHT|NINE|TEN|ELEVEN|TWELVE|THIRTEEN|FOURTEEN|FIFTEEN)$'
+}
+
 # Add new codes here: sync_<name>() { ... } — see README.md.
 
 targets=("$@")

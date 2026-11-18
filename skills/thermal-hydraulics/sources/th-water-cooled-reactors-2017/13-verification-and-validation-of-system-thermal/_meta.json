@@ -6,15 +6,12 @@
     "00-front-matter.md",
     "01-introduction.md",
     "02-scaling-of-thermal-hydraulic-phenomena-and-relatio.md",
-    "03-current-uncertainty-methods-introduction.md",
-    "04-current-uncertainty-methods-common-methods.md",
-    "05-current-uncertainty-methods-international-validati.md",
-    "06-current-uncertainty-methods-international-validati.md",
-    "07-current-uncertainty-methods-international-validati.md",
-    "08-current-uncertainty-methods-international-validati.md",
-    "09-current-uncertainty-methods-applications-in-licens.md",
-    "10-summary-remarks.md",
-    "11-references.md"
+    "03-current-uncertainty-methods--introduction.md",
+    "04-current-uncertainty-methods--international-validation-of-uncertainty.md",
+    "05-current-uncertainty-methods--best-estimate-methods-uncertainty-and-se.md",
+    "06-current-uncertainty-methods--applications-in-licensing.md",
+    "07-summary-remarks.md",
+    "08-references.md"
   ],
   "converter": "pymupdf text"
 }
