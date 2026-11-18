@@ -33,6 +33,17 @@ sync_valjean() {
   rm -rf "$tmp"
 }
 
+sync_neutronics() {
+  # Knowledge sources are local PDFs (no stable download URL). Only the
+  # sources/ text is regenerated; SKILL.md, physics.md, methods.md and
+  # equations.md are written by hand.
+  local pdf="${NEUTRONICS_METHODES_PDF:?set NEUTRONICS_METHODES_PDF=/path/to/La_neutronique_-_Les_methodes_de_la_neutronique.pdf}"
+  "$PY" "$ROOT/tools/pdf2md.py" --pdf "$pdf" \
+    --out "$ROOT/skills/neutronics/sources/cea-methodes-neutronique" \
+    --chapter-sizes 16,18 --section-sizes 11.5 --subsection-sizes 9.5,9.0 \
+    --footer-y 770 --page-offset 42
+}
+
 # Add new codes here: sync_<name>() { ... } — see README.md.
 
 targets=("$@")

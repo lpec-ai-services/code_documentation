@@ -32,6 +32,9 @@ except ImportError:  # fall back to plain text
 
 
 def slugify(text, maxlen=50):
+    import unicodedata
+    text = unicodedata.normalize("NFKD", text)
+    text = "".join(c for c in text if not unicodedata.combining(c))
     text = re.sub(r"[^\w\s-]", "", text.lower(), flags=re.ASCII)
     return re.sub(r"[\s_-]+", "-", text).strip("-")[:maxlen].strip("-") or "section"
 
@@ -101,7 +104,7 @@ def clean_text(text, running, headings):
             break
     text = "\n".join(lines)
     # words hyphenated across lines: "renormal-\nizes" -> "renormalizes"
-    text = re.sub(r"([a-z])-\n([a-z]+)([ \t]*)", r"\1\2\n", text)
+    text = re.sub(r"([a-zà-öø-ÿ])-\n([a-zà-öø-ÿ]+)([ \t]*)", r"\1\2\n", text)
     return re.sub(r"\n{3,}", "\n\n", text).strip()
 
 
@@ -144,6 +147,59 @@ def page_texts(doc, pages, markdown, row_pages=frozenset()):
         p = c["metadata"].get("page_number", c["metadata"].get("page", 0)) - 1
         out[p] = c["text"]
     return out
+
+
+def parse_sizes(spec):
+    return [float(x) for x in (spec or "").split(",") if x.strip()]
+
+
+def font_page(page, chap_sizes, sec_sizes, footer_y=None, tol=0.3, sub_sizes=()):
+    """Page text where lines set in heading font sizes become headings.
+
+    For PDFs without bookmarks. Returns (text, [(level, title)]).
+    Consecutive heading lines of the same level are merged.
+    """
+    out, heads = [], []
+    pending = None  # (level, [parts])
+
+    def flush():
+        nonlocal pending
+        if pending:
+            title = re.sub(r"\s+", " ", " ".join(pending[1])).strip()
+            out.append("\n" + "#" * pending[0] + " " + title + "\n")
+            heads.append((pending[0], title))
+            pending = None
+
+    for b in page.get_text("dict", flags=pymupdf.TEXTFLAGS_TEXT)["blocks"]:
+        for l in b.get("lines", []):
+            if footer_y is not None and l["bbox"][1] > footer_y:
+                continue
+            spans = [sp for sp in l["spans"] if sp["text"].strip()]
+            if not spans:
+                continue
+            text = "".join(sp["text"] for sp in l["spans"])
+            size = max(sp["size"] for sp in spans)
+            level = 1 if any(abs(size - c) < tol for c in chap_sizes) else \
+                2 if any(abs(size - c) < tol for c in sec_sizes) else 0
+            # sub-sections: whole line bold, in one of the given sizes
+            if not level and sub_sizes and all("Bold" in sp["font"] for sp in spans) \
+                    and any(abs(spans[0]["size"] - c) < tol for c in sub_sizes):
+                level = 3
+            # a title has words; big symbols and diagram labels do not
+            if level and not (pending and pending[0] == level) \
+                    and not re.search(r"[a-zà-ÿ]{3,}", text):
+                level = 0
+            if level:
+                if pending and pending[0] == level:
+                    pending[1].append(text)
+                else:
+                    flush()
+                    pending = (level, [text])
+            else:
+                flush()
+                out.append(text)
+    flush()
+    return "\n".join(out), heads
 
 
 def pick_split_level(toc, wanted=None):
@@ -207,6 +263,16 @@ def main():
                     help="pages 1..N form one front-matter file (title pages, contents)")
     ap.add_argument("--table-pages", default="",
                     help="pages (e.g. 552-562) whose lines are rebuilt as table rows")
+    ap.add_argument("--chapter-sizes", default="",
+                    help="no bookmarks: font sizes of chapter titles, e.g. 16,18")
+    ap.add_argument("--section-sizes", default="",
+                    help="no bookmarks: font sizes of section titles, e.g. 11.5")
+    ap.add_argument("--subsection-sizes", default="",
+                    help="no bookmarks: sizes of all-bold lines that are sub-section titles")
+    ap.add_argument("--footer-y", type=float,
+                    help="drop text lines starting below this y (page footers)")
+    ap.add_argument("--page-offset", type=int, default=0,
+                    help="printed page = PDF page + offset (used in page markers)")
     ap.add_argument("--split-level", type=int,
                     help="outline level of chapters (default: auto)")
     args = ap.parse_args()
@@ -224,6 +290,17 @@ def main():
         pdf_path = Path(args.pdf)
 
     doc = pymupdf.open(pdf_path)
+    chap_sizes, sec_sizes = parse_sizes(args.chapter_sizes), parse_sizes(args.section_sizes)
+    font_texts = {}
+    if chap_sizes:
+        # build an outline from heading fonts, then reuse the normal splitting
+        synth = []
+        for i, page in enumerate(doc):
+            text, heads = font_page(page, chap_sizes, sec_sizes, args.footer_y,
+                                    sub_sizes=parse_sizes(args.subsection_sizes))
+            font_texts[i] = text
+            synth += [[lvl, t, i + 1] for lvl, t in heads]
+        doc.set_toc(synth)
     chapters, toc, level = build_chapters(doc, args.split_level, args.front_matter_pages)
     print(f"{doc.page_count} pages, {len(chapters)} chapter files (outline level {level})")
 
@@ -241,14 +318,19 @@ def main():
 
     for ch in chapters:
         pages = range(ch["start"], ch["end"] + 1)
-        texts = page_texts(doc, pages, args.markdown, parse_pages(args.table_pages))
-        if not args.markdown:
-            texts = {p: clean_text(t, running, heads_by_page.get(p, []))
-                     for p, t in texts.items()}
+        if font_texts:  # headings already in place
+            texts = {p: clean_text(font_texts[p], running, []) for p in pages}
+        else:
+            texts = page_texts(doc, pages, args.markdown, parse_pages(args.table_pages))
+            if not args.markdown:
+                texts = {p: clean_text(t, running, heads_by_page.get(p, []))
+                         for p, t in texts.items()}
         parts = [f"# {ch['title']}\n",
                  f"<!-- source PDF pages {ch['start'] + 1}-{ch['end'] + 1} -->\n"]
         for p in pages:
-            parts.append(f"\n<!-- page {p + 1} -->\n")
+            label = f"page {p + 1 + args.page_offset} (PDF {p + 1})" if args.page_offset \
+                else f"page {p + 1}"
+            parts.append(f"\n<!-- {label} -->\n")
             parts.append(texts.get(p, "").strip() + "\n")
         (out / ch["file"]).write_text("".join(parts), encoding="utf-8")
         print(f"  {ch['file']}  (pp. {ch['start'] + 1}-{ch['end'] + 1})")
@@ -260,7 +342,8 @@ def main():
         if lvl < level:  # wrapper bookmarks above the chapters
             continue
         f = page_to_file.get(page - 1, "?")
-        lines.append(f"{'  ' * (lvl - level)}- {title.strip()} → `{f}` (p. {page})")
+        where = f"p. {page + args.page_offset}, PDF {page}" if args.page_offset else f"p. {page}"
+        lines.append(f"{'  ' * (lvl - level)}- {title.strip()} → `{f}` ({where})")
     if not toc:
         lines += [f"- {c['title']} → `{c['file']}`" for c in chapters]
     (out / "TOC.md").write_text("\n".join(lines) + "\n", encoding="utf-8")

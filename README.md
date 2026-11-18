@@ -12,9 +12,15 @@ skills/
 ├── tripoli5/              # TRIPOLI-5® docs (tripoli5.asnr.dev, Sphinx site)
 │   ├── SKILL.md
 │   └── docs/              # generated: one .md per page, INDEX.md, _meta.json
-└── valjean/               # VALJEAN V&V framework (github.com/valjean-framework/valjean)
-    ├── SKILL.md
-    └── docs/              # generated from the Sphinx sources + docstrings
+├── valjean/               # VALJEAN V&V framework (github.com/valjean-framework/valjean)
+│   ├── SKILL.md
+│   └── docs/              # generated from the Sphinx sources + docstrings
+└── neutronics/            # knowledge skill (not a code): physics vs simulation methods
+    ├── SKILL.md           # router: physics question or methods question?
+    ├── physics.md         # topic map: equations, criticality, kinetics, phenomena
+    ├── methods.md         # topic map: deterministic, Monte Carlo, depletion, kinetics solvers, schemes
+    ├── equations.md       # key equations in LaTeX, transcribed from the source pages
+    └── sources/           # one folder per document (generated text + TOC)
 tools/
 ├── pdf2md.py              # PDF manual  → chapter Markdown + TOC (uses the PDF bookmarks)
 ├── sphinx2md.py           # published Sphinx site → page Markdown + INDEX (searchindex.js or a local copy)
@@ -53,6 +59,10 @@ Check the result in opencode: ask "which skills do you have?" — `tripoli4`, `t
   Update the version line in `skills/tripoli5/SKILL.md`.
 - New TRIPOLI-4 guide: update the URL in `sync.sh`, then `./sync.sh tripoli4`. From a local copy: `python3 tools/pdf2md.py --pdf guide.pdf --out skills/tripoli4/docs --front-matter-pages 20 --table-pages 552-562` (page options are specific to the v12 guide, so check them for a new edition).
 - Commit the regenerated `docs/` so colleagues get them with a `git pull`, without having to sync themselves.
+
+## Knowledge skills
+
+`neutronics` is a topic skill, not a code skill. Its maps (`physics.md`, `methods.md`) and `equations.md` are written by hand, and only `sources/` is generated. To add a document: convert it with `tools/pdf2md.py` into `sources/<name>/` (PDFs without bookmarks: use `--chapter-sizes/--section-sizes`, the heading font sizes). Then add its topics to the maps. The source PDF is not stored here. Regenerate with `NEUTRONICS_METHODES_PDF=/path/to.pdf ./sync.sh neutronics`.
 
 ## Adding a code
 
