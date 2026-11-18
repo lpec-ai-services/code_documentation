@@ -21,12 +21,17 @@ skills/
 │   ├── methods.md         # topic map: deterministic, Monte Carlo, depletion, kinetics solvers, schemes
 │   ├── equations.md       # key equations in LaTeX, transcribed from the source pages
 │   └── sources/           # one folder per document (generated text + TOC)
-└── thermal-hydraulics/    # knowledge skill, same layout (water-cooled + fast reactors)
+├── thermal-hydraulics/    # knowledge skill, same layout (water-cooled + fast reactors)
+└── tfel-mfront/           # TFEL/MFront code skill (docs from the GitHub repo, exact LaTeX)
+    ├── SKILL.md, physics.md, methods.md
+    ├── docs/              # 266 pages + INDEX.md, release-notes/
+    └── examples/          # gallery .mfront / .mtest implementations
 tools/
 ├── pdf2md.py              # PDF manual  → chapter Markdown + TOC (uses the PDF bookmarks)
 ├── sphinx2md.py           # published Sphinx site → page Markdown + INDEX (searchindex.js or a local copy)
 ├── sphinx_src2md.py       # Sphinx *sources* of a Python project → Markdown, API read with ast (no build, no import)
 ├── pdfbook2md.py          # book delivered as one PDF per chapter → one folder per chapter + book TOC
+├── mdtree2md.py           # Markdown docs kept in a repo → skill docs + INDEX (links .html → .md)
 └── glyphmaps/             # per-font symbol fixes for publisher PDFs (e.g. Elsevier AdvP fonts)
 templates/SKILL.md         # starting point for a new code
 sync.sh                    # (re)generate docs/ for one or all codes

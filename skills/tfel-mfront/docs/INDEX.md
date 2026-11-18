@@ -1,0 +1,519 @@
+# Index of pages
+
+Each entry: file — title, then its main headings.
+
+
+## (root)
+
+- `abaqus.md` — **The Abaqus/Standard and Abaqus/Explicit interfaces** (26 kB)
+  - Introduction · Pitfalls · Current status · How to use `MFront` behaviours in `Abaqus/Standard` and `Abaqus/Explicit` · Notes · Compilation of the generic `umat.cpp` or `vumat-*.cpp` files · Import site specific parameters such as licensing and doc parameters · Installation of Abaqus CAE 2017 … (+15)
+- `about.md` — **About** (1 kB)
+  - Contributors · Tools
+- `amitex.md` — **MFront interface for AMITEX_FFTP** (2 kB)
+  - Generated input file template
+- `ansys.md` — **The MFront interface to the ANSYS Mechanical APDL finite element solver** (23 kB)
+  - Introduction · Limitations · Pitfalls · Current status · How to use `MFront` behaviours in `ANSYS` · Notes · Generated input files · The generic `usermat.cpp` file … (+9)
+- `associated-projects.md` — **Associated projects** (3 kB)
+  - Finite element and Fast-Fourier Transform solvers · The `Cast3M` finite element solver · `AMITEX_FFTP` · `code_aster` and `Salome-meca` · `OpenGeoSys` · `MoFEM` · `mgis.fenics` · `mfem-mgis` … (+7)
+- `aster.md` — **MFront interface for code_aster** (12 kB)
+  - Overview of the `aster` interface · Finite strain behaviours · Generating the shared library · Generating the shared library as part of the `code_aster` simulation · Second approach: generating the library before launching the simulation · Declaration of the call · Call to the `DEFI_MATERIAU` · Definition of the material in the `COMPORTEMENT` field of mechanical operators … (+2)
+- `barlat-yld2004.md` — **Implementation of Barlat Yld2004-18p behaviour** (14 kB)
+  - Description of the behaviour · Elasticity · Plasticity · Implicit scheme · Choice of the state variables · Elastic prediction · Equations governing the material evolution under plastic loading · Implementation … (+10)
+- `behaviour-variable.md` — **Calling behaviours inside behaviours using the `@BehaviourVariable` keyword** (16 kB)
+  - Example of usage · Options of the `@BehaviourVariable` keyword · Treatment of the gradients or thermodynamic variables of the behaviour variable · Treatment of the persistent variables of the behaviour variable · Treatment of the material properties and external state variables of the behaviour variable · Access to the variables of the behaviour variable · Initialization of the behaviour variable · Reinitializing and resetting a behaviour variable … (+3)
+- `BehaviourBricks.md` — **Behaviour bricks** (2 kB)
+  - Introduction · The `@Brick` keyword · Syntax · Example · List of available bricks
+- `behaviours.md` — **Mechanical behaviours in MFront** (19 kB)
+  - Overview · Mechanical behaviour role · Isotropic $J_{2}$ plastic/viscoplastic behaviours. Example of finite strain pre- and post-processing · Generic domain specific languages · Implicit integration · References
+- `benchmark.md` — **Performance assessments** (6 kB)
+  - Benchmarks made in the `PLEIADES` platform · Fuel performance codes based on the `Cast3M` finite element solver · `Cyrano3` fuel performance code · Benchmarks based on the `Code-Aster` finite element solver · References
+- `BetaRule.md` — **Implementation of Cailletaud-Pilvin beta rule for homogenization** (23 kB)
+  - Theoretical background · Cailletaud-Pilvin beta rule · Resolution of the non-linear system · Consistent tangent operator · Implementation in MFront · Results · Implementation with static condensation · Non-linear system … (+2)
+- `BiphasicLinearHomogenization.md` — **Implementation of mean-field homogenization schemes for biphasic elastic media** (10 kB)
+  - Available schemes · Example 1: a distribution of spherical inclusions · Implementation in `MFront` · Results · Example 2: distributions of ellipsoidal inclusions · Implementation in `MFront` · Results
+- `Burger_EDF_CIWAP_2021.md` — **The `Burger_EDF_CIWAP_2021` constitutive law for concrete creep and shrinkage** (51 kB)
+  - Introduction · Description of the behaviour · Strain decomposition · Drying shrinkage · Elastic and basic creep strain · Drying creep strain · Description of the implicit algorithm · Choice of the state variables and auxiliary state variables … (+20)
+- `calculix.md` — **How to use MFront in CalculiX** (15 kB)
+  - User defined behaviour in `CalculiX` · Using the `CalculiX` native interface · Using the `Abaqus/Standard` interface · Using the `MFront` behaviours generated through the `abaqus` interface · Known issues · `ABAQUS` and `ABAQUSNL` interfaces · Benchmarks · Small strain … (+1)
+- `castem-fr.md` — **Utilisation de MFront dans Cast3M** (9 kB)
+  - Lois de comportement mécanique · Compilation de la loi · Intégration dans `Cast3M` · Test · Propriétés matériau · Conductivité thermique du combustible carbure \(UPuC\) · Utilisation dans `Cast3M`
+- `castem.md` — **MFront interface for Cast3M** (11 kB)
+  - Mechanical behaviours · Compilation of the behaviour · Usage in `Cast3M` · Test · Keywords specific to the `Cast3M` interface · Material proprerties · Thermal conductivity of \(UPuC\) · Usage in `Cast3M`
+- `coding-guidelines.md` — **Coding guidelines** (45 kB)
+  - Quick reference · Tooling · Formatting · Static analysis and verification · Backward compatibility · Source files · Extensions and roles · Directory layout … (+37)
+- `compiling-mfront-shared-libraries.md` — **Compilation process used by `MFront`** (2 kB)
+  - General overview · Variables affecting the `make` generator · Variables affecting the `cmake` generator
+- `contributing.md` — **Contributing to `TFEL`** (6 kB)
+  - Using the issue tracker · Bug reports · Feature requests · Pull requests
+- `coverity-scan.md` — **Result of the Coverity tools** (1 kB)
+- `cyrano.md` — **Description of the Cyrano3 interface** (12 kB)
+  - Material properties · Error handling · Out of bounds policy · Mechanical behaviours · Supported modelling hypotheses · Finite strain modelling · References
+- `DDIF2Brick.md` — **The DDIF2 brick** (1 kB)
+  - References
+- `DDIF2StressPotential.md` — **The DDIF2 stress potential** (3 kB)
+  - Local coordinate · Material properties associated with damage · Fracture energies · External pressure effect · Resolution algorithm · References
+- `Default-keywords.md` — **Default keywords** (80 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@Author` keyword · Example · The `@AuxiliaryModel` keyword · Example · The `@AuxiliaryStateVar` keyword … (+179)
+- `DefaultCZM-keywords.md` — **DefaultCZM keywords** (79 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@Author` keyword · Example · The `@AuxiliaryModel` keyword · Example · The `@AuxiliaryStateVar` keyword … (+178)
+- `DefaultFiniteStrain-keywords.md` — **DefaultFiniteStrain keywords** (79 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@Author` keyword · Example · The `@AuxiliaryModel` keyword · Example · The `@AuxiliaryStateVar` keyword … (+178)
+- `DefaultGenericBehaviour-keywords.md` — **DefaultGenericBehaviour keywords** (83 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@AdditionalTangentOperatorBlock` keyword · Example · The `@AdditionalTangentOperatorBlocks` keyword · Example · The `@Author` keyword … (+189)
+- `DefaultModel-keywords.md` — **DefaultModel keywords** (82 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@AdditionalTangentOperatorBlock` keyword · Example · The `@AdditionalTangentOperatorBlocks` keyword · Example · The `@Author` keyword … (+186)
+- `documentations.md` — **General documentation** (11 kB)
+  - MFront documentation · Tutorials & Examples · Courses · Talks · Material Knowledge Types · Domain specific languages · Bricks and Extensions · Homogenization … (+13)
+- `drucker-prager-cap.md` — **Implementation of a multi-surface, compressible and perfect plastic behaviour using the Drucker-Prager yield criterion and a cap** (26 kB)
+  - Description · Elasticity · Plasticity · Integration scheme · Choice of the state variables · Implicit scheme · Status · Elastic prediction … (+20)
+- `drucker.md` — **Implementation of a perfect plastic behaviour using the Drucker yield criterion** (21 kB)
+  - Description · Elasticity · Plasticity · Derivatives of the equivalent stress · Implicit scheme · Choice of the state variables · Elastic prediction · Equation associated with the elastic strain … (+16)
+- `elmerfem.md` — **The ElmerFEM interface** (6 kB)
+  - Introduction · Usage · Further information
+- `ExplicitBerveillerZaouiPolyCrystals.md` — **Explicit integration of the constitutive equations of a polycrystal obtained by the Berveiller-Zaoui homogeneisation scheme** (20 kB)
+  - Constitutive equations · Notations · The Berveiller-Zaoui homogeneisation scheme · Intra-granular constitutive behavior · Explicit integration scheme · `MFront`' Implementation · Unit testing · Conclusions … (+1)
+- `ExtendingStandardElastoViscoPlasticityBrick-PorousStressCriterion.md` — **Extending the `StandardElastoViscoPlasticity` brick with a new porous stress criterion** (42 kB)
+  - Extending the `TFEL/Material` library · Template files · Creating a proper working directory for the example of the so-called hollow sphere criterion proposed by Michel and Suquet · Implementing the Michel and Suquet hollow sphere stress criterion · Testing the derivatives (advanced and optional) · Modifying the `MFront` implementations · Extending the `TFELMFront` library · Updating the working directory … (+7)
+- `ExtendingStandardElastoViscoPlasticityBrick-StressCriterion.md` — **Extending the StandardElastoViscoPlasticity brick with a new stress criterion** (19 kB)
+  - Extending the `TFEL/Material` library · Template files · Creating a proper working directory for the example of the Green criterion · Implementing the Green 1972 stress criterion · Extending the `TFELMFront` library · Updating the working directory · Adding the stress criterion options · Compilation of the `MFront` plugin … (+1)
+- `faq.md` — **Frequently asked questions** (16 kB)
+  - Getting help · Documentation · TFEL/Math · Installation · Documentation · Which build systems shall I use (`autotools` or `cmake`) · Portable build · when using cmake … (+6)
+- `FeFpImplicitPlasticity.md` — **Implicit integration of finite strain behaviours based on a multiplicative decomposition of the deformation gradient** (40 kB)
+  - Thermodynamical approach · Kinematics · Multiplicative decomposition of the deformation gradient · Expression of the mechanical power · Hyperelastic behaviour · Plastic dissipation and Mandel stress · Clausius-Duhem inequality · Examples … (+16)
+- `FichantLaBorderieDamageAndTorelliLoadInducedStrainBehaviour.md` — **Coupling the Fichant-La Borderie damage behaviour and Torelli' load induced strain behaviour** (14 kB)
+  - Description of the coupled behaviour · Damage behaviour · Load induced thermal strain · Implicit algorithm · Implementation · Choice of the domain specific language · Choice of the behaviour name · Metadata … (+3)
+- `FichantLaBorderieDamageBehaviour.md` — **How to implement the Fichant-La Borderie damage behaviour** (20 kB)
+  - Description of the Fichant-La Borderie damage law · Equivalent strain · Damage evolution · Computation of the stress · Implementation · Choice of the domain specific language · Name of the behaviour · Metadata … (+7)
+- `finitestrainsinglecrystal-huang.md` — **Implementing a simple finite strain single crystal behaviour, comparison with Huang's implementation** (6 kB)
+  - Constitutive equations · `MFront` Implementation · `DSL` type · Some meta-data · Default numerical parameters · The `FiniteStrainSingleCrystal` brick · Description of the crystal structure and the slip systems · Material properties … (+4)
+- `finitestrainsinglecrystal.md` — **A framework to implement finite strain single crystal behaviors, introducing the `FiniteStrainSingleCrystal` brick** (23 kB)
+  - A generic framework for finite strain single crystal plasticity · Thermodynamical basis · The `FiniteStrainSingleCrystal` brick · Variables automatically defined · Options · Implementation of the implicit system · Implementation of the consistent tangent operator · Code blocks automatically declared … (+2)
+- `FischerBurmeister.md` — **On the Fisher-Burmeister complementary function and its applications to multi-surface plasticity** (2 kB)
+  - The Fisher-Burmeister complementary function · Link with Karush-Kuhn-Tucker condition of plasticity · A regularized version of the Fisher-Burmeister complementary function · Acknowledgements
+- `gallery.md` — **The `MFront` gallery** (4 kB)
+  - Mechanical behaviours · Hyperelasticity · Hyperviscoelasticity · Viscoelasticity · Non-linear elasticity · Damage · Plasticity · Viscoplasticity … (+2)
+- `generic-behaviours-interface.md` — **The generic behaviour interface** (6 kB)
+  - Features · Supported behaviours · Supported modelling hypotheses · Finite strain behaviours · Support of orthotropic behaviours
+- `generic-material-property-interface.md` — **The generic interface for material properties** (6 kB)
+- `generic-parallel-material-property-interface.md` — **The `generic-parallel` interface for material properties** (35 kB)
+  - Generated functions · Data of a batch · Execution policies and statistics · Output status · Backends · `CUDA` backend · `HIP` backend · Parallel STL backend (`stlpar`) … (+2)
+- `getting-started.md` — **Getting started with `MFront`** (8 kB)
+  - First step: installation · Second step: understanding how `MFront` works · Third step: before starting to write your first behaviour · Look if your behaviour can be implemented using the `StandardElastoViscoPlasticity` brick · Have a look at the `MFront` gallery · Write your constitutive equations as a system of ordinary differential equations using tensorial notations · Select your integration algorithm · Write your discretized equations by hand using tensorial notations … (+3)
+- `glossary.md` — **Description of the TFEL glossary** (19 kB)
+  - The `AxialDeformationGradient` entry · Notes · The `AxialGrowth` entry · The `AxialStrain` entry · Notes · The `AxialStress` entry · Notes · The `B10BurnUp` entry … (+118)
+- `greenplasticity.md` — **Implementing an isotropic elliptic yield criterion of the Green type** (13 kB)
+  - Description of the behaviour · Elastic behaviour · Plastic flow · Integration algorithm · State variables · Plastic loading case · Elastic loading case · Implementation … (+4)
+- `HookeStressPotential.md` — **Description of the Hooke stress potential** (9 kB)
+  - Evolution of the elastic strain · Computation of the stress · First case: the stiffness tensor is available · Second case: the stiffness tensor is not available · Enforcement of the plane stress conditions: computation of the axial strain · Enforcement of the generalised plane stress conditions: computation of the axial strain · Generic computation of the tangent operator · Computation of the elastic prediction of the stress … (+1)
+- `hosford.md` — **Implementation of a perfect plastic behaviour using the Hosford equivalent stress** (24 kB)
+  - Description · Elasticity · Plasticity · Implicit scheme · Choice of the state variables · Elastic prediction · Equations governing the material evolution under plastic loading · Implementation … (+20)
+- `hyperelasticity.md` — **How to implement a hyperelastic behaviour in MFront** (10 kB)
+  - A first class of hyperelastic behaviours · Computation of the second Piola-Kirchhoff stress · Computation of consistent tangent operator · A second class of hyperelastic behaviours · Derivatives of the invariants of the isochoric right Cauchy tensor · General derivation of the second Piola-Kirchhoff stress and its derivative · Application to the Signorini behaviour · Odgen Hyperelastic behaviours
+- `hyperviscoelasticity.md` — **How to implement an hyperviscoelastic behaviour in MFront** (5 kB)
+  - Computation of the Cauchy stress · Evolution of the overstresses · Computation of second Piola-Kirchhoff stress · Computation of the Cauchy stress · Computation of the consistent tangent operator
+- `implicit-dsl.md` — **The `Implicit` domain specific language** (25 kB)
+  - Description · Available algorithms · Notes about updating auxiliary state variable or local variables in the `Integrator` code blocks when the numerical evaluation of the jacobian is requested · Failure of the evaluation of the residual for a perturbed estimate · Homotopy · Computation of the consistent tangent operator · Computation of the consistent tangent operator for small strain behaviours · Extension to generalised behaviours … (+1)
+- `Implicit-keywords.md` — **Implicit keywords** (102 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@AdditionalConvergenceChecks` keyword · Example · The `@Algorithm` keyword · Example (Runge-Kutta dsl) · Example (Implicit dsl) … (+234)
+- `ImplicitBerveillerZaouiPolyCrystals.md` — **Implicit integration of the constitutive equations of a polycrystal obtained by the Berveiller-Zaoui homogeneization scheme** (37 kB)
+  - Introduction · Notations · Constitutive equations · The Berveiller-Zaoui homogeneization scheme · Intra-granular constitutive behavior · Implicit integration scheme · Former implicit integration schemes · Choice of the integration variables … (+8)
+- `ImplicitCZM-keywords.md` — **ImplicitCZM keywords** (99 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@AdditionalConvergenceChecks` keyword · Example · The `@Algorithm` keyword · Example (Runge-Kutta dsl) · Example (Implicit dsl) … (+231)
+- `ImplicitFiniteStrain-keywords.md` — **ImplicitFiniteStrain keywords** (101 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@AdditionalConvergenceChecks` keyword · Example · The `@Algorithm` keyword · Example (Runge-Kutta dsl) · Example (Implicit dsl) … (+232)
+- `ImplicitGenericBehaviour-keywords.md` — **ImplicitGenericBehaviour keywords** (103 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@AdditionalConvergenceChecks` keyword · Example · The `@AdditionalTangentOperatorBlock` keyword · Example · The `@AdditionalTangentOperatorBlocks` keyword … (+240)
+- `ImplicitII-keywords.md` — **ImplicitII keywords** (101 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@AdditionalConvergenceChecks` keyword · Example · The `@Algorithm` keyword · Example (Runge-Kutta dsl) · Example (Implicit dsl) … (+232)
+- `ImplicitModel-keywords.md` — **ImplicitModel keywords** (102 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@AdditionalConvergenceChecks` keyword · Example · The `@AdditionalTangentOperatorBlock` keyword · Example · The `@AdditionalTangentOperatorBlocks` keyword … (+235)
+- `index.md` — **MFront, a code generation tool dedicated to material knowledge** (6 kB)
+  - Overview · Getting Started · Development & Contribution · Release Notes & History · Community & Support · Licences
+- `initializers.md` — **Initialize state of behaviours** (2 kB)
+- `install-freebsd.md` — **Installing TFEL/MFront on FreeBSD** (1 kB)
+  - `python` bindings
+- `install-windows-Cast3M2017.md` — **How to build and use TFEL and MFront on Windows with the MinGW compiler delivered with Cast3M 2017** (8 kB)
+  - Notes on the installation directory · Notes on `bat` scripts · About binary packages · Decompressing the archive · Prerequisites · Getting the sources using `git` · Cloning the repository · Updating the repository … (+7)
+- `install-windows-msys.md` — **Installing TFEL/MFront on [Windows](http://windows.microsoft.com) in the [`MSYS2`](https://www.msys2.org/) environment** (4 kB)
+  - Installing and updating [`MSYS2`](https://www.msys2.org/) · Installing [`MSYS2`](https://www.msys2.org/) · Updating [`MSYS2`](https://www.msys2.org/) · Installing essential setup requirements · Cloning the `TFEL` repository · Compiling and installing `TFEL` · Verifying the installation · Setting up the environment … (+2)
+- `install-windows-VisualStudio.md` — **How to build and use TFEL and MFront on Windows with the Visual Studio compiler** (7 kB)
+  - Notes on the installation directory · Notes on `bat` scripts · Decompressing the archive · Prerequisites · Getting the sources using `git` · Cloning the repository · Updating the repository · Compiling `MFront` … (+5)
+- `install.md` — **Installing `TFEL/MFront`** (19 kB)
+  - Prerequisites · Compilers · Third party libraries · Third party tools · Downloading the source · Configuration · Creating a `build` directory · Using the `cmake` build system … (+9)
+- `interfaces.md` — **Interfaces** (1 kB)
+  - Rationale
+- `IsotropicLinearHardeningPlasticity.md` — **How to implement an isotropic plastic behaviour with isotropic linear hardening in MFront** (20 kB)
+  - Description of the behaviour · Elastic behaviour · Plastic flow · Integration algorithm · Expression of the plastic strain increment · Expression of the elastic strain increment · Expression of the consistent tangent operator · Fully implicit implementation … (+7)
+- `IsotropicMisesCreep-keywords.md` — **IsotropicMisesCreep keywords** (81 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@Author` keyword · Example · The `@AuxiliaryModel` keyword · Example · The `@AuxiliaryStateVar` keyword … (+188)
+- `IsotropicMisesPlasticFlow-keywords.md` — **IsotropicMisesPlasticFlow keywords** (81 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@Author` keyword · Example · The `@AuxiliaryModel` keyword · Example · The `@AuxiliaryStateVar` keyword … (+188)
+- `isotropicplasticityamstrongfrederickinematichardening.md` — **How to implement an isotropic viscoplastic behaviour combining isotropic hardening and multiple kinematic hardenings following an Armstrong-Frederic evolution of the back stress** (17 kB)
+  - Description of the behaviour · Elastic behaviour · Viscoplastic behaviour · Evolution of the isotropic hardening · Evolution of the kinematic hardenings · \(\theta\)-scheme · Computation of the jacobian · Implementation … (+2)
+- `IsotropicPlasticMisesFlow-keywords.md` — **IsotropicPlasticMisesFlow keywords** (81 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@Author` keyword · Example · The `@AuxiliaryModel` keyword · Example · The `@AuxiliaryStateVar` keyword … (+188)
+- `IsotropicStrainHardeningMisesCreep-keywords.md` — **IsotropicStrainHardeningMisesCreep keywords** (84 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@Author` keyword · Example · The `@AuxiliaryModel` keyword · Example · The `@AuxiliaryStateVar` keyword … (+189)
+- `iwan.md` — **Implementation of the Iwan behaviour** (1 kB)
+- `libraries_usage.md` — **Using the `TFEL` libraries in `C++`** (6 kB)
+  - Using `tfel-config` · Paths · Compilation flags · Selection of the libraries · Examples of usage · Using `cmake` · Example of usage · Exported variables
+- `LoadInducedThermalStrainBehaviourTorelli2018.md` — **How to implement Torelli 2018 load induced thermal strain behaviour** (17 kB)
+  - Description · Elastic behaviour · Load induced thermal strain · Implicit scheme · Implementation · Choice of the domain specific language · Choice of the behaviour name · Metadata … (+10)
+- `madnex.md` — **Support of `madnex` files in `MFront`** (20 kB)
+  - Compilation of `TFEL` with `madnex` files support · `mfront` usage · Alternative way to select a single material knowledge (material property, behaviour, model) in a `madnex` file · Add a `madnex` file to the search paths · Automatic declaration of a `madnex` input file as a `madnex` search path · `mfront` python module · `mtest` usage · Executing a test stored in a `madnex` file … (+15)
+- `MassonAffineFormulation.md` — **Affine formulation for homogenization of a viscoplastic polycrystal** (27 kB)
+  - The viscoplastic polycrystal · Behaviour · The non-linear homogenization problem · The affine formulation · The affine linearization · Macroscopic stress and tangent operator · Summary and possible implementations · Summary … (+7)
+- `material-properties.md` — **Material properties in `MFront`** (42 kB)
+  - Introduction · First implementation and first tests in `Python` · Creating a first `MFront` file · Compilation of the `MFront` file as a `python` module · Testing · Description of the `MFront` implementation · Improvements · Associating the material property to a material … (+16)
+- `MaterialLaw-keywords.md` — **MaterialLaw keywords** (22 kB)
+  - The `;` keyword · The `@Author` keyword · Example · The `@Bounds` keyword · Effect · Example · The `@Constant` keyword · Example … (+61)
+- `MaterialProperty-keywords.md` — **MaterialProperty keywords** (19 kB)
+  - The `;` keyword · The `@Author` keyword · Example · The `@Bounds` keyword · Effect · Example · The `@Constant` keyword · The `@DSL` keyword … (+52)
+- `math.md` — **Overview of the mathematical libraries shipped with TFEL** (5 kB)
+  - The `TFELMath` library · The `TFELMathCubicSpline` library · The `TFELMathKriging` library · The `TFELMathParser` library · The `Evaluator` class
+- `MericCailletaudSingleCrystalPlasticity.md` — **How to implement the Méric-Cailletaud single crystal behaviour** (36 kB)
+  - Description of the behaviour · Elastic behaviour · Viscoplastic behaviour · Integration algorithm · Implicit system by direct discretization · Reduction of the number of unknowns · Implementation using a numerical jacobian · Choice of the domain specific language … (+15)
+- `mfm-test-generator.md` — **mfm-test-generator** (5 kB)
+  - Usage · Command line options · Syntax of the input file · Extensions · Description of the "UniaxialTensileTest" test case · Input file example · The "ClosedPipeTest" test · Input file example
+- `mfm.md` — **The mfm tool** (2 kB)
+  - Filters · Other command line options · Usage
+- `mfront-compatibility-modes.md` — **Compatibility modes in `MFront`** (12 kB)
+  - Available compatibility modes · Default compatibility mode · Setting the compatibility mode · Globally: the `--default-compatibility-mode` argument · For a given file: the `compatibility_mode` `DSL` option · Effect on the generated code · Knowing the compatibility mode of an asset · The `future` compatibility mode … (+2)
+- `mfront-doc.md` — **mfront-doc: a documentation generator from MFront files** (1 kB)
+  - Description · A minimalistic Example
+- `mfront-python.md` — **The `mfront` module** (17 kB)
+  - Introduction · behaviour description · a deeper look at the 3D case · The `AbstractDSL` class · Generating an object of type `AbstractDSL` · Using the `AbstractDSL` class · loop over (to be) generated libraries · Generating outputs … (+9)
+- `mfront-query.md` — **Description of mfront-query** (11 kB)
+  - Introduction · Usage · General queries · List of dependencies of an `MFront` file · Querying information about parameters in `mfront-query` · Querying the name of the parameters' file through `mfront-query` · The `--generated-sources` query · Retrieve the sources associated with specific targets … (+12)
+- `mfront-types.md` — **Predefined aliases in MFront** (11 kB)
+  - Variable declaration · Integers variables in template arguments · Tensorial objects automatically imported from `TFEL/Math` · The `quantity` type · The `derivative_type` alias · The `inverse_type` alias · The `result_type` alias · Type aliases … (+11)
+- `Model-keywords.md` — **Model keywords** (25 kB)
+  - The `;` keyword · The `@Author` keyword · Example · The `@Bounds` keyword · Effect · Example · The `@Coef` keyword · The `@ConstantMaterialProperty` keyword … (+69)
+- `models.md` — **Models** (1 kB)
+- `MohrCoulomb.md` — **Invariant-based implementation of the Mohr-Coulomb elasto-plastic model in OpenGeoSys using MFront** (41 kB)
+  - Description of the behaviour · Elastic behaviour · Yield surface · Plastic potential · Plastic flow rule · Integration algorithm · Plastic loading case · Elastic loading case … (+20)
+- `MTest-keywords.md` — **MTest keywords** (64 kB)
+  - The `@AccelerationAlgorithm` keyword · Example: · The `@AccelerationAlgorithmParameter` keyword · Example · The `@Author` keyword · Example: · The `@Behaviour` keyword · Available interfaces … (+189)
+- `mtest-nonlinear-constraints.md` — **On physical interpretations of Lagrange multipliers for kinematic and static constraints in MTest** (12 kB)
+  - Introduction · Nonlinear constraints · On the physical meaning of a constraint · Normalisation policy · Examples · Pitfalls · Example: Caculation of pore pressure in undrained stress paths in `MTest` · Theory … (+3)
+- `mtest-python.md` — **The MTest Python API** (24 kB)
+  - The `MaterialProperty` class · Description · Usage · using a dictionary · for material properties with only one argument · using a dictionary · for material properties with only one argument · The `Behaviour` class … (+34)
+- `mtest.md` — **MTest: unit testing of behaviours** (4 kB)
+  - Overview · Usage · Getting help · Simulation of a material point · Example · References
+- `MultipleIsotropicMisesFlows-keywords.md` — **MultipleIsotropicMisesFlows keywords** (84 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@Author` keyword · Example · The `@AuxiliaryModel` keyword · Example · The `@AuxiliaryStateVar` keyword … (+191)
+- `news.md` — **News** (79 kB)
+  - Next MFront User Day on October 17, 2019 (4/09/2019) · New FEniCS tour of elastoplasticity using the `MFront` code generator (24/01/2019) · `TFEL` is available as a `spack` package (27/11/2018) · Introducing the MFrontGenericInterfaceSupport project (11/09/2018) · Announcing the fourth MFront User Day (28/06/2018) · Follow the `TFEL/MFront` project on ResearchGate (28/06/2018) · A seminar introducing `TFEL/MFront` at Centrale Lille (21/06/2018) · A seminar about `TFEL/MFront` at the ENSMM (7/06/2018) … (+79)
+- `Norton-full.md` — **Norton behaviour description** (3 kB)
+  - Norton behaviour description · Variables · Code documentation
+- `Norton-mfront.md` — **Norton-mfront** (1 kB)
+- `Norton-web.md` — **Norton behaviour description** (2 kB)
+  - Norton behaviour description · Source code
+- `ogden.md` — **Implementation of the Ogden hyperelastic behaviour** (12 kB)
+  - Description · Implementation · Computation of the Cauchy stress · Computation of the consistent tangent operator
+- `orthotropiclinearhardeningplasticity.md` — **How to implement an orthotropic plastic behaviour with isotropic linear hardening in MFront** (12 kB)
+  - Description of the behaviour · Elastic behaviour · Plastic flow · Integration algorithm · Plastic loading case · Elastic loading case · Implementation · Preamble … (+2)
+- `packages.md` — **Creating packages for TFEL/MFront** (4 kB)
+  - Building portable binaries · The meaning of portable · Special configuration option · Generating packages · Basic steps · List of components · Building debian packages · Building `RPM` packages for `Mageia` (\(64\) bits) … (+1)
+- `parameters.md` — **Parameters in MFront** (7 kB)
+  - Rationale · Defining a parameter · Modifying a parameter at runtime · Examples of modifying the calling solver input file · External file · Querying information about parameters in `mfront-query` · List of parameters · Querying the default value of a parameter … (+2)
+- `phasefield.md` — **Phase field approach of brittle fracture with the Cast3M finite element solver** (5 kB)
+  - Description of the phase field approach · Defining a volumic energy associated to fracture · Choice of the free energy · Definition of the free energy for the phase-field behaviour · Definition of the stress · Thermodynamic force associated with the damage · Implementation · References
+- `physical-constants.md` — **List of physical constants** (13 kB)
+  - Values of the physical constants · Versioned values · `C++` · Quantities · `Python` · `Fortran` · Changing the values of the physical constants · Known limitations … (+1)
+- `PonteCastaneda1992.md` — **Ponte-Castaneda variational bound for homogenization in non-linear elasticity** (15 kB)
+  - Ponte-Castaneda variational bound · The non-linear homogenization problem · The variational bound · Macroscopic stress and tangent operator · Summary and possible implementations · Implementation in MFront · Example used for the implementation · Details of implementation … (+1)
+- `post-processings.md` — **Post-processings of behaviours** (3 kB)
+- `ptest.md` — **Simulation of pipes in MTest** (14 kB)
+  - Usage · Getting help on the command line · A simple tutorial · Overview and modeling hypotheses · Behaviours · Example of usage · Geometry and finite element discretization · Geometry … (+19)
+- `publications.md` — **Publications** (5 kB)
+- `RambergOsgoodNonLinearElasticity.md` — **Non linear elasticity of the Ramberg-Osgood type** (12 kB)
+  - Description of the behaviour · Algorithm · Computation of the stress · Computation of the tangent operator · Implementation · Choice of domain specific language · Name of the behaviour · Metadata … (+10)
+- `release-howto.md` — **Release howto** (4 kB)
+  - Running the sanitized tests
+- `release-notes.md` — **Release notes** (5 kB)
+  - Major versions · Minor versions · Versions 2.0.x · Version 2.0.0 · Version 2.0.1 · Version 2.0.2 · Version 2.0.3 (9/09/2015) · Version 2.0.4 (22/09/2015) … (+6)
+- `RungeKutta-keywords.md` — **RungeKutta keywords** (83 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@Algorithm` keyword · Example (Runge-Kutta dsl) · Example (Implicit dsl) · The `@Author` keyword · Example … (+194)
+- `RungeKuttaFiniteStrain-keywords.md` — **RungeKuttaFiniteStrain keywords** (83 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@Algorithm` keyword · Example (Runge-Kutta dsl) · Example (Implicit dsl) · The `@Author` keyword · Example … (+194)
+- `RungeKuttaGenericBehaviour-keywords.md` — **RungeKuttaGenericBehaviour keywords** (85 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@AdditionalTangentOperatorBlock` keyword · Example · The `@AdditionalTangentOperatorBlocks` keyword · Example · The `@Algorithm` keyword … (+202)
+- `RungeKuttaModel-keywords.md` — **RungeKuttaModel keywords** (85 kB)
+  - The `;` keyword · The `@APosterioriTimeStepScalingFactor` keyword · The `@APrioriTimeStepScalingFactor` keyword · The `@AdditionalTangentOperatorBlock` keyword · Example · The `@AdditionalTangentOperatorBlocks` keyword · Example · The `@Algorithm` keyword … (+197)
+- `Sachs.md` — **Implementation of Sachs/Reuss homogenization scheme with a BehaviourVariable** (12 kB)
+  - Sachs homogenization scheme · Resolution of the non-linear system · Implementation in MFront · Results
+- `sanitizers.md` — **Running sanitized tests** (6 kB)
+  - Choosing the sanitizers · Standard library hardening · Building and running the tests · Known pitfalls · Going further
+- `search.md` — **Search on this website using Google Custom Search** (1 kB)
+- `signorini.md` — **Implementation of the Signorini hyperelastic behaviour** (13 kB)
+  - Description · Implementation · Computation of the Cauchy stress · Computation of the consistent tangent operator · References
+- `singlecrystal.md` — **Description of the slip systems, orientation tensors and of the interaction matrices of single crystal and their usage** (15 kB)
+  - Description of the slip systems, orientation tensors and of the interaction matrices · Crystal structure · Definition of the slip systems · Definition of the interaction matrix · Definition of the interaction matrix used to evaluate the effect of all the dislocation on the mean free path of dislocations of a specific system · Usage in practice · Number of slip systems · Data structure generated … (+4)
+- `sovs.md` — **Skorohold-Olevsky Viscous Sintering (SOVS) model** (22 kB)
+  - About the Skorohold-Olevsky Viscous Sintering (SOVS) model · Description · Elasticity · Viscosity · Evolution of the relative density · Implicit scheme · Implicit equation associated with the elastic strain · Implicit equation associated with the trace of the inelastic strain … (+17)
+- `StandardElastoViscoPlasticityBrick-PorousPlasticity.md` — **Extension of the StandardElastoViscoPlasticity brick to porous materials** (93 kB)
+  - Introduction · Outline · General framework · Stress criteria · Nucleation terms · Implicit schemes · Standard implicit scheme · A staggered approach … (+19)
+- `StandardElastoViscoPlasticityBrick.md` — **Description of the `StandardElastoViscoPlasticity` brick** (51 kB)
+  - A detailed Example · List of available stress potentials · The Hooke stress potential · The `IsotropicDamage` stress potential · The `DDIF2` stress potential · Inelastic flows · Generalities · List of available inelastic flows … (+5)
+- `Taylor.md` — **Implementation of Taylor/Voigt homogenization scheme with a BehaviourVariable** (9 kB)
+  - Taylor homogenization scheme · Implementation in MFront · Creation of the `@BehaviourVariable` · Implementation of Taylor scheme · Results
+- `tensors.md` — **Second and fourth-order tensor objects in `TFEL/Math`** (48 kB)
+  - Classes describing second and fourth order tensors · Symmetric second order tensors · Vector notations for symmetric tensors · General (non symmetric) second order tensors · Vector notations for non symmetric tensors · Fourth order tensors · Standard operations · Basic operations … (+24)
+- `testing-fuzzing.md` — **Fuzz testing the tokenizer with libFuzzer** (18 kB)
+  - Why the tokenizer is fuzzed · Requirements · Configuring the analyses · Building and running the analyses · Corpus and artifacts · The `mfront-fuzzing` analysis · The `cxx-fuzzing` analysis · Treating a failure … (+3)
+- `tfel-check.md` — **Automation of unit-tests of scientific tools using tfel-check** (28 kB)
+  - Overview · Basic usage · Parallelization · A first example · A more complex example · Command failure handling · Description of the input files · List of available keywords … (+12)
+- `tfel-compatibility-modes.md` — **Compatibility modes in the `TFEL` libraries** (8 kB)
+  - Principle of the versioned entities · Naming convention · Example · Versioned language bindings · Adding a new compatibility mode · Known limitations · See also
+- `tfel-config.md` — **Overview of the TFEL/Config library** (4 kB)
+  - `getTFELDefaultSubstitutions`: TFEL's default substitutions
+- `tfel-material-homogenization.md` — **Introduction** (62 kB)
+  - Introduction · Eshelby, Hill and localisation tensors · Theoretical background · Computation in isotropic reference medium · Computation in anisotropic reference medium · Two-phase composites · Homogenization schemes · Second-moments of the strains (Hashin-Shtrikman two-phase composite) … (+8)
+- `tfel-material.md` — **The TFEL/Material library** (14 kB)
+  - Equivalent stress · Hosford equivalent stress · Barlat equivalent stress · General functionalities · Computation of the inverse of the Langevin function · Example of usage · \(\pi\)-plane · Orthotropic axes convention … (+1)
+- `tfel-math-data-interpolation.md` — **Data interpolation in TFEL/Math** (1 kB)
+  - Linear interpolation · Notes · Example of usage
+- `tfel-math-numerical-integration.md` — **Numerical integration in the TFEL/Math library** (5 kB)
+  - 1D integration · Gauss-Kronrod adapative scheme
+- `tfel-math.md` — **Overview of some features of the TFEL/Math library** (50 kB)
+  - Mathematical objects · Quantities · A generic framework to build tensorial-like objects · Description of the `IndexingPolicy` concept · Low rank mathematical objects · Higher order objects defined as derivatives · Expressions templates · Views … (+3)
+- `tfel-mfront-database.md` — **Overview of the TFELMFrontDatabase library** (3 kB)
+  - Overview · Filling the database · Querying entry points
+- `tfel-physical-constants.md` — **The `TFEL/PhysicalConstants` library** (2 kB)
+  - Description of the library · Bindings · Physical constants
+- `tfel-python.md` — **Overview of the TFEL modules** (30 kB)
+  - The `tfel.math` module · Bindings related to the `tvector` class · Bindings related to the `stensor` class · Bindings related to the `st2tost2` class · Walpole Basis · The `tfel.material` module · Bindings related to the \(\pi\)-plane · Bindings related to the Hosford equivalent stress … (+16)
+- `TFELSystem.md` — **Using the TFELSystem library to retrieve metadata about material properties and behaviours generated by MFront** (4 kB)
+  - Overview of the  functionalities provided by the`TFEL/System` library · The `ExternalMaterialKnowledgeDescription` class · Overview of the `ExternalMaterialKnowledgeDescription` class · The `ExternalMaterialPropertyDescription` class · Overview of the `ExternalMaterialPropertyDescription` class · Example of usage · The `ExternalBehaviourDescription` class · Overview of the `ExternalBehaviourDescription` class … (+5)
+- `TFELTests.md` — **TFELTests - Unit Testing Framework** (11 kB)
+  - Overview · Key Features · Test Organization · Assertion Macros · Output Formats · Automatic Test Registration · Usage · Basic Test Case … (+15)
+- `theory.md` — **Nonlinear mechanical behaviours of materials** (35 kB)
+  - Preliminary mathematical results · Tensors · Symmetric tensors · Kinematics · Deformation of a body · Mechanical equilibrium · Cauchy stress · Infinitesimal perturbation theory … (+24)
+- `tutorial-spanish.md` — **A Spanish introduction to MFront and Salome-MECA** (79 kB)
+  - Generación de la librería con `MFront` · Generación de un modelo de estudio geométrico con Salome Meca · Mallado del modelo · Cálculo mecánico con el módulo Aster · Modificación del archivo .comm para incluir la librería
+- `tutorial.md` — **Introduction à MFront** (9 kB)
+  - Comment écrire une loi de comportement: la loi de comportement de Norton · Discrétisation implicite de loi de Norton · Première implantation · Premier test · Références
+- `unicode.md` — **UTF-8 support in MFront** (3 kB)
+  - Common symbols · List of all supported symbols · Greek letters · Mathematical operators · Mathematical symbols · Superscripts and subscripts
+- `zmat.md` — **MFront usage in ZeBuLoN** (1 kB)
+  - Compilation of the behaviour · Usage in [ZeBuLoN](http://www.zset-software.com/products/zebulon)
+
+## doc
+
+- `doc/crossdomain.md` — **crossdomain.xml** (1 kB)
+  - crossdomain.xml
+- `doc/css.md` — **The CSS** (5 kB)
+  - The CSS · Normalize.css · HTML5 Boilerplate defaults · Common helpers · Media Queries · Print styles
+- `doc/extend.md` — **Extend and customise HTML5 Boilerplate** (20 kB)
+  - Extend and customise HTML5 Boilerplate · DNS prefetching · Search · Internet Explorer · Social Networks · URLs · News Feeds · App Stores … (+3)
+- `doc/faq.md` — **Frequently asked questions** (2 kB)
+  - Frequently asked questions
+- `doc/html.md` — **The HTML** (6 kB)
+  - The HTML · Conditional `html` classes · The `no-js` class · The order of meta tags, and `<title>` · X-UA-Compatible · Mobile viewport · Favicons and Touch Icon · Modernizr … (+1)
+- `doc/js.md` — **The JavaScript** (1 kB)
+  - The JavaScript · main.js · plugins.js · vendor
+- `doc/misc.md` — **Miscellaneous** (1 kB)
+  - Miscellaneous · .gitignore
+- `doc/TOC.md` — **HTML5 Boilerplate documentation:** (1 kB)
+  - HTML5 Boilerplate documentation: · Getting started · The core of HTML5 Boilerplate · Development · Related projects
+- `doc/usage.md` — **Usage** (3 kB)
+  - Usage · Basic structure
+
+## release-notes
+
+- `release-notes/release-notes-2.0.5.md` — **Overview of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Overview of `TFEL`, `MFront` and `MTest` · Tickets fixed · Ticket #38:  Bad normalisation of the tensor when computing eigenvalues · Ticket 39: Handling of Lagrange Multiplier in the ImposedDrivingVariable class · Ticket 44: `mtest` `@OutputFile` error: output file name already defined · Ticket #162: The `tfel::material::computeAlteredElasticStiffness` function  is wrong in  plane stress and axisymmetrical generalised plane stress
+- `release-notes/release-notes-3.0.1.md` — **Overview of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Overview of `TFEL`, `MFront` and `MTest` · Tickets fixed · Ticket 38:  Bad normalisation of the tensor when computing eigenvalues · Ticket #35: regression when using `@CastemFiniteStrainStrategy` or `@CastemFiniteStrainStrategies` in the `castem` interface
+- `release-notes/release-notes-3.0.10.md` — **Release notes of the 3.0.10 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue #17: [mtest]  Unsupported degenerated case when defining the rotation matrix using Miller' indices · Issue #16: [mtest] Unnecessary  brackets when declaring rotation matrix using Euler conventions · Issue #14: [aster interface] The 3D modelling hypothesis must always be defined
+- `release-notes/release-notes-3.0.11.md` — **Release notes of the 3.0.11 version of `TFEL`, `MFront` and `MTest`** (2 kB)
+  - Issues fixed · Issue #326: Support for Intel's compiler `icx` · Issue #320: [mfront] `HeatFlux` can't be use as a glossary name · Issue #309: [mfront] Profiling is broken when using logarithmic strain in the `abaqus` interface · Issue #308: [mfront] Profiling is broken when using logarithmic strain in the `europlexus` interface · Issue #307: [mfront] Profiling is broken when using logarithmic strain in the `ansys` interface · Issue #305: [mfront] Profiling is broken when using logarithmic strain in the `castem` interface · Issue 274: [mfront] Analysers not called while parsing `@Integrator` and `@Predictor` in implicit DSLs … (+7)
+- `release-notes/release-notes-3.0.12.md` — **Release notes of the 3.0.12 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue #415: [mtest] Interpreting data with a formula leads to invalid results · Issue #393: [mfront] Use cohesive zone model in axisymmetrical FE simulation with `Cast3M` · Issue #390: Fix build with `Fedora 38` · Issue #384: [mfront] the `cyrano::getModellingHypothesis` is not implemented properly · Issue #361: [mfront] State variables shall be rotated for orthotropic behaviours written using the native corotationnal frame · Issue #352: [mfront] generation of `MTest` file is broken when an unsymmetric tensor internal state variable is present
+- `release-notes/release-notes-3.0.13.md` — **Release notes of the 3.0.13 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 512: Backport PR 509 "Add PIE for some tools" to all rliv branches · Issue 487: [tfel-config] remove reference to svn revision · Issue 466: Fix build with gcc 13 · Issue 465: Thermal conductivity SI unit · Issue 460: [tfel-config] allow to modify the compiler flag associated with the `C++` standard · Issue 459: [mtest] correct the documentation of `@OutputFrequence`
+- `release-notes/release-notes-3.0.14.md` — **Release notes of the 3.0.14 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 619: [fortran] Add support for the `ifx` fortran compiler · Issue 610: [cmake] better support for using `TFEL` as a `CPM` dependency · Issue 605: update `octave` interface · Issue 583: [mtest] Fix typo when comparing tangent operator to its numerical approximation · Issue 580: [aster interface] Some fields are missing in the default implementation of the `AsterTraits` class
+- `release-notes/release-notes-3.0.15.md` — **Release notes of the 3.0.15 version of `TFEL`, `MFront` and `MTest`** (2 kB)
+  - Issues fixed · Issue 782: [tfel-system] `recursiveFind`: directory depths are not handled correctly. The flag selecting the treatment of errors is not passed correctly · Issue 769: Fix potential conflict between `@ComputeStressFressExpansion` and `@ComputeThermalExpansion` · Issue 757: cmake policy CMP0167 is only supported after 3..30.0 · Issue 755: Add support for the `nvc++` compiler · Issue 740: Support building with CMake 4.0.0 · Issue 746: [mfront] [mtest] Add support for substitutions in strings · Issue 742: Abaqus interface issue with Abaqus 2024 … (+6)
+- `release-notes/release-notes-3.0.16.md` — **Release notes of the 3.0.16 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 886: [mfront] reading parameters from a text file shall not be locale sensitive. `stod` shall not be used · Issue 885: [mfront] material properties shall read parameters using external names · Issue 884: [mfront] Isotropic DSLs can't be restricted to certain modelling hypothesis · Issue 882: Add support for AMD Fortran's compiler · Issue 743: `-Denable-glibcxx-debug=ON` seems to have no effects · Issue 801: [mfront] lower case the full name of the behavior law (1D ->1d)
+- `release-notes/release-notes-3.0.17.md` — **Release notes of the 3.0.17 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 983: [cmake] PYTHON_VERSION_MAJOR is deprecated in favour of Python_VERSION_MAJOR · Issue 971: [mfront] Trying to read a parameter file shall no modify the value of errno when the file is not present · Issue 964: [tfel-utilities] The second parameter of `CxxTokenizer::isValidIdentifier` is not taken into account correctly · Issue 953: Extending the precision of the default parameters value for material properties · Issue 948: [tfel-system] fix dir separator on `window` · Issue 892: [tfel-check] Specifying distinct columns for reference file and result file is broken
+- `release-notes/release-notes-3.0.18.md` — **Release notes of the 3.0.18 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Know incompatibilities · Issues fixed · Issue 998: [mfront] Missing factor of 1/2 in the `symmetric_product` function
+- `release-notes/release-notes-3.0.2.md` — **Tickets fixed** (16 kB)
+  - Tickets fixed · Ticket #93: Error declaring local variable · Ticket #92: Reading boolean values in `Data::read_value` is broken · Ticket #91: Parts of the implicit systems and jacobian matrix blocks by the `StandardElasticity` brick shall be inserted at the beginning of the `@Integrator` block, not at the end · Ticket #90: Wrong test on `BOOST_VERSION` version in `bindings/python/include/TFEL/Python/SharedPtr.hxx` · Ticket #89: StandardElasticity: bug when only one the plane stress modelling hypotheses is selected · Ticket #88: Error when treating axial growth: the axis along the growth is wrong · Ticket #87: The correction of the axial growth modifies all the stress free expansion treated so far … (+24)
+- `release-notes/release-notes-3.0.3.md` — **Tickets fixed** (2 kB)
+  - Tickets fixed · Ticket #97: Problem building the `python` bindings with a recent version of `boost` · Ticket #96: Building with the `musl` `c` library · Ticket #94: The `pymfronttest1` test shall not be executed if the `Aster` interface is not enabled
+- `release-notes/release-notes-3.0.4.md` — **Tickets fixed** (3 kB)
+  - Tickets fixed · Ticket #168: Fix another Windows' oddity: disabling the `small` macro · Ticket #163: MTest file generation: shear components of the strain are ill initialized · Ticket #156: Sub-stepping in the `Cast3M` interface is broken for true finite strain behaviours · Ticket #154: The `enable-portable-build` option does not work with `Visual Studio` · Ticket #151: Correct the python modules install path · Ticket #147: Improving material properties support with Visual Studio
+- `release-notes/release-notes-3.0.5.md` — **Tickets fixed** (2 kB)
+  - Tickets fixed · Ticket #193: Error in the computation of the consistent tangent operator in the `OrthotropicElastic5.mfront` and `OrthotropicElastic6.mfront` example · Ticket #188: Default constructor of the `qt` class is ill formed: noexcept specifier is not correctly defined · Ticket #185: Problem on transposition of fourth order tensor · Ticket #181: Runge-Kutta DSL does not handle `NaN` values · Ticket #180: "return false" doesn't work with some Runge-Kutta integrators · Ticket #178: Name of the python module is wrong under `Mac OS` · Ticket #175: Add `rpath` to the `TFEL` libraries when generating the library on `Mac Os` … (+2)
+- `release-notes/release-notes-3.0.6.md` — **Release notes of the 3.0.6 version of `TFEL`, `MFront` and `MTest`** (4 kB)
+  - Noticeable fixed issues that may affect the results obtained with previous versions · Tickets fixed · Ticket #256: Scalar products of unsymmetric tensors · Ticket #254: Register libraries for `ldconfig` · Ticket #246: Explicit implementation of the Berveiller-Zaoui homogeneisation scheme is inefficient · Ticket #244: Some header files related to MTest are not installed by `cmake` · Ticket #239: Missing `ostream` header for `gcc-10.1.0` · Ticket #238: `getPartialJacobianInvert` is broken for arrays of internal state variables … (+4)
+- `release-notes/release-notes-3.0.7.md` — **Release notes of the 3.0.7 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Tickets fixed · Ticket #266 [python bindings]: The `getBehaviourType` and `getBehaviourKinematic` of the `SingleStructureScheme` object methods returns unbinded objects · Ticket #264: Dynamically allocated local variables are not correctly handled in the `Default` DSLs · Ticket #261: Extending the precision of the output streams associated with the source files generated by `MFront` · Ticket #257: Use external compiler flags by default with the `spack` package manager
+- `release-notes/release-notes-3.0.8.md` — **Release notes of the 3.0.8 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Tickets fixed · Ticket #270: Fix uninitialized values in the `T91ViscoplasticBehaviour` example
+- `release-notes/release-notes-3.0.9.md` — **Release notes of the 3.0.9 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue #9: The `TFELCheck` library is not installed by `cmake`
+- `release-notes/release-notes-3.0.md` — **Overview of `TFEL`, `MFront` and `MTest`** (27 kB)
+  - Overview of `TFEL`, `MFront` and `MTest` · How to get `TFEL` and `MFront` · Highlights · New interfaces · Behaviour bricks · Pipe Modelling in `MTest` · New acceleration algorithms in `MTest` · A stable API to build external tools: application to the mechanical behaviours identification developed in the MAP plateform … (+8)
+- `release-notes/release-notes-3.1.1.md` — **New functionalities** (11 kB)
+  - New functionalities · `tfel-config` · Tickets fixed · Ticket #112: Documentation of the `@HillTensor` keyword · Ticket #113: Use the external name to define the default value of real parameters · Ticket #111: Have a flag stating if the implicit system is called for the evaluation of the jacobian by perturbation · Ticket #110: Numerically computed parts of the jacobian shall not be updated after convergence · Ticket #108: Imcompatibility between `@StrainMeasure Hencky` and `@ModellingHypothesis AxisymmetricalGeneralisedPlaneStrain` … (+13)
+- `release-notes/release-notes-3.1.10.md` — **Release notes of the 3.1.10 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.1.11.md` — **Release notes of the 3.1.11 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue #306: [mfront] Profiling is broken in the `cyrano` interface · Issue #204: [tfel-check] Invalid option `c` (must be `-c`) · Issue #184: [mfront] The output variable of a material property is only partially defined · Issue #71: [mfront] Single-crystal behaviours fails to compile with `intel/oneapi` (2021.1 and 2021.5) with `TFEL-3.4.3` · Issue #58: [mfront-doc] skip tests on internal data structure in the getData method · Issue #51: [mfront] Defining a gradient with external name "Temperature" do not trigger an error
+- `release-notes/release-notes-3.1.12.md` — **Release notes of the 3.1.12 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue #439: `@NumericallyComputedJacobianBlocks` : more than one scalar block
+- `release-notes/release-notes-3.1.13.md` — **Release notes of the 3.1.13 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.1.14.md` — **Release notes of the 3.1.14 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 600: Backport #599 to rliv branches
+- `release-notes/release-notes-3.1.15.md` — **Release notes of the 3.1.15 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue : Fix segfault in `FCString` when assigning a narrow view · Issue 671: [python] python module extension is incorrect · Issue 663: [tfel-utilities] Fix `FCString::strnlen`
+- `release-notes/release-notes-3.1.16.md` — **Release notes of the 3.1.16 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 827: [mfront] `@StrainMeasure` shall not be allowed after the first code block · Issue 784: [ansys] Plane stress support is broken
+- `release-notes/release-notes-3.1.17.md` — **Release notes of the 3.1.17 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 976: [tfel-config] no `python` version displayed
+- `release-notes/release-notes-3.1.2.md` — **Tickets fixed** (7 kB)
+  - Tickets fixed · Ticket #131: Plane stress support in `Abaqus/Explicit` is broken · Ticket #130: The size of arrays of parameters can't be declared using integer constants · Ticket #129: Arrays of parameters are not supported in simple precision · Ticket #128: Generation of `MTest` files throws an exception which can't be caught by `Cast3M` in case of forced convergence · Ticket #127: Substepping in the `Cast3M` and `Cyrano` interface may lead to an invalid convergence due to integer overflow · Ticket #126: Jacobian error in `DDIF2Base.ixx` · Ticket #125: Compiling on gcc 8.0.1 (Fedora 28) fails … (+9)
+- `release-notes/release-notes-3.1.3.md` — **Tickets fixed** (2 kB)
+  - Tickets fixed · Ticket #139: Invalid system flags when using the official `castem.h` header for `Cast3M 2018` · Ticket #138: Profiling is broken when one of the following code blocks is defined: `@APrioriTimeStepScalingFactor`, `@APosterioriTimeStepScalingFactor`, `@AdditionalConvergenceChecks` · Ticket #136: Removing unwanted output statements in windows · Ticket #135: Declaration error of 'material_properties_nb' in `CyranoBehaviourHandler` with the `cyrano` interface · Ticket #134: The `MFRONT_COMPILING` flag is not defined when using the `CMake` generator
+- `release-notes/release-notes-3.1.4.md` — **Tickets fixed** (2 kB)
+  - Tickets fixed · Ticket #155: Installation path with space characters for WIndows environment · Ticket #148: Library suffix is not taken into account by the `cmake` generator · Ticket #146: `ExternalLibraryManager::hasBounds` is broken · Ticket #144: Issue in the generic plane stress handler of the `Cast3M` interface · Ticket #143: Wrong detection of the ability to compute the disspated energy  in the `Abaqus/Explicit` interface
+- `release-notes/release-notes-3.1.5.md` — **Known issues** (1 kB)
+  - Known issues · Tickets fixed · Ticket #191: The interaction matrix aimed at describing the effets of hardening of the mean free path of dislocation is not correctly handled by the `SlipSystemsDescription` class · Ticket #190: The `FiniteStrainSingleCrystal` brick does not enforce that the plastic slips must be the second integraiton variables · Ticket #185: The `AngularCoordinate` material property shall not be defined in 1D by the DDIF2 brick · Ticket #183: The behaviour kinematic defined by the `abaqus` interface is wrong when using a strain measure**
+- `release-notes/release-notes-3.1.6.md` — **Release notes of the 3.1.6 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Noticeable fixed issues that may affect the results obtained with previous versions · Tickets fixed · Ticket #245: Example generated with the zmat behaviour misses the `**parameters` section · Ticket #199: The wrapping of the `setParameter` methods of the `mtest::Behaviour` class is missing in the `python` bindings
+- `release-notes/release-notes-3.1.7.md` — **Release notes of the 3.1.7 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Tickets fixed · Ticket #260: `BuildStensorFromMatrix` class is wrongly implemented · Ticket #259: Partial specialisation of `ComputeBinaryResult` is ill-formed for the product of a `Stensor` with an `T2toST2` object
+- `release-notes/release-notes-3.1.8.md` — **Release notes of the 3.1.8 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.1.9.md` — **Release notes of the 3.1.9 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue #279: Fix SlipSystemsDescription::InteractionMatrixStructure::getRank for hexagonal systems
+- `release-notes/release-notes-3.1.md` — **Highlights** (82 kB)
+  - Highlights · The gallery and the `MFrontGallery` project · Support for additional yield criteria · Enhanced numerical reproducibility and stability · Single crystal behaviours in `MFront` · The `DDIF2` brick · The `@StrainMeasure` keyword · Improved installation options … (+49)
+- `release-notes/release-notes-3.2.1.md` — **Associated projects release** (5 kB)
+  - Associated projects release · Tickets fixed · Ticket #166: The offset in material properties associated with the rotation matrix is not taken into account properly in the `Ansys` interface · Ticket #165: Integration failure is not always properly handled in the `Ansys` interface · Ticket #164: Prediction is not handled properly in the generic interface · Ticket #161: Buffer overflow in initial stress computation in the `generic` interface when using a strain measure · Ticket #153: `SignalManager.cxx` does not compile under `Mac OS` · Ticket #150: Option specification for additional keywords or variable substitution is inconsistent under Windows … (+4)
+- `release-notes/release-notes-3.2.10.md` — **Release notes of the 3.2.10 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue #489: [tfel-math] fix t2tost2::change_basis
+- `release-notes/release-notes-3.2.11.md` — **Release notes of the 3.2.11 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.2.12.md` — **Release notes of the 3.2.12 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 771:[Hooke stress potential] The initial_geometry_reference_temperature is not listed in the authorized options of the potential · Issue 765: [mfront] Fix numerical tests in the `Swift` and `Power` hardening rules · Issue 705: [mfront] fix the computation of the derivative of some isotropic hardening rules
+- `release-notes/release-notes-3.2.13.md` — **Release notes of the 3.2.13 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.2.14.md` — **Release notes of the 3.2.14 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 901: [ansys] usermatLib compilation error (cmake>=4.0)
+- `release-notes/release-notes-3.2.2.md` — **New MFront Features** (3 kB)
+  - New MFront Features · New algorithm to treat damage in the `DDIF2` stress potential · Issues solved · Ticket #192: DSL 'Implicit' definition · Ticket #187: Conversions in `Number::getCxxFormula` is biased by rounding errors · Ticket #186: "Less than" conditional is not correctly translated to `C++` by `tfel::math::Evaluator` · Ticket #182: Jacobian error in the SwiftIsotropicHardeningRule · Ticket #174: Using formulae with the Voce hardening rule is broken … (+3)
+- `release-notes/release-notes-3.2.3.md` — **Release notes of the 3.2.3 version of `TFEL`, `MFront` and `MTest`** (2 kB)
+  - Noticeable fixed issues that may affect the results obtained with previous versions · Issues solved · Ticket #249: Implementation of the Norton-Hoff in the StandardElastoViscoPlasticity brick may lead to negative equivalent plastic strain increment · Ticket #242: The factor in front of the hyperbolic sine is discarded when using the `HyperbolicSine` inelastic flow · Ticket #228: Many stress criteria of the StandardElastoViscoplasticity brick fail when compiling in C++-17 · Ticket #222: Handling stored and dissated energies is broken in `MTest` for `Abaqus/Standard` behaviours · Ticket #203: Cyrano` interface: compilation process hangs when treating behaviours based on the Hencky strain measure in `AxisymmetricalGeneralizedPlaneStress`
+- `release-notes/release-notes-3.2.4.md` — **Release notes of the 3.2.4 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.2.5.md` — **Release notes of the 3.2.5 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.2.6.md` — **Release notes of the 3.2.6 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.2.7.md` — **Release notes of the 3.2.7 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.2.8.md` — **Release notes of the 3.2.8 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue #190:  [tfel-utilities] Error in Data::read_map · Issue #163: [mfront] The equivalent stress is ill defined in the Plastic inelastic flow
+- `release-notes/release-notes-3.2.9.md` — **Release notes of the 3.2.9 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue #444: Fix the `IsotropicDamage` stress potential · Issue #432: UserDefinedViscoplasticity and Plastic flows · Issue #358: [mfront] Index error with interface cyrano, orthotropic behaviour and require stiffness tensor
+- `release-notes/release-notes-3.2.md` — **Documentation** (28 kB)
+  - Documentation · Updates in `TFEL` libraries · TFEL/Math · TFEL/Material · `python` bindings · New functionalities in `MFront` · The `StandardElastoViscoPlasticity` brick · Logarithmic strain framework support in the `cyrano` interface … (+11)
+- `release-notes/release-notes-3.3.1.md` — **Release notes of the 3.3.1 version of `TFEL`, `MFront` and `MTest`** (4 kB)
+  - Noticeable fixed issues that may affect the results obtained with previous versions · New features in `MTest` · Unicode characters in `MTest` · Tickets fixed · Ticket #255: Rate of gradients are not available in `@Derivative` for generic behaviours · Ticket #248: Symbols of time derivative in explicit DSLs are wrong · Ticket #247: Creating array of typed parameters is broken · Ticket #243: Generic behaviour interface: throwing an exception in the initialize method is not properly handled … (+14)
+- `release-notes/release-notes-3.3.10.md` — **Release notes of the 3.3.10 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed
+- `release-notes/release-notes-3.3.2.md` — **Release notes of the 3.3.2 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue #278: Fix reading a map of Data
+- `release-notes/release-notes-3.3.3.md` — **Release notes of the 3.3.3 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.3.4.md` — **Release notes of the 3.3.4 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 322: [cyrano interface] The output status does not match the specification when a variable is out of its bounds · Issue 268: Python binding of ExternalMaterialPropertyDescription class: error if no input variable in the MFront · Issue 142: [mfm-test-generator] handing of evolutions is broken in MTestInputFileGenerators for evolutions defined by a dictionary · Issue 141: [mtest] ThermalExpansion is not properly handled in the list of optional material properties by the Cast3MStandardBehaviour class for an isotropic behaviour · Issue #80: [mfront] The variable seq is defined twice by the `MohrCoulomb` stress criterion in case of non-associated flow
+- `release-notes/release-notes-3.3.5.md` — **Release notes of the 3.3.5 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.3.6.md` — **Release notes of the 3.3.6 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 597: Using the elastic material properties exported by the behaviour is broken for orthotropic behaviours in the `Cast3M` interface
+- `release-notes/release-notes-3.3.7.md` — **Release notes of the 3.3.7 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 718: [mfront] register tangent operator blocks as members
+- `release-notes/release-notes-3.3.8.md` — **Release notes of the 3.3.8 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.3.9.md` — **Release notes of the 3.3.9 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.3.md` — **Documentation and talks** (23 kB)
+  - Documentation and talks · New entries of the `MFront`' gallery · Talks of the fifth `MFront` User Day · Improvements to `MFront` · Unicode Support · Initial support for generalised behaviours · A new stress potential in the `StandardElastoViscoPlasticity` brick · Specifying a build identifier … (+23)
+- `release-notes/release-notes-3.4.1.md` — **Release notes of the 3.4.1 version of `TFEL`, `MFront` and `MTest`** (7 kB)
+  - Overview · Known incompatibilities · New reserved names · Change in the data structures used by the `generic` interface` · New features of the `TFEL/Glossary` library · New features of `MFront` · Support for `Cast3M 21` · The `amitex` interface … (+8)
+- `release-notes/release-notes-3.4.10.md` — **Release notes of the 3.4.10 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.4.2.md` — **Release notes of the 3.4.2 version of `TFEL`, `MFront` and `MTest`** (8 kB)
+  - New features of `MFront` · Ability to compute the interaction matrix manually · New features of `MTest` · Basic support for material properties · using a dictionary · for material properties with only one argument · using a dictionary · for material properties with only one argument … (+9)
+- `release-notes/release-notes-3.4.3.md` — **Release notes of the 3.4.3 version of `TFEL`, `MFront` and `MTest`** (5 kB)
+  - New features of `MFront` · Ability to implement point-wise models as a particular case of generic behaviours · New features of `MTest` · Support for point-wise models, i.e. generic behaviours without gradient, thermodynamic force nor tangent operator block · Support for the `amitex` interface · Issues solved · Issue #13: [mtest] Support for the `amitex` interface in `MTest` · Issue #12: [mtest] Add support for generic behaviours with no gradients, aka point-wise models … (+1)
+- `release-notes/release-notes-3.4.4.md` — **Release notes of the 3.4.4 version of `TFEL`, `MFront` and `MTest`** (11 kB)
+  - Known incompatilities · Known incompatilities in `MFront` · New features of `MFront` · Alternative way to select a single material knowledge (material property, behaviour, model) in a `madnex` file · New features of `mtest` · Imposed inner radius loading in pipe modelling · New features of `mfront-query` · New `--list-implementation-paths` query … (+33)
+- `release-notes/release-notes-3.4.5.md` — **Release notes of the 3.4.5 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues solved · Issue #412: [mfront] Error when trying to compile with `StandardElastoViscoplasticity` brick and porous stress criterion · Issue #409: [mfront] Problem with saving individual contributions to the porosity evolutions in dedicated auxiliary state variables · Issue #405: [amitex interface] Generation of the example input file leads to a infinite loop · Issue #366: Relative paths are not supported when dealing with `mdnx` files
+- `release-notes/release-notes-3.4.6.md` — **Release notes of the 3.4.6 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.4.7.md` — **Release notes of the 3.4.7 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-3.4.8.md` — **Release notes of the 3.4.8 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 707: Remove double initialization of `NumPy`
+- `release-notes/release-notes-3.4.9.md` — **Release notes of the 3.4.9 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 834: [mfront] fix invalid test in `PlasticInelasticFlow`
+- `release-notes/release-notes-3.4.md` — **New functionalities of the 3.4 version of `TFEL`, `MFront` and `MTest`** (30 kB)
+  - Overview · Some noticeable applications of `MFront` and `MGIS` in 2020 · Highlights · Simultaneous releases This version has been released along with: · Known incompatibilities · Noticeable fixed issues that may affect the results obtained with previous versions · Documentation · New features of the `TFEL` libraries … (+39)
+- `release-notes/release-notes-4.0.1.md` — **Release notes of the 4.0.1 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 443: [octave] Fix the octave interface
+- `release-notes/release-notes-4.0.2.md` — **Release notes of the 4.0.2 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 443: [octave] Fix the octave interface
+- `release-notes/release-notes-4.0.3.md` — **Release notes of the 4.0.3 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 571: [mtest] fix handling of the tangent operator blocks in the GenericBehaviour class · Issue 562: [cmake] fix enable-static option · Issue 542: Fix the `ConceptRebind` specialisation for `FixedSizeArrayDerivative` · Issue 524: [physical-constants] Units of the Stefan constant are wrong · Issue 524: [mfront] prevent importing a model not implemented using the Model DSL in behaviors · Issue 522: [mfront] Visual Studio 2022 compiler intrinsic type traits error C2139 · Issue 484: Allow `result_type` for `@StaticVariable`
+- `release-notes/release-notes-4.0.4.md` — **Release notes of the 4.0.4 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 648: Compilation with `clang-19` fails · Issue 615: [mfront] [c++-interface] Missing declaration of the `PhysicalConstants` class
+- `release-notes/release-notes-4.0.5.md` — **Release notes of the 4.0.5 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 738: `getIntegrationVariablesDerivatives` is broken for scalar gradients · Issue 703: `std::shared_ptr::unique` has been removed in `C++20`
+- `release-notes/release-notes-4.0.6.md` — **Release notes of the 4.0.6 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 840: [tfel-math] Fix io for views on `tmatrix` and `tvector` · Issue 818: [tfel-math] correct determinant of a `st2tost2`
+- `release-notes/release-notes-4.0.7.md` — **Release notes of the 4.0.7 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 938: [mfront] Use of `MakeQuantityReference` only if `use_qt` is `true` · Issue 934: [tfel-math] fix assignement of quantities with incompatible unit types · Issue 933: [mfront] the `use_qt` parameter shall alter the types declared using `quantity` · Issue 907: [tfel-math] fix `det` for `T2toT2` objects
+- `release-notes/release-notes-4.0.8.md` — **Release notes of the 4.0.8 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 1039: [mfront] consistent tangent operator is ill-declared for scalars when using quantities.
+- `release-notes/release-notes-4.0.md` — **Release notes of the 4.0 version of `TFEL`, `MFront` and `MTest`** (61 kB)
+  - Known incompatibilities · Changes to existing models · Rejuvenation of the `TFEL/Math` library · Description of some shortcomings of previous versions · Overview of the new design of the TFEL/Math library · New MFront features · Improvements to implicit DSLs · Issues fixed … (+5)
+- `release-notes/release-notes-4.1.1.md` — **Release notes of the 4.1.1 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 404: [mfront] Invalid treatments of variables bounds in the `Cast3M` and `generic` interfaces for models · Issue 402: [TFEL/Math] problem with `tfel::math::deviator` when compiling with `Sycl` · Issue 376: Add documentation for the keywords specific to the `Cast3M` interface · Issue 375: Invalid strain components when generating `MTest` files · Issue 364: [mfront] castem interface is broken for points wise models which are implemented as behaviours and which declares a consistent tangent operator · Issue 363: [mfront] Check number of material properties and state variables in the `Cast3M` interface for point-wise models · Issue 355: [MFront] Invalid implementation of the climb tensors
+- `release-notes/release-notes-4.1.2.md` — **Release notes of the 4.1.2 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 548: [generic-interface] Fix initialisation of array of material properties when quantities are used · Issue 541: [tfel-math] support for quantities in `computePushForwardDerivative` and `convertSecondPiolaKirchhoffStressDerivativeToFirstPiolaKirchoffStressDerivative` · Issue 540: Allow behaviour to call models with more than one output · Issue 519: [ImplicitCZM] Typo in ComputeCohesiveForce block · Issue 514: [material-properties] add try/catch blocks in interfaces for the C family (fortran, C, Cast3M)
+- `release-notes/release-notes-4.1.3.md` — **Release notes of the 4.1.3 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 589: [mfront-doc] Treat correctly the DSL option `parameters_as_static_variables` · Issue 586: [mfront-query] Treat correctly the DSL option `parameters_as_static_variables`
+- `release-notes/release-notes-4.1.4.md` — **Release notes of the 4.1.4 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 745: Fix `BehaviourDescription::requiresTVectorOrVectorIncludes` · Issue 716: [`mtest`] scalar variables defined using derivative_type are not properly handled · Issue 681: [mfront] External models (declared by `@Model`) are evaluated twice
+- `release-notes/release-notes-4.1.5.md` — **Release notes of the 4.1.5 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 839: [mfront] PhysicalConstants is inconsistently defined in material properties: quantities are always used, even if not requested · Issue 813: [implicit-dsl] smflag may not be defined for generalized behaviour · Issue 807: [mfront] Evaluation of external material properties shall be made *after* the evaluation of external models
+- `release-notes/release-notes-4.1.6.md` — **Release notes of the 4.1.6 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 951: [mfront] Correctly initialize the stress at the end of the time step when making a prediction for finite strain behaviours · Issue 937: [model] Difference between `castem` and `castem21` interfaces · Issue 935: [model] Temperature is required to be the first external state variable with `Cast3M` interface · Issue 915: [mfront] Check on the number of state variables is broken in the Cast3M interface for point-wise models · Issue 902: [castem] support for material properties in point-wise models is broken
+- `release-notes/release-notes-4.1.7.md` — **Release notes of the 4.1.7 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 985: [tfel-math] Fix the declaration of getStensorSize: remove the TFEL_HOST modifier
+- `release-notes/release-notes-4.1.md` — **Release notes of the 4.1 version of `TFEL`, `MFront` and `MTest`** (118 kB)
+  - Known incompatiblities · New restrictions in user defined variable names · New reserved keywords in `MFront` · `TFEL/Config` improvements · The `TFEL_HOST`, `TFEL_DEVICE` and `TFEL_HOST_DEVICE` macros · `TFEL/Exceptions` improvements · Disabling `reportContractViolation` on GPUs · `TFEL/System` improvements … (+175)
+- `release-notes/release-notes-4.2.1.md` — **Release notes of the 4.2.1 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 504: Add support for HIP
+- `release-notes/release-notes-4.2.2.md` — **Release notes of the 4.2.2 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 627: add aliases for libraries · Issue 581: [C++ interface] Fix support of quantities in `checkBounds`
+- `release-notes/release-notes-4.2.3.md` — **Release notes of the 4.2.3 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 714: [octave-interface] fix support for bounds on output when quantities are used · Issue 710: [mfront] fix support for bounds on output when quantities are used in C based interfaces
+- `release-notes/release-notes-4.2.4.md` — **Release notes of the 4.2.4 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+- `release-notes/release-notes-4.2.5.md` — **Release notes of the 4.2.5 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue #862: [diana-interface] Extension of `DIANA` interface to support 2D resolution
+- `release-notes/release-notes-4.2.6.md` — **Release notes of the 4.2.6 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed
+- `release-notes/release-notes-4.2.md` — **Release notes of the 4.2 version of `TFEL`, `MFront` and `MTest`** (7 kB)
+  - `TFEL/Math` improvements · Workspace of nonlinear solvers · `MFront` improvements · The `validator` DSL option · Allow to specify a directory where to save the `mtest` files in case of integration failure · Issues fixed · Issue 447: [mfront] Generation of MTest file shall be protected by a try/catch · Issue 446: [mfront] Allow to specify a validator … (+15)
+- `release-notes/release-notes-5.0.1.md` — **Release notes of the 5.0.1 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 764: [tfel-math] Remove the noexcept specifier in the nonlinear solvers · Issue 703: [octave] set `C++` standard to 20 when calling `mkoctfile` · Issue 664: compilation of the `ZMAT` interface  fails
+- `release-notes/release-notes-5.0.2.md` — **Release notes of the 5.0.2 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 867: Compilation fails with intel 2022 · Issue 854: [tfel-math] tfel::math::fpclassify is not usable in constexpr's context · Issue 843: [python bindings] fix call to `os.add_dll_directory` when `TFELHOME` is defined · Issue 798: [tfel-math] fix declaration of the data function in the `View` class
+- `release-notes/release-notes-5.0.3.md` — **Release notes of the 5.0.3 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 975: Fix `fpclassify` for `long double` · Issue 965: [clang] Fix declaration of `reportContractViolation` when compiling with `clang++` and `CUDA` offloading · Issue 918: `TFEL` fails to compile with older compilers since version 5.0.2 · Issue 917: Fix `TFELMFrontStaticConfig.cmake.in` and `TFELMaterialStaticConfig.cmake.in` · Issue 897: [python-bindings] `makeConstraintOptions` is not properly wrapped
+- `release-notes/release-notes-5.0.md` — **Release notes of the 5.0 version of `TFEL`, `MFront` and `MTest`** (18 kB)
+  - Tested configurations · New `TFEL/Utilities` features · Support for `C++` digit separator in `CxxTokenizer` · New `TFEL/Math` features · Tiny matrices product · New solver  eigen solver · New `TFEL/Material` features · Homogenization … (+17)
+- `release-notes/release-notes-5.1.1.md` — **Release notes of the 5.1.1 version of `TFEL`, `MFront` and `MTest`** (1 kB)
+  - Issues fixed · Issue 1048: [tfel-home] fix `--tfel-home` · Issue 963: Fix `CoalescedView` class and `map` function with `llvm-22.1.3` · Issue 947: [mfront] Warnings in Windows · Issue 913: `env.sh.in` shall not define the `PYTHONPATH` · Issue 911: [mfront] include of the slip-systems are not properly handled when the slip systems are generated for a behaviour variable · Issue 908: [tfel-math] mutable value-access operators in `CoalescedView` shall be disabled for const views
+- `release-notes/release-notes-5.1.md` — **Release notes of the 5.1 version of `TFEL`, `MFront` and `MTest`** (52 kB)
+  - Highlights · Known incompatibilities · Internal API changes · Documentation · New tutorials · `TFEL/Math` · `TFEL/Material` · `TFEL/MFrontDatabase` … (+80)
+- `release-notes/release-notes-5.2.md` — **Release notes of the 5.2 version of `TFEL`, `MFront` and `MTest`** (94 kB)
+  - Highlights · Support for the `TDLS` library (Tiny Device-callable Linear Solvers) · Compatibility modes · Known incompatibilities · Improvements to the build system · New `cmake` options · Sanitizers and hardening options · User-defined `cmake` variables … (+192)

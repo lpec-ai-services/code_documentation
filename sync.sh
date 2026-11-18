@@ -59,10 +59,26 @@ sync_thermal_hydraulics() {
     --heading-regex '2:^\d+\.\d+\.\s+[A-Z][A-Z0-9 ,;:()\-–/&’]+$'
 }
 
+sync_tfel_mfront() {
+  # Docs are Markdown in the TFEL repo (docs/web); gallery .mfront/.mtest in docs/gallery.
+  # TFEL_REF selects a branch or tag (default: master).
+  local ref="${TFEL_REF:-master}" tmp; tmp="$(mktemp -d)"
+  git clone -q --depth 1 --branch "$ref" --filter=blob:none --sparse \
+    https://github.com/thelfer/tfel.git "$tmp/tfel"
+  git -C "$tmp/tfel" sparse-checkout set --no-cone '/docs/web/' '/docs/gallery/' '/CMakeLists.txt'
+  local v; v="$(sed -n 's/^tfel_project(\([0-9]*\) \([0-9]*\) "\([0-9]*\)").*/\1.\2.\3/p' "$tmp/tfel/CMakeLists.txt")"
+  local c; c="$(git -C "$tmp/tfel" log -1 --format='%h, %cs')"
+  "$PY" "$ROOT/tools/mdtree2md.py" --src "$tmp/tfel/docs/web" --out "$ROOT/skills/tfel-mfront/docs" \
+    --examples "$tmp/tfel/docs/gallery" --examples-glob '*.mfront' --examples-glob '*.mtest' \
+    --source-url https://github.com/thelfer/tfel/tree/$ref/docs/web --version "$v ($ref $c)"
+  rm -rf "$tmp"
+  echo "Update the version line in skills/tfel-mfront/SKILL.md if it changed: $v"
+}
+
 # Add new codes here: sync_<name>() { ... } — see README.md.
 
 targets=("$@")
-[ ${#targets[@]} -eq 0 ] && targets=(tripoli4 tripoli5 valjean)
+[ ${#targets[@]} -eq 0 ] && targets=(tripoli4 tripoli5 valjean tfel_mfront)
 for t in "${targets[@]}"; do
   echo "== $t =="
   "sync_$t"
