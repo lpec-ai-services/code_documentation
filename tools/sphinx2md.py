@@ -80,7 +80,8 @@ def convert_page(html, docname, page_url):
     soup = BeautifulSoup(html, "html.parser")
     node = main_content(soup)
     for junk in node.select("a.headerlink, script, style, div.rst-footer-buttons, "
-                            "nav, footer, .prompt, .copybtn"):
+                            "nav, footer, .prompt, .copybtn, "
+                            "span.linenos, td.linenos"):  # code line numbers
         junk.decompose()
     # notebook outputs (run logs) can be thousands of lines: keep head and tail
     for pre in node.select("div.nboutput pre, div.cell_output pre, div.output pre"):

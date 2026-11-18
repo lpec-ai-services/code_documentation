@@ -22,10 +22,13 @@ skills/
 │   ├── equations.md       # key equations in LaTeX, transcribed from the source pages
 │   └── sources/           # one folder per document (generated text + TOC)
 ├── thermal-hydraulics/    # knowledge skill, same layout (water-cooled + fast reactors)
-└── tfel-mfront/           # TFEL/MFront code skill (docs from the GitHub repo, exact LaTeX)
+├── tfel-mfront/           # TFEL/MFront code skill (docs from the GitHub repo, exact LaTeX)
+│   ├── SKILL.md, physics.md, methods.md
+│   ├── docs/              # 266 pages + INDEX.md, release-notes/
+│   └── examples/          # gallery .mfront / .mtest implementations
+└── manta/                 # MANTA code skill (Sphinx site, user docs + demos, no Doxygen)
     ├── SKILL.md, physics.md, methods.md
-    ├── docs/              # 266 pages + INDEX.md, release-notes/
-    └── examples/          # gallery .mfront / .mtest implementations
+    └── docs/              # 200 pages + INDEX.md
 tools/
 ├── pdf2md.py              # PDF manual  → chapter Markdown + TOC (uses the PDF bookmarks)
 ├── sphinx2md.py           # published Sphinx site → page Markdown + INDEX (searchindex.js or a local copy)

@@ -1,0 +1,393 @@
+# Index of pages
+
+Each entry: file — title, then its section headings.
+
+
+## catalogs
+
+- `catalogs/components/physics_catalog_alphabetical.md` — **Catalog : Formulations and Algorithms alphabetically** (11 kB)
+  - : · A · B · C · D · E · F · G · H · I · L · M … (+6)
+- `catalogs/components/physics_catalog_theme.md` — **Catalog : Formulations and Algorithms by theme** (11 kB)
+  - ◆ Contact algorithms · ◆ Eigenvalue problems · ◆ FEM Damage mechanics · ◆ FEM Fracture mechanics · ◆ FEM General · Constraints and boundary conditions · General parameters · ◆ FEM Heat transfer · ◆ FEM Laplacian problems · ◆ FEM Solid mechanics · Contact and impact · Elasticity … (+15)
+- `catalogs/components/post_proc_catalog_alphabetical.md` — **Catalog : Post-processing tutorials alphabetically** (1 kB)
+  - V
+- `catalogs/components/post_proc_catalog_theme.md` — **Catalog : Post-processing tutorials by theme** (1 kB)
+  - ◆ VTK output
+- `catalogs/components/pre_proc_catalog_alphabetical.md` — **Catalog : Pre-processing tutorials  alphabetically** (1 kB)
+  - L · M · U
+- `catalogs/components/pre_proc_catalog_theme.md` — **Catalog : Pre-processing tutorials by theme** (1 kB)
+  - ◆ Behaviour usage · ◆ Fields declaration and usage · ◆ Linear solver interface · ◆ Mesh · General mesh guidelines · Readers
+
+## demos
+
+- `demos/components_examples/components_examples.md` — **Commented examples in the components** (1 kB)
+  - General remarks about the test-files contents
+- `demos/components_examples/contact_and_impact/charpy.md` — **3D notched beam subjected to a Charpy impact test** (25 kB)
+  - Description · Files for computation · The main.cpp step-by-step · Reading parameters from external xml file · Creation of Context and ResourcesManager · Import the mesh · Define the Fields and associated LinearSystem · Define the MFrontBehaviorComponent or mechanical model · Define the Formulation · Define contact Constraints · Defining output Fields · Definition of a TimeIntegrator … (+4)
+- `demos/components_examples/contact_and_impact/contact_and_impact.md` — **Contact and impact** (1 kB)
+- `demos/components_examples/elasticity/2D_elastic_thin_plate_with_hole_cpp.md` — **2D linear elastic thin plate with a hole in tension in c++** (14 kB)
+  - Description · Creation of Context and ResourcesManager · Import the mesh · Define the displacement field · Linear system and formulation · Memory allocation · Resolution and post-processing
+- `demos/components_examples/fracture_mechanics/gtheta_example.md` — **Linear elastic fracture mechanics on a 2D plate with an inclined crack** (11 kB)
+  - Description · Material's properties : · Boundary conditions: · Loading : · The mainGtheta.cpp step-by-step · Libraries to include : · Manta namespace  : · Declaration of main and init : · Creation of Context and ResourcesManager · Import the mesh · Define the Fields and LinearSystem · Define the Behavior of the mechanical model … (+9)
+- `demos/components_examples/structural_elements/euler_beam_explicit.md` — **Euler beam in explicit mechanics** (26 kB)
+  - Description · Call to the MANTA_FATAL_ERROR macro · Creation of Context · Reading a json input file · Definition of the geometrical hypothesis · Definition of the kinematic description · Creation of ResourcesManager · Import the mesh · Define the node fields · Linear system and formulations · Linear system definition · Euler beam formulation … (+10)
+- `demos/demos.md` — **Demos of manta usage** (1 kB)
+  - The search_tool.py script
+- `demos/frontend_examples/damage_and_fracture/bounded_constraint_optimization/bounded_constraint_optimization.md` — **Bounded constraint optimization** (1 kB)
+- `demos/frontend_examples/damage_and_fracture/bounded_constraint_optimization/micromorphic_approach.md` — **A micromorphic approximation for bounded constraint optimization problems associated with gradient damage models** (14 kB)
+  - Problem considered · Geometry · Boundary conditions · Expression of the micromorphic behaviour · Balance equations for the micromorphic damage · Evolution of damage · Numerical schemes · Implementation of the test case in MANTA · Definition of the physical system · Definition of the micromorphic model · Definition of the material properties · Projection of the damage at nodes for the post-processings … (+10)
+- `demos/frontend_examples/damage_and_fracture/damage_and_fracture.md` — **Damage and fracture mechanics modelling** (1 kB)
+- `demos/frontend_examples/damage_and_fracture/engelen/engelen.md` — **Double notched plate described by a nonlocal implicit gradient-enhanced plastic law** (14 kB)
+  - Description · Geometry · Boundary conditions · Mechanical behavior · Description of the MANTA input file · Definition of the physical system · Declaration of the material properties · Mechanical model, behavior and boundary conditions · Computation of the non local equivalent plastic strain · Declaration of the coupling scheme · Post-processings · Time discretization and simulation … (+1)
+- `demos/frontend_examples/damage_and_fracture/mealor2-tp8/mealor2-tp8.md` — **Ductile rupture of a notched bar using an implicit gradient regularization of the Gurson-Tvergaard-Needleman constitutive equations** (23 kB)
+  - Description · Geometry of the notched bar · Boundary conditions · Constitutive equations · Initial state · Description of the MANTA input file · Definition of the physical system · Mechanical model, behaviour and boundary conditions · Computation of the non local equivalent plastic strain and non local plastic change of volume · Declaration of the coupling scheme · Post-processings · User-defined post-processing task … (+4)
+- `demos/frontend_examples/damage_and_fracture/micromorphic_damage/fiber_reinforced_matrix/fiber_reinforced_matrix.md` — **Description of damage evolution in fiber reinforced matrix** (20 kB)
+  - Problem considered · Geometry and mesh · Material behaviour · Material properties · Modeling hypothesis · Boundary conditions · Description of the MANTA input file · Definition of the physical system · Declaration of the material properties · Mechanical model, behaviour and boundary conditions · Micromorphic model, behaviour and boundary conditions · Declaration of the coupling scheme … (+8)
+- `demos/frontend_examples/elasticity/2D_elastic_thin_plate_with_hole_python.md` — **2D linear elastic thin plate with a hole in tension in python** (10 kB)
+  - Description · Implementation · Definition of the physical system · Declaration of the material properties · Definition of the mechanical model, plate behavior and boundary conditions · Definition of the evolution of the imposed pressure · Declaration of the auxiliary task for the projection of the stress on nodes · Declaration of the coupling scheme · Declaration of the post-processings · Running the simulation · Execution · Results
+- `demos/frontend_examples/frontend_examples.md` — **Commented examples in pyManta** (1 kB)
+  - General remarks about the test-files contents
+- `demos/frontend_examples/non_linear_behaviour/non_linear_behaviour.md` — **Non linear behaviour** (1 kB)
+- `demos/frontend_examples/non_linear_behaviour/plasticity/rate_dependent_plasticity/swift_voce_cowper_symonds_notched_plate.md` — **Finite strain simulation of a strain sensitive plastic notched bar in tension** (15 kB)
+  - Description · Geometry · Boundary conditions · Mechanical behavior · Implementation · Definition of the physical system · Definition of the material properties · Definition of the mechanical model, boundary conditions and behavior law · Declaration of the coupling scheme · Declaration of the post-processings · Running the simulation · Execution … (+1)
+- `demos/frontend_examples/numerical_analysis/norms_calculation/norms_calculation.md` — **Applied math: norms calculation for a linear thermal problem** (11 kB)
+  - Error and norm computation · Physical system · 1D constant source term case · 2D non constant source term case · Description of the input file · Execution · Simulation · First case · Second case · Appendix · Appendix 1 : Analytical solution · Appendix 2 : Implementation
+- `demos/frontend_examples/numerical_analysis/numerical_analysis.md` — **Numerical analysis** (1 kB)
+- `demos/frontend_examples/solid_heat_transfer/fuel_rod/nuclear_fuel_pellet_heat_transfer.md` — **Multiple material simulation: nuclear_fuel_rod example** (13 kB)
+  - Description · Geometry · Boundary conditions · Materials · Analytical solutions · Implementation · Execution · Results · Verifications tests · Results of the real geometry · Conclusion
+- `demos/frontend_examples/solid_heat_transfer/solid_heat_transfer.md` — **Heat transfer in solid material** (1 kB)
+- `demos/search_tool.md` — **Using the search tool** (3 kB)
+  - Introduction · Supported Python versions · Usage · Getting some help · The main command · The list subcommand
+
+## get_started
+
+- `get_started/containerized_usage.md` — **Containerized usage** (7 kB)
+  - How to install Apptainer · How to download MANTA's image · How to build and run a C++ case with the Apptainer image · How to launch a Python calculation with the Apptainer image · A few pitfalls · Symlinks in the path to the current working directory · MPI version compatibility
+- `get_started/get_started.md` — **Get started** (1 kB)
+- `get_started/installation_guide.md` — **Installation guide** (31 kB)
+  - Requirements · MANTA's list of dependencies · Spack setup · Build MANTA · Fine selecting which part of MANTA you would like to build, test and use · The cmake preset way · Python bindings · Available CMake options · Options and their definition · Use MANTA within Python · Compilation tips · Build on a machine without internet access … (+3)
+- `get_started/run_examples.md` — **Learn with examples** (6 kB)
+  - PyManta Examples · Manta components examples · Looking for an example · Build and run examples using the test pipeline (easier) · Build and run examples as stand alone computations (more involved) · Weekly run of examples · Tips
+
+## manta_components_user_guide
+
+- `manta_components_user_guide/algorithms_and_numerics/contact/contact.md` — **Contact algorithms** (3 kB)
+  - Time integrators · CentralDifferenceWContactTimeIntegrator · CentralDifferenceWFrictionTimeIntegrator
+- `manta_components_user_guide/algorithms_and_numerics/eigen_problem.md` — **Eigenproblem solver** (5 kB)
+  - Objective · The EigenProblem class · Examples of application · Methods used · Handling constraints · Mode normalization
+- `manta_components_user_guide/algorithms_and_numerics/gtheta_method_2D.md` — **GTheta Numerical Method 2D** (3 kB)
+  - Description · Class Definition · Constructor · Theta Field Definition · Typical usage of the class · Notes
+- `manta_components_user_guide/algorithms_and_numerics/newton.md` — **Newton's algorithm** (24 kB)
+  - Example of usage · Solving · Options · Call-backs · Other useful methods · Formulations usable with a Newton algorithm · Use of setJacobianUpdateTrigger () to handle a semi-Newton like resolution · Use of setAccelerationMethod () to accelerate convergence · The CastemLikeNewtonAlgorithm preset · Use of freezeNormalizationFactors () and unfreezeNormalizationFactors () · Use of multiphysicsResolution to handle a monolithically coupled problem · Choice of the convergence criterion … (+2)
+- `manta_components_user_guide/algorithms_and_numerics/time_integrators/pf_time_integrators.md` — **Phase-field specific time integrators** (4 kB)
+  - PhaseFieldHeunTimeIntegrator · PhaseFieldSubCyclingTimeIntegrator
+- `manta_components_user_guide/algorithms_and_numerics/time_integrators/time_integrators.md` — **Notions on time integrators** (10 kB)
+  - General example of usage · Usual methods · List of available time integrators · Specific example of usage · Contact and Friction time integrators · Finite Volume time integrators · Phase field time integrators · Quasi-Static Damping
+- `manta_components_user_guide/components_catalogs/components_catalogs.md` — **Catalogs for components** (1 kB)
+  - Sorted by theme · Sorted alphabetically
+- `manta_components_user_guide/formulations/constraints_and_bcs/blockingFormulation.md` — **BlockingFormulation** (1 kB)
+  - Introduction · Example of usage · Parameters · How to use · List of commented examples and verification tests
+- `manta_components_user_guide/formulations/constraints_and_bcs/body_force_form.md` — **ImposedBodyForceFormulation** (3 kB)
+  - Introduction · Example of usage · Parameters · Description · Notes
+- `manta_components_user_guide/formulations/constraints_and_bcs/dirichletConstraintFormulation.md` — **DirichletConstraintFormulation** (2 kB)
+  - Introduction · Example of usage · Parameters · How to use · Computing reactions
+- `manta_components_user_guide/formulations/constraints_and_bcs/externalSurfaceForceFormulation.md` — **ExternalSurfaceForceFormulation** (4 kB)
+  - Introduction · Example of usage · Parameters · Description · List of commented examples and verification tests · Notes
+- `manta_components_user_guide/formulations/constraints_and_bcs/glueConstraintFormulation.md` — **GlueConstraintFormulation** (2 kB)
+  - Introduction · Example of usage · Parameters · How to use · List of commented examples and verification tests · Description
+- `manta_components_user_guide/formulations/constraints_and_bcs/imposed_nodal_forces.md` — **Imposed nodal forces** (1 kB)
+  - Example of usage · Parameters · Description · Notes
+- `manta_components_user_guide/formulations/constraints_and_bcs/imposed_pressure.md` — **Imposed pressure** (2 kB)
+  - Example of usage · Parameters · Description · Preconditions · Notes
+- `manta_components_user_guide/formulations/constraints_and_bcs/imposed_resulting_force.md` — **Imposed resulting force** (1 kB)
+  - Example of usage · Parameters · Description · Notes
+- `manta_components_user_guide/formulations/constraints_and_bcs/imposed_uniform_gravity_force_form.md` — **ImposedUniformGravityForceFormulation** (3 kB)
+  - Introduction · Example of usage · Parameters · Description · List of commented examples and verification tests · Notes
+- `manta_components_user_guide/formulations/constraints_and_bcs/multiple_points_constraint.md` — **Multiple Point Constraint** (4 kB)
+  - Description · Example of usage · Parameters · Preconditions · Notes
+- `manta_components_user_guide/formulations/damage_and_fracture/phasefieldexplicit.md` — **PhaseFieldDamageExplicitFormulation** (6 kB)
+  - Introduction · Example of usage · Parameters · List of commented examples and verification tests · Description · Pre-conditions · Conditions on the mechanical formulation · Critical time-step · Damage field viewed by mechanical problem
+- `manta_components_user_guide/formulations/damage_and_fracture/phasefieldimplicit.md` — **PhaseFieldDamageImplicitFormulation** (3 kB)
+  - Introduction · Example of usage · Parameters · List of commented examples and verification tests · Description · Pre-conditions · Conditions on the mechanical formulation · Damage field viewed by mechanical problem
+- `manta_components_user_guide/formulations/fluid_mechanics/equations_of_state/isothermal_fluid.md` — **Isothermal fluid equation of state** (1 kB)
+  - IsothermalFluidEOS · Example of usage
+- `manta_components_user_guide/formulations/fluid_mechanics/equations_of_state/perfect_gas.md` — **Perfect gas equation of state** (1 kB)
+  - PerfectGasEOS · Example of usage
+- `manta_components_user_guide/formulations/fluid_mechanics/equations_of_state/steam_water.md` — **Steam / Water equation of state** (7 kB)
+  - EPXTabulatedWater equation of state
+- `manta_components_user_guide/formulations/fluid_mechanics/equations_of_state/stiffened_gas.md` — **Stiffened gas equation of state** (1 kB)
+  - StiffenedGasEOS · Example of usage
+- `manta_components_user_guide/formulations/fluid_mechanics/fluid_models/hem_fluid_model.md` — **HEMFluidModel** (2 kB)
+  - Example of usage · Constructor implementation · Parameters · Description
+- `manta_components_user_guide/formulations/fluid_mechanics/fluid_models/mcsg_fluid_model.md` — **MCSGFluidModel** (4 kB)
+  - Example of usage · Constructor implementation · Parameters · Description · Variants
+- `manta_components_user_guide/formulations/fluid_mechanics/fluid_models/single_fluid_model.md` — **SingleFluidModel** (3 kB)
+  - Example of usage · Constructor implementation · Parameters
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_compressible_fluid_mechanics/boundary_conditions/copied.md` — **Copied boundary condition** (1 kB)
+  - Usage
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_compressible_fluid_mechanics/boundary_conditions/critical_flow.md` — **CriticalFlow boundary condition** (4 kB)
+  - Transient regime · Break ratio · Examples of usage · Input parameters
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_compressible_fluid_mechanics/boundary_conditions/fvm_boundary_conditions.md` — **All FVM Boundary conditions and compatibility summaries** (1 kB)
+  - Compatibility summary
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_compressible_fluid_mechanics/boundary_conditions/prescribed_outflow.md` — **PrescribedPressureOutflow boundary condition** (1 kB)
+  - Example of usage · Input parameters
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_compressible_fluid_mechanics/boundary_conditions/tank.md` — **Tank boundary condition** (2 kB)
+  - Example of usage · Input parameters
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_compressible_fluid_mechanics/boundary_conditions/wall.md` — **Wall boundary condition** (1 kB)
+  - Example of usage · Input parameters
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_compressible_fluid_mechanics/end_user_formulations/chimera.md` — **Chimera** (4 kB)
+  - Introduction · Example of usage · Parameters
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_compressible_fluid_mechanics/end_user_formulations/euler_explicit_formulation.md` — **Euler Explicit Formulation** (5 kB)
+  - Introduction · Example of usage · Constructors implementation · Parameters · Constructors · List of commented examples and verification tests · Description
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_compressible_fluid_mechanics/end_user_formulations/euler_explicit_pipe_formulation.md` — **Euler Explicit Pipe Formulation** (11 kB)
+  - Introduction · Example of usage · Constructors implementation · Parameters · Constructor arguments · List of commented examples and verification tests · Description
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_compressible_fluid_mechanics/end_user_formulations/euler_implicit_formulation.md` — **Euler Implicit Formulation** (7 kB)
+  - Introduction · Example of usage · Constructors implementation · Parameters · FluidModelType · RecoOperatorType · JacobianIntegrand · ImplicitFtrClass · Constructors · List of commented examples and verification tests · Description · FVNewtonFeatures … (+2)
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_compressible_fluid_mechanics/end_user_formulations/euler_implicit_pipe_formulation.md` — **Euler Implicit Pipe Formulation** (9 kB)
+  - Introduction · Example of usage · Constructors implementation · Parameters · FluidModelType · RecoOperatorType · JacobianIntegrand · ImplicitFtrClass · Constructors · List of commented examples and verification tests · Description · FVNewtonFeatures … (+2)
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_compressible_fluid_mechanics/source_terms/energy_injection.md` — **Energy injection source term** (8 kB)
+  - Computation of the injected thermal power \(\dot{Q}\) · Configuration Options · Example of usage:
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_compressible_fluid_mechanics/source_terms/gravity.md` — **Gravity source term** (3 kB)
+  - Example of usage:
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_compressible_fluid_mechanics/source_terms/regular_headloss.md` — **Regular headloss source term** (3 kB)
+  - Example of usage:
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_compressible_fluid_mechanics/source_terms/source_terms.md` — **Source terms** (1 kB)
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_misc/fvm_advection_formulation.md` — **FVM Advection formulation** (4 kB)
+  - Introduction · Example of usage · Parameters · Explicit formulation · Implicit formulation · Description
+- `manta_components_user_guide/formulations/fluid_mechanics/fvm_misc/fvm_burgers_formulation.md` — **FVM Burgers formulation** (3 kB)
+  - Introduction · Example of usage · Parameters · Explicit formulation · Implicit formulation · Description
+- `manta_components_user_guide/formulations/fluid_mechanics/limiting_operators/limiting_operators.md` — **Limiting Operators** (2 kB)
+  - DummyLimitingOperator · BarthJespersenLimitingOperator · DuboisLimitingOperator · The LimitingArguments struct
+- `manta_components_user_guide/formulations/fluid_mechanics/reconstruction_operators/reconstruction_operators.md` — **Reconstruction Operators** (2 kB)
+  - PieceWiseConstantReconstructionOperator · Example of usage · Parameters · LeastSquaresLinearReconstructionOperator · Example of usage · Parameters
+- `manta_components_user_guide/formulations/general_models/scalarlaplacianformulation.md` — **ScalarLaplacianFormulation** (1 kB)
+  - Introduction · Example of usage · Parameters · List of commented examples and verification tests · Description
+- `manta_components_user_guide/formulations/general_models/vectorlaplacianformulation.md` — **VectorLaplacianFormulation** (2 kB)
+  - Introduction · Example of usage · Parameters · List of commented examples and verification tests · Description
+- `manta_components_user_guide/formulations/heat_transfer/boundary_conditions/imposed_heat_flux.md` — **Imposed heat flux** (2 kB)
+  - Example of usage · Parameters · Description · Preconditions · Notes
+- `manta_components_user_guide/formulations/heat_transfer/boundary_conditions/linear_convection.md` — **Linear convection formulation** (3 kB)
+  - Example of usage · Parameters · Description · Preconditions · Notes
+- `manta_components_user_guide/formulations/heat_transfer/boundary_conditions/linearheatsourceformulation.md` — **LinearHeatSourceFormulation** (1 kB)
+  - Introduction · Example of usage · Parameters · Description · List of commented examples and verification tests · Notes
+- `manta_components_user_guide/formulations/heat_transfer/boundary_conditions/nonlinear_convection.md` — **Non linear convection formulation** (3 kB)
+  - Example of usage · Parameters · Description · Preconditions · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/euler_beams/euler_beam_distributed_load_formulation.md` — **EulerBeamDistributedLoadFormulation** (6 kB)
+  - Introduction · Example of usage · Constructors implementation · Parameters · List of commented examples and verification tests · Description · Pre-conditions · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/euler_beams/euler_beam_exact_stiffness_matrix_formulation.md` — **EulerBeamExactStiffnessMatrixFormulation** (7 kB)
+  - Introduction · Example of usage · Constructors implementation · Parameters · List of commented examples and verification tests · Description · Pre-conditions · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/euler_beams/euler_beam_explicit_formulation.md` — **EulerBeamExplicitFormulation** (14 kB)
+  - Introduction · Example of usage · Constructors implementation · Parameters · List of commented examples and verification tests · Description · Pre-conditions · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/euler_beams/euler_beam_internal_forces_formulation.md` — **EulerBeamInternalForcesFormulation** (9 kB)
+  - Introduction · Example of usage · Constructors implementation · Parameters · List of commented examples and verification tests · Description · Pre-conditions · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/euler_beams/euler_beam_lumped_mass_matrix_formulation.md` — **EulerBeamLumpedMassMatrixFormulation** (12 kB)
+  - Introduction · Example of usage · Constructors implementation · Parameters · List of commented examples and verification tests · Description · Pre-conditions · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/euler_beams/euler_beam_stiffness_matrix_formulation.md` — **EulerBeamStiffnessMatrixFormulation** (7 kB)
+  - Introduction · Example of usage · Constructors implementation · Parameters · List of commented examples and verification tests · Description · Pre-conditions · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/nodal/nodal_damper_matrix_formulation.md` — **NodalDamperMatrixFormulation** (1 kB)
+  - Introduction · Example of usage · Equations · Constructors implementation · Note
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/nodal/nodal_mass_matrix_formulation.md` — **NodalMassMatrixFormulation** (2 kB)
+  - Introduction · Example of usage · Equations · List of commented examples and verification tests · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/nodal/nodal_matrix_formulation.md` — **NodalMatrixFormulation** (2 kB)
+  - Introduction · Usage · Equations
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/nodal/nodal_stiffness_matrix_formulation.md` — **NodalStiffnessMatrixFormulation** (2 kB)
+  - Introduction · Example of usage · Equations · List of commented examples and verification tests
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/rods/rod_formulation.md` — **rodStiffnessMatrixFormulation** (1 kB)
+  - Introduction · Example of usage · Parameters · Material and Geometrical parameters · List of commented examples and verification tests
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/timoshenko_beams/timoshenko_beam_distributed_load_formulation.md` — **TimoshenkoBeamDistributedLoadFormulation** (11 kB)
+  - Introduction · Example of usage · Constructors implementation · Parameters · List of commented examples and verification tests · Description · Pre-conditions · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/timoshenko_beams/timoshenko_beam_exact_stiffness_matrix_formulation.md` — **TimoshenkoBeamExactStiffnessMatrixFormulation** (9 kB)
+  - Introduction · Example of usage · Constructors implementation · Parameters · List of commented examples and verification tests · Description · Pre-conditions · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/timoshenko_beams/timoshenko_beam_internal_forces_formulation.md` — **TimoshenkoBeamInternalForcesFormulation** (8 kB)
+  - Introduction · Example of usage · Constructor implementation · Parameters · List of commented examples and verification tests · Description · Pre-conditions · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/timoshenko_beams/timoshenko_beam_mass_matrix_formulation.md` — **TimoshenkoBeamMassMatrixFormulation** (9 kB)
+  - Introduction · Example of usage · Constructors implementation · Parameters · List of commented examples and verification tests · Description · Pre-conditions · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/beams_and_shells/timoshenko_beams/timoshenko_beam_stiffness_matrix_formulation.md` — **TimoshenkoBeamStiffnessMatrixFormulation** (9 kB)
+  - Introduction · Example of usage · Constructors implementation · Parameters · List of commented examples and verification tests · Description · Pre-conditions · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/contact_and_impact/analytical_contact_friction.md` — **AnalyticalContactFrictionFormulation** (5 kB)
+  - Introduction · Example of usage · Parameters · Description · Coulomb model · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/contact_and_impact/analyticalcontactformulation.md` — **AnalyticalContactFormulation** (3 kB)
+  - Introduction · Example of usage · Parameters · List of commented examples and verification tests · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/contact_and_impact/implicitanalyticalcontactformulation.md` — **ImplicitAnalyticalContactFormulation** (2 kB)
+  - Introduction · Example of usage · Parameters · Description · List of commented examples and verification tests · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/elasticity/linearized_elasticity_finite_element_formulation.md` — **LinearizedElasticityFiniteElementFormulation** (5 kB)
+  - Introduction · Example of usage · Parameters · Description · Stress-free expansion · List of examples and tests · Notes
+- `manta_components_user_guide/formulations/solid_mechanics/elasticity/thermalExpansionFormulation.md` — **ThermalExpansionFormulation** (1 kB)
+  - Introduction · Example of usage · Parameters · Description · List of commented examples and verification tests
+- `manta_components_user_guide/formulations/solid_mechanics/general_parameters.md` — **General parameters of solid mechanics formulations** (1 kB)
+  - The structural hypothesis · The kinematic formulation
+- `manta_components_user_guide/formulations/solid_mechanics/non_linear_behaviour/solid_finite_element_formulation.md` — **SolidFiniteElementFormulation (implicit and explicit solid mechanics)** (7 kB)
+  - Introduction · Example of usage · Parameters · Defining a non-linear material · Specificities for Implicit mechanics · Description · Specificities for Explicit dynamics · Description · Time-integration · CriticalTimeStepComputer · List of examples and tests · Notes
+- `manta_components_user_guide/formulations/utilities/finite_elements/l2_projection_formulation.md` — **Projection of integration point values at nodes** (1 kB)
+  - Example of usage · Description · Template Parameters
+- `manta_components_user_guide/formulations/utilities/finite_elements/regularized_l2_projection_formulation.md` — **Regularized_projection of integration point values at nodes** (1 kB)
+  - Example of usage · Description · Template Parameters
+- `manta_components_user_guide/main_user_concepts/general_outline/cpp_user_guide.md` — **Main c++ User Concepts** (1 kB)
+- `manta_components_user_guide/main_user_concepts/general_outline/steps_for_a_cpp.md` — **Steps for a c++ computation with MANTA** (18 kB)
+  - Outline of a MANTA lower level API C++ script · Includes and parameter definition · The ResourcesManager class · Filling the Mesh · Setting the Meshsets · Declaring the Fields · Declaring Formulations or the terms of the equation · The TimeIntegrators and Algorithms · Post-processings declaration for vtk output · Initializing fields before resolution · Solving the given problem · Post-processings … (+3)
+- `manta_components_user_guide/main_user_concepts/general_outline/user_outline.md` — **General MANTA's c++ outline** (14 kB)
+  - The ResourcesManager class · The Mesh and MeshSets classes · The fields · The LinearSystem and ConstraintSet classes · The Formulation classes
+- `manta_components_user_guide/main_user_concepts/user_guide_objects/linear_solver_interface.md` — **Linear solver interface** (5 kB)
+  - Parameters that can be set in scripts (.py, .cpp) · method · preconditioner · factorizationBackend · methodForConstraint · Using a petscrc file to set more options · Example of usage in pyManta · Example of usage in components · List of examples and tests
+- `manta_components_user_guide/main_user_concepts/user_guide_objects/mfront_behavior_component.md` — **MFrontBehaviorComponent** (4 kB)
+  - Example of usage · Parameters · State variables and time stepping · List of examples and tests · Current limitations
+- `manta_components_user_guide/main_user_concepts/user_guide_objects/user_fields.md` — **User guide for Fields** (14 kB)
+  - The different kinds of fields · Node field · Element field · IP field · Construction · Operations · Common usage · Get a value · Reductions · Specific functions · Set to each entity of an element field the average value of a function · Set to each node of an node field the value of a function … (+1)
+- `manta_components_user_guide/main_user_concepts/user_guide_objects/user_mesh.md` — **User guide for the Mesh** (9 kB)
+  - Reading an external Mesh · Generating a mesh · Generating a grid and its MeshSet · Generating a 1D-line and its MeshSet · printoutPartition : written vizualization of the mesh · Geometrical types · Other informations
+- `manta_components_user_guide/main_user_concepts/user_guide_objects/user_readers.md` — **User guide for the Readers** (9 kB)
+  - Available readers · General usage · A few more details about importing regions
+- `manta_components_user_guide/manta_components_user_guide.md` — **User guide of the MANTA components** (1 kB)
+- `manta_components_user_guide/post_processings/vtk_output.md` — **VTK output** (1 kB)
+- `manta_components_user_guide/the_module_system/available_modules.md` — **Available modules** (4 kB)
+- `manta_components_user_guide/the_module_system/enabling_disabling_modules.md` — **Enabling/disabling modules** (1 kB)
+- `manta_components_user_guide/the_module_system/how_to_create_a_new_module.md` — **How to create a new "module"** (16 kB)
+  - Create the files structure · Writing the CMakeLists.txt file for a new module · Update the file .manta-enabled-modules.json · Manage the initialization/finalization · Handling command line arguments · Making an "executable" module · Update the documentation · Private modules
+- `manta_components_user_guide/the_module_system/the_module_system.md` — **The "module" system** (1 kB)
+- `manta_components_user_guide/user_defined_extensions/plugins.md` — **Plug-ins usage** (1 kB)
+  - The loadPlugin function · Available factories · Example
+- `manta_components_user_guide/user_defined_extensions/user_defined_ext.md` — **User-defined extensions** (1 kB)
+
+## manta_frontend_user_guide
+
+- `manta_frontend_user_guide/auxiliary_tasks/auxiliary_tasks.md` — **Auxiliary tasks** (1 kB)
+- `manta_frontend_user_guide/auxiliary_tasks/l2_projection_auxiliary_task.md` — **The L2Projection auxiliary task** (3 kB)
+  - Examples of usage · Main parameters · Description
+- `manta_frontend_user_guide/bricks/bricks.md` — **Bricks** (2 kB)
+  - Organized by model category · All bricks
+- `manta_frontend_user_guide/bricks/micromorphic_damage/implicit_micromorphic_damage_brick.md` — **The ImplicitMicromorphicDamageSolidMaterialBrick brick** (6 kB)
+  - About the micromorphic damage behavior · Main parameters · Supported structural hypotheses and elements · Example of usage · User-defined extensions · Compatible models
+- `manta_frontend_user_guide/bricks/micromorphic_damage/micromorphic_damage_bricks.md` — **Micromorphic damage bricks** (1 kB)
+- `manta_frontend_user_guide/bricks/point_wise/mfront_point_wise_model_brick.md` — **The MFrontPointWiseModel model brick** (2 kB)
+  - Example of usage · Available parameters · Compatible models
+- `manta_frontend_user_guide/bricks/point_wise/point_wise_bricks.md` — **Point-wise bricks** (1 kB)
+- `manta_frontend_user_guide/bricks/solid_heat_transfer/heat_transfer_bricks.md` — **Solid heat transfer bricks** (1 kB)
+- `manta_frontend_user_guide/bricks/solid_heat_transfer/implicit_heat_transfer_heat_source.md` — **The HeatSource brick** (4 kB)
+  - Example of usage · Main parameters · Description · Supported structural hypotheses and elements · Compatible models
+- `manta_frontend_user_guide/bricks/solid_heat_transfer/implicit_heat_transfer_linear_capacity.md` — **The ImplicitHeatLinearCapacity brick** (1 kB)
+  - Compatible models
+- `manta_frontend_user_guide/bricks/solid_heat_transfer/implicit_heat_transfer_linear_convection.md` — **The ImplicitHeatLinearConvection brick** (1 kB)
+  - Compatible models
+- `manta_frontend_user_guide/bricks/solid_heat_transfer/implicit_heat_transfer_nonlinear_convection.md` — **The ImplicitHeatTransferNonlinearConvection brick** (3 kB)
+  - Example of usage · Description · Parameters · About the MFront behavior · Compatible models
+- `manta_frontend_user_guide/bricks/solid_heat_transfer/implicit_heat_transfer_solid_material.md` — **The ImplicitHeatTransferSolidMaterial brick** (4 kB)
+  - About the behavior · Example of usage · Main parameters · Description · Supported structural hypotheses and elements · User-defined extensions · Compatible models
+- `manta_frontend_user_guide/bricks/solid_heat_transfer/imposed_heat_flux.md` — **The ImposedHeatFlux brick** (2 kB)
+  - Example of usage · Main parameters · Description · Supported structural hypotheses and elements · Notes · Compatible models
+- `manta_frontend_user_guide/bricks/solid_mechanics/beams/euler_beam_brick.md` — **The EulerBeam brick** (4 kB)
+  - Example of usage · Main parameters · Physical description · Supported structural hypotheses and elements · Compatible models
+- `manta_frontend_user_guide/bricks/solid_mechanics/beams/euler_beam_distributed_loadings_brick.md` — **The EulerBeamDistributedLoadings brick** (4 kB)
+  - Example of usage · Main parameters · Physical description · Supported structural hypotheses and elements · Compatible models
+- `manta_frontend_user_guide/bricks/solid_mechanics/beams/explicit_euler_beam_brick.md` — **The ExplicitEulerBeam brick** (8 kB)
+  - Example of usage · Main parameters · Physical description · Supported structural hypotheses and elements · Compatible models
+- `manta_frontend_user_guide/bricks/solid_mechanics/beams/timoshenko_beam_brick.md` — **The TimoshenkoBeam brick (implicit mechanics)** (5 kB)
+  - Example of usage · Main parameters · Physical description · Supported structural hypotheses and elements · Compatible models
+- `manta_frontend_user_guide/bricks/solid_mechanics/beams/timoshenko_beam_distributed_loadings_brick.md` — **The TimoshenkoBeamDistributedLoadings brick** (5 kB)
+  - Example of usage · Main parameters · Physical description · Supported structural hypotheses and elements · Compatible models
+- `manta_frontend_user_guide/bricks/solid_mechanics/implicit_mechanics_solid_material.md` — **The ImplicitMechanicsSolidMaterial brick** (6 kB)
+  - Example of usage · Main parameters · Description · About the behavior · Supported structural hypotheses and elements · User-defined extensions · Compatible models
+- `manta_frontend_user_guide/bricks/solid_mechanics/imposed_pressure.md` — **The ImposedPressure brick** (2 kB)
+  - Example of usage · Main parameters · Description · Supported structural hypotheses and elements · Notes · Compatible models
+- `manta_frontend_user_guide/bricks/solid_mechanics/imposed_resulting_force.md` — **The ImposedResultingForce brick** (2 kB)
+  - Examples of usage · Main parameters · Physical description · Compatible models
+- `manta_frontend_user_guide/bricks/solid_mechanics/imposed_uniform_gravity_force.md` — **The ImposedUniformGravityForce brick** (5 kB)
+  - Example of usage · Main parameters · Physical description · Supported structural hypotheses and elements · Compatible models
+- `manta_frontend_user_guide/bricks/solid_mechanics/isotropic_linear_elastic_material.md` — **The IsotropicLinearElasticSolidMaterial brick** (1 kB)
+  - Description · Compatible models
+- `manta_frontend_user_guide/bricks/solid_mechanics/nodal/nodal_mass_brick.md` — **The NodalMass brick** (1 kB)
+  - Example of usage · Main parameters · Physical description · Supported structural hypotheses and elements · Compatible models
+- `manta_frontend_user_guide/bricks/solid_mechanics/solid_mechanics_bricks.md` — **Solid mechanics bricks** (1 kB)
+  - General · Structural elements · Euler beams · Timoshenko beams · Nodal elements
+- `manta_frontend_user_guide/loadings.md` — **Loadings** (4 kB)
+  - Available loadings · ConstantUniform · ConstantUniformScalar · Defining spatiotemporal loadings in Python · Example of usage · Parameters
+- `manta_frontend_user_guide/main_concepts.md` — **Main concepts** (37 kB)
+  - Description of a standard computation · A simple uniaxial test · The physical system · Creation of the mechanical model · Model bricks · Properties · Loadings · Coupling scheme · The simulation · Running the Simulation
+- `manta_frontend_user_guide/miscellaneous/coarse_grain_profiling.md` — **Coarse grain profilings** (3 kB)
+  - Displaying resources usage · Example of usage · Example of output
+- `manta_frontend_user_guide/miscellaneous/command_line_arguments.md` — **Handling of command line arguments** (4 kB)
+  - Treatment of command line arguments · Default command line arguments · Pitfalls · --parameter · --petsc-options-file
+- `manta_frontend_user_guide/miscellaneous/constraints/constraints.md` — **Imposing constraints on unknowns** (13 kB)
+  - Available bricks · The ConstraintsSet brick · The DirichletBoundaryCondition brick · The ImposedTemperature brick · The ImposedDisplacement brick · Available constraints · The Dirichlet constraint · The ImposedTemperature constraint · The ImposedDisplacement constraint · The MultiplePoints constraint · The AbstractConstraint and the ConstraintFactory classes
+- `manta_frontend_user_guide/miscellaneous/mfront_behaviors_bricks.md` — **Generalities on bricks based on MFront behaviors** (3 kB)
+  - About the behavior · Interaction with the dependency management algorithm · Common parameters
+- `manta_frontend_user_guide/miscellaneous/mfront_material_knowledge_management.md` — **Advices on the management of MFront material knowledge** (9 kB)
+  - Role of material knowledge in numerical simulations of solids · Requirements related to safety-critical studies · Pratical material knowledge management · Creating a material management project for enginneering studies and team work · Personal usage · General advices
+- `manta_frontend_user_guide/miscellaneous/mfront_postprocessed_fields.md` — **Compute custom postprocessed fields** (9 kB)
+  - Example: torsion of a slender nonlinear elastic solid · Implementation · Running a Simulation
+- `manta_frontend_user_guide/miscellaneous/miscellaneous.md` — **Miscellaneous topics** (1 kB)
+- `manta_frontend_user_guide/miscellaneous/petsc_cuda.md` — **Running a simulation using PETSc CUDA capabilities** (2 kB)
+- `manta_frontend_user_guide/miscellaneous/simulation_monitors.md` — **Monitoring a simulation** (4 kB)
+  - Available monitors · MemoryUsage · Convergence
+- `manta_frontend_user_guide/miscellaneous/tools.md` — **Command line tools** (3 kB)
+  - The manta - extract_line_curve_values utility · The manta - info utility · The manta executable
+- `manta_frontend_user_guide/miscellaneous/utilities.md` — **Miscellaneous utility features** (1 kB)
+  - Fields · The computeIntegral functions · The computeMeanValue functions
+- `manta_frontend_user_guide/models/fluid_mechanics/explicit_compressible_inviscid_fluid_mechanics.md` — **Explicit compressible inviscid fluid mechanics** (10 kB)
+  - Introduction · Available solvers · Example of usage · User-defined extensions · Equations of state · Riemann solvers · Reconstruction operators and limiters · Time integration · The CFLStabilityfactorEstimate parameter · Boundary conditions · The Wall boundary condition · The Copied boundary condition
+- `manta_frontend_user_guide/models/generalities.md` — **Generalities on models** (3 kB)
+  - Discretization methods · Periodic computations support · Periodic boundary conditions · Macroscopic gradients · Linear solver options
+- `manta_frontend_user_guide/models/micromorphic_damage/implicit_micromorphic_damage_model.md` — **Implicit micromorphic damage model** (1 kB)
+- `manta_frontend_user_guide/models/micromorphic_damage/micromorphic_damage.md` — **Micromorphic damage models** (1 kB)
+- `manta_frontend_user_guide/models/models.md` — **Models** (1 kB)
+- `manta_frontend_user_guide/models/point_wise_models/mfront_point_wise_model.md` — **The MFrontPointWiseModel model** (1 kB)
+  - Example of usage · Available parameters
+- `manta_frontend_user_guide/models/point_wise_models/point_wise_models.md` — **Point-wise models** (1 kB)
+- `manta_frontend_user_guide/models/solid_heat_transfer/implicit_heat_transfer.md` — **Implicit heat transfer** (1 kB)
+  - Description · Available algorithms
+- `manta_frontend_user_guide/models/solid_heat_transfer/solid_heat_transfer.md` — **Solid heat transfer** (1 kB)
+- `manta_frontend_user_guide/models/solid_mechanics/explicit_solid_mechanics.md` — **The ExplicitMechanics model** (3 kB)
+  - Example of usage · Parameters · Physical description · Time integration
+- `manta_frontend_user_guide/models/solid_mechanics/implicit_solid_mechanics.md` — **The ImplicitMechanics model** (2 kB)
+  - Example of usage · Parameters · Physical description
+- `manta_frontend_user_guide/models/solid_mechanics/solid_mechanics.md` — **Solid mechanics models** (1 kB)
+- `manta_frontend_user_guide/physical_system/geometric_hypothesis.md` — **Definining the geometric hypothesis and the default structural hypothesis** (3 kB)
+  - Geometric hypothesis · Example · Default structural hypothesis
+- `manta_frontend_user_guide/physical_system/mesh/mesh_user.md` — **Defining the mesh** (12 kB)
+  - Reading a MED mesh · Reading a Cast3M or GMSH mesh · Mesh generation with the Grid generator · Creating meshsets in Python · Operations on meshsets · Extracting a sub- meshset using a spatial function
+- `manta_frontend_user_guide/physical_system/physical_system.md` — **Physical system** (1 kB)
+- `manta_frontend_user_guide/post_processings/curves.md` — **Curves** (9 kB)
+  - The Value curve · Parameters · Example · The NodalValue curve · Parameters · Example · The Maximum , Minimum and MaximumIncrement curves · Parameters · Example · The Integral and MeanValue curves · Parameters · Example … (+6)
+- `manta_frontend_user_guide/post_processings/generalities.md` — **Generalities on post-processings** (2 kB)
+  - The PostProcessingFactory class
+- `manta_frontend_user_guide/post_processings/line_curves.md` — **LineCurves** (5 kB)
+  - Direct usage · Example of usage · Parameters · The LineCurves post-processing · Example of usage · Parameters · Format of the output file
+- `manta_frontend_user_guide/post_processings/post_processings.md` — **Post-processings** (1 kB)
+- `manta_frontend_user_guide/post_processings/vtk_export.md` — **The VTKExport post-processing** (4 kB)
+  - Limitations · Parameters · Example of usage
+- `manta_frontend_user_guide/properties.md` — **Properties** (7 kB)
+  - External material databases · Available properties implementations · The Constant property · The MFront property · Defining properties using user defined functions · Example · Defining constant spatially variable properties · Example · Parameters
+- `manta_frontend_user_guide/simulation/simulation.md` — **Simulation** (1 kB)
+- `manta_frontend_user_guide/simulation/simulation_class_overview.md` — **Overview of the simulation class** (13 kB)
+  - Main parameters · Time steps management · Determining the next time increment at the beginning of a time step · Determining the next time increment in case of convergence failure · Determining the next time increment in case of invalidation of the time step · How simulation is stopped · Conditions for post-processings to be executed · Appendix · Description of the default time increment balancer
+- `manta_frontend_user_guide/simulation/time_increment_computers.md` — **Time increment computers** (2 kB)
+  - Example of usage · List of available time increment computers · MaximumFieldIncrement
+- `manta_frontend_user_guide/solvers/implicit_model_solvers.md` — **Solvers for implicit models** (4 kB)
+  - Available algorithms · The Linear solver · The Newton solver
+- `manta_frontend_user_guide/solvers/solvers.md` — **Solvers** (1 kB)
+- `manta_frontend_user_guide/user_guide.md` — **User guide of the MANTA and PyManta frontends** (1 kB)
+
+## theory_manual
+
+- `theory_manual/fluid_mechanics/cfl_stability_factor_estimate.md` — **The CFLStabilityfactorEstimate parameter** (8 kB)
+  - Short documentation · Introduction · Principal notations · Definition of the CFL number · Description of the CFL condition · Definition of the critical time step · The role of the parameter \(C_e\) · Demonstration · Discussion about the choice of \(C_e\) · The stability time step · Demonstration · Difference between critical and stability time step … (+1)
+- `theory_manual/fluid_mechanics/compressible_fluid_mechanics.md` — **Compressible inviscid fluid mechanics** (14 kB)
+  - Compressible Euler equations · Transport of scalar variables · Numerical scheme - Finite Volume method (FVM) · Riemann solvers · The Exact Riemann solver · The HLLC Riemann solver · Reconstruction operators and limiters · PieceWiseConstant reconstruction operator · Linear reconstruction operator · Limiters · Time integration · The CFL condition and the stability factor … (+1)
+- `theory_manual/fluid_mechanics/critical_flow.md` — **Critical flow** (31 kB)
+  - Perfect gas · Problem definition and assumptions · Conservation equations · Upstream region · Downstream region · Summary · Case of low velocities · Two-phase flow · Problem definition and assumptions · Moody's model · Fauske's Model · Homogeneous Model … (+3)
+- `theory_manual/fluid_mechanics/fluid_mechanics.md` — **Fluid mechanics** (1 kB)
+- `theory_manual/fluid_mechanics/jacobian_computation.md` — **Computing the Jacobian matrix for Euler Implicit Formulations** (4 kB)
+  - Options · Notes on the choice of a jacobian expression for the implicit formulation
+- `theory_manual/fluid_mechanics/varying_section_1d.md` — **Finite Volume Method Quasi-1D for inviscid flow in a varying section pipe** (8 kB)
+  - Introduction · Disclaimer: purely 1D model · Constitutive equation and numerical model for a rigid pipe · Formulations · Boundary conditions for a compressible flow in a nozzle · Extension of the model · Additional discussion
+- `theory_manual/nonlinear_resolution/castem_like_newton.md` — **A Cast3M like, Newton algorithm implementation** (13 kB)
+  - Search operator · Convergence acceleration method · Flip-flop check · Poor independence of the basis vectors · Bounce back and large acceleration · Other tricks
+- `theory_manual/nonlinear_resolution/non_linear_resolution_theory.md` — **Resolution of non-linear implicit problems in MANTA** (19 kB)
+  - Newton algorithm · Limits to the Newton algorithm · Quasi-Newton approaches · Computing the "non-linear forces" · Convergence acceleration approaches · Cast3M slight variation of Anderson's approach · Forced convergence "trick"
+- `theory_manual/solid_heat_transfer/solid_heat_transfer.md` — **Heat transfer in solids** (6 kB)
+  - Balance equations · Boundary conditions · Initial conditions · Finite Element discretization
+- `theory_manual/solid_mechanics/beams/beam_theory.md` — **Beam theory - Euler-Bernoulli and Timoshenko** (120 kB)
+  - Introduction · Local coordinate system · Kinematics description formulation · Kinematics · Strains · Generalized forces, external forces and equations of equilibrium · Principle of virtual work · Generalized forces · External forces · Equations of equilibrium · Constitutive behaviours · Linear elastic … (+21)
+- `theory_manual/solid_mechanics/mitc4.md` — **MITC4 shell ( deprecated doc )** (4 kB)
+  - Some elements of theory · Basis · Strain · Elasticity Matrix and stress · Virtual power · Numerical application
+- `theory_manual/solid_mechanics/solid_mechanics.md` — **Solid mechanics** (1 kB)
+- `theory_manual/theory_manual.md` — **Theory manual** (1 kB)

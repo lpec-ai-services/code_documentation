@@ -75,6 +75,19 @@ sync_tfel_mfront() {
   echo "Update the version line in skills/tfel-mfront/SKILL.md if it changed: $v"
 }
 
+sync_manta() {
+  # The site is not reachable from everywhere: from a local mirror
+  #   wget -m -np -k https://manta-project.gitlab.io/manta/   (Doxygen part can be removed)
+  # set MANTA_MIRROR to the folder containing get_started/, theory_manual/, …
+  # Without MANTA_MIRROR, fetch the site directly (needs searchindex.js online).
+  local base="https://manta-project.gitlab.io/manta/"
+  if [ -n "${MANTA_MIRROR:-}" ]; then
+    "$PY" "$ROOT/tools/sphinx2md.py" --base "$base" --local "$MANTA_MIRROR" --out "$ROOT/skills/manta/docs"
+  else
+    "$PY" "$ROOT/tools/sphinx2md.py" --base "$base" --out "$ROOT/skills/manta/docs"
+  fi
+}
+
 # Add new codes here: sync_<name>() { ... } — see README.md.
 
 targets=("$@")
