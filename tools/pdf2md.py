@@ -164,7 +164,7 @@ def span_text(span, gmap):
 
 
 def font_page(page, chap_sizes, sec_sizes, footer_y=None, tol=0.3, sub_sizes=(),
-              gmap=None, regexes=(), code_fonts=(), code_lang="", drop=None):
+              gmap=None, regexes=(), code_fonts=(), code_lang="", drop=None, header_y=None):
     """Page text where lines set in heading font sizes become headings.
 
     For PDFs without bookmarks. Returns (text, [(level, title)]).
@@ -187,6 +187,8 @@ def font_page(page, chap_sizes, sec_sizes, footer_y=None, tol=0.3, sub_sizes=(),
         nonlocal pending
         if pending:
             title = re.sub(r"\s+", " ", " ".join(pending[1])).strip()
+            for k, v in LIGATURES.items():
+                title = title.replace(k, v)
             out.append("\n" + "#" * pending[0] + " " + title + "\n")
             heads.append((pending[0], title))
             pending = None
@@ -194,6 +196,8 @@ def font_page(page, chap_sizes, sec_sizes, footer_y=None, tol=0.3, sub_sizes=(),
     for b in page.get_text("dict", flags=pymupdf.TEXTFLAGS_TEXT)["blocks"]:
         for l in b.get("lines", []):
             if footer_y is not None and l["bbox"][1] > footer_y:
+                continue
+            if header_y is not None and l["bbox"][3] <= header_y:
                 continue
             spans = [sp for sp in l["spans"] if sp["text"].strip()]
             if not spans:
@@ -213,7 +217,8 @@ def font_page(page, chap_sizes, sec_sizes, footer_y=None, tol=0.3, sub_sizes=(),
             level = 1 if any(abs(size - c) < tol for c in chap_sizes) else \
                 2 if any(abs(size - c) < tol for c in sec_sizes) else 0
             # sub-sections: whole line bold, in one of the given sizes
-            if not level and sub_sizes and all("Bold" in sp["font"] for sp in spans) \
+            if not level and sub_sizes and all("bold" in sp["font"].lower() or sp["flags"] & 16
+                                               for sp in spans) \
                     and any(abs(spans[0]["size"] - c) < tol for c in sub_sizes):
                 level = 3
             for lvl_re, rx in regexes:
@@ -237,6 +242,18 @@ def font_page(page, chap_sizes, sec_sizes, footer_y=None, tol=0.3, sub_sizes=(),
     flush()
     flush_code()
     return "\n".join(out), heads
+
+
+def printed_number(page, header_y=None, footer_y=None):
+    """Page number printed in the running header/footer (a line of digits or roman numerals)."""
+    for b in page.get_text("dict", flags=pymupdf.TEXTFLAGS_TEXT)["blocks"]:
+        for l in b.get("lines", []):
+            in_zone = (header_y is not None and l["bbox"][3] <= header_y) or \
+                      (footer_y is not None and l["bbox"][1] > footer_y)
+            text = "".join(sp["text"] for sp in l["spans"]).strip()
+            if in_zone and re.fullmatch(r"\d{1,4}|[ivxlcdm]{1,7}", text):
+                return text
+    return ""
 
 
 def pick_split_level(toc, wanted=None):
@@ -369,6 +386,11 @@ def main():
     ap.add_argument("--code-lang", default="", help="language tag for those code blocks")
     ap.add_argument("--drop-regex", help="drop text lines matching this regex "
                                          "(e.g. 'continued from previous page')")
+    ap.add_argument("--header-y", type=float,
+                    help="drop text lines ending above this y (running headers)")
+    ap.add_argument("--printed-pages", action="store_true",
+                    help="read printed page numbers from the header/footer zones "
+                         "(needs --header-y and/or --footer-y), for PDFs without page labels")
     ap.add_argument("--footer-y", type=float,
                     help="drop text lines starting below this y (page footers)")
     ap.add_argument("--page-offset", type=int, default=0,
@@ -397,7 +419,25 @@ def main():
     regexes = [(int(r.split(":", 1)[0]), re.compile(r.split(":", 1)[1]))
                for r in args.heading_regex]
     drop = re.compile(args.drop_regex) if args.drop_regex else None
-    fp_opts = dict(code_fonts=tuple(args.code_fonts), code_lang=args.code_lang, drop=drop)
+    fp_opts = dict(code_fonts=tuple(args.code_fonts), code_lang=args.code_lang, drop=drop,
+                   header_y=args.header_y)
+    labels = {}
+    if args.printed_pages:
+        raw = {i: printed_number(doc[i], args.header_y, args.footer_y) for i in range(doc.page_count)}
+        # arabic numbers: use the median (number - index) offset of the neighbouring pages,
+        # so pages without a header (chapter openings) or with a stray number get a
+        # consistent value; roman front-matter numbers are kept as found
+        offs = {i: int(v) - i for i, v in raw.items() if v.isdigit()}
+        for i in range(doc.page_count):
+            near = sorted(o for j, o in offs.items() if abs(j - i) <= 6)
+            if near:
+                labels[i] = str(i + near[len(near) // 2])
+                if int(labels[i]) < 1:
+                    labels[i] = raw[i]
+            else:
+                labels[i] = raw[i]
+            if raw[i] and not raw[i].isdigit():
+                labels[i] = raw[i]
     font_texts = {}
     synth_toc = None
     if chap_sizes:
@@ -410,7 +450,7 @@ def main():
             font_texts[i] = text
             synth += [[lvl, t, i + 1] for lvl, t in heads]
         synth_toc = synth
-    elif gmap or args.code_fonts or drop:
+    elif gmap or args.code_fonts or drop or args.header_y:
         # bookmarks exist: font-aware text, headings inserted from the outline
         for i, page in enumerate(doc):
             font_texts[i] = None
@@ -441,7 +481,7 @@ def main():
         pages = range(ch["start"], ch["end"] + 1)
         if chap_sizes:  # headings already in place
             texts = {p: clean_text(font_texts[p], running, []) for p in pages}
-        elif gmap or args.code_fonts or drop:
+        elif gmap or args.code_fonts or drop or args.header_y:
             texts = {p: clean_text(font_page(doc[p], [], [], args.footer_y, gmap=gmap, **fp_opts)[0],
                                    running, heads_by_page.get(p, []))
                      for p in pages}
@@ -453,7 +493,8 @@ def main():
         parts = [f"# {ch['title']}\n",
                  f"<!-- source PDF pages {ch['start'] + 1}-{ch['end'] + 1} -->\n"]
         for p in pages:
-            printed = doc[p].get_label() if not args.page_offset else str(p + 1 + args.page_offset)
+            printed = labels.get(p) if labels else (
+                doc[p].get_label() if not args.page_offset else str(p + 1 + args.page_offset))
             label = f"page {printed} (PDF {p + 1})" if printed else f"page {p + 1}"
             parts.append(f"\n<!-- {label} -->\n")
             parts.append(texts.get(p, "").strip() + "\n")
@@ -467,8 +508,9 @@ def main():
         if lvl < level:  # wrapper bookmarks above the chapters
             continue
         f = page_to_file.get(page - 1, "?")
-        printed = str(page + args.page_offset) if args.page_offset else \
-            (doc[page - 1].get_label() if 0 < page <= doc.page_count else "")
+        printed = labels.get(page - 1, "") if labels else (
+            str(page + args.page_offset) if args.page_offset else
+            (doc[page - 1].get_label() if 0 < page <= doc.page_count else ""))
         where = f"p. {printed}, PDF {page}" if printed else f"p. {page}"
         lines.append(f"{'  ' * (lvl - level)}- {title.strip()} → `{f}` ({where})")
     if not toc:

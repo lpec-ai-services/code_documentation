@@ -33,7 +33,9 @@ Correlations sit on the boundary. Their physical basis and data are in the physi
 2. Read the passage. In the text, "□" marks a symbol that could not be decoded, and display equations are split across lines. Take formulas from `equations.md`, or say they're not transcribed and cite the page.
 3. Cite the source and its **printed page** (`<!-- page N (PDF M) -->` markers give both), e.g. "(D'Auria 2017, p. 226)" or "(IAEA TRS-498, p. 29)".
 4. Water vs liquid metal: don't carry water correlations or two-phase concepts over to sodium or lead without saying so. Liquid metals have low Prandtl numbers, and F §3 discusses why the usual correlations and turbulence models fail.
-5. Point to related skills. Neutronics feedback and coupled physics are in `neutronics`. Comparing code results to experiments (V&V statistics) is in `valjean`.
+5. Point to related skills:
+   - **`neutronics`:** neutronics feedback and coupled physics. Its `technology.md` branch covers PWR components and systems (primary circuit, pressurizer, steam generators, safety injection, auxiliary feedwater, containment spray) from Marguet's *La technologie des REP*, which is useful for system descriptions behind accident scenarios.
+   - **`valjean`:** comparing code results to experiments (V&V statistics).
 
 ## Adding a document
 

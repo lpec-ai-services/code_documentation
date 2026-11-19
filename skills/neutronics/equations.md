@@ -1,6 +1,6 @@
 # Key equations
 
-Transcribed in LaTeX from the rendered pages of the sources, because the extracted text garbles symbols. **P** = physics, **M** = methods. Page numbers are printed pages of *Les méthodes de la neutronique* (CEA, 2013). Equation numbers are those of the source.
+Transcribed in LaTeX from the rendered pages of the sources, because the extracted text garbles symbols. **P** = physics, **M** = methods. Page numbers are printed pages. §P1–P6 and §M1–M5 come from *Les méthodes de la neutronique* (CEA, 2013). §P7–P10 come from Stacey, *Nuclear Reactor Physics*, 3rd ed. (2018), marked "S". Equation numbers are those of the source.
 
 Notation: $\psi(\vec r,E,\vec\Omega,t)$ angular flux; $\phi=\int_{4\pi}\psi\,d\Omega$ scalar flux; $N_k$ concentration of nuclide $k$; $\sigma$ microscopic and $\Sigma=\sum_k N_k\sigma_k$ macroscopic cross sections; $\nu$ neutrons per fission; $\chi$ emission spectra.
 
@@ -179,3 +179,39 @@ k_{eff}^{(n+1)}\approx k_1\left[1+c\left(\frac{k_2}{k_1}\right)^n\left(\frac{k_2
 \phi^{(n+1)}\propto u_1+c\left(\frac{k_2}{k_1}\right)^{n+1}
 $$
 The dominance ratio $k_2/k_1$ is close to 1 in large, loosely coupled cores such as PWRs, so convergence is slow. k_eff converges faster than the source and flux distribution.
+
+---
+
+## P7 — Effective multiplication constant, six-factor form (S eq. 2.3, p. 37)
+
+$$k=\eta f\varepsilon pP_{NL}\equiv k_\infty P_{NL}$$
+$\eta$: fission neutrons per neutron absorbed in fuel; $f$: thermal utilization; $\varepsilon$: fast fission factor; $p$: resonance escape probability; $P_{NL}$: non-leakage probability. Natural uranium in a graphite lattice, fuel distributed uniformly: $\eta\approx1.33$, $f\approx0.9$, $\varepsilon\approx1.05$, $p\approx0.7$, giving $k_\infty\approx0.88$. Lumping the fuel raises $p$, which is why heterogeneous lattices can be critical (p. 37).
+
+## P8 — Bare homogeneous reactor, one-group diffusion (S eqs. 3.59–3.66, pp. 57–58)
+
+Separation of variables $\phi(\mathbf r,t)=\psi(\mathbf r)T(t)$, with $T(t)=T(0)e^{-\lambda t}$ and
+$$\nabla^2\psi(\mathbf r)=-B_g^2\,\psi(\mathbf r)$$
+with zero flux on the extrapolated boundary. $B_g$ is the **geometric buckling**. Slab of extrapolated width $a_{ex}$:
+$$\psi_n(x)=\cos B_nx,\qquad B_n^2=\Big(\frac{n\pi}{a_{ex}}\Big)^2,\ n=1,3,5,\dots,\qquad \lambda_n=v\big(\Sigma_a+DB_n^2-\nu\Sigma_f\big)$$
+Since $B_1^2<B_3^2<\dots$, at long times $\phi(x,t)\to A_1e^{-\lambda_1t}\cos(\pi x/a_{ex})$: the fundamental mode. The reactor is steady (critical) if $\lambda_1=0$, i.e. when the material buckling $(\nu\Sigma_f-\Sigma_a)/D$ equals $B_1^2$.
+
+## P9 — Samarium and xenon poisoning (S eqs. 6.10–6.15, pp. 212–213)
+
+**Samarium-149** (from ¹⁴⁹Nd → ¹⁴⁹Pm, $\beta^-$, 53 h → ¹⁴⁹Sm, stable, $\sigma_a\approx4\times10^4$ b). Equilibrium:
+$$P_{eq}=\frac{\gamma^{Nd}\Sigma_f\phi}{\lambda^P},\qquad S_{eq}=\frac{\gamma^{Nd}\Sigma_f}{\sigma_a^S}\quad(\text{independent of flux level})$$
+After shutdown from equilibrium ($\phi=0$): $P(t)=P_{eq}e^{-\lambda^Pt}$, $S(t)=S_{eq}+P_{eq}(1-e^{-\lambda^Pt})\to S_{eq}+P_{eq}$ (time constant $1/\lambda^P=78$ h).
+Reactivity worth: $\rho_{Sm}^{(t)}=-S(t)\sigma_a^S/\Sigma_a$, and at equilibrium $\rho_{Sm}^{eq}=-\gamma^{Nd}\Sigma_f/\Sigma_a=-\gamma^{Nd}/\nu$ (using $k\approx\nu\Sigma_f/\Sigma_a=1$), $\approx0.0045$ in magnitude for ²³⁵U fuel.
+
+**Xenon-135** ($\sigma_a=2.6\times10^6$ b), produced directly ($\gamma^{Xe}$) and from ¹³⁵I (taking ¹³⁵I as produced directly with yield $\gamma^{Te}$):
+$$\frac{dI}{dt}=\gamma^{Te}\Sigma_f\phi-\lambda^II,\qquad \frac{dX}{dt}=\gamma^{Xe}\Sigma_f\phi+\lambda^II-\big(\lambda^X+\sigma_a^X\phi\big)X$$
+Solutions for constant flux:
+$$I(t)=\frac{\gamma^{Te}\Sigma_f\phi}{\lambda^I}\big(1-e^{-\lambda^It}\big)+I(0)e^{-\lambda^It}$$
+$$X(t)=\frac{(\gamma^{Te}+\gamma^{Xe})\Sigma_f\phi}{\lambda^X+\sigma_a^X\phi}\Big[1-e^{-(\lambda^X+\sigma_a^X\phi)t}\Big]+\frac{\gamma^{Te}\Sigma_f\phi-\lambda^II(0)}{\lambda^X-\lambda^I+\sigma_a^X\phi}\Big[e^{-(\lambda^X+\sigma_a^X\phi)t}-e^{-\lambda^It}\Big]+X(0)e^{-(\lambda^X+\sigma_a^X\phi)t}$$
+The shutdown xenon peak and the reactivity worth follow on pp. 214–217.
+
+## P10 — Fast excursion with prompt energy feedback (S eqs. 5.138–5.142, p. 187)
+
+Step reactivity $\Delta k_0>k\beta$ above prompt critical, feedback proportional to the energy released ($\alpha_E=\partial k/\partial E$), delayed neutrons neglected:
+$$\frac1P\frac{dP}{dt}=\frac{k-1}{\Lambda}=\frac{\Delta k_0-\alpha_EE(t)}{\Lambda},\qquad E(t)\equiv\int_0^tP(t')\,dt'$$
+$$E(t)=\frac{(\Delta k_0/\Lambda)+R}{\alpha_E/\Lambda}\;\frac{1-e^{-Rt}}{\dfrac{R+\Delta k_0/\Lambda}{R-\Delta k_0/\Lambda}e^{-Rt}+1},\qquad R\equiv\sqrt{\Big(\frac{\Delta k_0}{\Lambda}\Big)^2+2\Big(\frac{\alpha_E}{\Lambda}\Big)P_0}$$
+From a low initial power, $R\approx\Delta k_0/\Lambda$. The power peaks at $P_{max}=(\Delta k_0/\Lambda)^2/\big(2\alpha_E/\Lambda\big)$ at $t\approx1.3/(\Delta k_0/\Lambda)$, with a width at half maximum $\approx3.52/(\Delta k_0/\Lambda)$ (p. 188).

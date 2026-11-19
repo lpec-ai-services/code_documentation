@@ -1,62 +1,76 @@
 # Methods branch: how it is computed
 
-Source key: **M** = `sources/cea-methodes-neutronique/` (*Les méthodes de la neutronique*, CEA 2013). Pages are printed page numbers; the file is given as its two-digit prefix. Equations: see `equations.md` (§M…).
+Sources (pages are printed pages):
+- **M** = `sources/cea-methodes-neutronique/`: CEA monograph (2013), in French. File = two-digit prefix.
+- **S** = `sources/stacey-reactor-physics-3e/`: Stacey, *Nuclear Reactor Physics*, 3rd ed. (2018).
 
-## Calculation schemes (the neutronicist's approach)
+Equations: `equations.md` (§M…).
 
-| Topic | Where | Notes |
-|---|---|---|
-| Why we need schemes: 7 variables, about 10¹² unknowns for a fine description, coupling, time scales | M `02`, p. 51 | |
-| **Two-step scheme**: lattice/assembly calculation (2D transport, infinite lattice), then homogenization/condensation, equivalence, then core calculation (3D diffusion or simplified transport) | M `02`, pp. 51–54 | The only qualified operational scheme for 3D cores with depletion and feedback |
-| Direct 3D transport: deterministic (out of reach for large cores) vs Monte Carlo coupled to a depletion code (statistical uncertainty propagation problem) | M `02`, p. 52 | |
-| Separating statics / slow evolution / fast transients | M `02`, p. 52 | |
-
-## Deterministic solution of the stationary Boltzmann equation (chapter `04`)
+## Calculation schemes and reactor analysis
 
 | Topic | Where | Notes |
 |---|---|---|
-| Discretizing phase space: orders of magnitude of unknowns | M `04`, pp. 62–63 | |
-| **Energy: multigroup** equations; flux-weighted multigroup cross sections; lethargy | M `04`, pp. 64–65 | §M1 |
-| **Self-shielding formalism** (APOLLO2): self-shielded vs infinite-dilution cross sections; equivalence with an infinite homogeneous medium; **subgroup** methods; mixtures of resonant isotopes; BWR assembly validation | M `04`, pp. 65–72 | Livolant–Jeanpierre method also cited in `02`, p. 53 |
-| **Angle: SN** (discrete ordinates, quadratures) | M `04`, pp. 72–74 | |
-| **PN**, **SPN** (simplified transport, available in the MINOS and MINARET solvers) | M `04`, pp. 74–75 | §M2 |
-| **Diffusion approximation** (P1 truncation, Fick's law, diffusion coefficient) | M `04`, pp. 75–76 | §M2 |
-| **Space**: finite differences, **nodal methods**, finite elements (primal and mixed formulations) | M `04`, pp. 76–79 | |
-| **Angle + space**: finite elements (even-parity formulation, discontinuous Galerkin) | M `04`, p. 81 | |
-| **Method of characteristics (MOC)**: tracking, transmission and balance equations, transverse integration, boundary conditions, use with self-shielding and finite elements | M `04`, pp. 82–86 | §M3. APOLLO3 |
+| Why schemes (7 variables, ~10¹² unknowns); **two-step scheme** (lattice, then homogenization/condensation and equivalence, then core); direct 3D transport vs Monte Carlo + depletion; separating statics, depletion and transients | M `02`, pp. 51–54 | |
+| Nuclear reactor analysis workflow; physics–thermal-hydraulics interaction | S §7.12–7.13, pp. 276–284 | |
+| **Homogenization**: equivalent cross sections, ABH collision probability, blackness theory, assembly transport, homogenization theory, **equivalence theory**, multiscale expansion, **flux reconstruction** | S ch. 14, pp. 535–562; S §3.8, p. 65 | |
 
-## Monte Carlo solution (chapter `05`)
+## Energy treatment
 
 | Topic | Where | Notes |
 |---|---|---|
-| General principles; **Neumann series** of the integral equation | M `05`, pp. 89–90 | |
-| Transport by Monte Carlo: analog vs non-analog (biased) simulation | M `05`, pp. 91–92 | |
-| **Sampling laws**: source, path length, collision kernel (nuclide, reaction, outgoing E and Ω) | M `05`, pp. 92–94 | §M4 |
-| Neutron **weight** | M `05`, p. 95 | |
-| Simulation strategies: fine PWR power distribution, flux attenuation in structures (shielding) | M `05`, p. 97 | |
-| **Convergence, figure of merit / quality factor**, estimators and variance | M `05`, pp. 97–98 | |
-| **Criticality**: power iteration (deterministic vs Monte Carlo batches), dominance ratio, source convergence, stationarity diagnostics (entropy) | M `05`, pp. 99–100 | §M5 |
-| **Variance of k_eff and flux**: inter-cycle correlation leads to underestimated variance in large cores; independent replicas | M `05`, p. 101 | |
-| **Acceleration / variance reduction**: deterministic initial source for criticality; biasing in propagation (importance, splitting / Russian roulette, exponential transform) | M `05`, pp. 101–104 | |
-| Perspectives | M `05`, p. 104 | |
+| **Multigroup** equations and flux-weighted cross sections; lethargy | M `04`, pp. 64–65; S §4.2, §4.4, pp. 112, 127 | §M1 |
+| **Self-shielding formalism** (APOLLO2): equivalence with a homogeneous medium, **subgroup** methods, resonant mixtures, BWR validation | M `04`, pp. 65–72 | Livolant–Jeanpierre method also cited in M `02`, p. 53 |
+| Resonance treatment: first-flight escape probabilities, unresolved resonances, **multiband** spatial self-shielding, resonance representations (SLBW, MLBW, Reich–Moore, Adler–Adler, pole) | S ch. 11, pp. 439–468 | |
+| P1 and B1 slowing-down equations; continuous slowing-down; multigroup Sₙ | S ch. 10, pp. 400–428 | |
+| Thermal spectra in homogeneous media and lattices (numerical) | S §12.4–12.5, pp. 478–494 | |
 
-## Depletion solvers (chapter `06`)
+## Angle and space (deterministic)
 
 | Topic | Where | Notes |
 |---|---|---|
-| Principles; decay/reaction chains | M `06`, p. 107 | |
-| **Analytic solution** of the Bateman equations | M `06`, p. 108 | |
-| **Numerical solution** (time steps, Runge–Kutta) | M `06`, p. 109 | |
-| Examples: heavy nuclides, Xe/Sm poisoning; DARWIN | M `06`, pp. 110–113 | |
+| **Diffusion**: P1 truncation, Fick's law; numerical solution of the diffusion equation | M `04`, pp. 75–76; S §3.10, p. 76 | §M2 |
+| **Collision probability** and **interface current** methods (slab and multidimensional) | S §9.3–9.5, pp. 323–343 | |
+| **Pₙ** (1D and multidimensional), **SPₙ** (MINOS, MINARET) | M `04`, pp. 74–75; S §9.6–9.7, pp. 344–361 | §M2 |
+| **Sₙ** discrete ordinates (slab, sphere, multidimensional) | M `04`, pp. 72–74; S §9.8–9.10, pp. 362–379 | |
+| Even-parity transport | M `04`, p. 81; S §9.11, p. 379; S §13.10, p. 524 | |
+| **Method of characteristics** (tracking, transmission and balance equations, boundary conditions; APOLLO3) | M `04`, pp. 82–86 | §M3 |
+| Space: finite differences, **nodal** (conventional; transverse-integrated diffusion, integral transport and Sₙ), finite elements (primal and mixed), coarse-mesh finite elements | M `04`, pp. 76–79; S §3.11, p. 82; S ch. 15, pp. 563–604 | |
+| **Synthesis methods**: single- and multi-channel spatial, spectral | S §15.9–15.11, pp. 608–622 | |
+| Variational principle for multigroup diffusion | S §15.8, p. 605 | |
 
-## Kinetics solvers (chapter `07`)
+## Monte Carlo
 
 | Topic | Where | Notes |
 |---|---|---|
-| Principles of time-dependent solution | M `07`, pp. 116–117 | |
-| Point kinetics: solution via the Nordheim equation | M `07`, pp. 118–119 | Equations in physics §P6 |
-| **3D kinetics**: simplification models, **quasi-static (QS)**, **improved quasi-static (IQS)**, local quasi-static, **multi-scale**, **modal synthesis**, direct 3D kinetics (CRONOS, APOLLO3/MINARET) | M `07`, pp. 120–124 | |
+| Principles, Neumann series, analog and non-analog simulation, sampling laws, weights | M `05`, pp. 89–95; S §9.12, p. 380 | §M4 |
+| Convergence, figure of merit, estimators, variance | M `05`, pp. 97–98 | |
+| Criticality: power iteration, dominance ratio, source convergence, stationarity diagnostics | M `05`, pp. 99–100 | §M5 |
+| k_eff variance and inter-cycle correlation; acceleration and variance reduction (importance, splitting / Russian roulette) | M `05`, pp. 101–104 | |
 
-## Codes named in the source
+## Perturbation and variational methods
 
-APOLLO2 / APOLLO3 (deterministic lattice and core), MINOS, MINARET (core solvers), CRONOS (core), ERANOS (fast reactors), TRIPOLI-4 (Monte Carlo → `tripoli4` skill), DARWIN (depletion).
+| Topic | Where | Notes |
+|---|---|---|
+| **Perturbation theory** reactivity estimates; **adjoint operators and importance function** | S §13.1–13.2, pp. 501–508 | |
+| Variational / generalized perturbation theory (reactivity, reaction-rate ratios, reaction rates); variational theory; intermediate resonance integral; heterogeneity effects; variational derivation of approximate equations; boundary perturbation | S §13.3–13.11, pp. 508–534 | |
+| Perturbation estimates of reactivity temperature coefficients | S §5.8, p. 168 | |
+
+## Depletion
+
+| Topic | Where | Notes |
+|---|---|---|
+| Bateman principles; analytic and numerical solution | M `06`, pp. 107–109 | |
+| Examples: heavy nuclides, Xe/Sm poisoning (DARWIN); simple depletion model | M `06`, pp. 110–113; S §6.4, p. 219 | |
+
+## Kinetics solvers
+
+| Topic | Where | Notes |
+|---|---|---|
+| Numerical methods for point kinetics | S §5.13, p. 192 | |
+| Point kinetics via the Nordheim equation | M `07`, pp. 118–119 | Equations in §P6 |
+| **Space–time kinetics**: spatially dependent point kinetics; time integration of the spatial flux; stability | S §16.2–16.4, pp. 626–667 | |
+| **3D kinetics models**: quasi-static (QS), improved quasi-static (IQS), local quasi-static, multi-scale, **modal synthesis**, direct 3D kinetics (CRONOS, APOLLO3/MINARET) | M `07`, pp. 120–124 | |
+
+## Codes named in the sources
+
+APOLLO2/3, MINOS, MINARET, CRONOS, ERANOS, TRIPOLI-4 (→ `tripoli4` skill), DARWIN (M).

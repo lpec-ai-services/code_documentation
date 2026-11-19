@@ -34,14 +34,24 @@ sync_valjean() {
 }
 
 sync_neutronics() {
-  # Knowledge sources are local PDFs (no stable download URL). Only the
-  # sources/ text is regenerated; SKILL.md, physics.md, methods.md and
+  # Knowledge sources are local PDFs (no stable download URL); each is optional.
+  # Only sources/ is regenerated; SKILL.md, physics.md, methods.md, technology.md and
   # equations.md are written by hand.
-  local pdf="${NEUTRONICS_METHODES_PDF:?set NEUTRONICS_METHODES_PDF=/path/to/La_neutronique_-_Les_methodes_de_la_neutronique.pdf}"
-  "$PY" "$ROOT/tools/pdf2md.py" --pdf "$pdf" \
-    --out "$ROOT/skills/neutronics/sources/cea-methodes-neutronique" \
-    --chapter-sizes 16,18 --section-sizes 11.5 --subsection-sizes 9.5,9.0 \
-    --footer-y 770 --page-offset 42
+  local out="$ROOT/skills/neutronics/sources" any=""
+  if [ -n "${NEUTRONICS_METHODES_PDF:-}" ]; then any=1
+    "$PY" "$ROOT/tools/pdf2md.py" --pdf "$NEUTRONICS_METHODES_PDF" --out "$out/cea-methodes-neutronique" \
+      --chapter-sizes 16,18 --section-sizes 11.5 --subsection-sizes 9.5,9.0 --footer-y 770 --page-offset 42
+  fi
+  if [ -n "${NEUTRONICS_STACEY_PDF:-}" ]; then any=1   # Stacey, Nuclear Reactor Physics, 3rd ed. (Wiley-VCH 2018)
+    "$PY" "$ROOT/tools/pdf2md.py" --pdf "$NEUTRONICS_STACEY_PDF" --out "$out/stacey-reactor-physics-3e" \
+      --chapter-sizes 13 --section-sizes 12.5 --subsection-sizes 10 --header-y 62 --printed-pages \
+      --glyph-map "$ROOT/tools/glyphmaps/wiley-stix.json" --max-pages 20
+  fi
+  if [ -n "${NEUTRONICS_MARGUET_PDF:-}" ]; then any=1  # Marguet, La technologie des REP (EDF 2019)
+    "$PY" "$ROOT/tools/pdf2md.py" --pdf "$NEUTRONICS_MARGUET_PDF" --out "$out/marguet-technologie-rep-2019" \
+      --chapter-sizes 20.7 --section-sizes 14.3 --subsection-sizes 12 --header-y 55 --printed-pages --max-pages 20
+  fi
+  [ -n "$any" ] || { echo "set NEUTRONICS_METHODES_PDF, NEUTRONICS_STACEY_PDF and/or NEUTRONICS_MARGUET_PDF" >&2; return 1; }
 }
 
 sync_thermal_hydraulics() {
