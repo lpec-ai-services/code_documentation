@@ -1,6 +1,6 @@
 <!-- source: modules/valjean/chrono.rst -->
 
-# `.chrono` — A context manager to time code sections
+# `chrono` — A context manager to time code sections
 
 This module provides the `Chrono` context manager.
 

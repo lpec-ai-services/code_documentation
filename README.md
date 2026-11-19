@@ -33,7 +33,9 @@ skills/
 ├── salome-gui/            # SALOME desktop / GUI user guide
 ├── scivianna/             # CEA visualizer: AGENTS.md, tutorials, API (static), runnable examples
 ├── vtk/                   # VTK in Python: 900 examples (classic + Pythonic API), VTK Textbook, user docs
-└── uranie/                # Uranie user manual (Python): modules + 985 runnable code blocks
+├── uranie/                # Uranie user manual (Python): modules + 985 runnable code blocks
+├── icoco/                 # ICoCo v2 coupling norm: ICoCo::Problem contract from the header comments
+└── c3po/                  # C3PO coupling platform: overview, code integration, API, example couplings
 tools/
 ├── pdf2md.py              # PDF manual  → chapter Markdown + TOC (uses the PDF bookmarks)
 ├── sphinx2md.py           # published Sphinx site → page Markdown + INDEX (searchindex.js or a local copy)
@@ -41,6 +43,7 @@ tools/
 ├── pdfbook2md.py          # book delivered as one PDF per chapter → one folder per chapter + book TOC
 ├── mdtree2md.py           # Markdown docs kept in a repo → skill docs + INDEX (links .html → .md)
 ├── dox2md.py              # hand-written Doxygen pages (.dox/.doc) → Markdown, \snippet resolved from sources
+├── cppdoc2md.py           # Doxygen comments in C/C++ headers → Markdown API reference (no Doxygen needed)
 ├── glyphmaps/             # per-font symbol fixes for publisher PDFs (e.g. Elsevier AdvP fonts)
 └── hal_harvest.py         # incremental harvester of HAL metadata + open-access PDFs (see below)
 templates/SKILL.md         # starting point for a new code

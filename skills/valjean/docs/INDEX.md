@@ -73,7 +73,7 @@ Each entry: file — title, then its main headings.
 - `modules/cambronne/main.md` — **`main` — Main executable** (1 kB)
   - valjean.cambronne.main.main(argv=None) · valjean.cambronne.main.make_parser() · valjean.cambronne.main.process_options(args)
 - `modules/cosette.md` — **cosette — COnStruction et ExécuTion de TâchEs** (1 kB)
-- `modules/cosette/code.md` — **`.code` — Tools for checking out and building code** (4 kB)
+- `modules/cosette/code.md` — **`code` — Tools for checking out and building code** (4 kB)
   - class valjean.cosette.code.CheckoutTask(name, *, repository, checkout_root=None, log_root=None, flags=None, ref=None, vcs='git', deps=None, soft_deps=None)  — bases: PythonTask · class valjean.cosette.code.BuildTask(name, source, *, build_root=None, log_root=None, targets=None, build_system='cmake', configure_flags=None, build_flags=None, deps=None, soft_deps=None)  — bases: PythonTask
 - `modules/cosette/depgraph.md` — **`depgraph` — Dependency graphs** (11 kB)
   - Building · Querying · Merging, sorting and other operations · Grafting sub-graph nodes into the graph itself · Caveats · class valjean.cosette.depgraph.DepGraphError  — bases: Exception · class valjean.cosette.depgraph.DepGraph(nodes=None, edges=None)
@@ -127,7 +127,7 @@ Each entry: file — title, then its main headings.
   - valjean.gavroche.diagnostics.stats.stats_worker(test_fn, name, description, tasks, **kwargs) · valjean.gavroche.diagnostics.stats.task_stats(*, name, description='', labels=None, tasks) · class valjean.gavroche.diagnostics.stats.NameFingerprint(name, fingerprint=None) · class valjean.gavroche.diagnostics.stats.TestStatsTasks(*, name, description='', labels=None, task_results)  — bases: Test · class valjean.gavroche.diagnostics.stats.TestResultStatsTasks(*, test, classify)  — bases: TestResult · class valjean.gavroche.diagnostics.stats.TestOutcome  — bases: Enum · valjean.gavroche.diagnostics.stats.test_stats(*, name, description='', labels=None, tasks) · class valjean.gavroche.diagnostics.stats.TestStatsTests(*, name, description='', labels=None, task_results)  — bases: Test · class valjean.gavroche.diagnostics.stats.TestResultStatsTests  — bases: TestResultStatsTasks · valjean.gavroche.diagnostics.stats.test_stats_by_labels(*, name, description='', labels=None, tasks, by_labels) … (+7)
 - `modules/gavroche/eval_test_task.md` — **`eval_test_task` – One task to evaluate them all** (1 kB)
   - valjean.gavroche.eval_test_task.actually_eval_test(test) · class valjean.gavroche.eval_test_task.EvalTestTask(name, test_task_name, *, deps=None, soft_deps=None)  — bases: PythonTask · valjean.gavroche.eval_test_task.evaluate_tests(test_fn, name=None)
-- `modules/gavroche/stat_tests.md` — **`stat_tests` – Statistical tests for datasets comparisons** (36 kB)
+- `modules/gavroche/stat_tests.md` — **`stat_tests` – Statistical tests for datasets comparisons** (37 kB)
   - Modules · student` — Student's t-test · Test interpretation · Code implementation · Examples · class valjean.gavroche.stat_tests.student.TestResultStudent(test, tstud, pvalue=None)  — bases: TestResult · class valjean.gavroche.stat_tests.student.TestStudent(dsref, *datasets, name, description='', labels=None, alpha=0.01, ndf=None)  — bases: TestDataset · Statistical interpretation · Code implementation · Examples of the test … (+15)
 - `modules/gavroche/test.md` — **`test` – Domain-specific language for writing tests** (4 kB)
   - class valjean.gavroche.test.CheckBinsException  — bases: Exception · valjean.gavroche.test.same_arrays(arr1, arr2) · valjean.gavroche.test.same_bins(bins1, bins2) · valjean.gavroche.test.same_bins_datasets(*datasets) · valjean.gavroche.test.check_bins(*datasets) · class valjean.gavroche.test.Test(*, name, description='', labels=None)  — bases: ABC · class valjean.gavroche.test.TestDataset(dsref, *datasets, name, description='', labels=None)  — bases: Test · class valjean.gavroche.test.TestResult(test)  — bases: ABC · class valjean.gavroche.test.TestResultFailed(test, msg)  — bases: TestResult · class valjean.gavroche.test.TestResultEqual(test, equal)  — bases: TestResult … (+3)
@@ -154,7 +154,7 @@ Each entry: file — title, then its main headings.
   - class valjean.javert.verbosity.Verbosity  — bases: Enum
 - `modules/valjean.md` — **valjean — VALidation, Journal d'Évolution et ANalyse** (1 kB)
   - valjean.note(self, message, *args, **kwargs) · class valjean.ValjeanFormatter(fmt) · valjean.set_log_level(level) · valjean.get_logger(module) · valjean.set_logger_level(module, level=logging.INFO) · valjean.local_logger_level(module, level)
-- `modules/valjean/chrono.md` — **`.chrono` — A context manager to time code sections** (1 kB)
+- `modules/valjean/chrono.md` — **`chrono` — A context manager to time code sections** (1 kB)
   - class valjean.chrono.Chrono()
 - `modules/valjean/config.md` — **`config` — Configuration object** (1 kB)
   - Module API · class valjean.config.Config(dictionary=None)  — bases: MutableMapping

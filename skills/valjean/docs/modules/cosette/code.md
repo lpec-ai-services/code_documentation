@@ -1,6 +1,6 @@
 <!-- source: modules/cosette/code.rst -->
 
-# `.code` — Tools for checking out and building code
+# `code` — Tools for checking out and building code
 
 This submodule contains a few useful tasks for checking out, configuring, and building arbitrary code.
 

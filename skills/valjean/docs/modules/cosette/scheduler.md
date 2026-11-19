@@ -20,7 +20,7 @@ An error that may be raised by the `Scheduler` class.
 
 Schedule a number of tasks.
 
-The Scheduler class has the responsibility of scheduling and executing a number of tasks. Here `hard_graph` is a `DepGraph` describing the *hard* dependencies among the tasks to be executed (see `task` for details about *hard* vs. *soft* dependencies); `soft_graph` is a `DepGraph` describing the *soft* dependencies alone; finally, `backend` should be an instance of a `*Scheduling` class such as `.QueueScheduling`, or at any rate a class that exhibits an `execute_tasks()` method with the correct signature (see `.QueueScheduling.execute_tasks()`). If `backend` is `None`, the default backend will be used.
+The Scheduler class has the responsibility of scheduling and executing a number of tasks. Here `hard_graph` is a `DepGraph` describing the *hard* dependencies among the tasks to be executed (see `task` for details about *hard* vs. *soft* dependencies); `soft_graph` is a `DepGraph` describing the *soft* dependencies alone; finally, `backend` should be an instance of a `*Scheduling` class such as `QueueScheduling`, or at any rate a class that exhibits an `execute_tasks()` method with the correct signature (see `QueueScheduling.execute_tasks()`). If `backend` is `None`, the default backend will be used.
 
 param DepGraph hard_graph  
 The dependency graph for hard dependencies.

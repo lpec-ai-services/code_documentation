@@ -102,9 +102,9 @@ as you can verify yourself:
 
 > \>\>\> full_graph = DepGraph.from_dependency_dictionary({ ... spanish_inq: \[surprise\], ... surprise: \[fear, efficiency\], ... fear: \[devotion\], ... efficiency: \[devotion\], ... devotion: \[uniforms\] ... }) \>\>\> full_graph == spanish True
 
-The nice thing about this feature is that it makes it easier (more modular) to build complex graphs. Just build smaller subgraphs and assemble them together as if they were nodes! The `.flatten` method will recursively graft all graph nodes into the main graph.
+The nice thing about this feature is that it makes it easier (more modular) to build complex graphs. Just build smaller subgraphs and assemble them together as if they were nodes! The `flatten` method will recursively graft all graph nodes into the main graph.
 
-(Fun fact: the `DepGraph` type is a monad, with `.flatten` playing the role of `join`. If what I just wrote makes no sense to you, don't worry.)
+(Fun fact: the `DepGraph` type is a monad, with `flatten` playing the role of `join`. If what I just wrote makes no sense to you, don't worry.)
 
 ## Caveats
 

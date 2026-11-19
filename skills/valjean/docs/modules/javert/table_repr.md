@@ -425,7 +425,7 @@ empty list
 
 Represent external test as tables -\> no table done.
 
-If tables are required they are already done. Their representation in the report is done by `.ExternalRepresenter`.
+If tables are required they are already done. Their representation in the report is done by `ExternalRepresenter`.
 
 returns  
 empty list

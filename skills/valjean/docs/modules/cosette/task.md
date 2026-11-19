@@ -6,7 +6,7 @@ This module collects a few task classes that can be used with the `scheduler` an
 
 This module defines a dummy `Task` class that may be used as a base class and extended.
 
-The `.Task.do()` method takes two arguments:
+The `Task.do()` method takes two arguments:
 
 - `env` is an environment for task execution. The idea of the environment is that tasks may use it to store information about their execution. For instance, a task may create a file and store its location in the environment, so that later tasks may be able to retrieve it. The type of `env` is really immaterial, but it is probably natural to use a key-value mapping of some kind. Note, however, that most of the tasks defined in the `task` module hierarchy expect `env` to be an `Env` object.
 - `config` is a `Config` object describing the configuration for the current run. Tasks may look up global configuration values here.

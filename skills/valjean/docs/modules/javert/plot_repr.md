@@ -294,7 +294,7 @@ empty list
 
 Plot external test -\> no plot done.
 
-If plots are required they are already done. Their representation in the report is done by `.ExternalRepresenter`.
+If plots are required they are already done. Their representation in the report is done by `ExternalRepresenter`.
 
 returns  
 empty list

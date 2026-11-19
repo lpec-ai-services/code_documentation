@@ -1,0 +1,8 @@
+# API reference (from header comments)
+
+- `ICoCoExceptions.md` — 9 documented members: WrongContext, ~WrongContext, what, WrongArgument, ~WrongArgument, what, NotImplemented, ~NotImplemented, what
+- `ICoCoField.md` — 3 documented members: setName, getName, getCharName
+- `ICoCoMEDDoubleField.md` — 7 documented members: MEDDoubleField, MEDDoubleField, MEDDoubleField, MEDDoubleField& operator=(const MEDDoubleField& field), ~MEDDoubleField, getMCField, setMCField
+- `ICoCoMEDIntField.md` — 7 documented members: MEDIntField, MEDIntField, MEDIntField, MEDIntField& operator=(const MEDIntField& field), ~MEDIntField, getMCField, setMCField
+- `ICoCoProblem.md` — 56 documented members: enum class ValueType, GetICoCoMajorVersion, Problem, ~Problem, setDataFile, setMPIComm, initialize, terminate, presentTime, computeTimeStep, initTimeStep, solveTimeStep, validateTimeStep, setStationaryMode, getStationaryMode, isStationary, abortTimeStep, resetTime, iterateTimeStep, save, restore, forget, getInputFieldsNames, getOutputFieldsNames, getFieldType, getMeshUnit, getFieldUnit, getInputMEDDoubleFieldTemplate, setInputMEDDoubleField, getOutputMEDDoubleField, updateOutputMEDDoubleField, getInputMEDIntFieldTemplate, setInputMEDIntField, getOutputMEDIntField, updateOutputMEDIntField, getInputMEDStringFieldTemplate, setInputMEDStringField, getOutputMEDStringField, updateOutputMEDStringField, getMEDCouplingMajorVersion …
+- `ICoCoTrioField.md` — 10 documented members: TrioField, TrioField, ~TrioField, clear, set_standalone, dummy_geom, TrioField& operator=(const TrioField& NewField), save, restore, nb_values

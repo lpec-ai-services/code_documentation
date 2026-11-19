@@ -1,0 +1,1011 @@
+# `ICoCoProblem.hxx`
+
+
+## namespace `ICoCo`
+
+The namespace ICoCo (Interface for code coupling) encompasses all the classes
+and methods needed for the coupling of codes.
+See the class Problem and the function getProblem() to start with.
+
+
+### `enum class ValueType`
+
+```cpp
+enum class ValueType;
+```
+
+The various possible types for fields or scalar values.
+
+
+## class `Problem`
+
+```cpp
+class Problem
+```
+
+API that a code has to implement in order to comply with the ICoCo (version 2) norm.
+
+This abstract class represents the methods that a given code may implement to comply (partially or fully) to the
+ICoCo standard. For organization and documentation purposes the interface is separated into several sections but
+this does not correspond to any code constraint.
+Note that not all the methods need to be implemented! Notably the methods belonging to the sections
+  - Restorable
+  - Field I/O
+  - Scalar values I/O
+are not always needed since a code might not have any integer field to work with for example.
+Consequently, default implementation for all methods of this interface is to raise an ICoCo::NotImplemented
+exception.
+
+Some of the methods may not be called when some conditions are not met (i.e. when not in the correct context). Thus
+in this documentation we define the "TIME_STEP_DEFINED context" as the context that the code finds itself, when the method
+initTimeStep() has been called, and the method validateTimeStep() (or abortTimeStep()) has not yet been called.
+This is the status in which the current computation time step is well defined.
+
+Within the computation of a time step (so within TIME_STEP_DEFINED), the temporal semantic of the fields (and
+scalar values) is not imposed by the norm. Said differently, it does not require the fields to be defined at the
+start/middle/end of the current time step, this semantic must be agreed on between the codes being coupled.
+Fields and scalar values that are set within the TIME_STEP_DEFINED context are invalidated (undefined behavior)
+after a call to validateTimeStep() (or abortTimeStep()). They need to be set at each time step. However, fields and scalar
+values that are set outside of this context (before the first time step for example, or after the resolution of the last
+time step) are permanent (unless modified afterward within the TIME_STEP_DEFINED context).
+
+Finally, the ICoCo interface may be wrapped in Python using SWIG or PyBind11. For an example of the former see the
+TRUST implementation of ICoCo. Notably the old methods returning directly MEDCoupling::MEDCouplingFieldDouble objects
+(version 1.x of ICoCo) are easily re-instanciated in Python SWIG.
+
+
+### `GetICoCoMajorVersion`
+
+```cpp
+static int GetICoCoMajorVersion();
+```
+
+Return ICoCo interface major version number.
+
+**Returns:** ICoCo interface major version number (2 at present)
+
+
+### `Problem`
+
+```cpp
+Problem();
+```
+
+Constructor.
+
+Internal set up and initialization of the code should not be done here, but rather in initialize().
+
+
+### `~Problem`
+
+```cpp
+virtual ~Problem();
+```
+
+Destructor.
+
+The release of the resources allocated by the code should not be performed here, but rather in terminate().
+
+
+### `setDataFile`
+
+```cpp
+virtual void setDataFile(const std::string& datafile);
+```
+
+(Optional) Provide the relative path of a data file to be used by the code.
+
+This method must be called before initialize().
+
+
+- **datafile**: relative path to the data file.
+
+**Throws** `ICoCo::WrongContext`: exception if called multiple times or after initialize().
+
+**Throws** `ICoCo::WrongArgument`: if an invalid path is provided.
+
+
+### `setMPIComm`
+
+```cpp
+virtual void setMPIComm(void* mpicomm);
+```
+
+(Optional) Provide the MPI communicator to be used by the code for parallel computations.
+
+This method must be called before initialize(). The communicator should include all the processes
+to be used by the code. For a sequential code, the call to setMPIComm is optional or mpicomm should be
+nullptr.
+
+
+- **mpicomm**: pointer to a MPI communicator. Type void* to avoid to include mpi.h for sequential codes.
+
+**Throws** `ICoCo::WrongContext`: exception if called multiple times or after initialize().
+
+
+### `initialize`
+
+```cpp
+virtual bool initialize();
+```
+
+(Mandatory) Initialize the current problem instance.
+
+In this method the code should allocate all its internal structures and be ready to execute. File reads, memory
+allocations, and other operations likely to fail should be performed here, and not in the constructor (and not in
+the setDataFile() or in the setMPIComm() methods either).
+This method must be called only once (after a potential call to setMPIComm() and/or setDataFile()) and cannot be
+called again before terminate() has been performed.
+
+
+**Returns:** true if all OK, otherwise false.
+
+**Throws** `ICoCo::WrongContext`: exception if called multiple times or after initialize().
+
+
+### `terminate`
+
+```cpp
+virtual void terminate();
+```
+
+(Mandatory) Terminate the current problem instance and release all allocated resources.
+
+Terminate the computation, free the memory and save whatever needs to be saved. This method is called once
+at the end of the computation or after a non-recoverable error.
+No other ICoCo method except setDataFile(), setMPIComm() and initialize() may be called after this.
+
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+**Throws** `ICoCo::WrongContext`: exception if called inside the TIME_STEP_DEFINED context (see Problem documentation).
+
+
+### `presentTime`
+
+```cpp
+virtual double presentTime() const;
+```
+
+(Mandatory) Return the current time of the simulation.
+
+Can be called any time between initialize() and terminate().
+The current time can only change during a call to validateTimeStep() or to resetTime().
+
+
+**Returns:** the current (physical) time of the simulation
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+
+### `computeTimeStep`
+
+```cpp
+virtual double computeTimeStep(bool& stop) const;
+```
+
+(Mandatory) Return the next preferred time step (time increment) for this code, and whether the code
+wants to stop.
+
+Both data are only indicative, the supervisor is not required to take them into account. This method is
+however marked as mandatory, since most of the coupling schemes expect the code to provide this
+information (those schemes then typically compute the minimum of the time steps of all the codes being coupled).
+Hence a possible implementation is to return a huge value, if a precise figure can not be computed.
+
+Can be called whenever the code is outside the TIME_STEP_DEFINED context (see Problem documentation).
+
+
+- **stop**: set to true if the code wants to stop. It can be used for example to indicate that, according to
+a certain criterion, the end of the transient computation is reached from the code point of view.
+
+**Returns:** the preferred time step for this code (only valid if stop is false).
+
+**Throws** `ICoCo::WrongContext`: exception if called inside the TIME_STEP_DEFINED context (see Problem documentation).
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+
+### `initTimeStep`
+
+```cpp
+virtual bool initTimeStep(double dt);
+```
+
+(Mandatory) Provide the next time step (time increment) to be used by the code.
+
+After this call (if successful), the computation time step is defined to ]t, t + dt] where t is the value
+returned by presentTime(). The code enters the TIME_STEP_DEFINED context.
+A time step = 0. may be used when the stationaryMode is set to true for codes solving directly for
+the steady-state.
+
+
+- **dt**: the time step to be used by the code
+
+**Returns:** false means that given time step is not compatible with the code time scheme.
+
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+**Throws** `ICoCo::WrongContext`: exception if called inside the TIME_STEP_DEFINED context (see Problem documentation).
+
+**Throws** `ICoCo::WrongContext`: exception if called several times without resolution.
+
+**Throws** `ICoCo::WrongArgument`: exception if dt is invalid (dt < 0.0).
+
+
+### `solveTimeStep`
+
+```cpp
+virtual bool solveTimeStep();
+```
+
+(Mandatory) Perform the computation on the current time interval.
+
+Can be called whenever the code is inside the TIME_STEP_DEFINED context (see Problem documentation).
+
+
+**Returns:** true if computation was successful, false otherwise.
+
+**Throws** `ICoCo::WrongContext`: exception if called outside the TIME_STEP_DEFINED context (see Problem documentation).
+
+**Throws** `ICoCo::WrongContext`: exception if called several times without a call to validateTimeStep() or to
+abortTimeStep().
+
+
+### `validateTimeStep`
+
+```cpp
+virtual void validateTimeStep();
+```
+
+(Mandatory) Validate the computation performed by solveTimeStep.
+
+Can be called whenever the code is inside the TIME_STEP_DEFINED context (see Problem documentation).
+After this call:
+- the present time has been advanced to the end of the computation time step
+- the computation time step is undefined (the code leaves the TIME_STEP_DEFINED context).
+
+
+**Throws** `ICoCo::WrongContext`: exception if called outside the TIME_STEP_DEFINED context (see Problem documentation).
+
+**Throws** `ICoCo::WrongContext`: exception if called before the solveTimeStep() method.
+
+**Sa:** abortTimeStep()
+
+
+### `setStationaryMode`
+
+```cpp
+virtual void setStationaryMode(bool stationaryMode);
+```
+
+(Mandatory) Set whether the code should compute a stationary solution or a transient one.
+
+New in version 2 of ICoCo. By default the code is assumed to be in stationary mode False (i.e. set up
+for a transient computation).
+If set to True, solveTimeStep() can be used either to solve a time step in view of an asymptotic solution,
+or to solve directly for the steady-state. In this last case, a time step = 0. can be used with initTimeStep()
+(whose call is always needed).
+The stationary mode status of the code can only be modified by this method (or by a call to terminate()
+followed by initialize()).
+
+Can be called whenever the code is outside the TIME_STEP_DEFINED context (see Problem documentation).
+
+
+- **stationaryMode**: true if the code should compute a stationary solution.
+
+
+**Throws** `ICoCo::WrongContext`: exception if called inside the TIME_STEP_DEFINED context (see Problem documentation).
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+
+### `getStationaryMode`
+
+```cpp
+virtual bool getStationaryMode() const;
+```
+
+(Mandatory) Indicate whether the code should compute a stationary solution or a transient one.
+
+See also setStationaryMode().
+
+Can be called whenever the code is outside the TIME_STEP_DEFINED context (see Problem documentation).
+
+
+**Returns:** true if the code has been set to compute a stationary solution.
+
+
+**Throws** `ICoCo::WrongContext`: exception if called inside the TIME_STEP_DEFINED context (see Problem documentation).
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+
+### `isStationary`
+
+```cpp
+virtual bool isStationary() const;
+```
+
+(Optional) Return whether the solution is constant on the computation time step.
+
+Used to know if the steady-state has been reached. This method can be called whenever the computation time step
+is not defined.
+
+
+**Returns:** true if the solution is constant on the computation time step.
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+**Throws** `ICoCo::WrongContext`: exception  if called inside the TIME_STEP_DEFINED context (see Problem documentation),
+meaning we shouldn't request this information while the computation of a new time step is in progress.
+
+
+### `abortTimeStep`
+
+```cpp
+virtual void abortTimeStep();
+```
+
+(Optional) Abort the computation on the current time step.
+
+Can be called whenever the computation time step is defined, instead of validateTimeStep().
+After this call, the present time is left unchanged, and the computation time step is undefined
+(the code leaves the TIME_STEP_DEFINED context).
+
+
+**Throws** `ICoCo::WrongContext`: exception if called outside the TIME_STEP_DEFINED context (see Problem documentation).
+
+**Sa:** validateTimeStep()
+
+
+### `resetTime`
+
+```cpp
+virtual void resetTime(double time);
+```
+
+(Optional) Reset the current time of the Problem to a given value.
+
+New in version 2 of ICoCo.
+Particularly useful for the initialization of complex transients: the starting point of the transient
+of interest is computed first, the time is reset to 0, and then the actual transient of interest starts with proper
+initial conditions, and global time 0.
+
+Can be called outside the TIME_STEP_DEFINED context (see Problem documentation).
+
+
+- **time**: the new current time.
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+**Throws** `ICoCo::WrongContext`: exception if called inside the TIME_STEP_DEFINED context (see Problem documentation)
+
+
+### `iterateTimeStep`
+
+```cpp
+virtual bool iterateTimeStep(bool& converged);
+```
+
+(Optional) Perform a single iteration of computation inside the time step.
+
+This method is relevant for codes having inner iterations for the computation of a single time step.
+Calling iterateTimeStep() until converged is true is equivalent to calling solveTimeStep(), within the code's
+convergence threshold.
+Can be called (potentially several times) inside the TIME_STEP_DEFINED context (see Problem documentation).
+
+
+- **converged**: set to true if the solution is not evolving any more.
+
+**Returns:** false if the computation failed.
+
+**Throws** `ICoCo::WrongContext`: exception if called outside the TIME_STEP_DEFINED context (see Problem documentation)
+
+**Sa:** solveTimeStep()
+
+
+### `save`
+
+```cpp
+virtual void save(int label, const std::string& method) const;
+```
+
+(Optional) Save the state of the code.
+
+The saved state is identified by the combination of label and method arguments.
+If save() has already been called with the same two arguments, the saved state is overwritten.
+This method is const indicating that saving the state of the code should not change its behaviour with respect to
+all other ICoCo methods. Implementation may rely on a mutable attribute (e.g. if saving to memory is desired).
+
+
+- **label**: a user- (or code-) defined value identifying the state.
+
+- **method**: a string specifying which method is used to save the state of the code. A code can provide
+different methods (for example in memory, on disk, etc.).
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+**Throws** `ICoCo::WrongContext`: exception if called inside the TIME_STEP_DEFINED context (see Problem documentation),
+meaning we shouldn't save a previous time step while the computation of a new time step is in progress.
+
+**Throws** `ICoCo::WrongArgument`: exception if the method or label argument is invalid.
+
+
+### `restore`
+
+```cpp
+virtual void restore(int label, const std::string& method);
+```
+
+(Optional) Restore the state of the code.
+
+After restore, the code should behave exactly like after the corresponding call to save (except of course for
+save/restore methods, since the list of saved states may have changed).
+The state to be restored is identified by the combination of label and method arguments.
+The save() method must have been called at some point or in some previous run with this combination.
+
+
+- **label**: a user- (or code-) defined value identifying the state.
+
+- **method**: a string specifying which method is used to restore the state of the code. A code can provide
+different methods (for example in memory, on disk, etc.).
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+**Throws** `ICoCo::WrongContext`: exception if called inside the TIME_STEP_DEFINED context (see Problem documentation),
+meaning we shouldn't restore while the computation of a new time step is in progress.
+
+**Throws** `ICoCo::WrongArgument`: exception if the method or label argument is invalid.
+
+
+### `forget`
+
+```cpp
+virtual void forget(int label, const std::string& method) const;
+```
+
+(Optional) Discard a previously saved state of the code.
+
+After this call, the save-point cannot be restored anymore. This method can be used to free the space occupied by
+unused saved states.
+This method is const indicating that forgeting a previous state of the code should not change its behaviour with
+respect to all other ICoCo methods. Implementation may rely on a mutable attribute (e.g. if saving to memory is
+desired).
+
+
+- **label**: a user- (or code-) defined value identifying the state.
+
+- **method**: a string specifying which method is used to restore the state of the code. A code can provide
+different methods (for example in memory, on disk, etc.).
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+**Throws** `ICoCo::WrongArgument`: exception if the method or label argument is invalid.
+
+
+### `getInputFieldsNames`
+
+```cpp
+virtual std::vector<std::string> getInputFieldsNames() const;
+```
+
+(Optional) Get the list of input fields accepted by the code.
+
+
+**Returns:** the list of field names that represent inputs of the code
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+
+### `getOutputFieldsNames`
+
+```cpp
+virtual std::vector<std::string> getOutputFieldsNames() const;
+```
+
+(Optional) Get the list of output fields that can be provided by the code.
+
+
+**Returns:** the list of field names that can be produced by the code
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+
+### `getFieldType`
+
+```cpp
+virtual ValueType getFieldType(const std::string& name) const;
+```
+
+(Optional) Get the type of a field managed by the code (input or output)
+
+The three possible types are int, double and string, as defined in the ValueType enum.
+
+
+- **name**: field name
+
+**Returns:** one of ValueType::Double, ValueType::Int or ValueType::String
+
+**Throws** `ICoCo::WrongArgument`: exception if the field name is invalid.
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+**Sa:** ValueType
+
+
+### `getMeshUnit`
+
+```cpp
+virtual std::string getMeshUnit() const;
+```
+
+(Optional) Get the (length) unit used to define the meshes supporting the fields.
+
+
+**Returns:** length unit in which the mesh coordinates should be understood (e.g. "m", "cm", ...)
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+
+### `getFieldUnit`
+
+```cpp
+virtual std::string getFieldUnit(const std::string& name) const;
+```
+
+(Optional) Get the physical unit used for a given field.
+
+
+- **name**: field name
+
+**Returns:** unit in which the field values should be understood (e.g. "W", "J", "Pa", ...)
+
+**Throws** `ICoCo::WrongArgument`: exception if the field name is invalid.
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+
+### `getInputMEDDoubleFieldTemplate`
+
+```cpp
+virtual void getInputMEDDoubleFieldTemplate(const std::string& name, MEDDoubleField& afield) const;
+```
+
+(Optional) Retrieve an empty shell for an input field. This shell can be filled by the caller and then be
+given to the code via setInputField(). The field has the MEDDoubleField format.
+
+The code uses this method to populate 'afield' with all the data that represents the context
+of the field (i.e. its support mesh, its discretization -- on nodes, on elements, ...).
+The remaining job for the caller of this method is to fill the actual values of the field itself.
+When this is done the field can be sent back to the code through the method setInputField().
+This method is not mandatory but is useful to know the mesh, discretization... on which an input field is
+expected.
+
+See Problem documentation for more details on the time semantic of a field.
+
+
+- **name**: name of the field for which we would like the empty shell
+
+- **afield**: field object (in MEDDoubleField format) that will be populated with all the contextual information.
+Any previous information in this object will be discarded.
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+**Throws** `ICoCo::WrongArgument`: exception if the field name is invalid.
+
+
+### `setInputMEDDoubleField`
+
+```cpp
+virtual void setInputMEDDoubleField(const std::string& name, const MEDDoubleField& afield);
+```
+
+(Optional) Provide the code with input data in the form of a MEDDoubleField.
+
+The method getInputFieldTemplate(), if implemented, may be used first to prepare an empty shell of the field to
+pass to the code.
+
+See Problem documentation for more details on the time semantic of a field.
+
+
+- **name**: name of the field that is given to the code.
+
+- **afield**: field object (in MEDDoubleField format) containing the input data to be read by the code. The name
+of the field set on this instance (with the Field::setName() method) should not be checked. However its time value
+should be to ensure it is within the proper time interval ]t, t+dt].
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+**Throws** `ICoCo::WrongArgument`: exception if the field name ('name' parameter) is invalid.
+
+**Throws** `ICoCo::WrongArgument`: exception if the time property of 'afield' does not belong to the currently computed
+time step ]t, t + dt]
+
+
+### `getOutputMEDDoubleField`
+
+```cpp
+virtual void getOutputMEDDoubleField(const std::string& name, MEDDoubleField& afield) const;
+```
+
+(Optional) Retrieve output data from the code in the form of a MEDDoubleField.
+
+Gets the output field corresponding to name from the code into the afield argument.
+
+See Problem documentation for more details on the time semantic of a field.
+
+
+- **name**: name of the field that the caller requests from the code.
+
+- **afield**: field object (in MEDDoubleField format) populated with the data read by the code. The name
+and time properties of the field should be set in accordance with the 'name' parameter and with the current
+time step being computed.
+Any previous information in this object will be discarded.
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+**Throws** `ICoCo::WrongArgument`: exception if the field name ('name' parameter) is invalid.
+
+
+### `updateOutputMEDDoubleField`
+
+```cpp
+virtual void updateOutputMEDDoubleField(const std::string& name, MEDDoubleField& afield) const;
+```
+
+(Optional) Update a previously retrieved output field.
+
+(New in version 2) This methods allows the code to implement a more efficient update of a given output field,
+thus avoiding the caller to invoke getOutputMEDDoubleField() each time.
+A previous call to getOutputMEDDoubleField() with the same name must have been done prior to this call.
+The code should check the consistency of the field object with the requested data (same support mesh,
+discretization -- on nodes, on elements, etc.).
+
+See Problem documentation for more details on the time semantic of a field.
+
+
+- **name**: name of the field that the caller requests from the code.
+
+- **afield**: field object (in MEDDoubleField format) updated with the data read from the code. Notably the time
+indicated in the field should be updated to be within the current time step being computed.
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+**Throws** `ICoCo::WrongArgument`: exception if the field name ('name' parameter) is invalid.
+
+**Throws** `ICoCo::WrongArgument`: exception if the field object is inconsistent with the field being requested.
+
+
+### `getInputMEDIntFieldTemplate`
+
+```cpp
+virtual void getInputMEDIntFieldTemplate(const std::string& name, MEDIntField& afield) const;
+```
+
+Similar to getInputMEDDoubleFieldTemplate() but for MEDIntField.
+
+**Sa:** getInputMEDDoubleFieldTemplate()
+
+
+### `setInputMEDIntField`
+
+```cpp
+virtual void setInputMEDIntField(const std::string& name, const MEDIntField& afield);
+```
+
+Similar to setInputMEDDoubleField() but for MEDIntField.
+
+**Sa:** setInputMEDDoubleField()
+
+
+### `getOutputMEDIntField`
+
+```cpp
+virtual void getOutputMEDIntField(const std::string& name, MEDIntField& afield) const;
+```
+
+Similar to getOutputMEDDoubleField() but for MEDIntField.
+
+**Sa:** getOutputMEDDoubleField()
+
+
+### `updateOutputMEDIntField`
+
+```cpp
+virtual void updateOutputMEDIntField(const std::string& name, MEDIntField& afield) const;
+```
+
+Similar to updateOutputMEDDoubleField() but for MEDIntField.
+
+**Sa:** updateOutputMEDDoubleField()
+
+
+### `getInputMEDStringFieldTemplate`
+
+```cpp
+virtual void getInputMEDStringFieldTemplate(const std::string& name, MEDStringField& afield) const;
+```
+
+Similar to getInputMEDDoubleFieldTemplate() but for MEDStringField.
+
+**WARNING:** at the time of writing, MEDStringField are not yet implemented anywhere.
+
+**Sa:** getInputMEDDoubleFieldTemplate()
+
+
+### `setInputMEDStringField`
+
+```cpp
+virtual void setInputMEDStringField(const std::string& name, const MEDStringField& afield);
+```
+
+Similar to setInputMEDDoubleField() but for MEDStringField.
+
+**WARNING:** at the time of writing, MEDStringField are not yet implemented anywhere.
+
+**Sa:** setInputMEDDoubleField()
+
+
+### `getOutputMEDStringField`
+
+```cpp
+virtual void getOutputMEDStringField(const std::string& name, MEDStringField& afield) const;
+```
+
+Similar to getOutputMEDDoubleField() but for MEDStringField.
+
+**WARNING:** at the time of writing, MEDStringField are not yet implemented anywhere.
+
+**Sa:** getOutputMEDDoubleField()
+
+
+### `updateOutputMEDStringField`
+
+```cpp
+virtual void updateOutputMEDStringField(const std::string& name, MEDStringField& afield) const;
+```
+
+Similar to updateOutputMEDDoubleField() but for MEDStringField.
+
+**WARNING:** at the time of writing, MEDStringField are not yet implemented anywhere.
+
+**Sa:** updateOutputMEDDoubleField()
+
+
+### `getMEDCouplingMajorVersion`
+
+```cpp
+virtual int getMEDCouplingMajorVersion() const;
+```
+
+(Optional) Get MEDCoupling major version, if the code was built with MEDCoupling support.
+
+This can be used to assess compatibility between codes when coupling them.
+
+
+**Returns:** the MEDCoupling major version number (typically 7, 8, 9, ...)
+
+
+### `isMEDCoupling64Bits`
+
+```cpp
+virtual bool isMEDCoupling64Bits() const;
+```
+
+(Optional) Indicate whether the code was built with a 64-bits version of MEDCoupling.
+
+Implemented if the code was built with MEDCoupling support.
+This can be used to assess compatibility between codes when coupling them.
+
+
+**Returns:** the MEDCoupling major version number
+
+
+### `getInputFieldTemplate`
+
+```cpp
+virtual void getInputFieldTemplate(const std::string& name, TrioField& afield) const;
+```
+
+Similar to getInputMEDDoubleFieldTemplate() but for TrioField.
+
+**Sa:** getInputMEDDoubleFieldTemplate()
+
+
+### `setInputField`
+
+```cpp
+virtual void setInputField(const std::string& name, const TrioField& afield);
+```
+
+Similar to setInputMEDDoubleField() but for TrioField.
+
+**Sa:** setInputMEDDoubleField()
+
+
+### `getOutputField`
+
+```cpp
+virtual void getOutputField(const std::string& name, TrioField& afield) const;
+```
+
+Similar to getOutputMEDDoubleField() but for TrioField.
+
+**Sa:** getOutputMEDDoubleField()
+
+
+### `updateOutputField`
+
+```cpp
+virtual void updateOutputField(const std::string& name, TrioField& afield) const;
+```
+
+Similar to updateOutputMEDDoubleField() but for TrioField.
+
+**Sa:** updateOutputMEDDoubleField()
+
+
+### `getInputValuesNames`
+
+```cpp
+virtual std::vector<std::string> getInputValuesNames() const;
+```
+
+(Optional) Get the list of input scalars accepted by the code.
+
+
+**Returns:** the list of scalar names that represent inputs of the code
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+
+### `getOutputValuesNames`
+
+```cpp
+virtual std::vector<std::string> getOutputValuesNames() const;
+```
+
+(Optional) Get the list of output scalars that can be provided by the code.
+
+
+**Returns:** the list of scalar names that can be returned by the code
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+
+### `getValueType`
+
+```cpp
+virtual ValueType getValueType(const std::string& name) const;
+```
+
+(Optional) Get the type of a scalar managed by the code (input or output)
+
+The three possible types are int, double and string, as defined in the ValueType enum.
+
+
+- **name**: scalar value name
+
+**Returns:** one of ValueType::Double, ValueType::Int or ValueType::String
+
+**Throws** `ICoCo::WrongArgument`: exception if the scalar name is invalid.
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+**Sa:** ValueType
+
+
+### `getValueUnit`
+
+```cpp
+virtual std::string getValueUnit(const std::string& name) const;
+```
+
+(Optional) Get the physical unit used for a given value.
+
+
+- **name**: scalar value name
+
+**Returns:** unit in which the scalar value should be understood (e.g. "W", "J", "Pa", ...)
+
+**Throws** `ICoCo::WrongArgument`: exception if the value name is invalid.
+
+**Throws** `ICoCo::WrongContext`: exception if called before initialize() or after terminate().
+
+
+### `setInputDoubleValue`
+
+```cpp
+virtual void setInputDoubleValue(const std::string& name, const double& val);
+```
+
+(Optional) Provide the code with a scalar double data.
+
+See Problem documentation for more details on the time semantic of a scalar value.
+
+
+- **name**: name of the scalar value that is given to the code.
+
+- **val**: value passed to the code.
+
+**Throws** `ICoCo::WrongArgument`: exception if the scalar name ('name' parameter) is invalid.
+
+
+### `getOutputDoubleValue`
+
+```cpp
+virtual double getOutputDoubleValue(const std::string& name) const;
+```
+
+(Optional) Retrieve a scalar double value from the code.
+
+See Problem documentation for more details on the time semantic of a scalar value.
+
+
+- **name**: name of the scalar value to be read from the code.
+
+**Returns:** the double value read from the code.
+
+**Throws** `ICoCo::WrongArgument`: exception if the scalar name ('name' parameter) is invalid.
+
+
+### `setInputIntValue`
+
+```cpp
+virtual void setInputIntValue(const std::string& name, const int& val);
+```
+
+(Optional) Similar to setInputDoubleValue() but for an int value.
+
+**Sa:** setInputDoubleValue()
+
+
+### `getOutputIntValue`
+
+```cpp
+virtual int getOutputIntValue(const std::string& name) const;
+```
+
+(Optional) Similar to getOutputDoubleValue() but for an int value.
+
+**Sa:** getOutputDoubleValue()
+
+
+### `setInputStringValue`
+
+```cpp
+virtual void setInputStringValue(const std::string& name, const std::string& val);
+```
+
+(Optional) Similar to setInputDoubleValue() but for an string value.
+
+**Sa:** setInputDoubleValue()
+
+
+### `getOutputStringValue`
+
+```cpp
+virtual std::string getOutputStringValue(const std::string& name) const;
+```
+
+(Optional) Similar to getOutputDoubleValue() but for an string value.
+
+**Sa:** getOutputDoubleValue()
+
+
+### `getProblem`
+
+```cpp
+extern "C" ICoCo::Problem* getProblem();
+```
+
+(Mandatory) Retrieve an instance of the class defined by the code (and inheriting Problem).
+
+The main purpose of this function is to facilitate the instantiation of a problem when the code is loaded
+in the supervisor using a dlopen() mechanism. Code implementing the ICoCo interface should implement this
+method by returning a new instance of their derived class of Problem.
+No default implementation can be provided for this.
+
+
+**Returns:** a new instance of the derived class of Problem implemented by the code.

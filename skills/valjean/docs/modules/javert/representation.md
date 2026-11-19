@@ -11,15 +11,15 @@ This module uses the `Strategy` design pattern. The `Representation` class plays
 Currently we have 3 main `Representer` classes:
 
 - `Representer`: parent class of all others, containing the default `Representer.__call__` method, calling the class method named `'repr_' + class.name` of the test;
-- `TableRepresenter`: inherited from `Representer`, designed as a parent class for user's own representations of tables. Its `TableRepresenter.__call__` method first looks for a method called `'repr_' + class.name`; if it does not exist call the default method from the catalogue of table representation accessible in `.table_repr`;
-- `PlotRepresenter`: inherited from `Representer`, designed as a parent class for user's own representations of plots. Its `PlotRepresenter.__call__` method first looks for a method called `'repr_' + class.name`; if it does not exist call the default method from the catalogue of plot representation accessible in `.plot_repr`.
+- `TableRepresenter`: inherited from `Representer`, designed as a parent class for user's own representations of tables. Its `TableRepresenter.__call__` method first looks for a method called `'repr_' + class.name`; if it does not exist call the default method from the catalogue of table representation accessible in `table_repr`;
+- `PlotRepresenter`: inherited from `Representer`, designed as a parent class for user's own representations of plots. Its `PlotRepresenter.__call__` method first looks for a method called `'repr_' + class.name`; if it does not exist call the default method from the catalogue of plot representation accessible in `plot_repr`.
 
 An example of use of the `Representer` objects can be seen in the `FullTableRepresenter`. In this table representation, for the Bonferroni test result, the input test result is first represented in a table, then the Bonferroni itself is represented in a second table.
 
 Thus the use of the `Representer` is foreseen as:
 
 - use the default methods provided in `TableRepresenter` and `PlotRepresenter`;
-- if customisation is needed, you can easily call the additional method available in `.table_repr` and `.plot_repr`;
+- if customisation is needed, you can easily call the additional method available in `table_repr` and `plot_repr`;
 - you can also write your own representation method provided they follow the naming convention `'repr_' + class.name`;
 - `valjean` calls the `Representer` classes through the `Representation` class.
 

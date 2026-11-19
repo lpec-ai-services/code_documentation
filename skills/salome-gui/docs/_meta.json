@@ -1,7 +1,7 @@
 {
   "source": "https://github.com/SalomePlatform/gui/tree/master/doc/salome/gui",
   "version": "master (068ba26, 2026-09-21)",
-  "generated": "2026-11-18",
+  "generated": "2026-11-19",
   "pages": [
     "common_functionality.md",
     "drag_and_drop.md",

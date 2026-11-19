@@ -78,7 +78,7 @@ Class containing a parsing result from Tripoli-4 output for one batch.
 The `ParseResult` object is accessible from the instance attribute
 
 `res`  
-that is a unique dictionary containing all the results from scanning and parsing steps. Variables characteristic to a batch are stored under the key `'batch_data'` no matter if they come from `.Scanner` or from `Parser`. Variables characteristic to a run (= one execution of Tripoli-4) are stored under `'run_data'`, coming from the scanning step.
+that is a unique dictionary containing all the results from scanning and parsing steps. Variables characteristic to a batch are stored under the key `'batch_data'` no matter if they come from `Scanner` or from `Parser`. Variables characteristic to a run (= one execution of Tripoli-4) are stored under `'run_data'`, coming from the scanning step.
 
 It is possible to transform the `res` dictionary in a `Browser` thanks to the method `to_browser`.
 

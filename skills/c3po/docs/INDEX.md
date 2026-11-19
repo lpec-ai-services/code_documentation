@@ -1,0 +1,156 @@
+# Index of pages
+
+Each entry: file — title, then its main headings.
+
+
+## (root)
+
+- `code_integration.md` — **How to use a code with C3PO** (5 kB)
+  - Use of Python as high-level language · Use of MEDCoupling for data exchanges · Use of MPI as distributed memory parallelization standard · Use of an ICoCo API · References
+- `index.md` — **Collaborative Code Coupling PlatfOrm** (1 kB)
+- `mainpage.md` — **C3PO documentation** (18 kB)
+  - Introduction · Source overview · c3po/couplers directory · c3po/exchangeMethods directory · c3po/services directory · c3po/raises directory · c3po/multi1D directory · c3po/mpi directory · Contacts · References
+
+## api
+
+- `api/c3po.CollaborativeDataManager.md` — **`c3po.CollaborativeDataManager`** (2 kB)
+  - class c3po.CollaborativeDataManager.CollaborativeDataManager
+- `api/c3po.CollaborativeExchanger.md` — **`c3po.CollaborativeExchanger`** (1 kB)
+  - class c3po.CollaborativeExchanger.CollaborativeExchanger
+- `api/c3po.CollaborativeObject.md` — **`c3po.CollaborativeObject`** (1 kB)
+  - class c3po.CollaborativeObject.CollaborativeObject
+- `api/c3po.CollaborativePhysicsDriver.md` — **`c3po.CollaborativePhysicsDriver`** (1 kB)
+  - class c3po.CollaborativePhysicsDriver.CollaborativePhysicsDriver
+- `api/c3po.Coupler.md` — **`c3po.Coupler`** (3 kB)
+  - class c3po.Coupler.NormChoice  — bases: object · class c3po.Coupler.Coupler
+- `api/c3po.DataAccessor.md` — **`c3po.DataAccessor`** (11 kB)
+  - class c3po.DataAccessor.DataAccessor  — bases: object
+- `api/c3po.DataManager.md` — **`c3po.DataManager`** (1 kB)
+  - class c3po.DataManager.DataManager  — bases: object
+- `api/c3po.Exchanger.md` — **`c3po.Exchanger`** (1 kB)
+  - class c3po.Exchanger.Exchanger  — bases: object
+- `api/c3po.LocalDataManager.md` — **`c3po.LocalDataManager`** (4 kB)
+  - class c3po.LocalDataManager.LocalDataManager
+- `api/c3po.LocalExchanger.md` — **`c3po.LocalExchanger`** (1 kB)
+  - class c3po.LocalExchanger.ShortcutToField · class c3po.LocalExchanger.ShortcutToValue · class c3po.LocalExchanger.LocalExchanger
+- `api/c3po.PhysicsDriver.md` — **`c3po.PhysicsDriver`** (20 kB)
+  - class c3po.PhysicsDriver.PhysicsDriver
+- `api/c3po.TimeAccumulator.md` — **`c3po.TimeAccumulator`** (4 kB)
+  - class c3po.TimeAccumulator.SaveAtInitTimeStep  — bases: object · class c3po.TimeAccumulator.TimeAccumulator
+- `api/c3po.couplers.AdaptiveResidualBalanceCoupler.md` — **`c3po.couplers.AdaptiveResidualBalanceCoupler`** (4 kB)
+  - class c3po.couplers.AdaptiveResidualBalanceCoupler.AdaptiveResidualBalanceCoupler
+- `api/c3po.couplers.AndersonCoupler.md` — **`c3po.couplers.AndersonCoupler`** (3 kB)
+  - c3po.couplers.AndersonCoupler.deleteQRColumn · class c3po.couplers.AndersonCoupler.AndersonCoupler
+- `api/c3po.couplers.CrossedSecantCoupler.md` — **`c3po.couplers.CrossedSecantCoupler`** (2 kB)
+  - class c3po.couplers.CrossedSecantCoupler.CrossedSecantCoupler
+- `api/c3po.couplers.DynamicResidualBalanceCoupler.md` — **`c3po.couplers.DynamicResidualBalanceCoupler`** (3 kB)
+  - class c3po.couplers.DynamicResidualBalanceCoupler.DynamicResidualBalanceCoupler
+- `api/c3po.couplers.FixedPointCoupler.md` — **`c3po.couplers.FixedPointCoupler`** (3 kB)
+  - class c3po.couplers.FixedPointCoupler.FixedPointCoupler
+- `api/c3po.couplers.JFNKCoupler.md` — **`c3po.couplers.JFNKCoupler`** (3 kB)
+  - c3po.couplers.JFNKCoupler.solveTriang · class c3po.couplers.JFNKCoupler.JFNKCoupler
+- `api/c3po.couplers.md` — **`c3po.couplers`** (1 kB)
+- `api/c3po.exchangeMethods.DirectMatching.md` — **`c3po.exchangeMethods.DirectMatching`** (1 kB)
+  - class c3po.exchangeMethods.DirectMatching.DirectMatching  — bases: ExchangeMethod
+- `api/c3po.exchangeMethods.ExchangeMethod.md` — **`c3po.exchangeMethods.ExchangeMethod`** (1 kB)
+  - class c3po.exchangeMethods.ExchangeMethod.ExchangeMethod  — bases: object
+- `api/c3po.exchangeMethods.SharedRemapping.md` — **`c3po.exchangeMethods.SharedRemapping`** (2 kB)
+  - c3po.exchangeMethods.SharedRemapping.computeCellsToScreenOut · class c3po.exchangeMethods.SharedRemapping.Remapper · class c3po.exchangeMethods.SharedRemapping.SharedRemapping
+- `api/c3po.exchangeMethods.SharedRemappingMulti1D3D.md` — **`c3po.exchangeMethods.SharedRemappingMulti1D3D`** (2 kB)
+  - c3po.exchangeMethods.SharedRemappingMulti1D3D.shift1DFields · class c3po.exchangeMethods.SharedRemappingMulti1D3D.Multi1D3DRemapper · class c3po.exchangeMethods.SharedRemappingMulti1D3D.SharedRemappingMulti1D3D
+- `api/c3po.exchangeMethods.md` — **`c3po.exchangeMethods`** (1 kB)
+- `api/c3po.md` — **`c3po`** (1 kB)
+- `api/c3po.medcouplingCompat.md` — **`c3po.medcouplingCompat`** (1 kB)
+- `api/c3po.mpi.MPICollaborativeDataManager.md` — **`c3po.mpi.MPICollaborativeDataManager`** (1 kB)
+  - class c3po.mpi.MPICollaborativeDataManager.MPICollaborativeDataManager
+- `api/c3po.mpi.MPICollaborativePhysicsDriver.md` — **`c3po.mpi.MPICollaborativePhysicsDriver`** (1 kB)
+  - class c3po.mpi.MPICollaborativePhysicsDriver.MPICollaborativePhysicsDriver
+- `api/c3po.mpi.MPICollectiveDataManager.md` — **`c3po.mpi.MPICollectiveDataManager`** (1 kB)
+  - class c3po.mpi.MPICollectiveDataManager.MPICollectiveDataManager
+- `api/c3po.mpi.MPICollectiveProcess.md` — **`c3po.mpi.MPICollectiveProcess`** (1 kB)
+  - class c3po.mpi.MPICollectiveProcess.MPICollectiveProcess
+- `api/c3po.mpi.MPICoupler.md` — **`c3po.mpi.MPICoupler`** (1 kB)
+  - class c3po.mpi.MPICoupler.MPICoupler
+- `api/c3po.mpi.MPIDomainDecompositionDataManager.md` — **`c3po.mpi.MPIDomainDecompositionDataManager`** (2 kB)
+  - class c3po.mpi.MPIDomainDecompositionDataManager.MPIDomainDecompositionDataManager
+- `api/c3po.mpi.MPIExchanger.md` — **`c3po.mpi.MPIExchanger`** (1 kB)
+  - class c3po.mpi.MPIExchanger.MPIShortcutToData · class c3po.mpi.MPIExchanger.MPIExchanger
+- `api/c3po.mpi.MPIMasterDataManager.md` — **`c3po.mpi.MPIMasterDataManager`** (1 kB)
+  - class c3po.mpi.MPIMasterDataManager.MPIMasterDataManager
+- `api/c3po.mpi.MPIMasterExchanger.md` — **`c3po.mpi.MPIMasterExchanger`** (1 kB)
+  - class c3po.mpi.MPIMasterExchanger.MPIMasterExchanger
+- `api/c3po.mpi.MPIMasterPhysicsDriver.md` — **`c3po.mpi.MPIMasterPhysicsDriver`** (4 kB)
+  - class c3po.mpi.MPIMasterPhysicsDriver.MPIMasterPhysicsDriver
+- `api/c3po.mpi.MPIRecipient.md` — **`c3po.mpi.MPIRecipient`** (1 kB)
+  - class c3po.mpi.MPIRecipient.MPIFieldRecipient · class c3po.mpi.MPIRecipient.MPIFileFieldRecipient · class c3po.mpi.MPIRecipient.MPIValueRecipient
+- `api/c3po.mpi.MPIRemote.md` — **`c3po.mpi.MPIRemote`** (1 kB)
+  - class c3po.mpi.MPIRemote.MPIRemote
+- `api/c3po.mpi.MPIRemoteProcess.md` — **`c3po.mpi.MPIRemoteProcess`** (1 kB)
+  - class c3po.mpi.MPIRemoteProcess.MPIRemoteProcess
+- `api/c3po.mpi.MPIRemoteProcesses.md` — **`c3po.mpi.MPIRemoteProcesses`** (1 kB)
+  - class c3po.mpi.MPIRemoteProcesses.MPIRemoteProcesses
+- `api/c3po.mpi.MPISender.md` — **`c3po.mpi.MPISender`** (1 kB)
+  - class c3po.mpi.MPISender.MPIFieldSender · class c3po.mpi.MPISender.MPIFileFieldSender · class c3po.mpi.MPISender.MPIValueSender
+- `api/c3po.mpi.MPITag.md` — **`c3po.mpi.MPITag`** (1 kB)
+  - class c3po.mpi.MPITag.MPITag  — bases: object
+- `api/c3po.mpi.MPIWorker.md` — **`c3po.mpi.MPIWorker`** (1 kB)
+  - class c3po.mpi.MPIWorker.MPIWorker
+- `api/c3po.mpi.md` — **`c3po.mpi`** (1 kB)
+- `api/c3po.mpi.mpiExchangeMethods.MPIExchangeMethod.md` — **`c3po.mpi.mpiExchangeMethods.MPIExchangeMethod`** (1 kB)
+  - class c3po.mpi.mpiExchangeMethods.MPIExchangeMethod.MPIExchangeMethod  — bases: ExchangeMethod
+- `api/c3po.mpi.mpiExchangeMethods.MPISharedRemapping.md` — **`c3po.mpi.mpiExchangeMethods.MPISharedRemapping`** (1 kB)
+  - class c3po.mpi.mpiExchangeMethods.MPISharedRemapping.MPIRemapper · class c3po.mpi.mpiExchangeMethods.MPISharedRemapping.MPISharedRemapping
+- `api/c3po.mpi.mpiExchangeMethods.MPISharedRemappingMulti1D3D.md` — **`c3po.mpi.mpiExchangeMethods.MPISharedRemappingMulti1D3D`** (1 kB)
+  - class c3po.mpi.mpiExchangeMethods.MPISharedRemappingMulti1D3D.MPIMulti1D3DRemapper · class c3po.mpi.mpiExchangeMethods.MPISharedRemappingMulti1D3D.MPISharedRemappingMulti1D3D
+- `api/c3po.mpi.mpiExchangeMethods.MPIValueBcast.md` — **`c3po.mpi.mpiExchangeMethods.MPIValueBcast`** (1 kB)
+  - class c3po.mpi.mpiExchangeMethods.MPIValueBcast.MPIValueBcast
+- `api/c3po.mpi.mpiExchangeMethods.md` — **`c3po.mpi.mpiExchangeMethods`** (1 kB)
+- `api/c3po.multi1D.Grid.md` — **`c3po.multi1D.Grid`** (6 kB)
+  - class c3po.multi1D.Grid.Grid  — bases: ABC · class c3po.multi1D.Grid.MEDGrid · class c3po.multi1D.Grid.CartesianGrid · class c3po.multi1D.Grid.HexagonalGrid · class c3po.multi1D.Grid.MultiLevelGrid
+- `api/c3po.multi1D.MEDInterface.md` — **`c3po.multi1D.MEDInterface`** (1 kB)
+  - class c3po.multi1D.MEDInterface.MEDInterface
+- `api/c3po.multi1D.Multi1DAPI.md` — **`c3po.multi1D.Multi1DAPI`** (5 kB)
+  - class c3po.multi1D.Multi1DAPI.Multi1DAPI  — bases: ABC · class c3po.multi1D.Multi1DAPI.Multi1DWithObjectsAPI  — bases: Multi1DAPI
+- `api/c3po.multi1D.Multi1DPhysicsDriver.md` — **`c3po.multi1D.Multi1DPhysicsDriver`** (4 kB)
+  - class c3po.multi1D.Multi1DPhysicsDriver.Multi1DPhysicsDriver · class c3po.multi1D.Multi1DPhysicsDriver.DriversAPI · c3po.multi1D.Multi1DPhysicsDriver.shiftList
+- `api/c3po.multi1D.md` — **`c3po.multi1D`** (1 kB)
+- `api/c3po.multi1D.mpi.MPIMulti1DPhysicsDriver.md` — **`c3po.multi1D.mpi.MPIMulti1DPhysicsDriver`** (1 kB)
+  - class c3po.multi1D.mpi.MPIMulti1DPhysicsDriver.MPIMulti1DPhysicsDriver
+- `api/c3po.multi1D.mpi.md` — **`c3po.multi1D.mpi`** (1 kB)
+- `api/c3po.physicsDrivers.ALCYONE2Driver.md` — **`c3po.physicsDrivers.ALCYONE2Driver`** (1 kB)
+  - class c3po.physicsDrivers.ALCYONE2Driver.ALCYONE2Driver
+- `api/c3po.physicsDrivers.APOLLO3Driver.md` — **`c3po.physicsDrivers.APOLLO3Driver`** (1 kB)
+  - class c3po.physicsDrivers.APOLLO3Driver.APOLLO3Driver  — bases: ICOCODriver
+- `api/c3po.physicsDrivers.CATHARE2Driver.md` — **`c3po.physicsDrivers.CATHARE2Driver`** (1 kB)
+  - c3po.physicsDrivers.CATHARE2Driver.shortName · c3po.physicsDrivers.CATHARE2Driver.buildName · class c3po.physicsDrivers.CATHARE2Driver.CATHARE2Driver
+- `api/c3po.physicsDrivers.CATHARE3Driver.md` — **`c3po.physicsDrivers.CATHARE3Driver`** (1 kB)
+  - c3po.physicsDrivers.CATHARE3Driver.shortName · c3po.physicsDrivers.CATHARE3Driver.buildName · class c3po.physicsDrivers.CATHARE3Driver.CATHARE3Driver
+- `api/c3po.physicsDrivers.CRONOS2Driver.md` — **`c3po.physicsDrivers.CRONOS2Driver`** (3 kB)
+  - class c3po.physicsDrivers.CRONOS2Driver.ParamKey · class c3po.physicsDrivers.CRONOS2Driver.CRONOS2Driver
+- `api/c3po.physicsDrivers.FLICA4Driver.md` — **`c3po.physicsDrivers.FLICA4Driver`** (2 kB)
+  - class c3po.physicsDrivers.FLICA4Driver.FLICA4Driver · class c3po.physicsDrivers.FLICA4Driver.FLICA4AutoSwitchDriver
+- `api/c3po.physicsDrivers.ICOCODriver.md` — **`c3po.physicsDrivers.ICOCODriver`** (2 kB)
+  - class c3po.physicsDrivers.ICOCODriver.ICOCODriver
+- `api/c3po.physicsDrivers.THEDIDriver.md` — **`c3po.physicsDrivers.THEDIDriver`** (1 kB)
+  - class c3po.physicsDrivers.THEDIDriver.THEDIDriver  — bases: ICOCODriver
+- `api/c3po.physicsDrivers.TRUSTDriver.md` — **`c3po.physicsDrivers.TRUSTDriver`** (1 kB)
+  - class c3po.physicsDrivers.TRUSTDriver.TRUSTDriver
+- `api/c3po.physicsDrivers.md` — **`c3po.physicsDrivers`** (1 kB)
+- `api/c3po.raises.checkScope.md` — **`c3po.raises.checkScope`** (2 kB)
+  - class c3po.raises.checkScope.CheckScopeMeta  — bases: type · c3po.raises.checkScope.checkScope
+- `api/c3po.raises.md` — **`c3po.raises`** (1 kB)
+- `api/c3po.services.ListingWriter.md` — **`c3po.services.ListingWriter`** (7 kB)
+  - c3po.services.ListingWriter.getFormattedTime · class c3po.services.ListingWriter.ListingWriter · class c3po.services.ListingWriter.MergedListingWriter · c3po.services.ListingWriter.goToLastBox · c3po.services.ListingWriter.mergeListing · c3po.services.ListingWriter.getTotalTimePhysicsDriver · c3po.services.ListingWriter.getTimesExchanger
+- `api/c3po.services.NameChanger.md` — **`c3po.services.NameChanger`** (7 kB)
+  - class c3po.services.NameChanger.NameChanger · class c3po.services.NameChanger.NameChangerMeta · c3po.services.NameChanger.nameChanger
+- `api/c3po.services.PhysicsDriverWrapper.md` — **`c3po.services.PhysicsDriverWrapper`** (5 kB)
+  - class c3po.services.PhysicsDriverWrapper.PhysicsDriverWrapper
+- `api/c3po.services.Printer.md` — **`c3po.services.Printer`** (1 kB)
+  - class c3po.services.Printer.Printer · c3po.services.Printer.warning
+- `api/c3po.services.TransientLogger.md` — **`c3po.services.TransientLogger`** (3 kB)
+  - class c3po.services.TransientLogger.TransientLogger  — bases: object · class c3po.services.TransientLogger.Timekeeper · class c3po.services.TransientLogger.FortuneTeller · class c3po.services.TransientLogger.TransientPrinter
+- `api/c3po.services.md` — **`c3po.services`** (1 kB)
+- `api/c3po.services.tracer.md` — **`c3po.services.tracer`** (4 kB)
+  - c3po.services.tracer.getRegularName · c3po.services.tracer.getNameFieldInput · c3po.services.tracer.getNameInput · c3po.services.tracer.getDtInput · c3po.services.tracer.getStationaryModeInput · c3po.services.tracer.getTimeInput · c3po.services.tracer.getSaveInput · c3po.services.tracer.getArgsString · c3po.services.tracer.buildTypeArgs · c3po.services.tracer.tracer
+- `api/c3po.services.wrapper.md` — **`c3po.services.wrapper`** (1 kB)
+  - c3po.services.wrapper.buildWrappingClass · c3po.services.wrapper.wrapper

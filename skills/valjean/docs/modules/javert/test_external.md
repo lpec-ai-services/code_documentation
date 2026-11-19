@@ -6,7 +6,7 @@ External test used to represent user formatted results in the report.
 
 This test has been designed in order to offer the possibility to define and run user-defined tests outside valjean and include their results in a report, along with the native valjean tests.
 
-The user is responsible for defining and representing the test results. The representation must be done with templates (see `.templates` module).
+The user is responsible for defining and representing the test results. The representation must be done with templates (see `templates` module).
 
 For example, the simplest case is a custom plot to represent a test. In that case, if the path to the image is known a `TextTemplate` can be created and given to the test:
 

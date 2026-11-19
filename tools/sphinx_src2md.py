@@ -137,13 +137,13 @@ def roles_to_literals(rst):
     def repl(m):
         target = m.group(2)
         label = re.match(r"(.+?)\s*<.+>$", target)
-        text = label.group(1) if label else target.lstrip("~!")
+        text = label.group(1) if label else target.lstrip("~!.")
         if target.startswith("~"):
             text = text.split(".")[-1]
         return f"``{text}``"
-    rst = re.sub(r":(?:py:)?(\w+):`([^`]+)`", repl, rst)
+    rst = re.sub(r":(?:py:)?(?!math:)(\w+):`([^`]+)`", repl, rst)  # :math: is left to pandoc
     # default role `x` (not ``x``, not a `link <url>`_) -> ``x``
-    return re.sub(r"(?<![`\w])`([^`\n<]+)`(?![`_\w])", r"``\1``", rst)
+    return re.sub(r"(?<![`\w:])`([^`\n<]+)`(?![`_\w])", r"``\1``", rst)
 
 
 # ---------------------------------------------------------------- API (ast)
@@ -272,6 +272,9 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--exclude", action="append", default=[],
                     help="glob of source pages to skip, relative to --src (repeatable)")
+    ap.add_argument("--api-package", action="append", default=[],
+                    help="also write api/<module>.md for every module of this package "
+                         "(read statically from --pkg-root), like sphinx-apidoc")
     ap.add_argument("--source-url", default="", help="recorded in _meta.json")
     ap.add_argument("--version", default="", help="recorded in _meta.json")
     args = ap.parse_args()
@@ -305,6 +308,23 @@ def main():
         subs = [h.strip("`") for l, h in heads if len(l) > 1]
         index.append((rel.as_posix(), title, subs, len(md)))
         print(f"  {rel}")
+
+    for pkg in args.api_package:
+        root = Path(args.pkg_root)
+        for py in sorted((root / pkg.replace(".", "/")).rglob("*.py")):
+            if "__pycache__" in py.parts or "tests" in py.parts:
+                continue
+            parts = py.relative_to(root).with_suffix("").parts
+            mod = ".".join(parts[:-1] if parts[-1] == "__init__" else parts)
+            md = f"# `{mod}`\n\n" + api_markdown(root, mod, undoc=True)
+            md = re.sub(r"\n{3,}", "\n\n", md).strip() + "\n"
+            rel = f"api/{mod}.md"
+            (out / "api").mkdir(parents=True, exist_ok=True)
+            (out / rel).write_text(f"<!-- source: {py.relative_to(root).as_posix()} -->\n\n{md}",
+                                   encoding="utf-8")
+            heads = re.findall(r"(?m)^#{2,3} `([^`]+)`", md)
+            index.append((rel, f"`{mod}`", [h.split("(")[0] for h in heads], len(md)))
+            print(f"  {rel}")
 
     lines = ["# Index of pages\n", "Each entry: file — title, then its main headings.\n"]
     current = None

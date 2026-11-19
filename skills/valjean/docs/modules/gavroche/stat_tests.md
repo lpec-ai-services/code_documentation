@@ -24,7 +24,7 @@ and the variance of the mean is estimated as
 
 $$\bar{s}^2 = \frac{s^2}{n}$$
 
-The standard error `\bar{s}` is the quantity that typically enters Student's t-test.
+The standard error $\bar{s}$ is the quantity that typically enters Student's t-test.
 
 The Student test statistic is:
 
@@ -44,17 +44,17 @@ as value is difference of values and error is equal to the quadratic sum of the 
 
 The tested hypothesis in the Student's t-test, i.e. the null hypothesis is:
 
-- equal means, so `m_1 = m_2`
+- equal means, so $m_1 = m_2$
 - Gaussian errors (or error following a normal distribution)
 - independent datasets.
 
-The test interpretation is based on the comparison of the p-value with a given significance level, called `\alpha`. The (two-sided) p-value is defined as the probability to observe results more extreme than those that were actually observed, assuming that the null hypothesis is true. Mathematically, `p=P(|X| \geq |t_{\text{Student}}|\,|N)`, `X` being the Student test statistic for samples of size `N`; the variable `N` is also called the number of degrees of freedom. The significativity level `\alpha` is given by the user, usually 1% or 5%. Student's test fails if `P(|X| \geq |t_{\text{Student}}|) \leq \alpha`. If this is the case the null hypothesis is rejected.
+The test interpretation is based on the comparison of the p-value with a given significance level, called $\alpha$. The (two-sided) p-value is defined as the probability to observe results more extreme than those that were actually observed, assuming that the null hypothesis is true. Mathematically, $p=P(|X| \geq |t_{\text{Student}}|\,|N)$, $X$ being the Student test statistic for samples of size $N$; the variable $N$ is also called the number of degrees of freedom. The significativity level $\alpha$ is given by the user, usually 1% or 5%. Student's test fails if $P(|X| \geq |t_{\text{Student}}|) \leq \alpha$. If this is the case the null hypothesis is rejected.
 
-To evaluate the test we thus need an estimate of the number of degrees of freedom, which is typically approximated as `n_1 + n_2 - 2`, with `n_1` and `n_2` being the number of batches. For large values of `n_i` (i.e. for a large number of degrees of freedom), the distribution of the Student statistic approaches a standard normal distribution.
+To evaluate the test we thus need an estimate of the number of degrees of freedom, which is typically approximated as $n_1 + n_2 - 2$, with $n_1$ and $n_2$ being the number of batches. For large values of $n_i$ (i.e. for a large number of degrees of freedom), the distribution of the Student statistic approaches a standard normal distribution.
 
-It is sometimes easier to evaluate if the test succeeds by directly comparing the value of `t_{\text{Student}}` with a threshold given by the significativity level `\alpha` and the number of degrees of freedom.
+It is sometimes easier to evaluate if the test succeeds by directly comparing the value of $t_{\text{Student}}$ with a threshold given by the significativity level $\alpha$ and the number of degrees of freedom.
 
-For example, here are some thresholds for some values of `\alpha` and of the number of degrees of freedom:
+For example, here are some thresholds for some values of $\alpha$ and of the number of degrees of freedom:
 
 <table style="width:82%;">
 <colgroup>
@@ -65,7 +65,8 @@ For example, here are some thresholds for some values of `\alpha` and of the num
 <tbody>
 <tr class="odd">
 <td></td>
-<td colspan="2"><code>\alpha</code> = 1 % | <code>\alpha</code> = 5 % |</td>
+<td><span class="math inline"><em>α</em></span> = 1 %</td>
+<td><span class="math inline"><em>α</em></span> = 5 %</td>
 </tr>
 <tr class="even">
 <td><blockquote>
@@ -91,7 +92,7 @@ For example, here are some thresholds for some values of `\alpha` and of the num
 </tr>
 <tr class="even">
 <td><blockquote>
-<p>N = <code>\infty</code></p>
+<p>N = <span class="math inline">∞</span></p>
 </blockquote></td>
 <td><blockquote>
 <p>2.5758</p>
@@ -103,7 +104,7 @@ For example, here are some thresholds for some values of `\alpha` and of the num
 </tbody>
 </table>
 
-Results for N = `\infty` come from the normal distribution.
+Results for N = $\infty$ come from the normal distribution.
 
 Note
 
@@ -117,7 +118,7 @@ The p-value is only calculated if the number of degrees of freedom is given; oth
 
 All these methods use the **SciPy** package (see [scipy](https://docs.scipy.org/doc/scipy/reference/index.html)). The Student distribution comes from `scipy.stats.t`, where the pdf is explicitely written.
 
-The method `sf` of `scipy.stats.t` corresponds to `1 - cdf`, so this gives the one-sided p-value; we need to multiply it by 2.0 to get the two-sided p-value. The `ppf` (percent point) function returns the threshold corresponding to the required one-sided significativity, so we need to divide `\alpha` by 2.0 in our case.
+The method `sf` of `scipy.stats.t` corresponds to $1 - cdf$, so this gives the one-sided p-value; we need to multiply it by 2.0 to get the two-sided p-value. The `ppf` (percent point) function returns the threshold corresponding to the required one-sided significativity, so we need to divide $\alpha$ by 2.0 in our case.
 
 The methods where the test is really applied are static methods, they can be used outside of the `TestStudent` class. Examples are given in the class docstrings.
 
@@ -258,7 +259,7 @@ returns
 Get threshold from probability (**static method**).
 
 param alpha  
-required significance level (`\alpha`)
+required significance level ($\alpha$)
 
 type alpha  
 float or `numpy.generic` (`float`)
@@ -278,14 +279,14 @@ If number of degrees of freedom is given, the distribution used is the Student d
 
 #### `TestStudent.data(self)`
 
-Generator yielding objects supporting the buffer protocol that (as a whole) represent a serialized version of `self`. `chi2` – `\chi^2` test `````````````````` `   In our case we'll use the modified χ²-test widely used in physics for comparing histograms. This test is also available in the **ROOT** [software](https://root.cern.ch/). For further explanations a good desciption is provided by the documentation of ROOT's `Chi2Test()` method on [TH1 page](https://root.cern.ch/doc/master/classTH1.html) or in this [article](https://arxiv.org/abs/physics/0605123) by N. Gagunashvili.
+Generator yielding objects supporting the buffer protocol that (as a whole) represent a serialized version of `self`. `chi2` – $\chi^2$ test `````````````````` `   In our case we'll use the modified χ²-test widely used in physics for comparing histograms. This test is also available in the **ROOT** [software](https://root.cern.ch/). For further explanations a good desciption is provided by the documentation of ROOT's `Chi2Test()` method on [TH1 page](https://root.cern.ch/doc/master/classTH1.html) or in this [article](https://arxiv.org/abs/physics/0605123) by N. Gagunashvili.
 
 The used formula is then:
 
 $$\chi^2_{obs} = \sum_{i=1}^p\frac{(x_{1i} - x_{2i})^2}
 {\sigma_{1i}^2 + \sigma_{2i}^2}$$
 
-where datasets (or distributions) 1 and 2 are compared, `x_i` being the values and `\sigma_i` being the error in each bin.
+where datasets (or distributions) 1 and 2 are compared, $x_i$ being the values and $\sigma_i$ being the error in each bin.
 
 In our case only the 'weighted' case is implemented.
 
@@ -301,16 +302,16 @@ The interpretation of the test is based on the χ² value and on the p-value. Us
 
 $$pdf(x,k) = \frac{1}{2^{k/2}\Gamma(k/2)}x^{k/2-1}e^{-x/2}$$
 
-for `x > 0`, `k` the number of degrees of freedom and `\Gamma` is Euler's Gamma function[^1].
+for $x > 0$, $k$ the number of degrees of freedom and $\Gamma$ is Euler's Gamma function[^1].
 
-The cumulative distribution function, `cdf`, used to calculated the p-value is then:
+The cumulative distribution function, $cdf$, used to calculated the p-value is then:
 
 $$cdf(x,k) = \frac{\gamma(k/2,x/2)}{\Gamma(k/2)}
          = \int_{-\infty}^{x}pdf(t,k)dt$$
 
-where `\gamma` is the lower incomplete gamma function [^2].
+where $\gamma$ is the lower incomplete gamma function [^2].
 
-It is equivalent to calculate the probability `P(x < \chi^2_{obs})` which is equal to `1 - cdf(x,k)`, so the integral from `x` to `+\infty`. This probability is the p-value.
+It is equivalent to calculate the probability $P(x < \chi^2_{obs})$ which is equal to $1 - cdf(x,k)$, so the integral from $x$ to $+\infty$. This probability is the p-value.
 
 If the p-value is lower than the define level (1%, 5% for example), the null hypothesis is rejected.
 
@@ -322,7 +323,7 @@ Possible biases can come from wrong estimation of uncertainties (underestimated 
 
 Warning
 
-If some of your bins are not filled, if they are initialized to zero or if their error is zero, the χ² calculation will be wrong and probably give `\infty`.
+If some of your bins are not filled, if they are initialized to zero or if their error is zero, the χ² calculation will be wrong and probably give $\infty$.
 
 One option is proposed to remove these bins from the calculation, `ignore_empty`. The use of this option implies a reduction of the number of degrees of freedom by the number of removed bins (ndf = \# bins). It has to be considered with caution, this does not make necessarly sense, depending on the user case.
 
@@ -476,7 +477,7 @@ The null hypothesis is that the p-value is higher than a given significance leve
 
 The [Bonferroni](https://en.wikipedia.org/wiki/Bonferroni_correction) correction is used for multiple comparisons. It is based on a weighted comparison to the significance level α.
 
-If we have `m` different tests (for example a spectrum with `m` bins), the significance level α will be weighted by `m`. This p-value of the `m` tests will then be compared to that value. As a consequence, the null hypothesis will be rejected if
+If we have $m$ different tests (for example a spectrum with $m$ bins), the significance level α will be weighted by $m$. This p-value of the $m$ tests will then be compared to that value. As a consequence, the null hypothesis will be rejected if
 
 $$p_k \leq \frac{\alpha}{m}$$
 
@@ -494,11 +495,11 @@ Per default, in our case the test is rejected if there is at least one null hypo
 
 The [Holm-Bonferroni](https://en.wikipedia.org/wiki/Holm-Bonferroni_method) method is a variation of the Bonferroni correction.
 
-The p-value from the chosen test are first sorted from lower to higher value. Then each of them are compared to the significance level weighted by `m - k + 1` with `m` the number of tests and `k` the rank (starting at 1). The null hypothesis is rejected if
+The p-value from the chosen test are first sorted from lower to higher value. Then each of them are compared to the significance level weighted by $m - k + 1$ with $m$ the number of tests and $k$ the rank (starting at 1). The null hypothesis is rejected if
 
 $$p_k \leq \frac{\alpha}{m - k + 1}.$$
 
-The test can be stopped at the first `k` accepting the null hypothesis.
+The test can be stopped at the first $k$ accepting the null hypothesis.
 
 This test is quite conservative. It can be possible to get the proportion of accepted and rejected hypothesis, like in the Bonferroni correction case.
 

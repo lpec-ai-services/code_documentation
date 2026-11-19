@@ -238,7 +238,7 @@ type extra_args
 list or None
 
 param subprocess_args  
-A dictionary of arguments for the call to the `.subprocess.Popen` constructor.
+A dictionary of arguments for the call to the `subprocess.Popen` constructor.
 
 type subprocess_args  
 dict or None

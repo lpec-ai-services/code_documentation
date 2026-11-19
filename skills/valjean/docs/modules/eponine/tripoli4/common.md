@@ -231,15 +231,15 @@ More details in `convert_nu_spectrum` and `convert_za_spectrum`.
 
 ### Scores on spherical harmonics
 
-These scores are foreseen to be passed to deterministic codes. They are calculated on real spherical harmonics, using the Schmid semi-normalized harmonics as described in \[[SHTools](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018GC007529)\] to be consistent with Apollo3. Thus the associated functions are not only Legendre polynomials but also contains a factor `cos(m\phi)` for `m>0` and a factor `sin(|m|\phi)` for `m<0`.
+These scores are foreseen to be passed to deterministic codes. They are calculated on real spherical harmonics, using the Schmid semi-normalized harmonics as described in \[[SHTools](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018GC007529)\] to be consistent with Apollo3. Thus the associated functions are not only Legendre polynomials but also contains a factor $cos(m\phi)$ for $m>0$ and a factor $sin(|m|\phi)$ for $m<0$.
 
-In practice, they are discretized on a space mesh (`(u, v, w)` coordinates), on incident energy bins (`ie`), on energy bins (`e`) and on the order of the moments (`(l, m)`). `l` moments go from 0 to `L` (so there are `L+1` values), `m` ones go from `-l` to `l`, (`2L+1` values).
+In practice, they are discretized on a space mesh ($(u, v, w)$ coordinates), on incident energy bins ($ie$), on energy bins ($e$) and on the order of the moments ($(l, m)$). $l$ moments go from 0 to $L$ (so there are $L+1$ values), $m$ ones go from $-l$ to $l$, ($2L+1$ values).
 
-The eight scores available in such description are converted in a single array of 7 dimensions `(u, v, w, ie, e, l, m)`. The forbidden `(l, m)` pairs (`m>|l|`) are set to `numpy.nan`. A `mask` is applied to the resulting Dataset.
+The eight scores available in such description are converted in a single array of 7 dimensions $(u, v, w, ie, e, l, m)$<span class="title-ref">. The forbidden :math:</span><span class="title-ref">(l, m)</span> pairs ($m>|l|$) are set to `numpy.nan`. A `mask` is applied to the resulting Dataset.
 
-Note that `m` ids goes from 0 to 2L+1 in slicing, corresponding to bins values `-m` to `m`.
+Note that $m$ ids goes from 0 to 2L+1 in slicing, corresponding to bins values $-m$ to $m$.
 
-All the arrays have 7 dimensions, but incident energy bins are only relevant for the scattering matrix. The fission spectrum only allows `l=0, m=0`.
+All the arrays have 7 dimensions, but incident energy bins are only relevant for the scattering matrix. The fission spectrum only allows $l=0, m=0$.
 
 ## k`eff` results
 
@@ -897,7 +897,7 @@ Class specific to results on spherical harmonics.
 
 This class inherites from DictBuilder, see `DictBuilder` for initialization and common methods.
 
-Arrays are indexed by `(u, v, w)` for space, `ie` for incident energy, `e` for energy, `l` for moment and `m` for sub_moment with `L + 1` values of `l` and `2L + 1` values of `m`, `L` being the maximum value of `l`.
+Arrays are indexed by $(u, v, w)$ for space, $ie$ for incident energy, $e$ for energy, $l$ for moment and $m$ for sub_moment with $L + 1$ values of $l$ and $2L + 1$ values of $m$, $L$ being the maximum value of $l$.
 
 #### `SphericalHarmonicsDictBuilder.fill_arrays_and_bins(self, data)`
 
@@ -921,14 +921,14 @@ Fill spaces bins based on array shape.
 
 Fill moments bins.
 
-- `l` goes from 0 to `L`
-- `m` goes from `-L` to `L`
+- $l$ goes from 0 to $L$
+- $m$ goes from $-L$ to $L$
 
 #### `SphericalHarmonicsDictBuilder.reduced_bins(self, score)`
 
 Reduce bins according to score.
 
-Bins are initialized with highest dimensions possible for each. This method makes them match with the array shape. For example, remove incident energy bins keeping first and last edges in most case. A special case is done for fission_spectrum score that only has one `l` value, so `l=0`, `m=0`.
+Bins are initialized with highest dimensions possible for each. This method makes them match with the array shape. For example, remove incident energy bins keeping first and last edges in most case. A special case is done for fission_spectrum score that only has one $l$ value, so $l=0$, $m=0$.
 
 param str score  
 score name
@@ -974,9 +974,9 @@ return
 
     > - `'sigma2(means)'`: variance of means or σ`2` of means
     > - `'mean(sigma_n2)'`: mean of variances, with variance = v`n`
-    > - `'sigma(sigma_n2)'`: σ(variances) = `\sqrt{v(v_n)}`
+    > - `'sigma(sigma_n2)'`: σ(variances) = $\sqrt{v(v_n)}$
     > - `'fisher test'`: this is an estimator more than a test
-    > - Variance, or sigma_n2 is given by: `v_n = \frac{\sum^n_i{(x_i -m)^2}}{n(n-1)}`
+    > - Variance, or sigma_n2 is given by: $v_n = \frac{\sum^n_i{(x_i -m)^2}}{n(n-1)}$
 
 [^3]: Definition of µ and φ, direction angles (see also user guide)
 

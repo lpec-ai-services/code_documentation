@@ -12,7 +12,7 @@ You can run the unit-test suite with:
 
 This will run the tests and produce a summary report. Additionally, [pytest](https://docs.pytest.org/en/latest) will calculate code coverage; a text report will be printed to stdout, and a nice HTML report will be written to `tests/htmlcov`.
 
-The default `pytest` options are defined in the `pytest.ini` file, and `coverage` options are defined in `.coveragerc`, using [pytest-doc](https://pytest-cov.readthedocs.io/en/latest/). Extra options to `pytest` can be passed on the command line:
+The default `pytest` options are defined in the `pytest.ini` file, and `coverage` options are defined in `coveragerc`, using [pytest-doc](https://pytest-cov.readthedocs.io/en/latest/). Extra options to `pytest` can be passed on the command line:
 
     $ pytest tests/cosette/test_rlist.py  # run all tests in the named file
     $ pytest tests/cosette/test_rlist.py::test_insert  # run this test only

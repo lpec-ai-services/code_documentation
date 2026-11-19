@@ -125,7 +125,7 @@ Some metadata keys in the browser are slightly different from the corresponding 
 
 The most common keys in the `Browser` are `['result_name', 'output', 'zone', 'isotope']`.
 
-An inspect function is also available (no class:`Reader` object needed) to have a quick look at the content of the file.
+An inspect function is also available (no class:<span class="title-ref">Reader</span> object needed) to have a quick look at the content of the file.
 
 ``` python
 from valjean.eponine.apollo3.hdf5_reader import inspect

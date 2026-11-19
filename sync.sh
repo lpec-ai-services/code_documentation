@@ -174,10 +174,38 @@ sync_uranie() {
     --drop-regex '^\((continued from previous page|continues on next page)\)$|^CHAPTER$|^(ONE|TWO|THREE|FOUR|FIVE|SIX|SEVEN|EIGHT|NINE|TEN|ELEVEN|TWELVE|THIRTEEN|FOURTEEN|FIFTEEN)$'
 }
 
+sync_icoco() {
+  # The norm's documentation is its header comments (converted without Doxygen).
+  local tmp; tmp="$(mktemp -d)"
+  git clone -q --depth 1 https://github.com/cea-trust-platform/icoco-coupling.git "$tmp/i"
+  local out="$ROOT/skills/icoco/docs"
+  "$PY" "$ROOT/tools/cppdoc2md.py" --src "$tmp/i/include" --out "$out/api" --glob '*.hxx' \
+    --source-url https://github.com/cea-trust-platform/icoco-coupling \
+    --version "2.0 ($(git -C "$tmp/i" rev-parse --abbrev-ref HEAD) $(git -C "$tmp/i" log -1 --format='%h, %cs'))"
+  cp "$tmp/i/README.md" "$out/README.md"
+  mkdir -p "$out/swig" && cp "$tmp/i/swig/"*.i "$out/swig/"
+  rm -rf "$tmp"
+}
+
+sync_c3po() {
+  # Docs + API for every module (read statically) + the tests as examples. C3PO_REF: branch/tag.
+  local ref="${C3PO_REF:-}" tmp; tmp="$(mktemp -d)"
+  git clone -q --depth 1 ${ref:+--branch "$ref"} https://github.com/cea-code-coupling/c3po.git "$tmp/c"
+  ref="$(git -C "$tmp/c" rev-parse --abbrev-ref HEAD)"
+  local v; v="$(cat "$tmp/c/sources/c3po/VERSION") ($ref $(git -C "$tmp/c" log -1 --format='%h, %cs'))"
+  local out="$ROOT/skills/c3po"
+  "$PY" "$ROOT/tools/sphinx_src2md.py" --src "$tmp/c/doc/source" --pkg-root "$tmp/c/sources" \
+    --out "$out/docs" --api-package c3po --source-url https://github.com/cea-code-coupling/c3po --version "$v"
+  rm -rf "$out/examples" && mkdir -p "$out/examples"
+  (cd "$tmp/c/tests" && find . \( -name '*.py' -o -name 'README.md' \) -exec cp --parents {} "$out/examples/" \;)
+  rm -rf "$tmp"
+  echo "Update the version line in skills/c3po/SKILL.md if it changed: $v"
+}
+
 # Add new codes here: sync_<name>() { ... } — see README.md.
 
 targets=("$@")
-[ ${#targets[@]} -eq 0 ] && targets=(tripoli4 tripoli5 valjean tfel_mfront salome scivianna vtk)
+[ ${#targets[@]} -eq 0 ] && targets=(tripoli4 tripoli5 valjean tfel_mfront salome scivianna vtk icoco c3po)
 for t in "${targets[@]}"; do
   echo "== $t =="
   "sync_$t"

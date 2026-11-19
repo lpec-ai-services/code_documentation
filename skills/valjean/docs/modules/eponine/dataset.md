@@ -92,7 +92,7 @@ If the shapes are not the same `NumPy` raises an exception (and ds1pb is not def
 
 > \>\>\> ds2 = Dataset(value=np.arange(20, 30).reshape(2, 5), ... error=np.array(\[0.4\]*10).reshape(2, 5), ... bins=bins, name='ds2', what='spam') \>\>\> ds1.bins == ds2.bins True \>\>\> ds1p2 = ds1 + ds2 \>\>\> ds1p2.name == ds1.name True \>\>\> ds1p2.what == ds1.what True \>\>\> np.array_equal(ds1p2.value, \[\[20, 22, 24, 26, 28\], ... \[30, 32, 34, 36, 38\]\]) True \>\>\> np.array_equal(ds1p2.error, np.array(\[0.5\]*10).reshape(2, 5)) True
 
-The error is calulated considering both datasets are independent, so quadratically (`e = \sqrt{ds1.e^2 + ds2.e^2}`).
+The error is calulated considering both datasets are independent, so quadratically ($e = \sqrt{ds1.e^2 + ds2.e^2}$).
 
 Datasets without binning can also be added:
 
@@ -157,7 +157,8 @@ If the `numpy.ndarray`: contains `0`, `nan` or `inf`, `NumPy` deals with them. I
 >
 > \>\>\> ds1o2 = ds1 / ds2 \>\>\> ds1o2 \# doctest: +SKIP class: \<class 'valjean.gavroche.dataset.Dataset'\>, data type: \<class 'numpy.ndarray'\> shape (2, 5), value: \[\[0. 0.04761905 0.09090909 0.13043478 0.16666667\] \[0.2 0.23076923 0.25925926 0.28571429 0.31034483\]\], error: \[\[0.015 0.01431448 0.01373617 0.01323926 0.01280492\] \[0.01241934 0.01207231 0.01175624 0.01146541 0.0111955 \]\], bins: OrderedDict(\[('e', array(\[1, 2, 3\])), ('t', array(\[0, 1, 2, 3, 4\]))\]) \>\>\> ds1o2.what 'spam/spam'
 
-In both cases the error is calulated considering both datasets are independent, so quadratically `e = v*\sqrt{{(\frac{ds_1.e}{ds_1.v})}^2 + {(\frac{ds_2.e}{ds_2.v})}^2}`.
+In both cases the error is calulated considering both datasets are independent, so quadratically $e = v*\sqrt{{(\frac{ds_1.e}{ds_1.v})}^2 +
+{(\frac{ds_2.e}{ds_2.v})}^2}$.
 
 The same restictions on bins as for addition and subtraction are set for multiplication and division, same `AssertError` are raised, see `addition_dsataset`.
 
