@@ -46,7 +46,8 @@ tools/
 ├── dox2md.py              # hand-written Doxygen pages (.dox/.doc) → Markdown, \snippet resolved from sources
 ├── cppdoc2md.py           # Doxygen comments in C/C++ headers → Markdown API reference (no Doxygen needed)
 ├── glyphmaps/             # per-font symbol fixes for publisher PDFs (e.g. Elsevier AdvP fonts)
-└── hal_harvest.py         # incremental harvester of HAL metadata + open-access PDFs (see below)
+├── hal_harvest.py         # incremental harvester of HAL metadata + open-access PDFs (see below)
+└── pdfs2md.py             # a whole folder of PDFs → one .md each (HAL metadata as front matter), resumable
 templates/SKILL.md         # starting point for a new code
 sync.sh                    # (re)generate docs/ for one or all codes
 install.sh                 # symlink the skills into ~/.config/opencode/skills
@@ -119,6 +120,18 @@ python3 tools/hal_harvest.py export --out ~/hal      # catalogue.jsonl (metadata
 - `--no-pdf` harvests metadata only. The PDFs are fetched by a later run.
 - Failed downloads are kept and retried with `--retry-failed`. Embargoed files are skipped.
 - Defaults are polite: one request every 0.5 s and 2 download workers. Licences vary per document (`licence_s` in the catalogue).
+
+### Converting the PDFs to Markdown
+
+```bash
+python3 tools/pdfs2md.py --in ~/hal/pdf --out ~/hal/md --workers 8
+```
+
+- One `.md` per PDF, same sub-folders. With the HAL catalogue (`hal.sqlite`, found next to the PDF folder or given with `--catalog`), each file starts with YAML front matter (title, authors, year, halId, DOI, URL, type, domains, keywords, licence) and the abstract. Without it, the PDF's own title/author are used, so it works on any folder of PDFs.
+- Text keeps `<!-- page N -->` markers. Running headers/footers, ligatures and end-of-line hyphens are fixed.
+- Re-running converts only new or changed PDFs: run it after each harvest. Each PDF has a time limit (`--timeout`, 300 s). Broken PDFs are listed, not fatal: `--retry-failed` tries them again.
+- `INDEX.csv` lists every file with its status: `ok`, `no-text` (scanned PDF without a text layer, needs OCR), `failed`, `timeout`, `too-big` (`--max-mb`).
+- `--markdown` uses pymupdf4llm for headings, tables and bold. It is much slower: try it on a sample first. `--max-pages N` keeps the first N pages (long theses).
 
 ## Adding a code
 
