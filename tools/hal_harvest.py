@@ -2,7 +2,7 @@
 """Harvest HAL (hal.science) metadata and open-access PDFs, incrementally.
 
 Uses the public HAL search API (Solr, https://api.archives-ouvertes.fr/docs/search)
-with cursor paging, so it scales to the whole archive. Everything is
+paging by document id, so it scales to the whole archive. Everything is
 recorded in a SQLite catalogue, so runs can be interrupted and resumed, and
 later runs only fetch what was added or modified since the previous one.
 
@@ -20,8 +20,11 @@ Examples
   # first run: everything modified since a date (here: all of HAL with a PDF)
   python3 tools/hal_harvest.py run --out ~/hal --since 1900-01-01 --with-file --mailto you@lab.fr
 
-  # later: only what changed since the last successful run
-  python3 tools/hal_harvest.py run --out ~/hal --mailto you@lab.fr
+  # later: only what changed since the last complete run (the same command works too)
+  python3 tools/hal_harvest.py run --out ~/hal --with-file --mailto you@lab.fr
+
+  # in batches: each invocation does ~5000 records and the next one continues
+  python3 tools/hal_harvest.py run --out ~/hal --since 1900-01-01 --with-file --max-docs 5000
 
   # narrower scopes (all filters combine)
   python3 tools/hal_harvest.py run --out ~/hal-cea --portal cea --since 2015-01-01 --with-file
@@ -161,10 +164,18 @@ def scope_text(a):
     return "; ".join(parts)
 
 
-def search(session, throttle, a, fq, rows, cursor="*"):
+def search(session, throttle, a, fq, rows, after=None):
+    """One page of results sorted by docid, starting after docid `after`.
+
+    Paging by docid range (keyset) instead of Solr cursors: it needs no
+    server-side state, never skips or repeats a record, and lets a run
+    resume from the last docid it saved.
+    """
     params = [("q", a.query), ("fl", ",".join(FIELDS)), ("rows", rows),
-              ("sort", "docid asc"), ("cursorMark", cursor), ("wt", "json")]
+              ("sort", "docid asc"), ("wt", "json")]
     params += [("fq", f) for f in fq]
+    if after is not None:
+        params.append(("fq", f"docid:{{{int(after)} TO *]"))
     throttle.wait()
     r = session.get(endpoint(a), params=params, timeout=120)
     r.raise_for_status()
@@ -177,6 +188,11 @@ def open_db(out):
     out.mkdir(parents=True, exist_ok=True)
     db = sqlite3.connect(out / "hal.sqlite")
     db.executescript(SCHEMA)
+    cols = {r[1] for r in db.execute("PRAGMA table_info(runs)")}
+    for col in ("last_docid INTEGER", "processed INTEGER DEFAULT 0"):
+        if col.split()[0] not in cols:  # catalogues made by earlier versions
+            db.execute(f"ALTER TABLE runs ADD COLUMN {col}")
+    db.commit()
     return db
 
 
@@ -279,14 +295,34 @@ def download_pending(db, session, throttle, a, out, limit=None, retry_failed=Fal
 
 # ----------------------------------------------------------------- commands
 
-def resolve_since(db, a):
+def plan_run(db, a):
+    """Resume the last run with this scope if it is incomplete, else start a new one.
+
+    Returns (run_id or None, since, until, last_docid, processed).
+    """
+    scope = scope_text(a)
+    last = db.execute("SELECT id, since, until, complete, last_docid, processed FROM runs "
+                      "WHERE scope=? ORDER BY id DESC LIMIT 1", (scope,)).fetchone()
+    if last and not last[3] and not a.restart:
+        rid, since, until, _, last_docid, processed = last
+        if not a.since or iso(parse_date(a.since)) == since:
+            return rid, parse_date(since), parse_date(until), last_docid, processed or 0
+    until = parse_date(a.until) if a.until else now_utc()
+    done = db.execute("SELECT until, since FROM runs WHERE complete=1 AND scope=? "
+                      "ORDER BY id DESC LIMIT 1", (scope,)).fetchone()
+    if a.since and not a.restart and a.until is None and done:
+        first = db.execute("SELECT MIN(since) FROM runs WHERE complete=1 AND scope=?",
+                           (scope,)).fetchone()[0]
+        if parse_date(first) <= parse_date(a.since):
+            # this scope was already harvested from that date: just catch up
+            print(f"Already harvested from {first[:10]} with this scope: fetching only what changed "
+                  f"since the last complete run (use --restart to redo everything).")
+            return None, parse_date(done[0]) - dt.timedelta(days=a.overlap_days), until, None, 0
     if a.since:
-        return parse_date(a.since)
-    row = db.execute("SELECT until FROM runs WHERE complete=1 AND scope=? "
-                     "ORDER BY id DESC LIMIT 1", (scope_text(a),)).fetchone()
-    if not row:
+        return None, parse_date(a.since), until, None, 0
+    if not done:
         sys.exit("No previous complete run with this scope: pass --since YYYY-MM-DD.")
-    return parse_date(row[0]) - dt.timedelta(days=a.overlap_days)
+    return None, parse_date(done[0]) - dt.timedelta(days=a.overlap_days), until, None, 0
 
 
 def cmd_count(a):
@@ -307,47 +343,59 @@ def cmd_run(a):
     out = Path(a.out).expanduser()
     db = open_db(out)
     session, throttle = make_session(a.mailto), Throttle(a.interval)
-    since = resolve_since(db, a)
-    until = parse_date(a.until) if a.until else now_utc()
+    run_id, since, until, last_docid, processed = plan_run(db, a)
     fq = build_filters(a, since, until)
-    run_id = db.execute("INSERT INTO runs (started, since, until, scope) VALUES (?,?,?,?)",
-                        (iso(now_utc()), iso(since), iso(until), scope_text(a))).lastrowid
-    db.commit()
-    print(f"Run {run_id}: {scope_text(a)}\n  {a.date_field} from {iso(since)} to {iso(until)}")
+    if run_id is None:
+        run_id = db.execute("INSERT INTO runs (started, since, until, scope) VALUES (?,?,?,?)",
+                            (iso(now_utc()), iso(since), iso(until), scope_text(a))).lastrowid
+        db.commit()
+        print(f"Run {run_id} (new): {scope_text(a)}")
+    else:
+        print(f"Run {run_id} (resumed after docid {last_docid}, {processed:,} records already done): "
+              f"{scope_text(a)}")
+    print(f"  {a.date_field} from {iso(since)} to {iso(until)}")
 
-    cursor, found, counts, seen = "*", None, {"new": 0, "updated": 0, "same": 0}, 0
+    counts, this_run = {"new": 0, "updated": 0, "same": 0}, 0
     downloaded = failed = 0
+    complete = False
     while True:
-        res = search(session, throttle, a, fq, rows=a.rows, cursor=cursor)
-        if found is None:
-            found = res["response"]["numFound"]
-            print(f"  {found:,} records to process")
+        res = search(session, throttle, a, fq, rows=a.rows, after=last_docid)
+        remaining = res["response"]["numFound"]
         docs = res["response"]["docs"]
+        if not docs:
+            complete = True
+            break
         for doc in docs:
             counts[upsert(db, doc, run_id)] += 1
-        db.commit()
-        seen += len(docs)
-        print(f"  metadata: {seen:,}/{found:,} (new {counts['new']:,}, "
-              f"updated {counts['updated']:,})", flush=True)
+        last_docid = docs[-1]["docid"]
+        processed += len(docs)
+        this_run += len(docs)
+        db.execute("UPDATE runs SET last_docid=?, processed=? WHERE id=?",
+                   (last_docid, processed, run_id))
+        db.commit()  # progress saved after every page: an interrupted run resumes here
+        print(f"  metadata: {processed:,} done, {remaining - len(docs):,} to go "
+              f"(this run: new {counts['new']:,}, updated {counts['updated']:,})", flush=True)
         if not a.no_pdf:
             ok, ko = download_pending(db, session, throttle, a, out)
             downloaded, failed = downloaded + ok, failed + ko
-        nxt = res.get("nextCursorMark")
-        if not docs or not nxt or nxt == cursor or (a.max_docs and seen >= a.max_docs):
+        if len(docs) >= remaining:
+            complete = True
             break
-        cursor = nxt
+        if a.max_docs and this_run >= a.max_docs:
+            break
 
     if not a.no_pdf:  # leftovers from earlier interrupted runs, and optional retries
         ok, ko = download_pending(db, session, throttle, a, out, retry_failed=a.retry_failed)
         downloaded, failed = downloaded + ok, failed + ko
-    complete = int(not a.max_docs or seen < a.max_docs)
-    db.execute("UPDATE runs SET finished=?, found=?, new=?, updated=?, downloaded=?, failed=?, "
-               "complete=? WHERE id=?", (iso(now_utc()), found, counts["new"], counts["updated"],
-                                         downloaded, failed, complete, run_id))
+    db.execute("UPDATE runs SET finished=?, found=?, new=COALESCE(new,0)+?, updated=COALESCE(updated,0)+?, "
+               "downloaded=COALESCE(downloaded,0)+?, failed=COALESCE(failed,0)+?, complete=? WHERE id=?",
+               (iso(now_utc()), processed, counts["new"], counts["updated"], downloaded, failed,
+                int(complete), run_id))
     db.commit()
-    print(f"Done: {counts['new']:,} new, {counts['updated']:,} updated, "
-          f"{downloaded:,} PDFs downloaded, {failed:,} failed."
-          + ("" if complete else " (stopped by --max-docs: not marked complete)"))
+    print(f"This run: {counts['new']:,} new, {counts['updated']:,} updated, "
+          f"{downloaded:,} PDFs downloaded, {failed:,} failed. Total processed: {processed:,}.")
+    print("Harvest complete for this scope." if complete else
+          "Stopped before the end (--max-docs): run the same command again to continue.")
 
 
 def cmd_stats(a):
@@ -415,13 +463,18 @@ def main():
     p = sub.add_parser("run", help="harvest metadata and PDFs")
     scope(p)
     p.add_argument("--out", required=True, help="output folder (catalogue + pdf/)")
-    p.add_argument("--rows", type=int, default=500, help="records per API page (max 10000)")
+    p.add_argument("--rows", type=int, default=500,
+                   help="records per API request (page size, max 10000); the run continues "
+                        "page after page until everything is harvested")
     p.add_argument("--workers", type=int, default=2, help="parallel downloads")
     p.add_argument("--max-mb", type=float, default=200, help="skip PDFs larger than this")
     p.add_argument("--no-pdf", action="store_true", help="metadata only")
     p.add_argument("--retry-failed", action="store_true", help="retry earlier failed downloads")
     p.add_argument("--overlap-days", type=float, default=1.0)
-    p.add_argument("--max-docs", type=int, default=0, help="stop after N records (testing)")
+    p.add_argument("--max-docs", type=int, default=0,
+                   help="stop this run after about N records; the same command continues later")
+    p.add_argument("--restart", action="store_true",
+                   help="start a new run even if the last one with this scope is unfinished")
     p.set_defaults(func=cmd_run)
 
     p = sub.add_parser("stats", help="catalogue summary")

@@ -100,8 +100,11 @@ python3 tools/hal_harvest.py count --since 1900-01-01 --with-file
 # 2. first run from a date (all of HAL with an open-access PDF)
 python3 tools/hal_harvest.py run --out ~/hal --since 1900-01-01 --with-file --mailto you@lab.fr
 
-# 3. later updates: same command without --since
-python3 tools/hal_harvest.py run --out ~/hal --with-file --mailto you@lab.fr
+# 3. later updates: run the same command again (only what changed is fetched)
+python3 tools/hal_harvest.py run --out ~/hal --since 1900-01-01 --with-file --mailto you@lab.fr
+
+# in batches: each invocation stops after ~5000 records, the next one continues
+python3 tools/hal_harvest.py run --out ~/hal --since 1900-01-01 --with-file --max-docs 5000
 
 # narrower scopes combine: --portal cea, --domain phys.nucl, --type THESE, --lang fr, --query '...'
 python3 tools/hal_harvest.py stats  --out ~/hal
@@ -109,6 +112,7 @@ python3 tools/hal_harvest.py export --out ~/hal      # catalogue.jsonl (metadata
 ```
 
 - Dates filter `modifiedDate_tdate` by default, so new versions are caught. A new version is saved next to the old one (`<halId>v2.pdf`).
+- `--rows` is only the page size of each API request. A run goes on page after page until the whole scope is harvested, and progress is saved after every page: an interrupted run (Ctrl-C, crash, `--max-docs`) continues when you run the same command again. `--restart` forces a fresh full pass (already downloaded PDFs are kept).
 - `--no-pdf` harvests metadata only. The PDFs are fetched by a later run.
 - Failed downloads are kept and retried with `--retry-failed`. Embargoed files are skipped.
 - Defaults are polite: one request every 0.5 s and 2 download workers. Licences vary per document (`licence_s` in the catalogue).
