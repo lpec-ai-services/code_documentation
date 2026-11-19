@@ -34,7 +34,7 @@ skills/
 ├── scivianna/             # CEA visualizer: AGENTS.md, tutorials, API (static), runnable examples
 ├── vtk/                   # VTK in Python: 900 examples (classic + Pythonic API), VTK Textbook, user docs
 ├── uranie/                # Uranie user manual (Python): modules + 985 runnable code blocks
-├── icoco/                 # ICoCo v2 coupling norm: ICoCo::Problem contract from the header comments
+├── icoco/                 # ICoCo v2 coupling norm (C++ header contract) + official Python implementation
 └── c3po/                  # C3PO coupling platform: overview, code integration, API, example couplings
 tools/
 ├── pdf2md.py              # PDF manual  → chapter Markdown + TOC (uses the PDF bookmarks)

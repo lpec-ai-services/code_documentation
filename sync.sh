@@ -194,6 +194,14 @@ sync_icoco() {
     --version "2.0 ($(git -C "$tmp/i" rev-parse --abbrev-ref HEAD) $(git -C "$tmp/i" log -1 --format='%h, %cs'))"
   cp "$tmp/i/README.md" "$out/README.md"
   mkdir -p "$out/swig" && cp "$tmp/i/swig/"*.i "$out/swig/"
+  # Python implementation (pip package icoco)
+  git clone -q --depth 1 https://github.com/cea-trust-platform/icoco-coupling-python.git "$tmp/p"
+  local vp; vp="$(cat "$tmp/p/src/icoco/VERSION") ($(git -C "$tmp/p" rev-parse --abbrev-ref HEAD) $(git -C "$tmp/p" log -1 --format='%h, %cs'))"
+  rm -rf "$out/python"
+  "$PY" "$ROOT/tools/sphinx_src2md.py" --src "$tmp/p/docs/sphinx" --pkg-root "$tmp/p/src" --out "$out/python" \
+    --source-url https://github.com/cea-trust-platform/icoco-coupling-python --version "$vp"
+  cp "$tmp/p/README.md" "$out/python/README.md"
+  mkdir -p "$out/python/tests" && cp "$tmp/p/tests/"*.py "$tmp/p/tests/README.md" "$out/python/tests/"
   rm -rf "$tmp"
 }
 

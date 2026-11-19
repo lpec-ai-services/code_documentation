@@ -1,0 +1,14 @@
+{
+  "source": "https://github.com/cea-trust-platform/icoco-coupling-python",
+  "version": "2.0.7 (main e631dbc, 2026-03-20)",
+  "generated": "2026-11-19",
+  "pages": [
+    "index.md",
+    "introduction.md",
+    "src/icoco.exception.md",
+    "src/icoco.problem.md",
+    "src/icoco.md",
+    "src/icoco.utils.md",
+    "src/icoco.version.md"
+  ]
+}
