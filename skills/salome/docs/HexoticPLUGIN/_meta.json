@@ -1,0 +1,16 @@
+{
+  "source": "https://docs.salome-platform.org/latest/gui/HexoticPLUGIN/",
+  "generated": "2026-11-19",
+  "pages": [
+    "hexotic_hypo_page",
+    "hexoticplugin_python_interface_page",
+    "hexoticpluginpy_doc/classHexoticPLUGINBuilder_1_1Hexotic__Algorithm",
+    "hexoticpluginpy_doc/classsmeshBuilder_1_1Mesh",
+    "hexoticpluginpy_doc/classsmesh__algorithm_1_1Mesh__Algorithm",
+    "hexoticpluginpy_doc/index",
+    "hexoticpluginpy_doc/namespaceHexoticPLUGINBuilder",
+    "hexoticpluginpy_doc/namespacesmeshBuilder",
+    "hexoticpluginpy_doc/namespacesmesh__algorithm",
+    "index"
+  ]
+}

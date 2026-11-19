@@ -7,7 +7,7 @@
 A notched beam with a square cross-section is simply supported and subjected to an impact with a cylinder.
 Its behavior is assumed elastoplastic.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/simply_supported_notched_beam.svg)](../../../_images/simply_supported_notched_beam.svg)
+[![figure](https://manta-project.gitlab.io/manta/_images/simply_supported_notched_beam.svg)](https://manta-project.gitlab.io/manta/_images/simply_supported_notched_beam.svg)
 
 Fig. 5 Description of the notched beam, its support and impacting cylinder
 

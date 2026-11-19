@@ -178,4 +178,4 @@ field passed to the damage formulation constructor:
 > Note
 >
 > This function is called automatically by the [specific time
-> integrators for damage field problems](pf_time_integrator)
+> integrators for damage field problems](https://manta-project.gitlab.io/manta/manta_components_user_guide/formulations/damage_and_fracture/pf_time_integrator)

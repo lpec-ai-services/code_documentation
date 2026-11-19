@@ -29,17 +29,17 @@ physical system class. Using the `addCurve` method registers the
 created curve in the physical system, so that it will automatically
 participate to the dependencies resolutions.
 
-## [The `Value` curve](#id12)
+## The `Value` curve
 
 The `Value` curve retrieves values associated with mesh sets.
 
-### [Parameters](#id13)
+### Parameters
 
 - `value`: name of the value.
 - `location`: regular expression allowing to select mesh sets on which
   the values are extracted.
 
-### [Example](#id14)
+### Example
 
 PYTHON
 
@@ -57,11 +57,11 @@ auto c = ps.addCurve(ctx, "Value",
                                 {"location", "top"}});
 ```
 
-## [The `NodalValue` curve](#id15)
+## The `NodalValue` curve
 
 The `NodalValue` curve retrieves values at nodes.
 
-### [Parameters](#id16)
+### Parameters
 
 - `field`: name of the field.
 - `node`: regular expression allowing to select mesh sets from whose nodes
@@ -69,7 +69,7 @@ The `NodalValue` curve retrieves values at nodes.
 - `nodes`: arrays of regular expressions allowing to select mesh sets
   from whose nodes the values of the field are extracted.
 
-### [Example](#id17)
+### Example
 
 PYTHON
 
@@ -87,7 +87,7 @@ auto c = ps.addCurve(ctx, "NodalValue",
                                 {"nodes", Vector<Parameters>{"p1", "p2", "p3"}}});
 ```
 
-## [The `Maximum`, `Minimum` and `MaximumIncrement` curves](#id18)
+## The `Maximum`, `Minimum` and `MaximumIncrement` curves
 
 The `Maximum`, `Minimum` and `MaximumIncrement` curves calculate respectively:
 
@@ -97,7 +97,7 @@ The `Maximum`, `Minimum` and `MaximumIncrement` curves calculate respectively:
 
 of a field over a set of locations.
 
-### [Parameters](#id19)
+### Parameters
 
 - `field`: name of the field.
 - `fieldType`: type of the field post-processed (`nodeField` or `ipField`).
@@ -116,7 +116,7 @@ details. If the quadrature is not defined explicitly, the curve expects
 that the field is only defined for one quadrature. If this is not the
 case, its initialization will fail.
 
-### [Example](#id20)
+### Example
 
 PYTHON
 
@@ -136,12 +136,12 @@ auto c = ps.addCurve(ctx, "Maximum",
                                 {"material", "Fuel"}});
 ```
 
-## [The `Integral` and `MeanValue` curves](#id21)
+## The `Integral` and `MeanValue` curves
 
 The `Integral` and `MeanValue` curves compute respectively the
 integral and the mean value of a field over a set of locations.
 
-### [Parameters](#id22)
+### Parameters
 
 - `field`: name of the field.
 - `fieldType`: type of the field post-processed (`ipField`).
@@ -163,7 +163,7 @@ details. If the quadrature is not defined explicitly, the curve expects
 that the field is only defined for one quadrature. If this is not the
 case, its initialization will fail.
 
-### [Example](#id23)
+### Example
 
 PYTHON
 
@@ -183,7 +183,7 @@ auto c = ps.addCurve(ctx, "Integral",
                                 {"material", "Fuel"}});
 ```
 
-## [The `AbsoluteDistance` and `L2Distance` curves](#id24)
+## The `AbsoluteDistance` and `L2Distance` curves
 
 The `AbsoluteDistance` and `L2Distance` curves computes the
 distance between two fields \(f_{1}\) and \(f_{2}\) using
@@ -199,7 +199,7 @@ components of the fields, \(e\) refers to discretization points
 considered (nodes for node fields, integration points for fields at
 integration points).
 
-### [Parameters](#id25)
+### Parameters
 
 - `firstField`: name of the first field.
 - `secondField`: name of the second field.
@@ -223,7 +223,7 @@ details. If the quadrature is not defined explicitly, the curve expects
 that the field is only defined for one quadrature. If this is not the
 case, its initialization will fail.
 
-### [Example](#id26)
+### Example
 
 PYTHON
 
@@ -235,13 +235,13 @@ c = ps.addCurve({'L2Distance': {'firstField': 'Temperature',
                                 'quadratureOrder': 1}})
 ```
 
-## [The `Curves` post-processing](#id27)
+## The `Curves` post-processing
 
 The `Curves` post-processing generates a txt file containing the time in
 the first column and values extracted by some curves in the other
 columns (See Section [Curves](#curves)).
 
-### [Parameters](#id28)
+### Parameters
 
 The following parameters are accepted when defining a `Curves` post-processing :
 
@@ -259,7 +259,7 @@ The following parameters are accepted when defining a `Curves` post-processing :
   - The value is a dictionary containing the parameters used to
     initialize the cure.
 
-### [Example](#id29)
+### Example
 
 PYTHON
 

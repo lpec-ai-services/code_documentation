@@ -1,0 +1,29 @@
+<!-- source: https://docs.salome-platform.org/latest/gui/GEOM/tui_normal_face_page.html -->
+
+# Normal to a Face
+
+```python
+# Normal to a Face
+
+import salome
+salome.salome_init_without_session()
+import GEOM
+from salome.geom import geomBuilder
+geompy = geomBuilder.New()
+import math
+
+# create a box
+box = geompy.MakeBoxDXDYDZ(100,30,100)
+
+faces = geompy.SubShapeAllSortedCentres(box, geompy.ShapeType["FACE"])
+face0 = faces[0]
+vnorm = geompy.GetNormal(face0)
+if vnorm is None:
+ raise RuntimeError("GetNormal(face0) failed")
+else:
+  geompy.addToStudy(face0, "Face0")
+  geompy.addToStudy(vnorm, "Normale to Face0")
+  print("\nNormale of face has been successfully obtained")
+```
+
+[Download this script](https://docs.salome-platform.org/latest/examples/GEOM/normal_face.py)

@@ -1,0 +1,17 @@
+{
+  "source": "https://docs.salome-platform.org/latest/gui/HYBRIDPLUGIN/",
+  "generated": "2026-11-19",
+  "pages": [
+    "additional_hypo_page",
+    "hybrid_hypo_page",
+    "hybridplugin_python_interface_page",
+    "hybridpluginpy_doc/classHYBRIDPluginBuilder_1_1HYBRID__Algorithm",
+    "hybridpluginpy_doc/classsmeshBuilder_1_1Mesh",
+    "hybridpluginpy_doc/classsmesh__algorithm_1_1Mesh__Algorithm",
+    "hybridpluginpy_doc/index",
+    "hybridpluginpy_doc/namespaceHYBRIDPluginBuilder",
+    "hybridpluginpy_doc/namespacesmeshBuilder",
+    "hybridpluginpy_doc/namespacesmesh__algorithm",
+    "index"
+  ]
+}

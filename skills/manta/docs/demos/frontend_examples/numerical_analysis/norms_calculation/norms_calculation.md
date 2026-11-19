@@ -21,15 +21,15 @@ Note
 
 The following files are required to run the tutorial:
 
-- [`castem_1d_case.dgibi`](../../../../_downloads/54bb4f6e9aed7a5cc117c69521f3a2d1/castem_1d_case.dgibi):
+- [`castem_1d_case.dgibi`](https://manta-project.gitlab.io/manta/_downloads/54bb4f6e9aed7a5cc117c69521f3a2d1/castem_1d_case.dgibi):
   the Cast3M input file required to generate the mesh in 1D case.
-- [`castem_2d_case.dgibi`](../../../../_downloads/66f8d067f7e46b534cb2df6966e57ad6/castem_2d_case.dgibi):
+- [`castem_2d_case.dgibi`](https://manta-project.gitlab.io/manta/_downloads/66f8d067f7e46b534cb2df6966e57ad6/castem_2d_case.dgibi):
   the Cast3M input file required to generate the mesh in 2D case.
-- [`LinearHeatTransfer.mfront`](../../../../_downloads/2698de5e63b237f7d723ab4adb3f8d2a/LinearHeatTransfer.mfront): the MFront implementation of the linear heat transfer
-- [`test1.py`](../../../../_downloads/7baf15bf597f63310debd8572bb698e3/test1.py): the main script for 1D case
-- [`test2.py`](../../../../_downloads/c120d64fe21eeb9a62c411263c7527d2/test2.py): the main script for 2D case
+- [`LinearHeatTransfer.mfront`](https://manta-project.gitlab.io/manta/_downloads/2698de5e63b237f7d723ab4adb3f8d2a/LinearHeatTransfer.mfront): the MFront implementation of the linear heat transfer
+- [`test1.py`](https://manta-project.gitlab.io/manta/_downloads/7baf15bf597f63310debd8572bb698e3/test1.py): the main script for 1D case
+- [`test2.py`](https://manta-project.gitlab.io/manta/_downloads/c120d64fe21eeb9a62c411263c7527d2/test2.py): the main script for 2D case
 
-## [Error and norm computation](#id7)
+## Error and norm computation
 
 We use two different norms, \(L^{2}(\Omega)\) and
 \(L^{\infty}(\Omega)\).
@@ -48,9 +48,9 @@ The norms of the error are
 
 In the implementation section, we will see how to declare error norms type post-processings in MANTA.
 
-## [Physical system](#id8)
+## Physical system
 
-### [1D constant source term case](#id9)
+### 1D constant source term case
 
 The equation is
 
@@ -65,7 +65,7 @@ flux, \(s\) the source term and \(T_i\) the imposed temperature.
 We take \(\lambda = 230\) (aluminium), \(g=500\), \(s = 20\)
 and \(T_i = 25\).
 
-### [2D non constant source term case](#id10)
+### 2D non constant source term case
 
 For the 2D case, the equation is
 
@@ -79,7 +79,7 @@ where \(\lambda\) is the thermal conductivity, \(g\) the imposed
 flux, \(s\) the source term and \(T_i\) the imposed temperature.
 We take \(\lambda = 1\) and \(T_i = 25\).
 
-## [Description of the input file](#id11)
+## Description of the input file
 
 In this section we will only discuss how to implement norms calculation in MANTA, to have an overview
 of the script of this test case, please refer to the appendix.
@@ -113,7 +113,7 @@ the `L2Distance` and `AbsoluteDistance` are computed on
 integration points and another `AbsoluteDistance` is computed on the
 nodes.
 
-## [Execution](#id12)
+## Execution
 
 First, we build MFront library with
 
@@ -127,14 +127,14 @@ and we can run the simulation
 $ python3 test1.py
 ```
 
-## [Simulation](#id13)
+## Simulation
 
-### [First case](#id14)
+### First case
 
 [Fig. 33](#temperature-profile-ex1) shows that temperature is decreasing with \(x\) and that
 MANTA and Cast3M give the same result.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/temperature_profile.png)](../../../../_images/temperature_profile.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/temperature_profile.png)](https://manta-project.gitlab.io/manta/_images/temperature_profile.png)
 
 Fig. 33 Temperature as a fonction of \(x\) coordinate [0;5] given by MANTA and Cast3M.
 
@@ -145,16 +145,16 @@ a larger error than Cast3M.
 This figure also highlights the difference between norms, with the
 absolute norm always performing better than the L2 norm.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/error_norms.png)](../../../../_images/error_norms.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/error_norms.png)](https://manta-project.gitlab.io/manta/_images/error_norms.png)
 
 Fig. 34 Comparison of \(L^{2}(\Omega)\) and \(L^{\infty}(\Omega)\)
 error norms for MANTA and Cast3M for case one.
 
-### [Second case](#id15)
+### Second case
 
 The MANTA computed temperature field is shown in [Fig. 35](#result-field-temperature-2d).
 
-[![figure](https://manta-project.gitlab.io/manta/_images/result_field_temperature.png)](../../../../_images/result_field_temperature.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/result_field_temperature.png)](https://manta-project.gitlab.io/manta/_images/result_field_temperature.png)
 
 Fig. 35 Temperature field computed by MANTA for the case two.
 
@@ -163,7 +163,7 @@ for both Cast3M and MANTA. Note that the order of convergence is
 2, and the \(L^{2}(\Omega)\) norm is larger than the
 \(L^{\infty}(\Omega)\) norm.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/error_result_ex2_castem_vs_manta.png)](../../../../_images/error_result_ex2_castem_vs_manta.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/error_result_ex2_castem_vs_manta.png)](https://manta-project.gitlab.io/manta/_images/error_result_ex2_castem_vs_manta.png)
 
 Fig. 36 Comparison of \(L^{2}(\Omega)\) and
 \(L^{\infty}(\Omega)\) error norms for MANTA and Cast3M
@@ -180,15 +180,15 @@ between the same norms for nodes and integration point
 is approximately 3. MANTA automatically provides source terms defined on integration points that makes
 MANTA errors lower than Cast3M ones.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/error_result_ex2_castem_ip_vs_nodes.png)](../../../../_images/error_result_ex2_castem_ip_vs_nodes.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/error_result_ex2_castem_ip_vs_nodes.png)](https://manta-project.gitlab.io/manta/_images/error_result_ex2_castem_ip_vs_nodes.png)
 
 Fig. 37 Comparison of \(L^{2}(\Omega)\) and
 \(L^{\infty}(\Omega)\) error norms for integration point or nodes
 defined source term in Cast3M.
 
-## [Appendix](#id16)
+## Appendix
 
-### [Appendix 1 : Analytical solution](#id17)
+### Appendix 1 : Analytical solution
 
 For the first case, 1d with a constant source term, the analytical solution is given by
 
@@ -198,7 +198,7 @@ For the second case, 2D with a non constant source term, the analytical solution
 
 \[T(x,y) = \frac{1}{\lambda}\sin{(\frac{\pi}{2}x)}\sin{(\frac{\pi}{2}y)} + T_i\]
 
-### [Appendix 2 : Implementation](#id18)
+### Appendix 2 : Implementation
 
 In this appendix, we only discuss how to implement the first case since the second case is easily transposable.
 After `import manta`, we set the verbosity level to 3 in order to get
@@ -219,7 +219,7 @@ k,q,Ti,g,l = 230.,20.,25.,500.,5.
 
 The constants of the problems are not the same for both cases.
 
-#### [Physical system](#id19)
+#### Physical system
 
 The physical system is created using the MANTA `Grid` generator as
 follows:
@@ -235,7 +235,7 @@ for the 2D case, since the
 domain remains the same, we only need to modify `numberOfElements` by
 parameterizing the space discretization in the \(y\) direction.
 
-#### [Implicit heat transfer model and material declaration](#id20)
+#### Implicit heat transfer model and material declaration
 
 Even if the properties are linear, the user has to declare the thermal model solver
 as nonlinear since MANTA need an MFront declared material.
@@ -259,7 +259,7 @@ be inserted
 
 ```
 
-#### [Boundary conditions and heat source](#id21)
+#### Boundary conditions and heat source
 
 The boundary conditions and heat source have to be declared as follows:
 
@@ -277,7 +277,7 @@ Note that for the second example the `HeatSourceValue` is a space
 dependent function and must be declared using
 the `addScalarSpatiotemporalLoading` function.
 
-#### [Coupling scheme](#id22)
+#### Coupling scheme
 
 A coupling scheme is needed, and the simplest one (since we only deal
 with thermal simulation) is declared by:
@@ -286,7 +286,7 @@ with thermal simulation) is declared by:
 m.add('HeatSource', material = 'bar', value = 'HeatSourceValue')
 ```
 
-#### [Post-processing](#id23)
+#### Post-processing
 
 We need temperature on the domain as post-processings
 
@@ -295,7 +295,7 @@ We need temperature on the domain as post-processings
     T = Ti + A * x - (q / (2 * k)) * x * x
 ```
 
-#### [Run simulation](#id24)
+#### Run simulation
 
 Finally, we can initialize and run the simulation
 

@@ -6,8 +6,8 @@ Note
 
 The following files are needed to run this tutorial:
 
-- [`bar2D.py`](../../../../_downloads/c0c4d262849cab71b5c231cdf9462738/bar2D.py).
-- [`MicromorphicDamage.mfront`](../../../../_downloads/40ba88896b83c1618e660d8c1625d90f/MicromorphicDamage.mfront).
+- [`bar2D.py`](https://manta-project.gitlab.io/manta/_downloads/c0c4d262849cab71b5c231cdf9462738/bar2D.py).
+- [`MicromorphicDamage.mfront`](https://manta-project.gitlab.io/manta/_downloads/40ba88896b83c1618e660d8c1625d90f/MicromorphicDamage.mfront).
 
 This tutorial closely follows the demo of J. Bleyer
 [[Ble25](../../../../references/references.md#id21)] (which is part of the tutorials
@@ -53,18 +53,18 @@ The micromorphic approach introduces a relaxed unconstrained field
 with appropriate boundary conditions. In the previous expression,
 \(\beta\) is a penalization parameter.
 
-## [Problem considered](#id8)
+## Problem considered
 
-### [Geometry](#id9)
+### Geometry
 
 We consider a 2D rectangular domain \(\Omega\) of size
 \([L, h]\).
 
-### [Boundary conditions](#id10)
+### Boundary conditions
 
 \(d_{\chi}\left(0, y\right) = d_{0}\)
 
-## [Expression of the micromorphic behaviour](#id11)
+## Expression of the micromorphic behaviour
 
 It is then convenient to separate the Lagrangian \(\mathcal{L}\)
 into two parts \(\mathcal{L}_{1}\) and \(\mathcal{L}_{2}\) as
@@ -92,7 +92,7 @@ characterize the minima of the Lagrangian [[Son21](../../../../references/refere
 
   \[Y = -{\displaystyle \frac{\displaystyle \partial \psi}{\displaystyle \partial d}}\]
 
-### [Balance equations for the micromorphic damage](#id12)
+### Balance equations for the micromorphic damage
 
 The variation of \(\delta\,\mathcal{L}_{1}\) with respect to
 micromorphic damage field is defined by:
@@ -153,7 +153,7 @@ equation and boundary conditions:
 \end{aligned}
 \right.\end{split}\]
 
-### [Evolution of damage](#id13)
+### Evolution of damage
 
 This dissipation potential is equivalent to define the following damage
 surface:
@@ -165,7 +165,7 @@ closed form formula:
 
 (164)\[d=\min\left(0, \max\left(1 ,d_{\chi} - \frac{1}{\beta}\right)\right)\]
 
-### [Numerical schemes](#id14)
+### Numerical schemes
 
 The solution \(\left(d, d_{\chi}\right)\) of the problem must
 satisfy both Equations [(162)](#equation-micromorphicdamage-d-chi) and
@@ -195,9 +195,9 @@ implemented by the `SolidMaterial` brick of the
    \({\displaystyle \frac{\displaystyle \partial \vec{b}_{\chi}}{\displaystyle \partial \Delta\,d_{\chi}}}\).
 
 The MFront implementation can be downloaded
-[`here`](../../../../_downloads/40ba88896b83c1618e660d8c1625d90f/MicromorphicDamage.mfront).
+[`here`](https://manta-project.gitlab.io/manta/_downloads/40ba88896b83c1618e660d8c1625d90f/MicromorphicDamage.mfront).
 
-## [Implementation of the test case in MANTA](#id15)
+## Implementation of the test case in MANTA
 
 The test cases begins by importing the manta module:
 
@@ -220,7 +220,7 @@ ps = manta.PhysicalSystem(mesh = {'generator': 'Grid',
                           geometricHypothesis = 'inPlane')
 ```
 
-### [Definition of the physical system](#id16)
+### Definition of the physical system
 
 The next step is to define a physical system. We use the grid
 generator to define the mesh, as follows:
@@ -237,7 +237,7 @@ ps = manta.PhysicalSystem(mesh = {'generator': 'Grid',
 The geometric hypothesis specifies that we are not considering an
 axisymmetrical computation.
 
-### [Definition of the micromorphic model](#id17)
+### Definition of the micromorphic model
 
 The micromorphic model and the numerical parameters used internally are
 defined as follows:
@@ -253,7 +253,7 @@ damage = manta.Model('ImplicitMicromorphicDamage', ps,
 This model must be completed by adding bricks defining the micromorphic
 behaviour and the boundary conditions.
 
-#### [Definition of the brick associated with the micromorphic behaviour](#id18)
+#### Definition of the brick associated with the micromorphic behaviour
 
 ```python
 damage.add('SolidMaterial',
@@ -264,7 +264,7 @@ damage.add('SolidMaterial',
            quadratureOrder = 2)
 ```
 
-#### [Boundary conditions for micromorphic damage](#id19)
+#### Boundary conditions for micromorphic damage
 
 ```python
 damage.add('DirichletBoundaryCondition',
@@ -273,14 +273,14 @@ damage.add('DirichletBoundaryCondition',
            value = 1)
 ```
 
-### [Definition of the material properties](#id20)
+### Definition of the material properties
 
 ```python
 for n, v in properties.items():
     ps.addProperty('Constant', material = 'bar', name = n, value = v)
 ```
 
-### [Projection of the damage at nodes for the post-processings](#id21)
+### Projection of the damage at nodes for the post-processings
 
 The `L2ProjectionAuxiliaryTask` auxiliary task is used for the projection
 of the damage at nodes:
@@ -296,7 +296,7 @@ nodal_damage = manta.Model('L2ProjectionAuxiliaryTask', ps,
 This projection is required by the `LineCurves` post-processing
 defined below.
 
-### [Coupling scheme](#id22)
+### Coupling scheme
 
 The coupling scheme used in this test case is quite simple: at each
 time step, we compute the solution and then we project the damage at
@@ -310,7 +310,7 @@ cs.add(nodal_damage)
 ps.setCouplingScheme(cs)
 ```
 
-### [Definition of the post-processing](#id23)
+### Definition of the post-processing
 
 In this test case, we define two post-processings:
 
@@ -335,7 +335,7 @@ ps.addPostProcessing('VTKExport',
                                 'fieldType': 'ipField',
 ```
 
-### [Running the simulation](#id24)
+### Running the simulation
 
 ```python
 
@@ -343,23 +343,23 @@ s = manta.Simulation(ps, times = [0, 1],
                      allowSubStepping = False)
 ```
 
-## [Usage](#id25)
+## Usage
 
-### [Compilation of the `MFront` file](#id26)
+### Compilation of the `MFront` file
 
 ```bash
 mfront --obuild --interface=generic MicromorphicDamage.mfront
 ```
 
-### [Running the `manta`’s script](#id27)
+### Running the `manta`’s script
 
 ```bash
 python3 bar2D.py
 ```
 
-## [Results](#id28)
+## Results
 
-### [Extracting data with `manta-extract_line_curve_values`](#id29)
+### Extracting data with `manta-extract_line_curve_values`
 
 The `manta-extract_line_curve_values` allows to extract
 the values generated by the `LineCurves` post-processing
@@ -371,7 +371,7 @@ $ manta-extract_line_curve_values micromorphic-damage.res \
   1 -f txt -o micromorphic-damage-1.res
 ```
 
-### [Plotting the results](#id30)
+### Plotting the results
 
 ![figure](https://manta-project.gitlab.io/manta/_images/damage-values.png)
 
@@ -384,7 +384,7 @@ micromorphic damage and damage with the analytical solution.
 This figure shows that a penalisation factor of \(300\)
 is sufficient to get accurate results.
 
-### [Convergence](#id31)
+### Convergence
 
 ```
 | Iteration:  0 | normalized residual norm=1.0000e+00, tolerance: 1.0000e-10, absolute norm=5.4135e+00

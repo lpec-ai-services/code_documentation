@@ -6,13 +6,13 @@ Users of MANTA can interact with the Linear Solver backend
 (currently only [PETSc](https://petsc.org/)) through the interface presented
 in this page.
 
-## [Parameters that can be set in scripts (.py, .cpp)](#id3)
+## Parameters that can be set in scripts (.py, .cpp)
 
 MANTA words cover the usual choices only. Anything else can be given as a raw
 [PETSc](https://petsc.org/) keyword (e.g. `fgmres` for the method, `gamg` or `hypre` for the
 preconditioner), which is then used as is.
 
-### [`method`](#id4)
+### `method`
 
 | MANTA word | meaning | PETSc keyword |
 | --- | --- | --- |
@@ -23,7 +23,7 @@ preconditioner), which is then used as is.
 PETSc's own raw keyword for `direct` (`preonly`) is recognized just the same: it behaves
 identically to MANTA's `direct` word in every respect (including the defaults it gets).
 
-### [`preconditioner`](#id5)
+### `preconditioner`
 
 A preconditioner is used by iterative methods. `direct` is a single factorization, and has no use for one.
 
@@ -37,7 +37,7 @@ A preconditioner is used by iterative methods. `direct` is a single factorizatio
 Left unset, an iterative method uses PETSc's own default preconditioner: an ILU in serial,
 a block-Jacobi (an ILU on each process's block) in parallel.
 
-### [`factorizationBackend`](#id6)
+### `factorizationBackend`
 
 This parameter sets the library
 performing the factorization, e.g. `"mumps"` or
@@ -45,7 +45,7 @@ performing the factorization, e.g. `"mumps"` or
 keeps its own default backend for that solve.
 It is meaningful for `direct`, for `ilu`, and for any preconditioner that is a factorization.
 
-### [`methodForConstraint`](#id7)
+### `methodForConstraint`
 
 **If** your system still contain non-eliminated constraints,
 two mode of resolution can be chosen.
@@ -55,7 +55,7 @@ two mode of resolution can be chosen.
 | `monolithic` | the whole augmented system is solved at once. |
 | `schurComplement` | (**default**) solves the nested system with a schur's complement. The resolution of the Schur complement is not configurable through this interface. (use petscrc) |
 
-## [Using a petscrc file to set more options](#id8)
+## Using a petscrc file to set more options
 
 PETSc generic commands can be called through command line arguments or in
 a petscrc file in the working repository
@@ -64,7 +64,7 @@ the command line and petscrc options.
 More precisions about this mode of usage are available
 in .:ref:this <choosing_a_linear_solver_and_preconditioner> page.
 
-## [Example of usage in pyManta](#id9)
+## Example of usage in pyManta
 
 Using MANTA's generic words:
 
@@ -88,7 +88,7 @@ linear_solver_options = {'direct': {},
                          'methodForConstraint': 'schurComplement'}
 ```
 
-## [Example of usage in components](#id10)
+## Example of usage in components
 
 In the components, users have to instantiate a `LinearSystem::UserOptions` struct.
 It contains the parameters of the method cited above (`methodForConstraint`
@@ -148,7 +148,7 @@ a case resolved through the schur path (gathered constraints, not eliminated):
 equations, and takes effect on the next solve. Defaults value for every case are detailed in the
 [LinearSystem blueprint](../../../developer_guide/blueprints/linear_system_blueprint.md#blueprint-linear-system-solving).
 
-## [List of examples and tests](#id11)
+## List of examples and tests
 
 - `src/components/modeling/tests/e2e/nr/implicit/cantilever_plasticity`
 - `src/components/modeling/tests/e2e/nr/implicit/plasticube2`

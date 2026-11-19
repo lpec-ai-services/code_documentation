@@ -1,0 +1,33 @@
+{
+  "source": "https://docs.salome-platform.org/latest/gui/HOMARD/en/",
+  "generated": "2026-11-19",
+  "pages": [
+    "demarrage_rapide",
+    "divers",
+    "glossaire",
+    "gui_create_boundary",
+    "gui_create_case",
+    "gui_create_hypothese",
+    "gui_create_iteration",
+    "gui_create_yacs",
+    "gui_create_yacs_aster",
+    "gui_create_zone",
+    "gui_homard",
+    "gui_mesh_info",
+    "gui_usage",
+    "index",
+    "intro",
+    "preferences",
+    "regles",
+    "tui_create_boundary",
+    "tui_create_case",
+    "tui_create_hypothese",
+    "tui_create_iteration",
+    "tui_create_yacs",
+    "tui_create_zone",
+    "tui_homard",
+    "tui_usage",
+    "tutorials",
+    "yacs"
+  ]
+}

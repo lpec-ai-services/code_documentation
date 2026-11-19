@@ -15,11 +15,11 @@ Note
 
 The following files are required to run the tutorial:
 
-- [`mesh.dgibi`](../../../../../_downloads/f5d918303141555fbeeffc523103aac9/mesh.dgibi):
+- [`mesh.dgibi`](https://manta-project.gitlab.io/manta/_downloads/f5d918303141555fbeeffc523103aac9/mesh.dgibi):
   the Cast3M input file required to generated the mesh.
-- [`MicromorphicDamageI_SpectralSplit.mfront`](../../../../../_downloads/4f01c77408e60c95e830e37a776f8106/MicromorphicDamageI_SpectralSplit.mfront): the MFront implementation of the mechanical behaviour
-- [`MicromorphicDamageII.mfront`](../../../../../_downloads/232fb8628a6fc35352ca6b917a6fb436/MicromorphicDamageII.mfront): the MFront implementation of the micromorphic behaviour
-- [`fiber_reinforced_matrix.py`](../../../../../_downloads/5c7447af4d0e986012cb6f8ea59bd40b/fiber_reinforced_matrix.py): the main script
+- [`MicromorphicDamageI_SpectralSplit.mfront`](https://manta-project.gitlab.io/manta/_downloads/4f01c77408e60c95e830e37a776f8106/MicromorphicDamageI_SpectralSplit.mfront): the MFront implementation of the mechanical behaviour
+- [`MicromorphicDamageII.mfront`](https://manta-project.gitlab.io/manta/_downloads/232fb8628a6fc35352ca6b917a6fb436/MicromorphicDamageII.mfront): the MFront implementation of the micromorphic behaviour
+- [`fiber_reinforced_matrix.py`](https://manta-project.gitlab.io/manta/_downloads/5c7447af4d0e986012cb6f8ea59bd40b/fiber_reinforced_matrix.py): the main script
 
 The problem is that of a stiff circular inclusion embedded in a square
 plate under imposed vertical displacement on its upper boundary.
@@ -38,9 +38,9 @@ This tutorial is adapted from a demo of the `mgis.fenics` module
 element library `FEniCS` and the MGIS library,
 [[HBF+20](../../../../../references/references.md#id15)]:
 
-## [Problem considered](#id16)
+## Problem considered
 
-### [Geometry and mesh](#id17)
+### Geometry and mesh
 
 We consider a 2D square domain \(\Omega\) of size \([1, 1]\)
 composed of a circular fiber of radius \(0.2\) located at the center
@@ -54,7 +54,7 @@ Fig. 21 Mesh used to discretize the matrix.
 
 The mesh used for the matrix is illustrated on Figure [Mesh used to discretize the matrix.](#matrix-mesh).
 
-### [Material behaviour](#id18)
+### Material behaviour
 
 The micromorphic approach to fracture is a class of damage gradient
 models where three unknowns are considered:
@@ -149,7 +149,7 @@ if the material is fully damaged, *i,e* \(g(d) = (1-d)^2 + k\)
 In both cases, the physics can be described by a behaviour that can be
 implemented using MFront.
 
-### [Material properties](#id19)
+### Material properties
 
 Table 18 Material properties of the matrix
 
@@ -164,11 +164,11 @@ Table 18 Material properties of the matrix
 The material properties used in this test are reported on Table
 [Material properties of the matrix](#id9).
 
-### [Modeling hypothesis](#id20)
+### Modeling hypothesis
 
 Plane strain is assumed.
 
-### [Boundary conditions](#id21)
+### Boundary conditions
 
 The upper surface is blocked in the horizontal direction and a uniform
 displacement is applied in the vertical direction. On the boundary with
@@ -178,7 +178,7 @@ The micromorphic damage is assumed null on the boundary of the fiber,
 mostly to prevent the propagation of the damage at this interface: the
 damage is forced to develop in the matrix.
 
-## [Description of the MANTA input file](#id22)
+## Description of the MANTA input file
 
 The test cases begins by importing the `numpy` and `manta`
 module:
@@ -231,7 +231,7 @@ mechanical_behavior = 'MicromorphicDamageI_SpectralSplit'
 # mechanical_behavior = 'MicromorphicDamageI_SpectralSplit_PlaneStress'
 ```
 
-### [Definition of the physical system](#id23)
+### Definition of the physical system
 
 The next step is to define a physical system. The `Cast3M` script
 generates a `MED` file that is imported as follows:
@@ -249,7 +249,7 @@ is not axisymmetrical.
 
 See Section [Physical system](../../../../../manta_frontend_user_guide/physical_system/physical_system.md#physical-system) for further details.
 
-### [Declaration of the material properties](#id24)
+### Declaration of the material properties
 
 Once the physical system is defined, we can immediately define the
 material properties:
@@ -261,7 +261,7 @@ for n, v in properties.items():
 
 See Section [Properties](../../../../../manta_frontend_user_guide/properties.md#properties) for further details.
 
-### [Mechanical model, behaviour and boundary conditions](#id25)
+### Mechanical model, behaviour and boundary conditions
 
 The mechanical model is instanciated as follows:
 
@@ -305,7 +305,7 @@ mechanics.add('ImposedDisplacement', boundary = 'upper_boundary', component = 'U
               value = 'ImposedDisplacementValue')
 ```
 
-### [Micromorphic model, behaviour and boundary conditions](#id26)
+### Micromorphic model, behaviour and boundary conditions
 
 The micromorphic model is defined:
 
@@ -338,7 +338,7 @@ damage.add('DirichletBoundaryCondition',
            value = 0)
 ```
 
-### [Declaration of the coupling scheme](#id27)
+### Declaration of the coupling scheme
 
 The coupling is defined as follows:
 
@@ -366,7 +366,7 @@ iteration. In other words, an update of the damage does not perturb the
 mechanical equilibrium and an update of the mechanical variable does not
 perturb the micromorphic solution.
 
-### [Definition of the evolution of the imposed displacement at the upper boundary of the matrix](#id28)
+### Definition of the evolution of the imposed displacement at the upper boundary of the matrix
 
 The following line declares a loading evolution, i.e. a function of time:
 
@@ -391,7 +391,7 @@ and \(2\), a finer time discretization is used.
 
 See Section [Loadings](../../../../../manta_frontend_user_guide/loadings.md#loadings) for further details.
 
-### [Post-processings](#id29)
+### Post-processings
 
 Two post-processings are defined in this example:
 
@@ -432,7 +432,7 @@ ps.addPostProcessing('Curves',
 
 See Section [Post-processings](../../../../../manta_frontend_user_guide/post_processings/post_processings.md#post-processings) for further details.
 
-### [Time discretization](#id30)
+### Time discretization
 
 To reduce the computational time, a coarse time discretization is used
 between times \(0\) and \(1\), and a finer one between \(1\)
@@ -451,7 +451,7 @@ times = [i * dt1 for i in range(0, nsteps1 + 1)] + [1 + i * dt2 for i in range(0
 
 See Section [Simulation](../../../../../manta_frontend_user_guide/simulation/simulation.md#simulation) for further details.
 
-### [Running the simulation](#id31)
+### Running the simulation
 
 The next lines instantiates a `Simulation` object and starts the
 simulation:
@@ -463,13 +463,13 @@ s.run()
 
 See Section [Simulation](../../../../../manta_frontend_user_guide/simulation/simulation.md#simulation) for further details.
 
-## [Results](#id32)
+## Results
 
 The post-processings defined above allow to visualize the damage map at each
 time steps and plot the imposed force or the stored and dissipated
 energies as a function of time.
 
-### [Damage evolution](#id33)
+### Damage evolution
 
 ![figure](https://manta-project.gitlab.io/manta/_images/damage.png)
 
@@ -484,7 +484,7 @@ is broken with, in our simulation, an unstable propagation toward the
 left boundary followed by an unstable propagation toward the right
 boundary.
 
-### [Imposed force](#id34)
+### Imposed force
 
 ![figure](https://manta-project.gitlab.io/manta/_images/force.png)
 
@@ -502,7 +502,7 @@ can be observed and the differences can be explained by the fact that:
 - a looser criterion is used in `mgis.fenics` to stop the
   alternate minimization algorithm.
 
-### [Stored and dissipated energies](#id35)
+### Stored and dissipated energies
 
 ![figure](https://manta-project.gitlab.io/manta/_images/energies.png)
 

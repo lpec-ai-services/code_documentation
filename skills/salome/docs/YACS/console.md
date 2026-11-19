@@ -1,0 +1,25 @@
+<!-- source: https://docs.salome-platform.org/latest/gui/YACS/console.html -->
+
+# Using YACS in console mode
+
+- [Defining a calculation scheme in the XML format](schemaxml.md)
+  - [Definition of data types](schemaxml.md#definition-of-data-types)
+  - [Definition of elementary calculation nodes](schemaxml.md#definition-of-elementary-calculation-nodes)
+  - [Definition of connections](schemaxml.md#definition-of-connections)
+  - [Initialising an input data port](schemaxml.md#initialising-an-input-data-port)
+  - [First example starting from previous elements](schemaxml.md#first-example-starting-from-previous-elements)
+  - [Definition of composite nodes](schemaxml.md#definition-of-composite-nodes)
+  - [Definition of containers](schemaxml.md#definition-of-containers)
+  - [Node properties](schemaxml.md#node-properties)
+  - [Datastream connections](schemaxml.md#datastream-connections)
+  - [Other elementary nodes](schemaxml.md#other-elementary-nodes)
+- [Executing a calculation scheme in console mode](execxml.md)
+  - [Standard execution](execxml.md#standard-execution)
+  - [Execution displaying states of nodes during execution](execxml.md#execution-displaying-states-of-nodes-during-execution)
+  - [Execution saving the final state of the scheme](execxml.md#execution-saving-the-final-state-of-the-scheme)
+  - [Execution loading the initial state of the scheme](execxml.md#execution-loading-the-initial-state-of-the-scheme)
+  - [How to configure schema shutdown](execxml.md#how-to-configure-schema-shutdown)
+  - [Restart a schema with reset of nodes in error](execxml.md#restart-a-schema-with-reset-of-nodes-in-error)
+  - [Execute a scheme and save the state of execution every 30 seconds](execxml.md#execute-a-scheme-and-save-the-state-of-execution-every-30-seconds)
+  - [Change the values of some input ports before execution](execxml.md#change-the-values-of-some-input-ports-before-execution)
+  - [How to manage several SALOME sessions](execxml.md#how-to-manage-several-salome-sessions)

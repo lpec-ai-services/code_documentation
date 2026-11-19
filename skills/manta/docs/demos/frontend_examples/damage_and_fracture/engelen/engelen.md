@@ -5,7 +5,7 @@
 This test is based on the paper of Feld-Payet et al.
 [[FPBF11](../../../../references/references.md#id14)].
 
-[![figure](https://manta-project.gitlab.io/manta/_images/double_notched_plate.svg)](../../../../_images/double_notched_plate.svg)
+[![figure](https://manta-project.gitlab.io/manta/_images/double_notched_plate.svg)](https://manta-project.gitlab.io/manta/_images/double_notched_plate.svg)
 
 Fig. 25 Description of the geometry of the double notched plate and boundary conditions.
 
@@ -18,10 +18,10 @@ Note
 
 The following files are required to run the tutorial:
 
-- [`mesh.dgibi`](../../../../_downloads/cb17055a488b64160e78996a7330a554/mesh.dgibi):
+- [`mesh.dgibi`](https://manta-project.gitlab.io/manta/_downloads/cb17055a488b64160e78996a7330a554/mesh.dgibi):
   the `Cast3M` input file required to generated the mesh.
-- [`EngelenNonLocalElastoPlasticity.mfront`](../../../../_downloads/b280884116f9aac7d5a04ed12ec30852/EngelenNonLocalElastoPlasticity.mfront): the MFront implementation of the mechanical behavior
-- [`Engelen.py`](../../../../_downloads/c5c66a052996c4960452f0a675e71092/Engelen.py): the main script
+- [`EngelenNonLocalElastoPlasticity.mfront`](https://manta-project.gitlab.io/manta/_downloads/b280884116f9aac7d5a04ed12ec30852/EngelenNonLocalElastoPlasticity.mfront): the MFront implementation of the mechanical behavior
+- [`Engelen.py`](https://manta-project.gitlab.io/manta/_downloads/c5c66a052996c4960452f0a675e71092/Engelen.py): the main script
 
 Warning
 
@@ -31,9 +31,9 @@ when using standard finite elements. As of Release 0.1,
 no solution is available in the MANTA's frontend to mitigate
 such effects.
 
-## [Description](#id6)
+## Description
 
-### [Geometry](#id7)
+### Geometry
 
 Table 19 Main parameters used in this test
 
@@ -55,7 +55,7 @@ introduced:
 
 The values used in this are reported on [Table 19](#double-notched-plate-geometric-parameters).
 
-### [Boundary conditions](#id8)
+### Boundary conditions
 
 The plate is clamped on its bottom side and on its right side. On its
 left side, only the horizontal displacements are blocked.
@@ -64,7 +64,7 @@ A uniform vertical displacement is imposed on its top boundary. This
 displacement is imposed gradually up to a final value of
 \(7.83\,\cdot\,10^{-2}\) mm.
 
-### [Mechanical behavior](#id9)
+### Mechanical behavior
 
 To perform a finite strain analysis, the mechanical behavior is
 expressed in the logarithmic strain framework. See
@@ -118,7 +118,7 @@ Table 20 Main parameters used in this test
 The material parameters used in this test are reported on
 [Table 20](#double-notched-plate-material-parameters).
 
-## [Description of the MANTA input file](#id10)
+## Description of the MANTA input file
 
 The test cases begins by importing the `manta` module:
 
@@ -149,7 +149,7 @@ nsteps = 300
 umax = 7.83e-5
 ```
 
-### [Definition of the physical system](#id11)
+### Definition of the physical system
 
 The next step is to define a physical system. The `Cast3M` script
 generates a `MED` file that is imported as follows:
@@ -166,7 +166,7 @@ is not axisymmetrical.
 
 See Section [Physical system](../../../../manta_frontend_user_guide/physical_system/physical_system.md#physical-system) for further details.
 
-### [Declaration of the material properties](#id12)
+### Declaration of the material properties
 
 Once the physical system is defined, we can immediately define the
 material properties:
@@ -178,7 +178,7 @@ for n, v in material_properties.items():
 
 See Section [Properties](../../../../manta_frontend_user_guide/properties.md#properties) for further details.
 
-### [Mechanical model, behavior and boundary conditions](#id13)
+### Mechanical model, behavior and boundary conditions
 
 The mechanical model is instanciated as follows:
 
@@ -236,7 +236,7 @@ ps.addLoadingEvolution('ImposedDisplacementValue',
 
 See Section [Loadings](../../../../manta_frontend_user_guide/loadings.md#loadings) for further details.
 
-### [Computation of the non local equivalent plastic strain](#id14)
+### Computation of the non local equivalent plastic strain
 
 The non local equivalent plastic strain can be defined using the
 auxiliary task (i.e. a model with no physical meaning) named
@@ -255,7 +255,7 @@ See Section [The L2Projection auxiliary task](../../../../manta_frontend_user_gu
 
 In the following, this auxiliary task is referred to as the smoother.
 
-### [Declaration of the coupling scheme](#id15)
+### Declaration of the coupling scheme
 
 The coupling is defined as follows:
 
@@ -285,7 +285,7 @@ the absolute value of correction to the non local equivalent plastic
 strain between two iterations of the fixed point algorithm is on each
 nodes below a threshold chosen equal to \(10^{-5}\).
 
-### [Post-processings](#id16)
+### Post-processings
 
 Two post-processings are defined in this example:
 
@@ -309,7 +309,7 @@ ps.addPostProcessing('Curves',
 
 See Section [Post-processings](../../../../manta_frontend_user_guide/post_processings/post_processings.md#post-processings) for further details.
 
-### [Time discretization and simulation](#id17)
+### Time discretization and simulation
 
 To reduce the computational time, a coarse time discretization is used
 between times \(0\) and \(0.3\), and a finer one between
@@ -331,9 +331,9 @@ s.run()
 
 See Section [Simulation](../../../../manta_frontend_user_guide/simulation/simulation.md#simulation) for further details.
 
-## [Results](#id18)
+## Results
 
-[![figure](https://manta-project.gitlab.io/manta/_images/degradation_function.png)](../../../../_images/degradation_function.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/degradation_function.png)](https://manta-project.gitlab.io/manta/_images/degradation_function.png)
 
 Fig. 26 Degradation function at the end of the simulation.
 MANTA's results (left) vs `mgis.fenics`'s results.
@@ -344,7 +344,7 @@ computed by MANTA's and `mgis.fenics` are reported on
 maps looks similar, damage is more pronounced in the
 `mgis.fenics`'s case.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/force.svg)](../../../../_images/force.svg)
+[![figure](https://manta-project.gitlab.io/manta/_images/force.svg)](https://manta-project.gitlab.io/manta/_images/force.svg)
 
 Fig. 27 Evolution of the imposed force during the simulation, as
 computed by MANTA's and `mgis.fenics`.

@@ -1,0 +1,25 @@
+{
+  "source": "https://docs.salome-platform.org/latest/gui/NETGENPLUGIN/",
+  "generated": "2026-11-19",
+  "pages": [
+    "additional_hypo_page",
+    "index",
+    "netgen_2d_3d_hypo_page",
+    "netgenplugin_python_interface_page",
+    "netgenpluginpy_doc/classNETGENPluginBuilder_1_1NETGEN__1D2D3D__Algorithm",
+    "netgenpluginpy_doc/classNETGENPluginBuilder_1_1NETGEN__1D2D3D__Algorithm__2",
+    "netgenpluginpy_doc/classNETGENPluginBuilder_1_1NETGEN__1D2D__Algorithm",
+    "netgenpluginpy_doc/classNETGENPluginBuilder_1_1NETGEN__1D2D__Algorithm__2",
+    "netgenpluginpy_doc/classNETGENPluginBuilder_1_1NETGEN__2D__Only__Algorithm",
+    "netgenpluginpy_doc/classNETGENPluginBuilder_1_1NETGEN__2D__Remote__Algorithm",
+    "netgenpluginpy_doc/classNETGENPluginBuilder_1_1NETGEN__3D__Algorithm",
+    "netgenpluginpy_doc/classNETGENPluginBuilder_1_1NETGEN__3D__Remote__Algorithm",
+    "netgenpluginpy_doc/classNETGENPluginBuilder_1_1NETGEN__Algorithm",
+    "netgenpluginpy_doc/classsmeshBuilder_1_1Mesh",
+    "netgenpluginpy_doc/classsmesh__algorithm_1_1Mesh__Algorithm",
+    "netgenpluginpy_doc/index",
+    "netgenpluginpy_doc/namespaceNETGENPluginBuilder",
+    "netgenpluginpy_doc/namespacesmeshBuilder",
+    "netgenpluginpy_doc/namespacesmesh__algorithm"
+  ]
+}

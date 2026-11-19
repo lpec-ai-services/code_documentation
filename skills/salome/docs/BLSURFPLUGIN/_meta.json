@@ -1,0 +1,16 @@
+{
+  "source": "https://docs.salome-platform.org/latest/gui/BLSURFPLUGIN/",
+  "generated": "2026-11-19",
+  "pages": [
+    "blsurf_hypo_page",
+    "blsurfplugin_python_interface_page",
+    "blsurfpluginpy_doc/classBLSURFPluginBuilder_1_1BLSURF__Algorithm",
+    "blsurfpluginpy_doc/classsmeshBuilder_1_1Mesh",
+    "blsurfpluginpy_doc/classsmesh__algorithm_1_1Mesh__Algorithm",
+    "blsurfpluginpy_doc/index",
+    "blsurfpluginpy_doc/namespaceBLSURFPluginBuilder",
+    "blsurfpluginpy_doc/namespacesmeshBuilder",
+    "blsurfpluginpy_doc/namespacesmesh__algorithm",
+    "index"
+  ]
+}

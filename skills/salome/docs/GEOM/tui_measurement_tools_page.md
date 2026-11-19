@@ -1,0 +1,27 @@
+<!-- source: https://docs.salome-platform.org/latest/gui/GEOM/tui_measurement_tools_page.html -->
+
+# Measurement Tools
+
+- [Point Coordinates](tui_point_coordinates_page.md)
+- [Basic Properties](tui_basic_properties_page.md)
+- [Center of masses](tui_center_of_mass_page.md)
+- [Inertia](tui_inertia_page.md)
+- [Normal to a Face](tui_normal_face_page.md)
+- [Bounding Box](tui_bounding_box_page.md)
+- [Minimal Distance](tui_min_distance_page.md)
+- [Angle](tui_angle_page.md)
+- [Tolerance](tui_tolerance_page.md)
+- [What Is](tui_whatis_page.md)
+- [Check Free Boundaries](tui_free_boundaries_page.md)
+- [Check Free Faces](tui_free_faces_page.md)
+- [Check Shape](tui_check_shape_page.md)
+- [Check Compound of Blocks](tui_check_compound_of_blocks_page.md)
+- [Get Non Blocks](tui_get_non_blocks_page.md)
+- [Detect Self-intersections](tui_check_self_intersections_page.md)
+- [Detect Self-intersections fast](tui_check_self_intersections_fast_page.md)
+- [Fast intersection](tui_fast_intersection_page.md)
+- [Check Conformity](tui_check_conformity_page.md)
+- [Extract BOP Failure](tui_check_bop_page.md)
+- [Compute Proximity between Shapes](tui_shape_proximity_page.md)
+- [Get point on face parameters U and V by coordinates or coordinates by parameters](tui_xyz_to_uv_page.md)
+- [Get information about a shape](tui_kind_of_shape_page.md)

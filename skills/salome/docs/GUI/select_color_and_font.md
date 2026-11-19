@@ -1,0 +1,30 @@
+<!-- source: https://docs.salome-platform.org/latest/gui/GUI/select_color_and_font.html -->
+
+# Select Color and Font
+
+## Select Color Dialog
+
+**Select Color** and **Select Font** menus are used in many
+Preferences.
+
+### Select color
+
+![figure](https://docs.salome-platform.org/latest/gui/GUI/_images/selectcolor.png)
+
+This menu allows to choose from either predefined **Basic Colors**
+grouped in the upper left corner of the window or **Custom Colors**, which
+you can define yourselves. To define a Custom Color, click on one of
+the Custom Color cells, select the color you need in the field of
+colors or by typing in its numeric parameters in the lower right
+corner of the window, then click **Add to Custom Colors** button. The
+chosen color will be added to **Custom Colors** table.
+
+### Select font
+
+![figure](https://docs.salome-platform.org/latest/gui/GUI/_images/selectfont.png)
+
+This menu provides a wide choice of **Fonts**, **Font Styles** and
+**Sizes**. Characters can be underlined or struck out. It is possible to
+preview them in the **Sample** window. **Script** dialog-box gives the
+possibility to use not only Latin and Latin Extended but also
+Cyrillic, Greek, Arabic, Runic and many other subsets.

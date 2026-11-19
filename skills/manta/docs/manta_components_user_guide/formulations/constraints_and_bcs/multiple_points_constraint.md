@@ -49,7 +49,7 @@ For this example consider the 2D square illustrated below. We want to constrain 
 the order with which we constrain the nodes two by two is very important. For this specific example we will enforce that the nodes constrained two by two follow
 the geometric order: bottom nodes together, middle nodes together, and top nodes together.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/rela_ex.svg)](../../../_images/rela_ex.svg)
+[![figure](https://manta-project.gitlab.io/manta/_images/rela_ex.svg)](https://manta-project.gitlab.io/manta/_images/rela_ex.svg)
 
 Using the nomenclature shown above, with `l_right` and `l_left` are constituted respectively by nodes `ptr`, `pmr`, `pbr`
 and `ptl`, `pml`, `pbl`. We can enforce that `ptr`, `ptl`, the top nodes are constrained together,

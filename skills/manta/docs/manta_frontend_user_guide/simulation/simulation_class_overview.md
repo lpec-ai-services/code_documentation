@@ -45,7 +45,7 @@ A simulation also:
 - calls the post-processings defined by the physical system or some
   user-defined post-processing tasks.
 
-## [Main parameters](#id1)
+## Main parameters
 
 - `times`: list of times defining the temporal sequences.
 - `allowSubStepping`: boolean stating if sub stepping in case of
@@ -114,9 +114,9 @@ A simulation also:
 
   See Section [Monitoring a simulation](../miscellaneous/simulation_monitors.md#user-guide-simulation-monitors) for details.
 
-## [Time steps management](#id2)
+## Time steps management
 
-### [Determining the next time increment at the beginning of a time step](#id3)
+### Determining the next time increment at the beginning of a time step
 
 Let \(t\) be the time at the beginning of the current time step and
 \(t_{e}\) the end of the current temporal sequence and
@@ -155,7 +155,7 @@ small time steps at the end of the time step (see the
 `balanceTimeIncrement` and `timeIncrementBalancer`
 parameters).
 
-### [Determining the next time increment in case of convergence failure](#id4)
+### Determining the next time increment in case of convergence failure
 
 In case of convergence failure, the convergence failure handler is
 called to propose an estimate of a new time increment
@@ -173,7 +173,7 @@ time step which lead to a failure).
 The default convergence failure handler divides the current time step by
 (2).
 
-### [Determining the next time increment in case of invalidation of the time step](#id5)
+### Determining the next time increment in case of invalidation of the time step
 
 The time step validator must propose an estimate of a new time increment
 \(\Delta\,t_{e}\) when it invalidates the current time step.
@@ -190,7 +190,7 @@ rejected time step).
 The default time step validator just calls user defined validators. If
 no user defined validator is defined, the time step is always validated.
 
-### [How simulation is stopped](#id6)
+### How simulation is stopped
 
 Simulation may fail du to non-convergence of the coupling scheme and
 excessive sub-steppings.
@@ -212,7 +212,7 @@ output of the `getTimes` methods:
 - if the returned array contains more than one value, one may safely call
   the `run` method again.
 
-### [Conditions for post-processings to be executed](#id7)
+### Conditions for post-processings to be executed
 
 Every time a post-processing is called, it recieves a boolean stating if
 the post-processing time as been *explicitly requested by the user*.
@@ -234,7 +234,7 @@ The difference between lightweight and heavy post-processings is only
 the default value of this parameter (`true` for lightweight
 post-processings, `false` for heavy post-processings).
 
-#### [Post-processings times *explicitly requested by the user*](#id8)
+#### Post-processings times *explicitly requested by the user*
 
 The end of each temporal sequence is always a post-processing times.
 
@@ -262,9 +262,9 @@ Note that:
   requested by the user*, independently of the
   `numberOfTimeStepsBetweenPostProcessings` parameter,
 
-## [Appendix](#id9)
+## Appendix
 
-### [Description of the default time increment balancer](#id10)
+### Description of the default time increment balancer
 
 Let \(\Delta\, t_{c}\) be the current estimate of the time
 increment, \(t\) be the time at the beginning of the current time

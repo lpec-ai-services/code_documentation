@@ -1,0 +1,129 @@
+# Index of pages
+
+Each entry: file — title, then its section headings.
+
+
+## (root)
+
+- `annexe.md` — **Appendix: naming rule to find elements in an hexahedron** (1 kB)
+  - Definition of an hexahedron · Quadrangles in an hexahedron · Edges in an hexahedron · Vertices in an hexahedron
+- `block_method.md` — **Build a model of blocks** (1 kB)
+  - What is a model of blocks ? · How to find a model of blocks ? · How to create a model of blocks ? · Example of simple model of blocks
+- `cad.md` — **Import or build a geometry without constraint** (1 kB)
+- `creategrids.md` — **Create cartesian grids** (3 kB)
+  - Simple cartesian grid · Uniform cartesian grid · Custom cartesian grid
+- `full_example_bridle.md` — **Example generated from HexaBlock** (1 kB)
+- `general.md` — **Introduction to HEXABLOCK** (1 kB)
+  - Stages to obtain hexahedral mesh
+- `gui.md` — **GUI** (1 kB)
+- `gui_add_geometry.md` — **Add a geometry to a document** (1 kB)
+- `gui_asso_quad_to_geom.md` — **Associate the model of blocks to the geometry** (3 kB)
+  - Vertex Association · Edge(s) Association · One edge · Line · Quadrangle Association · Note
+- `gui_asso_vertex_to_geom.md` — **GUI: Definition of point of the geometry** (5 kB)
+  - By coordinates · By a reference · By an Edge and a Parameter · By an Edge and a Length · By an Edge and Coordinates · By intersection of two Lines or Wires · By a face and two parameters · By a face and coordinates
+- `gui_association.md` — **Associations** (1 kB)
+  - Show associations · Remove all associations · Remove an element’s association(s)
+- `gui_blocks_for_cyl_pipe.md` — **Cylinders and Pipes Construction** (6 kB)
+  - Cylinder · Simple Cylinder · Uniform Cylinder · Custom Cylinder · Cylinders · Pipe · Simple Pipe · Uniform Pipe · Custom Pipe · Pipes
+- `gui_component.md` — **Component** (1 kB)
+- `gui_cut_hexa.md` — **Cut hexahedra** (1 kB)
+  - Uniform Cut · Custom Cut
+- `gui_cyl.md` — **Cylinder** (1 kB)
+- `gui_disc_elmts.md` — **Disconnect elements** (1 kB)
+  - Disconnect a quadrangle · Disconnect edges · Disconnect an edge · Disconnect a vertex
+- `gui_discret_law.md` — **Manage discretization laws** (1 kB)
+  - Add law · Remove law
+- `gui_document.md` — **Document** (1 kB)
+- `gui_edge.md` — **Edge** (1 kB)
+- `gui_elements.md` — **Elements** (1 kB)
+- `gui_groups.md` — **Manage groups on the model** (1 kB)
+  - Add group · Remove group
+- `gui_hemisphere.md` — **Create Hemispherical Grid** (6 kB)
+  - Simple Sphere and Simple Rind · Uniform Sphere · Custom Sphere · Uniform Rind · Custom Rind · Simple Concentric (Spherical) · Uniform Concentric (Spherical) · Custom Concentric (Spherical)
+- `gui_hexahedron.md` — **Hexahedron** (1 kB)
+  - Create from quadrangles · Create from vertices
+- `gui_make_elmts.md` — **Make elements by transforming elements** (1 kB)
+  - Make elements by translation · Make elements by scaling · Make elements by rotation
+- `gui_make_symmetry.md` — **Make elements by symmetry** (1 kB)
+  - Make elements by point symmetry · Example · Make elements by line symmetry · Example · Make elements by plane symmetry · Example
+- `gui_merge_elmts.md` — **Merge elements** (1 kB)
+  - Merge two quadrangles · Merge two edges · Merge two vertices
+- `gui_mesh.md` — **Generate the mesh** (1 kB)
+- `gui_modify_elmts.md` — **Modify elements by transforming elements** (1 kB)
+  - Modify elements by translation · Modify elements by scaling · Modify elements by rotation
+- `gui_modify_symmetry.md` — **Modify elements by symmetry** (1 kB)
+  - Modify elements by point symmetry · Modify elements by line symmetry · Modify elements by plane symmetry
+- `gui_pipe.md` — **Pipe** (1 kB)
+- `gui_prism_join_quad.md` — **Extrude and join quadrangles** (3 kB)
+  - Extrude Quadrangles · Simple Extrude · Uniform Extrude · Custom Extrude · Join Quadrangles · Uniform Join Quadrangles · Custom Join Quadrangles
+- `gui_propag.md` — **Discretize on the propagation edges** (1 kB)
+- `gui_quad_revolution.md` — **Quad revolution** (1 kB)
+  - Uniform Quad Revolution · Custom Quad Revolution
+- `gui_quadrangle.md` — **Quadrangle** (1 kB)
+  - Create from vertices · Create from edges
+- `gui_remove.md` — **Remove hexahedra** (1 kB)
+- `gui_replace_hexa.md` — **Replace hexahedron** (1 kB)
+- `gui_vector.md` — **Vector** (1 kB)
+  - Create with dx, dy, dz · Create with two vertices
+- `gui_vertex.md` — **Vertex** (1 kB)
+- `index.md` — **HEXABLOCK’s documentation** (3 kB)
+  - Indices and tables
+- `interactive.md` — **Using HexaBlock with the Graphical User Interface (GUI)** (7 kB)
+- `intro_association.md` — **Associate this model of blocks with the geometry** (5 kB)
+  - Elements association · Associate the vertices · Associate the edges · Associate the quadrangles · Association by lines
+- `intro_groups.md` — **Define the groups on the model of blocks** (1 kB)
+- `intro_mesh.md` — **Generate the hexahedral mesh** (5 kB)
+  - Define a law of discretization · Set the propagation laws · Generate the mesh · Mesh Algorithm · Examples · Linear approximation of the discretization of faces · Geometric face and meshing by approximation · Geometric face and meshing by approximation and projection
+- `intro_python.md` — **Example: Python script for a connecting rod** (6 kB)
+  - Steps · Model creation · Recovering edges and faces from geometry before the association · Association of the model to the geometry · Definition of elements groups for the mesh · Definition of a law discretization laws : · Mesh generation
+- `mesh.md` — **Meshing with Hexahedra** (4 kB)
+  - Generate the mesh · Functionalities · Mesh Algorithm · Examples
+- `python.md` — **Using HexaBlock with the Python interface (TUI)** (3 kB)
+- `tui.md` — **TUI** (1 kB)
+- `tui_add_geometry.md` — **Add a geometry to a document** (1 kB)
+- `tui_asso_quad_to_geom.md` — **Associate the model of blocks to the geometry** (4 kB)
+  - Elements association · Associate by lines · Note for face association · Example · Result
+- `tui_asso_vertex_to_geom.md` — **TUI: Definition of point of the geometry** (1 kB)
+- `tui_association.md` — **Associations** (1 kB)
+- `tui_blocks_for_cyl_pipe.md` — **Cylinders and Pipes Construction** (11 kB)
+  - Cylinder · Simple Cylinder · Uniform Cylinder · Custom Cylinder · Example · Make Cylinders · Example · Pipe · Simple Pipe · Uniform Pipe · Custom Pipe · Example … (+2)
+- `tui_cartgrid.md` — **Make cartesian grids** (3 kB)
+  - Simple Cartesian Grid · Uniform Cartesian Grid · Custom Cartesian Grid · Example
+- `tui_component.md` — **Component** (1 kB)
+- `tui_cut_hexa.md` — **Cut hexahedra** (2 kB)
+  - Uniform Cut · Custom Cut · Example
+- `tui_cyl.md` — **Cylinder** (1 kB)
+- `tui_cylgrid.md` — **Make cylindrical grids** (2 kB)
+  - Example (regular mode) · Example (irregular mode)
+- `tui_disc_elmts.md` — **Disconnect elements** (1 kB)
+- `tui_discret_law.md` — **Define a law of discretization** (1 kB)
+- `tui_document.md` — **Document** (1 kB)
+- `tui_edge.md` — **Edges** (1 kB)
+- `tui_elements.md` — **Elements** (4 kB)
+  - Element · Elements · Cross Elements
+- `tui_groups.md` — **Define groups on the model of blocks** (1 kB)
+- `tui_hemisphere_rind.md` — **Hemisphere Grid Construction** (10 kB)
+  - Sphere · Simple Sphere · Uniform Sphere · Custom Sphere · Example · Rind · Simple Rind · Uniform Rind · Custom Rind · Example · Concentric (Spherical) Grid · Simple Concentric … (+3)
+- `tui_hexahedron.md` — **Hexahedron** (2 kB)
+- `tui_make_elmts.md` — **Make elements by transforming elements** (4 kB)
+  - Example · Translation · Rotation · Scale
+- `tui_make_symmetry.md` — **Make Symmetry** (6 kB)
+  - Symmetry by point · Example · Result · Symmetry by line · Example · Code · Result · Symmetry by plane · Example · Code · Result
+- `tui_merge_elmts.md` — **Merge elements** (1 kB)
+- `tui_mesh.md` — **Generate the mesh** (1 kB)
+- `tui_modify_elmts.md` — **Modify elements by transforming elements** (1 kB)
+- `tui_perform_symmetry.md` — **Modify elements by symmetry** (1 kB)
+- `tui_pipe.md` — **Pipe** (1 kB)
+- `tui_prism_join_quad.md` — **Extrude and Join Quadrangles** (8 kB)
+  - Extrude a quadrangle or quadrangles · Simple Extrude · Uniform Extrude · Custom Extrude · Example · Join quadrangle or quadrangles · Uniform Join · Custom Join · Example
+- `tui_propag.md` — **Discretization defined on the model of blocks** (1 kB)
+- `tui_quad_revolution.md` — **Quad Revolution** (3 kB)
+  - Uniform Quad Revolution · Custom Quad Revolution · Example
+- `tui_quadrangle.md` — **Quadrangles** (2 kB)
+- `tui_remove.md` — **Remove hexahedra** (1 kB)
+- `tui_replace_hexa.md` — **Replace Hexahedron** (3 kB)
+  - Complete example · Result
+- `tui_sphergrid.md` — **Make spherical grids** (1 kB)
+  - Example
+- `tui_vector.md` — **Vector** (1 kB)
+- `tui_vertex.md` — **Vertices** (1 kB)

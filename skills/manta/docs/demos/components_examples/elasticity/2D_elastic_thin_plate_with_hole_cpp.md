@@ -9,9 +9,9 @@ Note
 
 The following files are required to run the tutorial:
 
-- [`plate_with_hole.dgibi`](../../../_downloads/cfd42353b6e736b6d97f8ac484664bce/plate_with_hole.dgibi):
-- [`main.cpp`](../../../_downloads/6c9cfa2f4d4ce0f6306375278771b743/main.cpp):
-- [`CMakeLists.txt`](../../../_downloads/fefe3acdb7381e03d9a02fbb0def20fa/CMakeLists.txt):
+- [`plate_with_hole.dgibi`](https://manta-project.gitlab.io/manta/_downloads/cfd42353b6e736b6d97f8ac484664bce/plate_with_hole.dgibi):
+- [`main.cpp`](https://manta-project.gitlab.io/manta/_downloads/6c9cfa2f4d4ce0f6306375278771b743/main.cpp):
+- [`CMakeLists.txt`](https://manta-project.gitlab.io/manta/_downloads/fefe3acdb7381e03d9a02fbb0def20fa/CMakeLists.txt):
 
 Cast3M is required to run as a mesher to get the mesh file required to run this example.
 You can find the current version of cast3M on this website: <https://www-cast3m.cea.fr> .
@@ -23,7 +23,7 @@ Its behavior is supposed linear elastic and small perturbation hypothesis hold.
 
 Due to symmetry, only a quarter is meshed with the appropriate boundary conditions.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/plate_with_hole.svg)](../../../_images/plate_with_hole.svg)
+[![figure](https://manta-project.gitlab.io/manta/_images/plate_with_hole.svg)](https://manta-project.gitlab.io/manta/_images/plate_with_hole.svg)
 
 Fig. 4 Description of the 2D plate with a hole in tension
 

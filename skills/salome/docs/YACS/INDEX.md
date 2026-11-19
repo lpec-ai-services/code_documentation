@@ -1,0 +1,86 @@
+# Index of pages
+
+Each entry: file — title, then its section headings.
+
+
+## (root)
+
+- `accesCorba.md` — **Component with remote access (through CORBA)** (10 kB)
+  - Principle · IDL file · Example 6 (Part 1) · Example 7 (Part 1) · Server end interface · C++ server interface · Example 6 (continued) · Python server interface · Example 7 (continued) · Client interface · Example 8
+- `accesLocal.md` — **Component with local access** (9 kB)
+  - Principle · Starting from a python internal object · Starting from a C++ internal object · Swig interface file · Process for generating the C++ / python interface code · Example 5 (first version) · Example 5 (second version) · Example 5 (third version)
+- `advancepy.md` — **Advanced use of the Python programming interface** (5 kB)
+  - Passing Python objects between calculation nodes · The Python protocol · The json protocol · Definition of inline Python components
+- `annexe_common.md` — **Appendix:  processing of fortran commons and C / C++ global variables** (6 kB)
+  - Fortran common · C/C++ global variables
+- `batch.md` — **Starting a SALOME application in a batch manager** (10 kB)
+  - Principles · Description of the cluster using the CatalogResource.xml file · Using the Launcher service · SALOME on the batch cluster · SALOME constraints on batch managers
+- `calcium.md` — **Guide for the use of CALCIUM coupling in SALOME** (3 kB)
+- `calciumapi.md` — **CALCIUM C and Fortran coupling library** (19 kB)
+  - Include files · Functions to connect and disconnect · Functions to export data · Functions to import data · Functions to erase data · Examples · Fortran example · C example · Error codes · Some considerations about architecture (32, 64 bits) and programming language (C, Fortran)
+- `calciummod.md` — **calcium – python interface** (10 kB)
+  - Constants · Array types · Functions to connect and disconnect · Functions to export data · Functions to import data · Functions to erase data · Example
+- `calciumyacs.md` — **From the old CALCIUM product to CALCIUM in SALOME** (51 kB)
+  - The existing CALCIUM product · CALCIUM ports in SALOME · CALCIUM / SALOME ports and the YACS supervisor · The IDL declaration of components using CALCIUM ports · Declaration of a C++ component using CALCIUM ports · Declaration of component resources (part 1) · Definition of a component using CALCIUM ports · Creating CALCIUM ports using the add_port method · Creating CALCIUM ports using the create_calcium_port method · Declaration of component resources (part 2) · Configuring a CALCIUM port · Configuration when the PORT is created … (+14)
+- `calculator.md` — **MEDCoupling Calculator Component** (19 kB)
+  - The MED libraries · Creation of a new SALOME module - Compilation · Modification of interface (IDL) · Component implementation
+- `compInterne.md` — **Defining an internal object** (15 kB)
+  - Object methods and attributes · Fortran77 routines / C functions / C++ classes · Principle · Example 1 · References · Python function/classes · Principle · Example 2 · Initial code in the form of executables · Principle · Example 3:  Python internal object connected to external executables · Example 4:  Internal object connected to an external executable
+- `components.md` — **Integration of components into the SALOME environment** (3 kB)
+- `console.md` — **Using YACS in console mode** (1 kB)
+- `cppsalome.md` — **Guide for the development of a SALOME module in C++** (13 kB)
+  - Steps in the construction of the example module · Creating the module tree structure · IDL interface · C++ implementation · Sources · CMakeLists.txt · Controlling the component from Python (TUI mode) · Graphic interface · Introduction · Syntax naming rules
+- `dataflow.md` — **A standard dataflow** (5 kB)
+- `etapes.md` — **Steps in integration of a component** (12 kB)
+  - Concept of component · General scheme · Initial code · Putting the initial code in the form of an internal object · Access from a local python interpreter · Access from CORBA · Specific features of the SALOME environment · SALOME services · Containers and factories
+- `execpy.md` — **Execution of a calculation scheme with the Python programming interface** (6 kB)
+  - Executing the scheme in standard mode · Saving the state of a scheme · Loading the state of a scheme · Executing the scheme in step by step mode · Execution with stop on breakpoints · A stop on breakpoint followed by resuming until the end of the scheme · Execution in step by step mode
+- `execution.md` — **Execution of a schema** (9 kB)
+  - Execute a schema · Save/Restore execution state · Schema shutdown · Create new edition
+- `execxml.md` — **Executing a calculation scheme in console mode** (4 kB)
+  - Standard execution · Execution displaying states of nodes during execution · Execution saving the final state of the scheme · Execution loading the initial state of the scheme · How to configure schema shutdown · Restart a schema with reset of nodes in error · Execute a scheme and save the state of execution every 30 seconds · Change the values of some input ports before execution · How to manage several SALOME sessions
+- `gui.md` — **Using YACS with the graphical user interface (GUI)** (3 kB)
+  - YACS GUI description · Functionality list · YACS schema examples
+- `gui_components.md` — **YACS GUI components** (9 kB)
+  - Object Browser · Tree View · Edition mode of the Tree View · Run mode of the Tree View · 2D Viewer · Input Panel · Catalogs Tree View
+- `hxx2salome.md` — **hxx2salome : a SALOME component generator** (24 kB)
+  - Getting started · C++ component implementation · Compilation – Testing with python · SALOME component generation · What is a C++ component? · SALOME component architecture (insights) · SALOME Component generation · IDL definition · Correspondance for parameters · Correspondance for returned type · Example · IDL Implementation … (+5)
+- `index.md` — **YACS documentation** (1 kB)
+  - Indices and tables
+- `integration.md` — **Integration of components into SALOME for YACS** (5 kB)
+- `main_menu.md` — **Main Menu** (6 kB)
+  - File · Edit · View · YACS menu · Tools · Window · Help
+- `modification.md` — **Modification of a schema** (32 kB)
+  - Create an object · Create a new schema · Create a container definition · Create a component instance definition · Create a node · Create a link · Edit an object · Property page for container · Property page for component instance definition · Property page for schema · Property page for node · Delete an object
+- `operations.md` — **General operations** (20 kB)
+  - Activate YACS module · Import/Export a schema · Import YACS calculation schema · Import SALOME Supervisor graph · Export a schema to a file · Open/Save a study · Set user preferences · Select an object · Activate context popup menu · Set active schema or run of a schema
+- `optimizer.md` — **Definition of an algorithm for the OptimizerLoop** (24 kB)
+  - Synchronous algorithm · C++ plugin example · Python plugin example · Asynchronous algorithm · C++ plugin example · Python plugin example · Managing the pool of samples · C++ algorithm calling Python code
+- `pmml.md` — **Loading and executing a PMML file** (2 kB)
+  - Authorized PMML model types · Description of PyLoadPMML · Example of model execution
+- `principes.md` — **YACS general principles** (53 kB)
+  - Data types · Basic types · Object references · Sequences · Structures · Ports · Control ports · Data ports · Datastream ports · Elementary calculation nodes · Python script inline node · Python function inline node … (+35)
+- `progdsc.md` — **Introduction to the DSC programming model for SALOME components** (25 kB)
+  - The principle of the programming model · Benefits of the DSC extension · Interface type ports · Calcium datastream ports · Connections between DSC ports · The two programming layers · DSC through examples · Hello World · Client Hello World · Datastream ports and services · Add datastream ports and/or interfaces
+- `pysalome.md` — **Guide for the development of a SALOME module in Python** (12 kB)
+  - Steps in construction of the example module · Create the module tree structure · Implementation of CMake · The idl directory · The src directory · The doc directory · The bin directory · Creating a component that can be loaded by a container · Construction, installation · Running the platform · Loading the example component · Declared SALOME component … (+7)
+- `python.md` — **Using YACS with the python interface (TUI)** (1 kB)
+- `rappels.md` — **Reminders about the SALOME platform** (12 kB)
+  - Definitions · SALOME modules and components · Containers · Construction and use of a SALOME application · Principles · Creating a SALOME application · Some rules to be followed · Configuring a SALOME application for remote components
+- `references.md` — **References** (1 kB)
+- `representation.md` — **Representation of a schema** (3 kB)
+  - Change 2D representation of a schema · Auto-arrange schema nodes · Rebuild links between nodes · Shrink/Expand nodes
+- `resource.md` — **Concurrent branches and multiple machine execution** (4 kB)
+  - Execution of concurrent branches · Execution on multiple machines · Execution on multiple machines with mutliples HP container types · Principle · Graph with multiples ForEach Loop executed in parallel
+- `salome.md` — **SALOME component** (17 kB)
+  - Principle · IDL file · Principle · Example 9 (start) · Example 10 (start) · Registration into the modules catalog · C++ implementation class · Making conforming with the component IDL · Enable component supervision · Using the notification · Connection to the “factory” object of a container · Example 9 (continued) … (+8)
+- `schemapy.md` — **Defining a calculation scheme with the Python programming interface** (35 kB)
+  - Create a calculation scheme by loading an XML file · Create a calculation scheme from scratch · Creating an empty scheme · Definition of data types · Definition of elementary calculation nodes · Definition of connections · Initialising an input data port · First example starting from the previous elements · Definition of composite nodes · Definition of containers · Node properties · Datastream connections … (+8)
+- `schemaxml.md` — **Defining a calculation scheme in the XML format** (33 kB)
+  - Definition of data types · Object reference · Sequence · Structure · Definition of elementary calculation nodes · Python script node · Python function node · SALOME service node · Definition of connections · Control link · Dataflow link · Data link … (+18)
+- `scratch.md` — **Creation of a schema from scratch** (6 kB)
+- `toolbars.md` — **Toolbars** (4 kB)
+  - Standard toolbar · Modules toolbar · YACS toolbar, no schema loaded · YACS toolbar, edition mode · YACS toolbar, execution mode
+- `using.md` — **The YACS User Guide** (5 kB)
+- `yacsgen.md` — **YACSGEN: SALOME module generator** (68 kB)
+  - How to get it · Supported versions and architectures · Installation · Description of a SALOME module · Description of components · C / C++ component · HXX2SALOME components · Fortran component · Python component · Aster component · SALOME module generator · Fabrication of the SALOME module … (+21)

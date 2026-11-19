@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """Mirror a published Sphinx documentation site as agent-friendly Markdown.
 
+Also handles Doxygen-generated HTML pages found in a local copy (--local):
+the page content (div.contents) is kept, code fragments become fenced code,
+member prototypes become one-line signatures, and Doxygen listing pages
+(file lists, member indexes, source listings, search) are skipped.
+
 Reads the site's searchindex.js to get every page, downloads each rendered
 HTML page (so autodoc API pages and executed notebooks are included),
 keeps only the main content and converts it to Markdown. Internal links are
@@ -15,6 +20,7 @@ Usage:
 Requires: pip install requests beautifulsoup4 markdownify
 """
 import argparse
+import fnmatch
 import datetime as dt
 import json
 import re
@@ -29,6 +35,11 @@ from markdownify import MarkdownConverter
 
 MAX_OUTPUT_LINES = 60
 SKIP = re.compile(r"(^|/)(CMakeLists|sphinx_build_warnings|genindex|search|py-modindex)$")
+# Doxygen listing pages: they only repeat what the class/group/page files hold
+DOXY_SKIP = re.compile(
+    r"(^|/)(search/.*|files|annotated|classes|hierarchy|modules|pages|namespaces|"
+    r"functions(_\w+)?|globals(_\w+)?|namespacemembers(_\w+)?|dir_[0-9a-f]+|"
+    r"[^/]*_8[a-z]+(_source)?|[^/]*-members|inherits|graph_legend|deprecated|todo)$")
 
 
 class Converter(MarkdownConverter):
@@ -76,7 +87,7 @@ def load_docnames(session, base):
 
 
 def main_content(soup):
-    for sel in ['div[role="main"]', "article", "div.body", "main"]:
+    for sel in ['div[role="main"]', "article", "div.body", "main", "div.contents"]:
         node = soup.select_one(sel)
         if node:
             return node
@@ -90,9 +101,40 @@ def out_name(docname, dir_urls):
     return docname
 
 
+def doxygen_cleanup(soup, node):
+    """Doxygen page -> plain HTML that markdownify renders well."""
+    title = soup.select_one("div.header div.title")
+    if title:
+        h = soup.new_tag("h1")
+        h.string = title.get_text(" ", strip=True)
+        node.insert(0, h)
+    for junk in node.select("div.dynheader, div.dyncontent, table.memberdecls, "
+                            "p.reference, p.definition, div.directory, "
+                            "a.anchor, iframe, div.ttc"):
+        junk.decompose()
+    for frag in node.select("div.fragment"):
+        lines = [ln.get_text() for ln in frag.select("div.line")] or [frag.get_text()]
+        pre = soup.new_tag("pre")
+        pre.string = "\n".join(lines)
+        frag.replace_with(pre)
+    for proto in node.select("div.memproto"):
+        sig = re.sub(r"\s+", " ", proto.get_text(" ")).strip()
+        sig = re.sub(r"\s*([(),])\s*", r"\1 ", sig).replace("( ", "(").replace(" )", ")")
+        pre = soup.new_tag("pre")
+        pre.string = re.sub(r"\s+", " ", sig).strip()
+        proto.replace_with(pre)
+    for h in node.select("h2.memtitle"):
+        h.name = "h3"
+        for p in h.select("span.permalink"):
+            p.decompose()
+        h.string = h.get_text(" ", strip=True).lstrip("◆ ").strip()
+
+
 def convert_page(html, docname, page_url, dir_urls=False, known=None, base=""):
     soup = BeautifulSoup(html, "html.parser")
     node = main_content(soup)
+    if node.name == "div" and "contents" in (node.get("class") or []):
+        doxygen_cleanup(soup, node)
     for junk in node.select("a.headerlink, script, style, div.rst-footer-buttons, "
                             "nav, footer, .prompt, .copybtn, "
                             "span.linenos, td.linenos"):  # code line numbers
@@ -103,6 +145,22 @@ def convert_page(html, docname, page_url, dir_urls=False, known=None, base=""):
         if len(lines) > MAX_OUTPUT_LINES:
             keep = lines[:20] + [f"… [{len(lines) - 30} lines of output omitted] …"] + lines[-10:]
             pre.string = "\n".join(keep)
+    # sphinx.ext.imgmath renders formulas as PNG images: keep the LaTeX instead
+    for img in node.select("img.math, div.math img, span.math img, "
+                           "img.formulaInl, img.formulaDsp"):  # (Doxygen formulas)
+        cls = img.get("class", [])
+        if "_images/math/" not in img.get("src", "") and not {"math", "formulaInl",
+                                                              "formulaDsp"} & set(cls):
+            continue
+        tex = img.get("alt", "").strip()
+        if "formulaInl" in cls or "formulaDsp" in cls:
+            tex = re.sub(r"^\\\[|\\\]$|^\$|\$$", "", tex).strip()
+        display = img.find_parent("div", class_="math") is not None or "formulaDsp" in cls
+        img.replace_with(f"\n\n$${tex}$$\n\n" if display else f"${tex}$")
+    # headings linked back to a local table of contents: keep the text only
+    for a in node.select("h1 a.toc-backref, h2 a.toc-backref, h3 a.toc-backref, "
+                         "h4 a.toc-backref, h5 a.toc-backref, h6 a.toc-backref"):
+        a.unwrap()
     # images are not copied: link them to the published site
     for img in node.find_all("img", src=True):
         img["src"] = urljoin(page_url, img["src"])
@@ -140,6 +198,9 @@ def convert_page(html, docname, page_url, dir_urls=False, known=None, base=""):
             a["href"] = rel + frag
         elif path.endswith(".html"):
             a["href"] = path[:-5] + ".md" + frag
+        elif path and not path.endswith(".md"):
+            # downloads, PDFs, images…: not copied, so point to the published site
+            a["href"] = urljoin(page_url, href)
     title_el = node.find(["h1", "h2"])
     title = title_el.get_text(" ", strip=True) if title_el else docname
     headings = [h.get_text(" ", strip=True) for h in node.find_all(["h2", "h3"])]
@@ -162,6 +223,8 @@ def main():
     ap.add_argument("--dir-urls", action="store_true",
                     help="MkDocs-style site: folder/index.html pages become folder.md; "
                          "links to pages not converted point to the live site")
+    ap.add_argument("--exclude", action="append", default=[], metavar="GLOB",
+                    help="skip pages whose path (without .html) matches; repeatable")
     ap.add_argument("--code-lang", default="", help="language for code blocks without one")
     args = ap.parse_args()
 
@@ -176,7 +239,11 @@ def main():
         root = Path(args.local)
         docnames = sorted(p.relative_to(root).with_suffix("").as_posix()
                           for p in root.rglob("*.html") if "_static" not in p.parts)
-        docnames = [d for d in docnames if not SKIP.search(d)]
+        def doxygen_listing(d):
+            return DOXY_SKIP.search(d) and any(
+                (q / "doxygen.css").exists() for q in (root / d).parents)
+        docnames = [d for d in docnames if not SKIP.search(d) and not doxygen_listing(d)
+                    and not any(fnmatch.fnmatch(d, x) for x in args.exclude)]
 
         def get(d):
             f = root / f"{d}.html"

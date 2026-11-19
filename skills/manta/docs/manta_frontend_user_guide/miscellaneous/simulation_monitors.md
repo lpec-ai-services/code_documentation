@@ -45,20 +45,20 @@ There are mostly three ways to add a new monitor to a simuluation:
    be added to the simulation using the `addMonitor` method. Direct
    usage of the `SimulationMonitorFactory` class is discouraged.
 
-## [Available monitors](#id1)
+## Available monitors
 
-### [`MemoryUsage`](#id2)
+### `MemoryUsage`
 
 The `MemoryUsage` monitor displays the maximum amount of memory
 used by manta since it was started.
 
-### [`Convergence`](#id3)
+### `Convergence`
 
 The `Convergence` monitor displays various
 information about the convergence of the coupling schemes and models
 involved in the simulation.
 
-#### [Example of usage](#id4)
+#### Example of usage
 
 ```python
 s = manta.Simulation(ps, times = times,
@@ -66,14 +66,14 @@ s = manta.Simulation(ps, times = times,
                      monitors = [{'Convergence': {'file': 'convergence-report.txt'}}])
 ```
 
-#### [Parameters](#id5)
+#### Parameters
 
 The `Convergence` monitor has only one parameter named
 `file` which allows to specify an output file. This parameter is
 optional. If not defined, the information are displayed in the
 default output stream.
 
-#### [Notes](#id6)
+#### Notes
 
 - Setting the `keepOutputs` parameter to `true` when creating the
   simulation is required for the Convergence monitor to work as expected.
@@ -89,7 +89,7 @@ default output stream.
                                                         'reportResidualNorms': True}})
   ```
 
-#### [Typical output](#id7)
+#### Typical output
 
 ```text
 Convergence reports for time step from '0.6' to '0.8'

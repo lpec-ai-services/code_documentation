@@ -1,0 +1,20 @@
+{
+  "source": "https://docs.salome-platform.org/latest/gui/GHS3DPLUGIN/",
+  "generated": "2026-11-19",
+  "pages": [
+    "additional_hypo_page",
+    "ghs3d_hypo_page",
+    "ghs3dplugin_python_interface_page",
+    "ghs3dpluginpy_doc/classGHS3DPluginBuilder_1_1GHS3D__Algorithm",
+    "ghs3dpluginpy_doc/classGHS3DPluginBuilder_1_1GHS3D__Optimizer",
+    "ghs3dpluginpy_doc/classGHS3DPluginBuilder_1_1hypoProxy",
+    "ghs3dpluginpy_doc/classsmeshBuilder_1_1Mesh",
+    "ghs3dpluginpy_doc/classsmesh__algorithm_1_1Mesh__Algorithm",
+    "ghs3dpluginpy_doc/index",
+    "ghs3dpluginpy_doc/namespaceGHS3DPluginBuilder",
+    "ghs3dpluginpy_doc/namespacesmeshBuilder",
+    "ghs3dpluginpy_doc/namespacesmesh__algorithm",
+    "index",
+    "optimization_page"
+  ]
+}

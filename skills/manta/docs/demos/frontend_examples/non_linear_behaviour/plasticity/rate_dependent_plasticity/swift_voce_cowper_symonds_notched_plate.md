@@ -10,10 +10,10 @@ Note
 
 The following files are required to run the tutorial:
 
-- [`mesh3D.dgibi`](../../../../../_downloads/8605a51b0c356a84563a6e1b3cb259e6/mesh3D.dgibi):
+- [`mesh3D.dgibi`](https://manta-project.gitlab.io/manta/_downloads/8605a51b0c356a84563a6e1b3cb259e6/mesh3D.dgibi):
   the Cast3M input file required to generate the mesh.
-- [`SwiftVoce-CowperSymonds.mfront`](../../../../../_downloads/fb12841be6b94971fccd092836eead81/SwiftVoce-CowperSymonds.mfront): the MFront implementation of the mechanical behaviour
-- [`test3D.py`](../../../../../_downloads/bf28f9cea2798c1eb3a12011ca1e1d16/test3D.py): the main script
+- [`SwiftVoce-CowperSymonds.mfront`](https://manta-project.gitlab.io/manta/_downloads/fb12841be6b94971fccd092836eead81/SwiftVoce-CowperSymonds.mfront): the MFront implementation of the mechanical behaviour
+- [`test3D.py`](https://manta-project.gitlab.io/manta/_downloads/bf28f9cea2798c1eb3a12011ca1e1d16/test3D.py): the main script
 
 Note
 
@@ -22,11 +22,11 @@ by Thibault Barret during his PhD at IRDL
 (Institut de Recherche Dupuy de Lôme).
 His results are used to verify MANTA's one.
 
-## [Description](#id8)
+## Description
 
-### [Geometry](#id9)
+### Geometry
 
-[![figure](https://manta-project.gitlab.io/manta/_images/mesh1.svg)](../../../../../_images/mesh1.svg)
+[![figure](https://manta-project.gitlab.io/manta/_images/mesh1.svg)](https://manta-project.gitlab.io/manta/_images/mesh1.svg)
 
 Fig. 17 Geometry considered.
 
@@ -47,7 +47,7 @@ Table 16 Geometric parameters used in this test
 The main geometric parameters defining the plate are reported in
 [Table 16](#single-notched-plate-geometric-parameters).
 
-### [Boundary conditions](#id10)
+### Boundary conditions
 
 First, on Boundary `front`, the component \(U_{y}\) of the
 displacement is prescribed, such that:
@@ -63,13 +63,13 @@ The following components of the displacement are then imposed null:
 - \(U_{z}\) on Boundary `bottom`,
 - \(U_{y}\) on Boundary `rear`,
 
-### [Mechanical behavior](#id11)
+### Mechanical behavior
 
 We consider an homogeneous and isotropic material which is described by
 a plastic law whose yield surface depends on the equivalent
 plastic strain rate.
 
-#### [Finite strain kinematics](#id12)
+#### Finite strain kinematics
 
 Finite strain are handled by MFront using the logarithmic framework
 (see [[MAL02](../../../../../references/references.md#id12)] for details).
@@ -99,7 +99,7 @@ part \(\underline{\varepsilon}^{p}\) is assumed:
 
 \[\underline{\varepsilon}^{to}= \underline{\varepsilon}^{el} + \underline{\varepsilon}^{p}\]
 
-#### [Elastic behavior](#id13)
+#### Elastic behavior
 
 The stress is computed following Hooke's law, as follows:
 
@@ -109,7 +109,7 @@ where \(\lambda\) and \(\mu\) are respectively the first and
 second Lamé's coefficients and \(\text{tr}(\underline{\bullet})\)
 denotes the trace of the \(\underline{\bullet}\) tensor.
 
-#### [Plastic flow](#id14)
+#### Plastic flow
 
 The *plastic* inelastic flow part, is driven by the following yield
 surface:
@@ -142,7 +142,7 @@ Karush-Kuhn-Tucker conditions:
 \end{aligned}
 \right.\end{split}\]
 
-#### [Strain sensitive isotropic hardening rule](#id15)
+#### Strain sensitive isotropic hardening rule
 
 In this tutorial, the radius of the yield surface is assumed to have the
 following form:
@@ -183,7 +183,7 @@ The Cowper-Symonds law takes the following form:
 
 where \(A\) and \(e\) are material properties.
 
-#### [Material properties](#id16)
+#### Material properties
 
 The MFront behavior requires a set of material properties (see the
 `@MaterialProperty` keyword in the implementation) to compute the
@@ -229,7 +229,7 @@ parameter (to sum Voce and Swift law) while \(R_0\), \(p_0\) and
 \(Q3\) are parameters from Voce law. Finaly, \(D\) and \(e\)
 are parameters from Cowper-Symonds law.
 
-## [Implementation](#id17)
+## Implementation
 
 After having imported the `manta` module, the first declaration is:
 
@@ -241,7 +241,7 @@ It is used to manage the verbosity of MANTA's output. When set to
 `verboseLevel3`, it allows the code to print information about internal
 operations of each model, *e.g*, the internal iterations of each model.
 
-### [Definition of the physical system](#id18)
+### Definition of the physical system
 
 The mesh has been generated using Cast3M and saved with the name
 `mesh3D.med`.
@@ -257,7 +257,7 @@ ps = manta.PhysicalSystem(mesh = {'file': 'mesh3D.med',
 This statement needs some information like the name of the notched plate
 (here `vtot`) and the name of the boundaries.
 
-### [Definition of the material properties](#id19)
+### Definition of the material properties
 
 The material properties needed by the behavior are declared using the
 `addProperty` method of the `PhysicalSystem`:
@@ -283,9 +283,9 @@ for n, v in {'YoungModulus': 210e9,
 In the above lines of code, a Python dictionary, associating each
 property with its value, is used for convenience.
 
-### [Definition of the mechanical model, boundary conditions and behavior law](#id20)
+### Definition of the mechanical model, boundary conditions and behavior law
 
-#### [Model declaration](#id21)
+#### Model declaration
 
 An implicit mechanical model is declared by calling the `Model`
 abstract factory with the name `ImplicitMechanics`.
@@ -299,7 +299,7 @@ convergence tolerance of \(10^{-4}\).
 linear_solver_options = {'fgmres': {'preconditioner': 'ilu'}}
 ```
 
-#### [Declaration of boundary conditions](#id22)
+#### Declaration of boundary conditions
 
 The boundary conditions are created as follows:
 
@@ -330,7 +330,7 @@ The boundary conditions are created as follows:
                 material = 'vtot',
   ```
 
-#### [Declaration of the mechanical behavior](#id23)
+#### Declaration of the mechanical behavior
 
 This following snippet adds the `SolidMaterial` brick that assigns
 to the `vtot` material the behavior `SwiftVoceCowperSymonds`
@@ -346,7 +346,7 @@ found in the `./src/libBehaviour.so` shared library:
 This shared library must be generated by MFront before running the
 simulation.
 
-### [Declaration of the coupling scheme](#id24)
+### Declaration of the coupling scheme
 
 The declaration of a coupling scheme is required even if only one
 mechanical model is used. In this tutorial, we use the `setModel`
@@ -357,7 +357,7 @@ mechanical model once at each time step:
               value = 293.15)
 ```
 
-### [Declaration of the post-processings](#id25)
+### Declaration of the post-processings
 
 We define two post-processings:
 
@@ -390,7 +390,7 @@ We define two post-processings:
                             'fieldType': 'ipField',
   ```
 
-### [Running the simulation](#id26)
+### Running the simulation
 
 ```python
 ps.addPostProcessing('Curves',
@@ -408,7 +408,7 @@ steps.
 
 Finally, the last command, `s.run` starts the simulation.
 
-## [Execution](#id27)
+## Execution
 
 The mesh is generated using Cast3M with the command
 
@@ -434,7 +434,7 @@ or with mpi
 $ mpirun -n [nproc] python test3D.py
 ```
 
-## [Simulation results](#id28)
+## Simulation results
 
 The simulation leads to the following result (see
 [Fig. 18](#single-notched-plate-result-figure-simulation-equivalent-plastic-strain))

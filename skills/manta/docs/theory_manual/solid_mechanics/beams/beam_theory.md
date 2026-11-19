@@ -16,7 +16,7 @@ Timoshenko
 
 *Information specific to Timoshenko model*
 
-## [Introduction](#id27)
+## Introduction
 
 A beam is a structure where two of its geometric dimensions are negligible
 compared to the third. As such, beams are represented as the conjunction of:
@@ -80,7 +80,7 @@ coordinate system.
 For ease of readability, dependence in \(x\) and \(t\) (space and time
 respectively) might be omitted.
 
-## [Local coordinate system](#id28)
+## Local coordinate system
 
 Let us determine the expression of the local coordinate system as a function of
 the global coordinate system.
@@ -171,7 +171,7 @@ Note
 For the rest of this documentation, coordinates and DOFs will be written in
 the local coordinate system, unless specified otherwise.
 
-## [Kinematics description formulation](#id29)
+## Kinematics description formulation
 
 Two formulations are available to describe the kinematics.
 
@@ -229,7 +229,7 @@ where \(d \psi^{\transpose{}} = (d \psi_1, d \psi_2, d \psi_3)^{\transpose{}}\).
 
 The vector \(\boldsymbol{e_{v, local}}^{n+1}\) is then written back in the global frame.
 
-## [Kinematics](#id30)
+## Kinematics
 
 First, let us write the displacement vector of a given point \(M\). Let
 \(M'\) be the point on the neutral axis that shares \(M\)'s \(x\)
@@ -299,7 +299,7 @@ Timoshenko
 
 (*Intentionally left blank*)
 
-## [Strains](#id31)
+## Strains
 
 Strains are written as such:
 
@@ -370,14 +370,14 @@ Timoshenko
 
 (*Intentionally left blank*)
 
-## [Generalized forces, external forces and equations of equilibrium](#id32)
+## Generalized forces, external forces and equations of equilibrium
 
 In this section, all fundamental quantities and equations that are fundamental
 to any beam behavior are defined and described. They are all derived from
 the **principle of virtual work** written over the volume of the beam and
 integrated over its cross-section.
 
-### [Principle of virtual work](#id33)
+### Principle of virtual work
 
 Let \(\boldsymbol{\hat{u}}\) be a virtual displacement, and
 \(\boldsymbol{\hat{\epsilon}}\) be the associated virtual strains.
@@ -402,7 +402,7 @@ where:
 - \(V\) is the **volume** of the beam ;
 - \(\partial V\) is the **countour** of the volume.
 
-### [Generalized forces](#id34)
+### Generalized forces
 
 The **generalized forces**, also named **internal forces** of the beam, correspond
 to the integration over the cross-section of components of the stress tensor.
@@ -427,7 +427,7 @@ where:
 - \(M_z\) the **bending moment** around the \((Oz)\) direction (bending
   in the \((xOy)\) plane).
 
-### [External forces](#id35)
+### External forces
 
 External forces are derived from the external volumic and surfacic forces.
 
@@ -475,7 +475,7 @@ M_{x}^{ext} & = \int_{S} (y t_z^s - z t_x^s) dS \\
 M_{y}^{ext} & = \int_{S} z t_x^s dS \\
 M_{z}^{ext} & = \int_{S} - y t_x^s dS \\\end{split}\]
 
-### [Equations of equilibrium](#id36)
+### Equations of equilibrium
 
 Given the virtual work principle [(286)](#equation-theory-beam-virtual-work-principle) and the
 definition of the generalized [(287)](#equation-theory-beam-generalized-forces) and external
@@ -484,7 +484,7 @@ equations of equilibrium can be derived.
 
 Let us distinguish each virtual work independently of the others.
 
-#### [Virtual work of the internal forces](#id37)
+#### Virtual work of the internal forces
 
 The virtual work of the **internal forces** is written this way:
 
@@ -544,7 +544,7 @@ Timoshenko
 
 where \(L\) is the length of the element.
 
-#### [Virtual work of the external forces](#id38)
+#### Virtual work of the external forces
 
 Using the same reasoning as for the internal forces, the virtual work of the
 **external forces** can be written this way:
@@ -583,7 +583,7 @@ Timoshenko
 + \int_x (f_x \hat{u} + f_y \hat{v} + f_z \hat{w}
 + m_x \hat{\theta_x} + m_y \hat{\theta_y} + m_z \hat{\theta_z}) dx\]
 
-#### [Virtual work of the inertial forces](#id39)
+#### Virtual work of the inertial forces
 
 The virtual work of the **inertial forces** can be determined this way:
 
@@ -620,7 +620,7 @@ Timoshenko
 
 (*Intentionally left blank*)
 
-#### [Determining the equations of equilibrium](#id40)
+#### Determining the equations of equilibrium
 
 The **equations of equilibrium** can be determined by injecting the expression of
 each virtual work in the principle of virtual work.
@@ -665,11 +665,11 @@ Timoshenko
 
 (293)\[ \begin{align}\begin{aligned}\partial_x N_x + f_x & = \rho S \partial_t^{2} u\\\partial_x T_y + f_y & = \rho S \partial_t^2 v\\\partial_x T_z + f_z & = \rho S \partial_t^2 w\\\partial_x M_x + m_x & = \rho J \partial_t^{2} \theta_x\\\partial_x M_y - T_z + m_{y} & = \rho I_y \partial_t^{2} \theta_y\\\partial_x M_z + T_y + m_{z} & = \rho I_z \partial_t^{2} \theta_z\end{aligned}\end{align} \]
 
-## [Constitutive behaviours](#id41)
+## Constitutive behaviours
 
-### [Linear elastic](#id42)
+### Linear elastic
 
-#### [Stresses](#id43)
+#### Stresses
 
 For an elastic and isotropic material, the constitutive law for beams are the
 following:
@@ -700,7 +700,7 @@ Hereabove, no hypothesis over the variation of the geometric and material
 properties has been made, i.e. these properties may as well **vary** over the
 length of the beam.
 
-#### [Internal forces](#id44)
+#### Internal forces
 
 By definition, the internal forces in a beam are deduced by integrating the
 stress components over the cross-section:
@@ -766,7 +766,7 @@ become:
 
 (299)\[ \begin{align}\begin{aligned}T_y & = G S \kappa_y (\partial_x v - \theta_z)\\T_z & = G S \kappa_z (\partial_x w + \theta_y)\\M_x & = G J_x \partial_x \theta_x\end{aligned}\end{align} \]
 
-## [Shape functions and interpolation](#id45)
+## Shape functions and interpolation
 
 \(\boldsymbol{U}(x)\) is interpolated inside the element using **shape
 functions**.
@@ -926,13 +926,13 @@ Finally, the relation between \(\boldsymbol{U}(x)\) and
 0 & \psi^1_{\theta_z} & 0 & 0 & 0 & \varphi^1_{\theta_z} & 0 & \psi^2_{\theta_z} & 0 & 0 & 0 & \varphi^2_{\theta_z}
 \end{pmatrix}(x) \boldsymbol{u}_{e} = \boldsymbol{N}(x)\boldsymbol{u}_{e}\end{split}\]
 
-## [Determination of the stiffness matrix](#id46)
+## Determination of the stiffness matrix
 
 Warning
 
 The work done in this part covers only the **linear elastic** behaviour.
 
-### [Definition of the stiffness matrix](#id47)
+### Definition of the stiffness matrix
 
 The **elementary stiffness matrix** \(\boldsymbol{K}_e\) of the element is
 defined through the virtual work of the **internal forces** for any given virtual
@@ -941,7 +941,7 @@ displacement:
 \[\delta \hat{W_i} = - \int_V \boldsymbol{\sigma}.\boldsymbol{\hat{\epsilon}} dV
 = - \boldsymbol{u}_e^{\transpose{}} \boldsymbol{K}_e \boldsymbol{\hat{u}}_e\]
 
-### [Determination of the integrand stiffness matrix](#id48)
+### Determination of the integrand stiffness matrix
 
 Euler-Bernoulli
 
@@ -1157,7 +1157,7 @@ E S \partial_x \varphi^i_u \partial_x \varphi^j_u & 0 & 0 & 0 & 0 & 0\\
 0 & 0 & 0 & 0 & 0 & 0\\
 \end{pmatrix}\end{split}\]
 
-### [Integration of the integrand stiffness matrix](#id49)
+### Integration of the integrand stiffness matrix
 
 The integral that must be computed is explicited in [(307)](#equation-theory-beam-elementary-stiffness-integral).
 
@@ -1214,7 +1214,7 @@ through the element, \(\boldsymbol{k}_e(x)\) has a polynomial degree of **4**,
 which means that a quadrature that has **3** Gauss points is sufficient, as
 it can integrate exactly polynomial of degrees up to **5**.
 
-#### [Exact integration of the integrand stiffness matrix](#id50)
+#### Exact integration of the integrand stiffness matrix
 
 Due to the low complexity of the integrand stiffness matrix, it is also possible
 to exactly integrate it in some specific cases.
@@ -1234,7 +1234,7 @@ integrated elementary stiffness matrix.
 Therefore, we will consider successively virtual displacements that are non-zero
 only at a single degree of freedom.
 
-##### [Traction-compression motion](#id51)
+##### Traction-compression motion
 
 We consider the following virtual displacements:
 
@@ -1270,7 +1270,7 @@ defined in the decomposition of the integrand stiffness matrix
 -1 & 1
 \end{pmatrix}\end{split}\]
 
-##### [Torsion motion](#id52)
+##### Torsion motion
 
 Doing a similar work as was performed for the traction-compression motion, one easily
 deduces that:
@@ -1280,7 +1280,7 @@ deduces that:
 -1 & 1
 \end{pmatrix}\end{split}\]
 
-##### [Bending motion in the (xOz) plane](#id53)
+##### Bending motion in the (xOz) plane
 
 Euler-Bernoulli
 
@@ -1391,7 +1391,7 @@ one can obtain the elementary stiffness matrix in bending:
 -\frac{L}{2} & \frac{(2-\Phi_y)L^2}{12} & \frac{L}{2} & \frac{(4+\Phi_y)L^2}{12}
 \end{pmatrix}\end{split}\]
 
-##### [Bending motion in the (xOy) plane](#id54)
+##### Bending motion in the (xOy) plane
 
 The methodology is similar for the other bending axis. The
 differential equation that the test-functions must meet becomes:
@@ -1422,7 +1422,7 @@ The same calculation steps give the following elementary stiffness matrix:
 \frac{L}{2} & \frac{(2-\Phi_z)L^2}{12} & -\frac{L}{2} & \frac{(4+\Phi_z)L^2}{12}
 \end{pmatrix}\end{split}\]
 
-##### [Assembling the elementary stiffness matrix](#id55)
+##### Assembling the elementary stiffness matrix
 
 Assembling the matrix given by the four previous ones gives an elementary stiffness
 matrix for the element that has the same profile as sum of the matrices given
@@ -1432,9 +1432,9 @@ In the current section, the assembled elementary stiffness matrix is the
 product of an exact integral over the element, which guarantees that the
 finite element solution will be exact at the element nodes.
 
-## [Determination of the consistent mass matrix](#id56)
+## Determination of the consistent mass matrix
 
-### [Definition of the mass matrix](#id57)
+### Definition of the mass matrix
 
 The **elementary mass matrix** \(\boldsymbol{M}_e\) of the element is
 defined through the virtual work of the **inertial forces** for any given virtual
@@ -1443,7 +1443,7 @@ displacement:
 \[\delta \hat{W_a} = \int_V \rho \frac{\partial^2 \boldsymbol{u}}{\partial t^2} \boldsymbol{\hat{u}} dV
 = \boldsymbol{u}_e^{\transpose{}} \boldsymbol{M}_e \boldsymbol{\hat{u}}_e\]
 
-### [Determination of the integrand mass matrix](#id58)
+### Determination of the integrand mass matrix
 
 Using the expression of the displacement field [(284)](#equation-theory-beam-displacement-simplified):
 
@@ -1573,7 +1573,7 @@ where:
     - \(\boldsymbol{m}_{ij}^{bending_z}\) contains the terms in
       \(\varphi_{v}\) and \(\varphi_{\theta_z}\).
 
-### [Integration of the integrand mass matrix](#id59)
+### Integration of the integrand mass matrix
 
 The integral that must be computed is explicited in [(318)](#equation-theory-beam-elementary-mass-integral).
 
@@ -1588,7 +1588,7 @@ Also note that in order to assemble the **consistent** mass matrix, one has to
 choose an interpolation and shape functions that are consistent with those that
 were chosen for the stiffness matrix.
 
-#### [Classic integration using Gauss quadrature](#id60)
+#### Classic integration using Gauss quadrature
 
 Using the expression of the integrand mass matrix [(319)](#equation-theory-beam-integrand-mass),
 it is possible to determine an appropriate Gauss quadrature that should be used
@@ -1626,7 +1626,7 @@ through the element, given that shape functions for the \(u\) and
 that a quadrature that has **4** Gauss points is sufficient, as it can integrate
 exactly polynomial of degrees up to **7**.
 
-#### [Exact integration of the integrand mass matrix](#id61)
+#### Exact integration of the integrand mass matrix
 
 Due to the low complexity of the integrand mass matrix, it is also possible
 to exactly integrate it in some specific cases.
@@ -1643,7 +1643,7 @@ Plugging in the corresponding shape functions in the [(319)](#equation-theory-be
 one directly deduces the exact expression of the **integrand** mass matrix, and
 can thus integrate it exactly.
 
-##### [Traction-compression motion](#id62)
+##### Traction-compression motion
 
 Integrating exactly the terms of the **integrand** mass matrix yields the
 following expression for its traction-compression subterm:
@@ -1653,7 +1653,7 @@ following expression for its traction-compression subterm:
 \frac{1}{6} & \frac{1}{3}
 \end{pmatrix}\end{split}\]
 
-##### [Torsion motion](#id63)
+##### Torsion motion
 
 Integrating exactly the terms of the **integrand** mass matrix yields the
 following expression for its torsion subterm:
@@ -1663,7 +1663,7 @@ following expression for its torsion subterm:
 \frac{1}{6} & \frac{1}{3}
 \end{pmatrix}\end{split}\]
 
-##### [Bending motion in the (xOz) plane](#id64)
+##### Bending motion in the (xOz) plane
 
 Integrating exactly the terms of the **integrand** mass matrix yields the
 following expression for its bending subterm along the \((xOz)\) plane:
@@ -1716,7 +1716,7 @@ Timoshenko
 0 & \frac{L^2}{6} & 0 & \frac{L^2}{3}
 \end{pmatrix}\end{split}\]
 
-##### [Bending motion in the (xOy) plane](#id65)
+##### Bending motion in the (xOy) plane
 
 Integrating exactly the terms of the **integrand** mass matrix yields the
 following expression for its bending subterm along the \((xOy)\) plane:
@@ -1769,7 +1769,7 @@ Timoshenko
 0 & \frac{L^2}{6} & 0 & \frac{L^2}{3}
 \end{pmatrix}\end{split}\]
 
-##### [Assembling the elementary mass matrix](#id66)
+##### Assembling the elementary mass matrix
 
 Assembling the matrix given by the four previous ones gives an elementary mass
 matrix for the element that has the same profile as the matrix given in
@@ -1779,7 +1779,7 @@ In the current section, the assembled elementary mass matrix is the
 product of an exact integral over the element, which guarantees that the
 finite element solution will be exact at the element nodes.
 
-## [Mass matrix lumping](#id67)
+## Mass matrix lumping
 
 Euler-Bernoulli
 
@@ -1806,7 +1806,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-### [General expression of a lumped mass matrix](#id68)
+### General expression of a lumped mass matrix
 
 Euler-Bernoulli
 
@@ -1971,7 +1971,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-### [General principles of mass matrix lumping](#id69)
+### General principles of mass matrix lumping
 
 Euler-Bernoulli
 
@@ -2000,7 +2000,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-### [Choosing a coefficient for traction and transverse displacement motions](#id70)
+### Choosing a coefficient for traction and transverse displacement motions
 
 Euler-Bernoulli
 
@@ -2061,7 +2061,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-### [Choosing a coefficient for torsion and bending motions](#id71)
+### Choosing a coefficient for torsion and bending motions
 
 Euler-Bernoulli
 
@@ -2096,7 +2096,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-#### [Different approaches for the choice of coefficients](#id72)
+#### Different approaches for the choice of coefficients
 
 Euler-Bernoulli
 
@@ -2124,7 +2124,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-##### [Ruszniewski's coefficient](#id73)
+##### Ruszniewski's coefficient
 
 Euler-Bernoulli
 
@@ -2143,7 +2143,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-##### [Key and Beisinger's coefficient](#id74)
+##### Key and Beisinger's coefficient
 
 Euler-Bernoulli
 
@@ -2175,7 +2175,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-##### [Lepareux's coefficient](#id75)
+##### Lepareux's coefficient
 
 Euler-Bernoulli
 
@@ -2228,7 +2228,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-##### [Belytschko and Mindle's coefficient](#id76)
+##### Belytschko and Mindle's coefficient
 
 Euler-Bernoulli
 
@@ -2255,7 +2255,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-#### [Implementation of the choice of the coefficient in MANTA](#id77)
+#### Implementation of the choice of the coefficient in MANTA
 
 Euler-Bernoulli
 
@@ -2301,7 +2301,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-## [Determination of the external distributed forces vector](#id78)
+## Determination of the external distributed forces vector
 
 The **elementary external distributed forces vector**
 \(\boldsymbol{F}_{ext, d}\) of the element is defined through the distributed
@@ -2328,7 +2328,7 @@ forces vector**:
 
 \[\boldsymbol{F}_{ext, d} = \int_x \boldsymbol{N}^{t}(x) \boldsymbol{f}_{ext, d} dx\]
 
-## [Critical time step for explicit time integration](#id79)
+## Critical time step for explicit time integration
 
 Euler-Bernoulli
 
@@ -2358,7 +2358,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-### [Traction-compression motion](#id80)
+### Traction-compression motion
 
 Euler-Bernoulli
 
@@ -2406,7 +2406,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-### [Torsion motion](#id81)
+### Torsion motion
 
 Euler-Bernoulli
 
@@ -2427,7 +2427,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-### [Bending motion](#id82)
+### Bending motion
 
 Euler-Bernoulli
 
@@ -2466,7 +2466,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-### [Calulcation of the critical time step](#id83)
+### Calulcation of the critical time step
 
 Euler-Bernoulli
 
@@ -2491,7 +2491,7 @@ Theory relative to Timoshenko beams has not been written yet, as
 such calculations are still impossible in MANTA. Theory will
 be completed once the associated formulations will be developed.
 
-## [Other possible interpolations and formulations](#id84)
+## Other possible interpolations and formulations
 
 Euler-Bernoulli
 

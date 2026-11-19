@@ -35,6 +35,6 @@ The MEDCoupling documentation from the SALOME repository (master branch) is in `
 
 ## Related skills
 
-- **`salome-gui`:** the SALOME desktop.
+- **`salome`:** the SALOME user documentation (desktop, GEOM, SMESH, SHAPER, YACS, ADAO…).
 - **`manta`:** reads MED meshes.
 - **`tfel-mfront`:** materials.

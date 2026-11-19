@@ -7,7 +7,7 @@ The second one relies used with the `C++` components, available [here](../../com
 
 ## Description
 
-[![figure](https://manta-project.gitlab.io/manta/_images/plate_with_hole1.svg)](../../../_images/plate_with_hole1.svg)
+[![figure](https://manta-project.gitlab.io/manta/_images/plate_with_hole1.svg)](https://manta-project.gitlab.io/manta/_images/plate_with_hole1.svg)
 
 Fig. 8 Description of the 2D plate with a hole in compression
 
@@ -54,10 +54,10 @@ Note
 
 The following files are required to run the tutorial:
 
-- [`mesh.dgibi`](../../../_downloads/db37572c1bd43faa1ce5c760398a1d56/mesh.dgibi):
+- [`mesh.dgibi`](https://manta-project.gitlab.io/manta/_downloads/db37572c1bd43faa1ce5c760398a1d56/mesh.dgibi):
   the `Cast3M` input file required to generated the mesh.
-- [`Elasticity.mfront`](../../../_downloads/a829e7dcf02733a5c421888759f1e665/Elasticity.mfront): the MFront implementation of the mechanical behaviour
-- [`plate_with_hole.py`](../../../_downloads/da65e6ad20bf4176ce2f3f82d787f555/plate_with_hole.py): the main script
+- [`Elasticity.mfront`](https://manta-project.gitlab.io/manta/_downloads/a829e7dcf02733a5c421888759f1e665/Elasticity.mfront): the MFront implementation of the mechanical behaviour
+- [`plate_with_hole.py`](https://manta-project.gitlab.io/manta/_downloads/da65e6ad20bf4176ce2f3f82d787f555/plate_with_hole.py): the main script
 
 ## Implementation
 
@@ -262,7 +262,7 @@ the plate:
 \sigma_{r\theta} &= 0 \\
 \end{aligned}\end{split}\]
 
-[![figure](https://manta-project.gitlab.io/manta/_images/radial_stress.svg)](../../../_images/radial_stress.svg)
+[![figure](https://manta-project.gitlab.io/manta/_images/radial_stress.svg)](https://manta-project.gitlab.io/manta/_images/radial_stress.svg)
 
 Fig. 9 Profile of the radial stress \(\sigma_{rr}\) along the bottom line
 
@@ -279,7 +279,7 @@ The agreement is satisfying if we take into account the fact that:
 As expected due to the boundary conditions, the radial stress is null on
 the left and equals \(-p^{\infty}\) on the right boundary.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/hoop_stress.svg)](../../../_images/hoop_stress.svg)
+[![figure](https://manta-project.gitlab.io/manta/_images/hoop_stress.svg)](https://manta-project.gitlab.io/manta/_images/hoop_stress.svg)
 
 Fig. 10 Profile of the hoop stress \(\sigma_{\theta\theta}\) along the bottom line
 
@@ -287,7 +287,7 @@ Fig. 10 Profile of the hoop stress \(\sigma_{\theta\theta}\) along the bottom li
 profiles of the hoop stress \(\sigma_{\theta\theta}\). The stress
 concentration near the hole can be readily observed.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/shear_stress.svg)](../../../_images/shear_stress.svg)
+[![figure](https://manta-project.gitlab.io/manta/_images/shear_stress.svg)](https://manta-project.gitlab.io/manta/_images/shear_stress.svg)
 
 Fig. 11 Profile of the shear stress \(\sigma_{r\theta}\) along the bottom line
 

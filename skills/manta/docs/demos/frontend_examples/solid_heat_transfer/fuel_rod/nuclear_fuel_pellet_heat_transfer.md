@@ -42,45 +42,45 @@ Note
 
 The following MFront files are required to run all the simulations
 
-- [`CladdingHeatTransfer.mfront`](../../../../_downloads/aba0b76cafca006366c7f69e3bf828e0/CladdingHeatTransfer.mfront): the MFront implementation of the thermal conductivity of the cladding
-- [`GasHeatTransfer.mfront`](../../../../_downloads/95f249a09cdac6794c968b920ae49198/GasHeatTransfer.mfront): the MFront implementation of the thermal conductivity of the gas
-- [`UO2HeatTransfer.mfront`](../../../../_downloads/e1e5315f03fbf1646a1c4678aedd90b1/UO2HeatTransfer.mfront): the MFront implementation of the thermal conductivity of the fuel
+- [`CladdingHeatTransfer.mfront`](https://manta-project.gitlab.io/manta/_downloads/aba0b76cafca006366c7f69e3bf828e0/CladdingHeatTransfer.mfront): the MFront implementation of the thermal conductivity of the cladding
+- [`GasHeatTransfer.mfront`](https://manta-project.gitlab.io/manta/_downloads/95f249a09cdac6794c968b920ae49198/GasHeatTransfer.mfront): the MFront implementation of the thermal conductivity of the gas
+- [`UO2HeatTransfer.mfront`](https://manta-project.gitlab.io/manta/_downloads/e1e5315f03fbf1646a1c4678aedd90b1/UO2HeatTransfer.mfront): the MFront implementation of the thermal conductivity of the fuel
 
 The following files are required to run the tutorial for 2d in plane simulation:
 
-- [`mesh_2d_inplane.dgibi`](../../../../_downloads/c645c3b7d7bbef3e493e921408b5effb/mesh_2d_inplane.dgibi):
+- [`mesh_2d_inplane.dgibi`](https://manta-project.gitlab.io/manta/_downloads/c645c3b7d7bbef3e493e921408b5effb/mesh_2d_inplane.dgibi):
   the Cast3M input file required to generate the mesh.
-- [`nuclear_fuel_pellet_2D_inplane.py`](../../../../_downloads/3db7f11c2a12d0941d6ca3fa4241912d/nuclear_fuel_pellet_2D_inplane.py): the main script
+- [`nuclear_fuel_pellet_2D_inplane.py`](https://manta-project.gitlab.io/manta/_downloads/3db7f11c2a12d0941d6ca3fa4241912d/nuclear_fuel_pellet_2D_inplane.py): the main script
 
 The following files are required to run the tutorial for 2d axisymmetrical simulation:
 
-- [`mesh_2d_axisymmetrical.dgibi`](../../../../_downloads/b472d225bb3817edfff14a5e096c1e12/mesh_2d_axisymmetrical.dgibi):
+- [`mesh_2d_axisymmetrical.dgibi`](https://manta-project.gitlab.io/manta/_downloads/b472d225bb3817edfff14a5e096c1e12/mesh_2d_axisymmetrical.dgibi):
   the Cast3M input file required to generate the mesh.
-- [`nuclear_fuel_pellet_2D_axisymmetrical.py`](../../../../_downloads/aaafe4960759d03306119c471915e8f0/nuclear_fuel_pellet_2D_axisymmetrical.py): the main script
+- [`nuclear_fuel_pellet_2D_axisymmetrical.py`](https://manta-project.gitlab.io/manta/_downloads/aaafe4960759d03306119c471915e8f0/nuclear_fuel_pellet_2D_axisymmetrical.py): the main script
 
 The following files are required to run the tutorial for 2d axisymmetrical simulation with chamfer:
 
-- [`mesh_2d_axisymmetrical_chamfer.dgibi`](../../../../_downloads/44f9732f676d83cf02189a5bc6eeab38/mesh_2d_axisymmetrical_chamfer.dgibi):
+- [`mesh_2d_axisymmetrical_chamfer.dgibi`](https://manta-project.gitlab.io/manta/_downloads/44f9732f676d83cf02189a5bc6eeab38/mesh_2d_axisymmetrical_chamfer.dgibi):
   the Cast3M input file required to generate the mesh.
-- [`nuclear_fuel_pellet_2D_axisymmetrical_chamfer.py`](../../../../_downloads/e474763fcd99a29972386b114a13d1da/nuclear_fuel_pellet_2D_axisymmetrical_chamfer.py): the main script
+- [`nuclear_fuel_pellet_2D_axisymmetrical_chamfer.py`](https://manta-project.gitlab.io/manta/_downloads/e474763fcd99a29972386b114a13d1da/nuclear_fuel_pellet_2D_axisymmetrical_chamfer.py): the main script
 
 The following files are required to run the tutorial for 3d simulation:
 
-- [`mesh_3d.dgibi`](../../../../_downloads/84d00f21abaf39e0e82acbc1d76c1eb4/mesh_3d.dgibi):
+- [`mesh_3d.dgibi`](https://manta-project.gitlab.io/manta/_downloads/84d00f21abaf39e0e82acbc1d76c1eb4/mesh_3d.dgibi):
   the Cast3M input file required to generate the mesh.
-- [`nuclear_fuel_pellet_3D.py`](../../../../_downloads/29ae7e3996b07ac04a10731f76614fcd/nuclear_fuel_pellet_3D.py): the main script
+- [`nuclear_fuel_pellet_3D.py`](https://manta-project.gitlab.io/manta/_downloads/29ae7e3996b07ac04a10731f76614fcd/nuclear_fuel_pellet_3D.py): the main script
 
 The following files are required to run the tutorial for 3d simulation with chamfer:
 
-- [`mesh_3d_chamfer.dgibi`](../../../../_downloads/2b35776cc3537e5eefa167fcc483eb79/mesh_3d_chamfer.dgibi):
+- [`mesh_3d_chamfer.dgibi`](https://manta-project.gitlab.io/manta/_downloads/2b35776cc3537e5eefa167fcc483eb79/mesh_3d_chamfer.dgibi):
   the Cast3M input file required to generate the mesh.
-- [`nuclear_fuel_pellet_3D_chamfer.py`](../../../../_downloads/92b0d1b657cbab8945b9537ca4724740/nuclear_fuel_pellet_3D_chamfer.py): the main script
+- [`nuclear_fuel_pellet_3D_chamfer.py`](https://manta-project.gitlab.io/manta/_downloads/92b0d1b657cbab8945b9537ca4724740/nuclear_fuel_pellet_3D_chamfer.py): the main script
 
-## [Description](#id9)
+## Description
 
-### [Geometry](#id10)
+### Geometry
 
-[![figure](https://manta-project.gitlab.io/manta/_images/meshes.png)](../../../../_images/meshes.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/meshes.png)](https://manta-project.gitlab.io/manta/_images/meshes.png)
 
 Fig. 12 On the left, the geometry used in \(2D(r,\theta)\).
 On the right, a typical \(2D(r, z)\) mesh.
@@ -100,13 +100,13 @@ chamfer. The cladding mesh is axially greater than the pellet mesh
 to accomodate the difference in axial expansions under
 irradidation.
 
-### [Boundary conditions](#id11)
+### Boundary conditions
 
 The external temperature, corresponding to the temperature at \(r =
 R_e\), is fixed and equal to \(T_e = 614.15\; K\). The heat source
 produced by the fuel is set to \(q_f=3.10^{8}\;W/m^{3}\)
 
-### [Materials](#id12)
+### Materials
 
 The nonlinear thermal conductivity laws are given:
 
@@ -124,7 +124,7 @@ The nonlinear thermal conductivity laws are given:
 The thermal conductivity of the cladding is assumed constant, equal to
 \(16\).
 
-### [Analytical solutions](#id13)
+### Analytical solutions
 
 In the absence of chamfer and dishing, it is possible to establish
 analytical solutions for the temperature profiles in the various
@@ -153,7 +153,7 @@ Such expressions are useful to verify the implementation, even if the
 \(2D\left(r, z\right)\) and \(3D\) simulations require to
 consider a simplified geometry for the comparisons to be meaningful.
 
-## [Implementation](#id14)
+## Implementation
 
 First, multiple materials need to be declared at the beginning of the physical system definition:
 
@@ -199,7 +199,7 @@ ps.addPostProcessing('VTKExport',
                      fields = [{'field': 'Temperature', 'fieldType': 'nodeField', 'materials': ['GAS','FUEL','CLADDING']}])
 ```
 
-## [Execution](#id15)
+## Execution
 
 First, we build the MFront libraries with
 
@@ -219,11 +219,11 @@ and we finally can run the simulation with
 $ python3 nuclear_fuel_pellet_2D_inplane.py
 ```
 
-## [Results](#id16)
+## Results
 
-### [Verifications tests](#id17)
+### Verifications tests
 
-[![figure](https://manta-project.gitlab.io/manta/_images/Simulation_temp_field_results.png)](../../../../_images/Simulation_temp_field_results.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/Simulation_temp_field_results.png)](https://manta-project.gitlab.io/manta/_images/Simulation_temp_field_results.png)
 
 Fig. 13 Temperature field for 2D in plane, 2D axisymmetrical and 3D simulations.
 (Paraview)
@@ -231,7 +231,7 @@ Fig. 13 Temperature field for 2D in plane, 2D axisymmetrical and 3D simulations.
 [Fig. 13](#fig-fuel-rod-simulations-temp-field-results) shows the temperature
 field calculated for the three considered modeling hypotheses.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/temperature_profil.png)](../../../../_images/temperature_profil.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/temperature_profil.png)](https://manta-project.gitlab.io/manta/_images/temperature_profil.png)
 
 Fig. 14 Temperature conduction in the nuclear fuel pellet for
 2d in plane, 2D axisymmetrical, 3D simulations and analytical solution.
@@ -268,9 +268,9 @@ Table 15 Total heat flux computed through the external surface
 | 3D | \(100.711\) |
 | Analytical | \(101.024\) |
 
-### [Results of the real geometry](#id18)
+### Results of the real geometry
 
-[![figure](https://manta-project.gitlab.io/manta/_images/temperature_profil_comparison.png)](../../../../_images/temperature_profil_comparison.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/temperature_profil_comparison.png)](https://manta-project.gitlab.io/manta/_images/temperature_profil_comparison.png)
 
 Fig. 15 Temperature conduction in the nuclear fuel pellet for
 2D axisymmetrical and 3D simulations with inclusion of chamfer
@@ -291,13 +291,13 @@ density using the real geometries and a neutronic model takes
 into account the fact that nuclear fissions and uranium consumptions
 are not homogeneous inside the fuel pellet.
 
-## [Conclusion](#id19)
+## Conclusion
 
 As mentioned in the introduction, the simulations presented in this
 tutorial are crude compared to the myriad of multi-physics phenomena
 taken into account in fuel performance codes.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/multi-pastilles.png)](../../../../_images/multi-pastilles.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/multi-pastilles.png)](https://manta-project.gitlab.io/manta/_images/multi-pastilles.png)
 
 Fig. 16 Simulation of the full 3D domain with 2 pellets.
 

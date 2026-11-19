@@ -43,7 +43,7 @@ Each entry: file — title, then its section headings.
   - Description · Geometry of the notched bar · Boundary conditions · Constitutive equations · Initial state · Description of the MANTA input file · Definition of the physical system · Mechanical model, behaviour and boundary conditions · Computation of the non local equivalent plastic strain and non local plastic change of volume · Declaration of the coupling scheme · Post-processings · User-defined post-processing task … (+4)
 - `demos/frontend_examples/damage_and_fracture/micromorphic_damage/fiber_reinforced_matrix/fiber_reinforced_matrix.md` — **Description of damage evolution in fiber reinforced matrix** (20 kB)
   - Problem considered · Geometry and mesh · Material behaviour · Material properties · Modeling hypothesis · Boundary conditions · Description of the MANTA input file · Definition of the physical system · Declaration of the material properties · Mechanical model, behaviour and boundary conditions · Micromorphic model, behaviour and boundary conditions · Declaration of the coupling scheme … (+8)
-- `demos/frontend_examples/elasticity/2D_elastic_thin_plate_with_hole_python.md` — **2D linear elastic thin plate with a hole in tension in python** (10 kB)
+- `demos/frontend_examples/elasticity/2D_elastic_thin_plate_with_hole_python.md` — **2D linear elastic thin plate with a hole in tension in python** (11 kB)
   - Description · Implementation · Definition of the physical system · Declaration of the material properties · Definition of the mechanical model, plate behavior and boundary conditions · Definition of the evolution of the imposed pressure · Declaration of the auxiliary task for the projection of the stress on nodes · Declaration of the coupling scheme · Declaration of the post-processings · Running the simulation · Execution · Results
 - `demos/frontend_examples/frontend_examples.md` — **Commented examples in pyManta** (1 kB)
   - General remarks about the test-files contents
@@ -357,7 +357,7 @@ Each entry: file — title, then its section headings.
 - `manta_frontend_user_guide/properties.md` — **Properties** (7 kB)
   - External material databases · Available properties implementations · The Constant property · The MFront property · Defining properties using user defined functions · Example · Defining constant spatially variable properties · Example · Parameters
 - `manta_frontend_user_guide/simulation/simulation.md` — **Simulation** (1 kB)
-- `manta_frontend_user_guide/simulation/simulation_class_overview.md` — **Overview of the simulation class** (13 kB)
+- `manta_frontend_user_guide/simulation/simulation_class_overview.md` — **Overview of the simulation class** (12 kB)
   - Main parameters · Time steps management · Determining the next time increment at the beginning of a time step · Determining the next time increment in case of convergence failure · Determining the next time increment in case of invalidation of the time step · How simulation is stopped · Conditions for post-processings to be executed · Appendix · Description of the default time increment balancer
 - `manta_frontend_user_guide/simulation/time_increment_computers.md` — **Time increment computers** (2 kB)
   - Example of usage · List of available time increment computers · MaximumFieldIncrement

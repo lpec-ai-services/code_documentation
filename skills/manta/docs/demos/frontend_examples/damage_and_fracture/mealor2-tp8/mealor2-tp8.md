@@ -19,10 +19,10 @@ Note
 
 The following files are required to run the tutorial:
 
-- [`mesh.dgibi`](../../../../_downloads/f9172a89b51c65bf6f50b6c5e9f3bb9c/mesh.dgibi):
+- [`mesh.dgibi`](https://manta-project.gitlab.io/manta/_downloads/f9172a89b51c65bf6f50b6c5e9f3bb9c/mesh.dgibi):
   the `Cast3M` input file required to generated the mesh.
-- [`ImplicitGradientGTN.mfront`](../../../../_downloads/305d802a30a16e7204630a06dbbfad64/ImplicitGradientGTN.mfront): the MFront implementation of the mechanical behaviour
-- [`ImplicitGradientGTN.py`](../../../../_downloads/bb6f8b328cf924ee7563489b5dd7b0bf/ImplicitGradientGTN.py): the main script
+- [`ImplicitGradientGTN.mfront`](https://manta-project.gitlab.io/manta/_downloads/305d802a30a16e7204630a06dbbfad64/ImplicitGradientGTN.mfront): the MFront implementation of the mechanical behaviour
+- [`ImplicitGradientGTN.py`](https://manta-project.gitlab.io/manta/_downloads/bb6f8b328cf924ee7563489b5dd7b0bf/ImplicitGradientGTN.py): the main script
 
 Warning
 
@@ -36,16 +36,16 @@ If this tutorial is to be considered for more serious work,
 under integrated quadratic elements shall be at least
 considered.
 
-## [Description](#id12)
+## Description
 
-[![figure](https://manta-project.gitlab.io/manta/_images/mesh.svg)](../../../../_images/mesh.svg)
+[![figure](https://manta-project.gitlab.io/manta/_images/mesh.svg)](https://manta-project.gitlab.io/manta/_images/mesh.svg)
 
 Fig. 28 Geometry and boundary conditions of the notched bar in an
 \(2D(r,z)\) representation
 (compared to standard conventions, this figure has been rotated
 so that the axis of revolution \(Oz\) is horizontal).
 
-### [Geometry of the notched bar](#id13)
+### Geometry of the notched bar
 
 The geometry of the notched bar is depicted on
 [Fig. 28](#fig-mealor2-tp8-mesh).
@@ -62,7 +62,7 @@ Table 21 Geometric parameters
 The main geometric parameters are reported on
 [Table 21](#mealor2-tp8-geometric-parameters).
 
-### [Boundary conditions](#id14)
+### Boundary conditions
 
 As depicted on [Fig. 28](#fig-mealor2-tp8-mesh), the bar is submitted to
 the following boundary conditions:
@@ -76,7 +76,7 @@ the following boundary conditions:
 Due to axisymmetrical hypothesis, no boundary condition in the radial
 direction is needed.
 
-### [Constitutive equations](#id15)
+### Constitutive equations
 
 The Gurson-Tvergaard-Needleman constitutive equations, introduced by
 Tvergaard and Needleman [[TN84](../../../../references/references.md#id11)] extending the
@@ -89,7 +89,7 @@ The total strain of the material is split into an elastic part, used to
 compute the stress through Hooke's law, and a plastic part which is now
 detailed.
 
-#### [Plasticity, effective stress](#id16)
+#### Plasticity, effective stress
 
 The evolution of plastic strain of the material is governed by the
 following yield surface:
@@ -158,7 +158,7 @@ is given by a Voce law:
 
 \[R\left(p\right) = R_{0}+{\left(R_{\infty}-R_{0}\right)}\,{\left(1-\exp(-b\,p)\right)}\]
 
-#### [Evolution of the porosity, non local regularization](#id17)
+#### Evolution of the porosity, non local regularization
 
 The porosity \(f\) is decomposed into a nucleation porosity
 \(f_{n}\) and a growth porosity \(f_{g}\):
@@ -242,7 +242,7 @@ the Chu-Needleman model [[CN80](../../../../references/references.md#id7)]:
 
 where \(\{f_N,s_N,\epsilon_N\}\) are material parameters.
 
-#### [Summary of the material parameters](#id18)
+#### Summary of the material parameters
 
 Table 22 Material parameters
 
@@ -259,11 +259,11 @@ The material parameters of the model are summarized in
 [Table 22](#mealor2-tp8-material-parameters). The regularization length
 \(l_{c}\) is chosen equal to \(5\,\cdot\,10^{-2}\,m\).
 
-### [Initial state](#id19)
+### Initial state
 
 The initial porosity is assumed equal to \(4\,\cdot\,10^{-3}\).
 
-## [Description of the MANTA input file](#id20)
+## Description of the MANTA input file
 
 The test cases begins by importing the `manta` module:
 
@@ -298,7 +298,7 @@ Phi = 2.2
 Phi_0 = 1.23
 ```
 
-### [Definition of the physical system](#id21)
+### Definition of the physical system
 
 The next step is to define a physical system. The `Cast3M` script
 generates a `MED` file that is imported as follows:
@@ -316,7 +316,7 @@ is axisymmetrical.
 
 See Section [Physical system](../../../../manta_frontend_user_guide/physical_system/physical_system.md#physical-system) for further details.
 
-### [Mechanical model, behaviour and boundary conditions](#id22)
+### Mechanical model, behaviour and boundary conditions
 
 The mechanical model is instanciated as follows:
 
@@ -373,7 +373,7 @@ post-processing.
 See Sections [Solid mechanics bricks](../../../../manta_frontend_user_guide/bricks/solid_mechanics/solid_mechanics_bricks.md#solid-mechanics-bricks) and [Loadings](../../../../manta_frontend_user_guide/loadings.md#loadings) for
 further details.
 
-### [Computation of the non local equivalent plastic strain and non local plastic change of volume](#id23)
+### Computation of the non local equivalent plastic strain and non local plastic change of volume
 
 The increment of the non local variables
 \(\Delta\,\bar{\omega}\) and \(\Delta\,\bar{p}\) can
@@ -408,7 +408,7 @@ p_project = manta.Model('L2ProjectionAuxiliaryTask', ps,
 
 See Section [The L2Projection auxiliary task](../../../../manta_frontend_user_guide/auxiliary_tasks/l2_projection_auxiliary_task.md#l2-projection-auxiliary-taks) for further details.
 
-### [Declaration of the coupling scheme](#id24)
+### Declaration of the coupling scheme
 
 The coupling is defined as follows:
 
@@ -449,14 +449,14 @@ the absolute value of correction to the non local equivalent plastic
 strain between two iterations of the fixed point algorithm is on each
 nodes below a threshold chosen equal to \(10^{-5}\).
 
-[![figure](https://manta-project.gitlab.io/manta/_images/coupling_scheme.svg)](../../../../_images/coupling_scheme.svg)
+[![figure](https://manta-project.gitlab.io/manta/_images/coupling_scheme.svg)](https://manta-project.gitlab.io/manta/_images/coupling_scheme.svg)
 
 Fig. 29 Staggered approach used in this tutorial
 
 The coupling scheme `cs2` is represented schematically on
 [Fig. 29](#fig-mealor2-tp8-coupling-scheme).
 
-### [Post-processings](#id25)
+### Post-processings
 
 Next, two built-in post-processings are defined:
 
@@ -480,7 +480,7 @@ ps.addPostProcessing('Curves',
 
 See Section [Post-processings](../../../../manta_frontend_user_guide/post_processings/post_processings.md#post-processings) for further details.
 
-### [User-defined post-processing task](#id26)
+### User-defined post-processing task
 
 The `Simulation` class allows to define user-defined
 post-processing tasks, i.e. call-back functions called at the end of a
@@ -525,7 +525,7 @@ def post():
                  header="# Time Strain f_max pv Sigma DeltaPhi")
 ```
 
-### [Initialization of the porosity](#id27)
+### Initialization of the porosity
 
 In order to initialize the porosity, the physical model must be
 initialized: this operation, among other things, allocates the memory
@@ -540,7 +540,7 @@ p_bts.setValue(pini)
 p_ets.setValue(pini)
 ```
 
-### [Time discretization and simulation](#id28)
+### Time discretization and simulation
 
 The next lines instantiates a `Simulation` object, declare our
 post-processing task and starts the simulation:
@@ -554,7 +554,7 @@ s.run()
 
 See Section [Simulation](../../../../manta_frontend_user_guide/simulation/simulation.md#simulation) for further details.
 
-## [Execution](#id29)
+## Execution
 
 The mesh can be generated by calling `Cast3M`, as follows:
 
@@ -574,9 +574,9 @@ The simulation is run by executing Python:
 $ python ImplicitGradientGTN.py
 ```
 
-## [Results](#id30)
+## Results
 
-[![figure](https://manta-project.gitlab.io/manta/_images/porosity.png)](../../../../_images/porosity.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/porosity.png)](https://manta-project.gitlab.io/manta/_images/porosity.png)
 
 Fig. 30 Porosity map at the end of the simulation
 
@@ -588,7 +588,7 @@ localized in a band of the width of a finite element. The size of the
 localization band is, in this non local version, related to the
 characteristic length \(l_{c}\).
 
-[![figure](https://manta-project.gitlab.io/manta/_images/traction_curve.svg)](../../../../_images/traction_curve.svg)
+[![figure](https://manta-project.gitlab.io/manta/_images/traction_curve.svg)](https://manta-project.gitlab.io/manta/_images/traction_curve.svg)
 
 Fig. 31 Calculated traction curve
 

@@ -21,7 +21,7 @@ SH
 manta-info Models
 ```
 
-## [Discretization methods](#id2)
+## Discretization methods
 
 MANTA supports several discretization methods.
 
@@ -37,14 +37,14 @@ discretization methods. This can be changed using the parameter
 `allowMixingDiscretizationMethods`, which must be set to
 `true`.
 
-## [Periodic computations support](#id3)
+## Periodic computations support
 
 Periodic computations support requires to:
 
 1. Deal with so-called "periodic boundary conditions".
 2. Impose the macroscopic gradients.
 
-### [Periodic boundary conditions](#id4)
+### Periodic boundary conditions
 
 Physical models based on solving partial derivative equations (PDEs)
 require boundary conditions. If the mesh is periodic (which is usually
@@ -59,7 +59,7 @@ merged in the connectivity map used to define the degrees of freedom
 of the problem, i.e. the same degree of freedom is assigned to
 two entities connected by the periodicity condition.
 
-### [Macroscopic gradients](#id5)
+### Macroscopic gradients
 
 Periodic computations requires to define the macroscopic gradients
 (macroscopic deformation gradients for finite strain analyses,
@@ -82,7 +82,7 @@ will do the same for the other components. If this evolution is not
 defined, the default value is applied. Note that the components are
 stored using [MFront conventions, see](https://thelfer.github.io/tfel/web/tensors.html) for details.
 
-## [Linear solver options](#id6)
+## Linear solver options
 
 The resolution of the underlying linear system can be tuned by users
 using the interface described in [this page](../../manta_components_user_guide/main_user_concepts/user_guide_objects/linear_solver_interface.md#linear-solver-interface).

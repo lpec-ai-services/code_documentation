@@ -100,7 +100,8 @@ sync_manta() {
 
 sync_salome() {
   # MEDCoupling (developer guide in Doxygen pages + user guide + tutorial) and
-  # the SALOME GUI user guide, from the GitHub mirrors of SALOME (sources only).
+  # the GUI architecture notes, from the GitHub mirrors of SALOME (sources only).
+  # The user documentation of every module comes from sync_salome_docs.
   local ref="${SALOME_REF:-master}" tmp; tmp="$(mktemp -d)"
   git clone -q --depth 1 --branch "$ref" --filter=blob:none --sparse \
     https://github.com/SalomePlatform/medcoupling.git "$tmp/mc"
@@ -120,11 +121,37 @@ sync_salome() {
     --out "$mc/user" --source-url "$url/medcoupling/tree/$ref/doc/user" --version "$v"
   "$PY" "$ROOT/tools/sphinx_src2md.py" --src "$tmp/mc/doc/tutorial" --pkg-root "$tmp/mc" \
     --out "$mc/tutorial" --exclude '*_fr.rst' --source-url "$url/medcoupling/tree/$ref/doc/tutorial" --version "$v"
-  "$PY" "$ROOT/tools/sphinx_src2md.py" --src "$tmp/gui/doc/salome/gui/input" --pkg-root "$tmp/gui" \
-    --out "$ROOT/skills/salome-gui/docs" --source-url "$url/gui/tree/$ref/doc/salome/gui" --version "$vg"
+  # GUI architecture notes (developer Doxygen pages; not in the binary docs)
   "$PY" "$ROOT/tools/dox2md.py" --src "$tmp/gui/doc/salome/tui/input" --ext .doc \
-    --out "$ROOT/skills/salome-gui/docs/architecture" --source-url "$url/gui/tree/$ref/doc/salome/tui"
+    --out "$ROOT/skills/salome/docs/architecture" --source-url "$url/gui/tree/$ref/doc/salome/tui"
   rm -rf "$tmp"
+}
+
+sync_salome_docs() {
+  # The SALOME user documentation of every module (GUI, SHAPER, GEOM, SMESH and
+  # its meshing plug-ins, YACS, HexaBlock, EFICAS, JobManager, HOMARD, ADAO,
+  # FIELDS, PARAVIS, samples, developer notes), from the HTML documentation
+  # shipped with a SALOME binary install or a wget mirror of
+  # docs.salome-platform.org/latest. Point SALOME_DOC_DIR at the folder holding
+  # gui/, dev/ and main/ (…/BINARIES-*/DOCUMENTATION/share/doc/salome).
+  # SALOME_VERSION is recorded in the INDEX (default: read from the path).
+  local d="${SALOME_DOC_DIR:?set SALOME_DOC_DIR to the folder holding gui/ dev/ main/}"
+  local v="${SALOME_VERSION:-$(grep -o 'SALOME-[0-9][0-9.]*[0-9]' <<<"$d" | head -1)}"
+  local out="$ROOT/skills/salome/docs" site=https://docs.salome-platform.org/latest
+  local m
+  for m in GUI SHAPER GEOM SMESH YACS HEXABLOCK EFICAS JOBMANAGER NETGENPLUGIN BLSURFPLUGIN \
+           GHS3DPLUGIN HexoticPLUGIN HYBRIDPLUGIN GMSHPLUGIN HELLO PYHELLO HOMARD/en ADAO/en; do
+    [ -d "$d/gui/$m" ] || { echo "  missing gui/$m"; continue; }
+    "$PY" "$ROOT/tools/sphinx2md.py" --base "$site/gui/$m/" --local "$d/gui/$m" \
+      --out "$out/${m%/en}" --code-lang python >/dev/null
+  done
+  for m in FIELDS PARAVIS cmake/html git/html; do
+    [ -d "$d/dev/$m" ] || { echo "  missing dev/$m"; continue; }
+    "$PY" "$ROOT/tools/sphinx2md.py" --base "$site/dev/$m/" --local "$d/dev/$m" \
+      --out "$out/dev/${m%/html}" --exclude 'api/*' --exclude 'fr/*' --code-lang python >/dev/null
+  done
+  "$PY" "$ROOT/tools/sphinx2md.py" --base "$site/main/" --local "$d/main" --out "$out/main" >/dev/null
+  "$PY" "$ROOT/tools/salome_index.py" --docs "$out" --version "$v"
 }
 
 sync_scivianna() {

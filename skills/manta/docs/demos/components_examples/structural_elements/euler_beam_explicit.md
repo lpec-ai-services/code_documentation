@@ -6,9 +6,9 @@ Note
 
 The following files are required to run the tutorial:
 
-- [`main.cpp`](../../../_downloads/95044b6a1132cdb48f608828f4887d58/main.cpp):
-- [`input_data.json`](../../../_downloads/bdfdd3319955bdadf203b9532603fcd0/input_data.json):
-- [`CMakeLists.txt`](../../../_downloads/d61badd37c0091e8fd6dc90f90d75b18/CMakeLists.txt):
+- [`main.cpp`](https://manta-project.gitlab.io/manta/_downloads/95044b6a1132cdb48f608828f4887d58/main.cpp):
+- [`input_data.json`](https://manta-project.gitlab.io/manta/_downloads/bdfdd3319955bdadf203b9532603fcd0/input_data.json):
+- [`CMakeLists.txt`](https://manta-project.gitlab.io/manta/_downloads/d61badd37c0091e8fd6dc90f90d75b18/CMakeLists.txt):
 
 ## Description
 
@@ -648,6 +648,6 @@ The results are also written into the VTK file.
 
 Here are the results, shown on **ParaViS**.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/beam_results.gif)](../../../_images/beam_results.gif)
+[![figure](https://manta-project.gitlab.io/manta/_images/beam_results.gif)](https://manta-project.gitlab.io/manta/_images/beam_results.gif)
 
 Fig. 7 Results of the example, exported in *ParaVis*

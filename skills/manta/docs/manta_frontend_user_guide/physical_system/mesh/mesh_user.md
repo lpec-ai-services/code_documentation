@@ -215,7 +215,7 @@ And this specific order for boundary edges:
 - y1z0
 - y1z1
 
-[![figure](https://manta-project.gitlab.io/manta/_images/grid_nomenclature.svg)](../../../_images/grid_nomenclature.svg)
+[![figure](https://manta-project.gitlab.io/manta/_images/grid_nomenclature.svg)](https://manta-project.gitlab.io/manta/_images/grid_nomenclature.svg)
 
 Fig. 1 Nomenclature of the grid. Left: nodes and edges in 2D. Middle: nodes in 3D. Right: edges in 3D.
 

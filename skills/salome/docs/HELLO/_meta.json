@@ -1,0 +1,20 @@
+{
+  "source": "https://docs.salome-platform.org/latest/gui/HELLO/",
+  "generated": "2026-11-19",
+  "pages": [
+    "bin_dir",
+    "build_proc_files",
+    "build_procedure",
+    "catalog_def",
+    "dev_steps",
+    "doc_dir",
+    "idl_dir",
+    "index",
+    "load_iapp",
+    "load_lcc",
+    "load_module",
+    "run_procedure",
+    "src_dir",
+    "tree_structure"
+  ]
+}

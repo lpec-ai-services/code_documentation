@@ -1,0 +1,123 @@
+# Index of pages
+
+Each entry: file — title, then its section headings.
+
+
+## (root)
+
+- `advanced.md` — **7. [DocU] Advanced usage of the ADAO module and interoperability** (26 kB)
+  - 7.1. Converting and executing an ADAO command file (JDC) using a Shell script · 7.2. Running an ADAO calculation scheme in YACS using the text user mode (YACS TUI) · 7.3. Running an ADAO calculation in R environment using the TUI ADAO interface · 7.4. Using the ADAO EFICAS graphical interface as an ADAO TUI command · 7.5. Change the default execution mode of nodes in YACS · 7.6. Getting information on special variables during the ADAO calculation · 7.7. Getting more information when running a calculation · 7.8. Accelerating numerical derivatives calculations by using a parallel mode · 7.9. Convergence control for calculation cases and iterative algorithms
+- `bibliography.md` — **19. Bibliography** (13 kB)
+- `examples.md` — **4. [DocU] Examples of ADAO use** (4 kB)
+  - 4.1. General usage guidelines · 4.2. Tutorials · 4.3. Calculation algorithms uses · 4.4. Checking algorithms uses · 4.5. Dedicated tasks or study oriented cases uses · 4.6. Comprehensive studies and use case examples · 4.7. Advanced uses
+- `glossary.md` — **20. Glossary** (5 kB)
+- `gui_in_salome.md` — **8. [DocR] Graphical User Interface for ADAO (GUI/EFICAS)** (11 kB)
+  - 8.1. Logical procedure to build an ADAO case · 8.2. Detailed procedure to build an ADAO case · 8.2.1. STEP 1: Activate the ADAO module and use the editor GUI · 8.2.2. STEP 2: Build and modify the ADAO case, and save it · 8.2.3. STEP 3: Export the ADAO case as a YACS scheme · 8.2.4. STEP 4: Supplement and modify the YACS scheme, and save it · 8.2.5. STEP 5: Execute the YACS case and obtain the results
+- `index.md` — **ADAO documentation** (15 kB)
+- `intro.md` — **1. Introduction to ADAO** (1 kB)
+- `license.md` — **18. License and requirements** (1 kB)
+- `methodology.md` — **3. [DocT] Methodology to elaborate a Data Assimilation or Optimization study** (13 kB)
+  - 3.1. Logical procedure for a study · 3.2. Detailed procedure for a study · 3.2.1. STEP 1: Specify the resolution of the physical problem and the parameters to adjust · 3.2.2. STEP 2: Specify the criteria for physical results qualification · 3.2.3. STEP 3: Identify and describe the available observations · 3.2.4. STEP 4: Specify the DA/Optimization modeling elements (covariances, background…) · 3.2.5. STEP 5: Choose the optimization algorithm and its parameters · 3.2.6. STEP 6: Conduct the optimization calculations and get the results · 3.2.7. STEP 7: Exploit the results and qualify their physical properties · 3.3. To test a data assimilation chain: the twin experiments
+- `notations.md` — **17. Notations and common conventions** (2 kB)
+- `ref_algorithm_3DVAR.md` — **13.1. Calculation algorithm “ 3DVAR ”** (63 kB)
+  - 13.1.1. Description · 13.1.2. Some noteworthy properties of the implemented methods · 13.1.3. Optional and required commands · 13.1.4. Information and variables available at the end of the algorithm · 13.1.5. Python (TUI) use examples · 13.1.5.1. First example · 13.1.5.2. Second example · 13.1.5.3. Third example · 13.1.5.4. Correction by 3DVAR of the state of a Lorenz dynamic system · 13.1.6. See also
+- `ref_algorithm_4DVAR.md` — **13.2. Calculation algorithm “ 4DVAR ”** (20 kB)
+  - 13.2.1. Description · 13.2.2. Some noteworthy properties of the implemented methods · 13.2.3. Optional and required commands · 13.2.4. Information and variables available at the end of the algorithm · 13.2.5. See also
+- `ref_algorithm_AdjointTest.md` — **14.1. Checking algorithm “ AdjointTest ”** (14 kB)
+  - 14.1.1. Description · 14.1.2. Some noteworthy properties of the implemented methods · 14.1.3. Optional and required commands · 14.1.4. Information and variables available at the end of the algorithm · 14.1.5. Python (TUI) use examples · 14.1.6. See also
+- `ref_algorithm_Blue.md` — **13.3. Calculation algorithm “ Blue ”** (27 kB)
+  - 13.3.1. Description · 13.3.2. Some noteworthy properties of the implemented methods · 13.3.3. Optional and required commands · 13.3.4. Information and variables available at the end of the algorithm · 13.3.5. Python (TUI) use examples · 13.3.6. See also
+- `ref_algorithm_ControledFunctionTest.md` — **14.2. Checking algorithm “ ControledFunctionTest ”** (19 kB)
+  - 14.2.1. Description · 14.2.2. Some noteworthy properties of the implemented methods · 14.2.3. Optional and required commands · 14.2.4. Information and variables available at the end of the algorithm · 14.2.5. Python (TUI) use examples · 14.2.5.1. First example · 14.2.5.2. Second example · 14.2.6. See also
+- `ref_algorithm_DerivativeFreeOptimization.md` — **13.4. Calculation algorithm “ DerivativeFreeOptimization ”** (33 kB)
+  - 13.4.1. Description · 13.4.2. Some noteworthy properties of the implemented methods · 13.4.3. Optional and required commands · 13.4.4. Information and variables available at the end of the algorithm · 13.4.5. Python (TUI) use examples · 13.4.6. See also
+- `ref_algorithm_DifferentialEvolution.md` — **13.5. Calculation algorithm “ DifferentialEvolution ”** (21 kB)
+  - 13.5.1. Description · 13.5.2. Some noteworthy properties of the implemented methods · 13.5.3. Optional and required commands · 13.5.4. Information and variables available at the end of the algorithm · 13.5.5. See also
+- `ref_algorithm_EnsembleBlue.md` — **13.6. Calculation algorithm “ EnsembleBlue ”** (12 kB)
+  - 13.6.1. Description · 13.6.2. Some noteworthy properties of the implemented methods · 13.6.3. Optional and required commands · 13.6.4. Information and variables available at the end of the algorithm · 13.6.5. See also
+- `ref_algorithm_EnsembleKalmanFilter.md` — **13.7. Calculation algorithm “ EnsembleKalmanFilter ”** (27 kB)
+  - 13.7.1. Description · 13.7.2. Some noteworthy properties of the implemented methods · 13.7.3. Optional and required commands · 13.7.4. Information and variables available at the end of the algorithm · 13.7.5. See also
+- `ref_algorithm_EnsembleOfSimulationGenerationTask.md` — **15.1. Task algorithm “ EnsembleOfSimulationGenerationTask ”** (17 kB)
+  - 15.1.1. Description · 15.1.2. Some noteworthy properties of the implemented methods · 15.1.3. Optional and required commands · 15.1.4. Information and variables available at the end of the algorithm · 15.1.5. See also
+- `ref_algorithm_ExtendedBlue.md` — **13.8. Calculation algorithm “ ExtendedBlue ”** (26 kB)
+  - 13.8.1. Description · 13.8.2. Some noteworthy properties of the implemented methods · 13.8.3. Optional and required commands · 13.8.4. Information and variables available at the end of the algorithm · 13.8.5. Python (TUI) use examples · 13.8.6. See also
+- `ref_algorithm_ExtendedKalmanFilter.md` — **13.9. Calculation algorithm “ ExtendedKalmanFilter ”** (21 kB)
+  - 13.9.1. Description · 13.9.2. Some noteworthy properties of the implemented methods · 13.9.3. Optional and required commands · 13.9.4. Information and variables available at the end of the algorithm · 13.9.5. See also
+- `ref_algorithm_FunctionTest.md` — **14.3. Checking algorithm “ FunctionTest ”** (17 kB)
+  - 14.3.1. Description · 14.3.2. Some noteworthy properties of the implemented methods · 14.3.3. Optional and required commands · 14.3.4. Information and variables available at the end of the algorithm · 14.3.5. Python (TUI) use examples · 14.3.5.1. First example · 14.3.5.2. Second example · 14.3.6. See also
+- `ref_algorithm_GradientTest.md` — **14.4. Checking algorithm “ GradientTest ”** (12 kB)
+  - 14.4.1. Description · 14.4.1.1. “Taylor” residue · 14.4.1.2. “TaylorOnNorm” residue · 14.4.1.3. “Norm” residue · 14.4.2. Some noteworthy properties of the implemented methods · 14.4.3. Optional and required commands · 14.4.4. Information and variables available at the end of the algorithm · 14.4.5. See also
+- `ref_algorithm_InputValuesTest.md` — **14.5. Checking algorithm “ InputValuesTest ”** (5 kB)
+  - 14.5.1. Description · 14.5.2. Some noteworthy properties of the implemented methods · 14.5.3. Optional and required commands · 14.5.4. See also
+- `ref_algorithm_InterpolationByReducedModelTask.md` — **15.2. Task algorithm “ InterpolationByReducedModelTask ”** (13 kB)
+  - 15.2.1. Description · 15.2.2. Some noteworthy properties of the implemented methods · 15.2.3. Optional and required commands · 15.2.4. Information and variables available at the end of the algorithm · 15.2.5. Python (TUI) use examples · 15.2.5.1. First example · 15.2.6. See also
+- `ref_algorithm_InterpolationByReducedModelTest.md` — **14.6. Checking algorithm “ InterpolationByReducedModelTest ”** (6 kB)
+  - 14.6.1. Description · 14.6.2. Some noteworthy properties of the implemented methods · 14.6.3. Optional and required commands · 14.6.4. Information and variables available at the end of the algorithm · 14.6.5. See also
+- `ref_algorithm_KalmanFilter.md` — **13.10. Calculation algorithm “ KalmanFilter ”** (32 kB)
+  - 13.10.1. Description · 13.10.2. Some noteworthy properties of the implemented methods · 13.10.3. Optional and required commands · 13.10.4. Information and variables available at the end of the algorithm · 13.10.5. Python (TUI) use examples · 13.10.5.1. First example · 13.10.5.2. Second example · 13.10.6. See also
+- `ref_algorithm_LinearLeastSquares.md` — **13.11. Calculation algorithm “ LinearLeastSquares ”** (16 kB)
+  - 13.11.1. Description · 13.11.2. Some noteworthy properties of the implemented methods · 13.11.3. Optional and required commands · 13.11.4. Information and variables available at the end of the algorithm · 13.11.5. See also
+- `ref_algorithm_LinearityTest.md` — **14.7. Checking algorithm “ LinearityTest ”** (13 kB)
+  - 14.7.1. Description · 14.7.1.1. “CenteredDL” residue · 14.7.1.2. “Taylor” residue · 14.7.1.3. “NominalTaylor” residue · 14.7.1.4. “NominalTaylorRMS” residue · 14.7.2. Some noteworthy properties of the implemented methods · 14.7.3. Optional and required commands · 14.7.4. Information and variables available at the end of the algorithm · 14.7.5. See also
+- `ref_algorithm_LocalSensitivityTest.md` — **14.8. Checking algorithm “ LocalSensitivityTest ”** (7 kB)
+  - 14.8.1. Description · 14.8.2. Some noteworthy properties of the implemented methods · 14.8.3. Optional and required commands · 14.8.4. Information and variables available at the end of the algorithm · 14.8.5. See also
+- `ref_algorithm_MeasurementsOptimalPositioningTask.md` — **15.3. Task algorithm “ MeasurementsOptimalPositioningTask ”** (38 kB)
+  - 15.3.1. Description · 15.3.2. Some noteworthy properties of the implemented methods · 15.3.3. Optional and required commands · 15.3.4. Information and variables available at the end of the algorithm · 15.3.5. Python (TUI) use examples · 15.3.5.1. First example · 15.3.5.2. Second example · 15.3.5.3. Measurement optimal positioning for DEIM decomposition · 15.3.6. See also
+- `ref_algorithm_NonLinearLeastSquares.md` — **13.12. Calculation algorithm “ NonLinearLeastSquares ”** (29 kB)
+  - 13.12.1. Description · 13.12.2. Some noteworthy properties of the implemented methods · 13.12.3. Optional and required commands · 13.12.4. Information and variables available at the end of the algorithm · 13.12.5. Python (TUI) use examples · 13.12.6. See also
+- `ref_algorithm_ObservationSimulationComparisonTest.md` — **14.9. Checking algorithm “ ObservationSimulationComparisonTest ”** (18 kB)
+  - 14.9.1. Description · 14.9.2. Some noteworthy properties of the implemented methods · 14.9.3. Optional and required commands · 14.9.4. Information and variables available at the end of the algorithm · 14.9.5. Python (TUI) use examples · 14.9.6. See also
+- `ref_algorithm_ObserverTest.md` — **14.10. Checking algorithm “ ObserverTest ”** (2 kB)
+  - 14.10.1. Description · 14.10.2. Some noteworthy properties of the implemented methods · 14.10.3. Optional and required commands
+- `ref_algorithm_ParallelFunctionTest.md` — **14.11. Checking algorithm “ ParallelFunctionTest ”** (13 kB)
+  - 14.11.1. Description · 14.11.2. Some noteworthy properties of the implemented methods · 14.11.3. Optional and required commands · 14.11.4. Information and variables available at the end of the algorithm · 14.11.5. Python (TUI) use examples · 14.11.6. See also
+- `ref_algorithm_ParameterCalibrationTask.md` — **15.4. Task algorithm “ ParameterCalibrationTask ”** (57 kB)
+  - 15.4.1. Description · 15.4.2. Some noteworthy properties of the implemented methods · 15.4.3. Optional and required commands · 15.4.4. Information and variables available at the end of the algorithm · 15.4.5. Python (TUI) use examples · 15.4.5.1. First example · 15.4.5.2. Second example · 15.4.6. See also
+- `ref_algorithm_ParticleSwarmOptimization.md` — **13.13. Calculation algorithm “ ParticleSwarmOptimization ”** (49 kB)
+  - 13.13.1. Description · 13.13.2. Some noteworthy properties of the implemented methods · 13.13.3. Optional and required commands · 13.13.4. Information and variables available at the end of the algorithm · 13.13.5. Python (TUI) use examples · 13.13.6. See also
+- `ref_algorithm_QuantileRegression.md` — **13.14. Calculation algorithm “ QuantileRegression ”** (17 kB)
+  - 13.14.1. Description · 13.14.2. Some noteworthy properties of the implemented methods · 13.14.3. Optional and required commands · 13.14.4. Information and variables available at the end of the algorithm · 13.14.5. See also
+- `ref_algorithm_ReducedModelingTest.md` — **14.12. Checking algorithm “ ReducedModelingTest ”** (25 kB)
+  - 14.12.1. Description · 14.12.2. Some noteworthy properties of the implemented methods · 14.12.3. Optional and required commands · 14.12.4. Information and variables available at the end of the algorithm · 14.12.5. Python (TUI) use examples · 14.12.5.1. First example · 14.12.6. See also
+- `ref_algorithm_SamplingTest.md` — **14.13. Checking algorithm “ SamplingTest ”** (22 kB)
+  - 14.13.1. Description · 14.13.2. Some noteworthy properties of the implemented methods · 14.13.3. Optional and required commands · 14.13.4. Information and variables available at the end of the algorithm · 14.13.5. See also
+- `ref_algorithm_SimulatedAnnealing.md` — **13.15. Calculation algorithm “ SimulatedAnnealing ”** (25 kB)
+  - 13.15.1. Description · 13.15.2. Some noteworthy properties of the implemented methods · 13.15.3. Optional and required commands · 13.15.4. Information and variables available at the end of the algorithm · 13.15.5. See also
+- `ref_algorithm_TabuSearch.md` — **13.16. Calculation algorithm “ TabuSearch ”** (20 kB)
+  - 13.16.1. Description · 13.16.2. Some noteworthy properties of the implemented methods · 13.16.3. Optional and required commands · 13.16.4. Information and variables available at the end of the algorithm · 13.16.5. See also
+- `ref_algorithm_TangentTest.md` — **14.14. Checking algorithm “ TangentTest ”** (9 kB)
+  - 14.14.1. Description · 14.14.2. Some noteworthy properties of the implemented methods · 14.14.3. Optional and required commands · 14.14.4. Information and variables available at the end of the algorithm · 14.14.5. See also
+- `ref_algorithm_UnscentedKalmanFilter.md` — **13.17. Calculation algorithm “ UnscentedKalmanFilter ”** (23 kB)
+  - 13.17.1. Description · 13.17.2. Some noteworthy properties of the implemented methods · 13.17.3. Optional and required commands · 13.17.4. Information and variables available at the end of the algorithm · 13.17.5. See also
+- `ref_assimilation_keywords.md` — **13.18. List of commands and keywords for data assimilation or optimization case** (9 kB)
+- `ref_checking_keywords.md` — **14.15. List of commands and keywords for an ADAO checking case** (6 kB)
+- `ref_covariance_requirements.md` — **12.3. Requirements to describe covariance matrices** (4 kB)
+  - 12.3.1. First matrix form: using “ Matrix ” representation · 12.3.2. Second matrix form: using “ ScalarSparseMatrix ” representation · 12.3.3. Third matrix form: using “ DiagonalSparseMatrix ” representation
+- `ref_entry_types.md` — **11.1. List of possible input types** (7 kB)
+  - 11.1.1. Pseudo-types of mathematical representation of data · 11.1.2. Pseudo-types of digital data description · 11.1.3. Information on the names required for file entries
+- `ref_observations_requirements.md` — **12.1. Requirements for observation or experimental measurements description** (8 kB)
+  - 12.1.1. Use of a single spatial observation · 12.1.2. Use of a time series of spatial observations · 12.1.3. Use of a single spatio-temporal observation · 12.1.4. Use of a parameterized series of spatial observations · 12.1.5. General comments on the observations
+- `ref_observers_requirements.md` — **12.5. Requirements for functions describing an “ observer ”** (22 kB)
+  - 12.5.1. Register and activate of an “ observer ” function · 12.5.2. General form for a script describing an “ observer ” function · 12.5.3. Inventory of available “ observer ” function models (” Template ”) · 12.5.3.1. Template ValuePrinter · 12.5.3.2. Template ValueAndIndexPrinter · 12.5.3.3. Template ValueSeriePrinter · 12.5.3.4. Template ValueSaver · 12.5.3.5. Template ValueSerieSaver · 12.5.3.6. Template ValuePrinterAndSaver · 12.5.3.7. Template ValueIndexPrinterAndSaver · 12.5.3.8. Template ValueSeriePrinterAndSaver · 12.5.3.9. Template ValueGnuPlotter … (+22)
+- `ref_operator_requirements.md` — **12.2. Requirements for functions describing an operator** (17 kB)
+  - 12.2.1. First functional form: one direct operator only · 12.2.2. Second functional form: three operators direct, tangent and adjoint · 12.2.3. Third functional form: three operators with a switch · 12.2.4. Special case of controlled evolution or observation operator · 12.2.5. Additional notes on dimensionless transformation of operators · 12.2.6. Dealing explicitly with “multiple” functions
+- `ref_options_AlgorithmParameters.md` — **11.2. Description of options of an algorithm by “ AlgorithmParameters ”** (8 kB)
+  - 11.2.1. First method (GUI): using explicit pre-filled keywords · 11.2.2. Second method(GUI): using a string in the graphical interface · 11.2.3. Third method (GUI): using an external Python script file · 11.2.4. Fourth method (TUI): use explicit documented keywords · 11.2.5. Fifth method (TUI): use an external Python script file
+- `ref_output_variables.md` — **11.3. Variables and information available at the output** (17 kB)
+  - 11.3.1. How to obtain the information available at the output · 11.3.2. Examples of Python scripts to obtain or treat the outputs · 11.3.3. Cross compliance of the information available at the output · 11.3.4. Inventory of potentially available information at the output
+- `ref_sampling_requirements.md` — **12.4. Requirements for describing a state sampling** (18 kB)
+  - 12.4.1. Explicit or implicit description of the state sampling collection · 12.4.2. Simple examples of state-space distributions · 12.4.2.1. Explicit state distribution by keyword “ SampleAsnUplet ” · 12.4.2.2. Implicit state distribution by keyword “ SampleAsExplicitHyperCube ” · 12.4.2.3. Implicit state distribution by keyword “ SampleAsMinMaxStepHyperCube ” · 12.4.2.4. Implicit state distribution by keyword “ SampleAsMinMaxLatinHyperCube ” · 12.4.2.5. Implicit state distribution by keyword “ SampleAsMinMaxSobolSequence ” · 12.4.2.6. Implicit state distribution by keyword “ SampleAsMinMaxHaltonSequence ” · 12.4.2.7. Implicit state distribution by keyword “ SampleAsIndependentRandomVariables ” with normal laws · 12.4.2.8. Implicit state distribution by keyword “ SampleAsIndependentRandomVariables ” with log-normal laws · 12.4.2.9. Implicit state distribution by keyword “ SampleAsIndependentRandomVariables ” with uniform laws · 12.4.2.10. Implicit state distribution by keyword “ SampleAsIndependentRandomVariables ” with log-uniform laws … (+6)
+- `ref_task_keywords.md` — **15.5. List of commands and keywords for a dedicated task or study oriented case** (3 kB)
+- `ref_userpostanalysis_requirements.md` — **12.6. Requirements to describe a post-processing after an ADAO calculation** (6 kB)
+  - 12.6.1. Save a dedicated post-processing · 12.6.2. General form of a script to define a dedicated post-processing · 12.6.3. Inventory of simple templates of post-processing (” Template ”) · 12.6.3.1. Modèle AnalysisPrinter · 12.6.3.2. Modèle AnalysisSaver · 12.6.3.3. Modèle AnalysisPrinterAndSaver · 12.6.3.4. Modèle AnalysisSeriePrinter · 12.6.3.5. Modèle AnalysisSerieSaver · 12.6.3.6. Modèle AnalysisSeriePrinterAndSaver
+- `reference.md` — **10. [DocR] Reference description of the ADAO commands and keywords** (8 kB)
+- `theory.md` — **2. [DocT] A brief introduction to Data Assimilation and Optimization** (41 kB)
+  - 2.1. Fields reconstruction or measures interpolation · 2.2. Parameters identification, models adjustment, or calibration · 2.3. Joint estimation of states and parameters · 2.4. Simple description of the data assimilation methodological framework · 2.5. A schematic view of Data Assimilation and Optimization approaches · 2.6. An overview of reduction methods and of reduced optimization · 2.7. Going further in the data assimilation framework · 2.8. Going further in the state estimation by optimization methods · 2.9. Going further in data assimilation for dynamics · 2.9.1. General form of dynamic systems · 2.9.2. State estimation in dynamics · 2.9.3. Parameter estimation in dynamics … (+2)
+- `tui.md` — **9. [DocR] Textual User Interface for ADAO (TUI/API)** (45 kB)
+  - 9.1. Creation of ADAO TUI calculation case and examples · 9.1.1. A simple setup example of an ADAO TUI calculation case · 9.1.2. Detailed setup of an ADAO TUI calculation case · 9.1.3. Using more complex calculation data or information · 9.1.4. Obtain and use the results of calculation in a richer way · 9.2. Set of available commands in text user interface TUI · 9.2.1. Equivalent syntax calls for commands · 9.2.2. Creating a calculation case in TUI text interface · 9.2.3. Defining the calculation data · 9.2.4. Setting the calculation, outputs, etc. · 9.2.5. Perform the calculation · 9.2.6. Get the calculation results separately … (+5)
+- `tutorials_in_python.md` — **6. [DocU] Tutorials on using the ADAO module in Python** (11 kB)
+  - 6.1. Building an estimation case with explicit data definition · 6.1.1. Experimental setup · 6.1.2. Using the graphical interface (GUI) to build the ADAO case · 6.2. Building an estimation case with external data definition by scripts
+- `tutorials_in_salome.md` — **5. [DocU] Tutorials on using the ADAO module in SALOME** (27 kB)
+  - 5.1. Building an estimation case with explicit data definition · 5.1.1. Experimental setup · 5.1.2. Using the graphical interface (GUI) to build the ADAO case · 5.2. Building an estimation case with external data definition by scripts · 5.3. Adding parameters to control the data assimilation algorithm · 5.4. Building a complex case with external data definition by scripts · 5.4.1. Experimental setup · 5.4.2. Skeletons of the scripts describing the setup · 5.4.3. Building the case with external data definition by scripts
+- `versions.md` — **16. Versions of ADAO and external compatibility** (7 kB)
+  - 16.1. Switching from a version of ADAO to a newer one · 16.1.1. Switching from 9.x to 9.y with y > x · 16.1.2. Switching from 8.5 to 9.2 · 16.1.3. Switching from 8.x to 8.y with y > x · 16.1.4. Switching from 7.8 to 8.1 · 16.1.5. Switching from 7.x to 7.y with y > x · 16.1.6. Switching from 6.6 to 7.2 · 16.1.7. Switching from 6.x to 6.y with y > x · 16.2. Versions of ADAO compatibility with support tools

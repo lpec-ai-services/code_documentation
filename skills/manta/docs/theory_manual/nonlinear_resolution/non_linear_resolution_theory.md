@@ -5,7 +5,7 @@
 The resolution of non-linear problem in MANTA is performed using Newton like algorithms
 that are described in these pages.
 
-## [Newton algorithm](#id15)
+## Newton algorithm
 
 As is detailed in [this section](../../developer_guide/blueprints/newton_algorithm_blueprint.md#blueprint-newton-algorithm),
 the system that is being resolved can be written as:
@@ -63,7 +63,7 @@ The Newton approach thus supposes that the expression of a null residual can
 be incrementally approached by computing this increment, by solving successively
 the linear system in [(324)](#equation-theory-non-linear-system).
 
-### [Limits to the Newton algorithm](#id16)
+### Limits to the Newton algorithm
 
 Newton's approach is characterized by this usage of the jacobian of the problem
 to search space. This means that, close to the solution, convergence is quadratic.
@@ -85,7 +85,7 @@ Note that several other clever tricks are put forward in cast3M, but are not yet
 A more detailed description of some of the specifics of cast3M non-linear implicit solver are available
 in [this page](castem_like_newton.md#castem-newton).
 
-## [Quasi-Newton approaches](#id17)
+## Quasi-Newton approaches
 
 As detailed in the previous section, most limitations of the Newton algorithm are linked to the
 cost of computing (and assembling, and "inverting"), the consistent jacobian.
@@ -99,16 +99,16 @@ However, note that if this can save a lot of computing time for one iteration, s
 usually linked to much slower convergence rates (as we are not using a search operator consistent with
 the problem at hand). Below are some 1D vizualization of the methods:
 
-[![figure](https://manta-project.gitlab.io/manta/_images/fig_newton.png)](../../_images/fig_newton.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/fig_newton.png)](https://manta-project.gitlab.io/manta/_images/fig_newton.png)
 
 Fig. 119 Newton iterations over three load steps: the search operator is the tangent.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/fig_quasi_elastic_per_step.png)](../../_images/fig_quasi_elastic_per_step.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/fig_quasi_elastic_per_step.png)](https://manta-project.gitlab.io/manta/_images/fig_quasi_elastic_per_step.png)
 
 Fig. 120 Quasi-Newton iterations, the search operator being recomputed at the
 beginning of every load step and kept for its iterations.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/fig_quasi_elastic_frozen.png)](../../_images/fig_quasi_elastic_frozen.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/fig_quasi_elastic_frozen.png)](https://manta-project.gitlab.io/manta/_images/fig_quasi_elastic_frozen.png)
 
 Fig. 121 Quasi-Newton iterations, the search operator being computed once at the
 first load step and kept for the whole simulation.
@@ -116,7 +116,7 @@ first load step and kept for the whole simulation.
 Quasi-Newton like solvers can be set-up in MANTA using the `jacobianUpdateTrigger`, described
 in [this section](../../manta_components_user_guide/algorithms_and_numerics/newton.md#jacobianupdatetrigger).
 
-## [Computing the "non-linear forces"](#id18)
+## Computing the "non-linear forces"
 
 (coming soon in MANTA)
 
@@ -161,7 +161,7 @@ while if the time-step and/or charge increment was multiplied by a constant \(n\
 
 In Fig. [Fig. 122](#fig-castem-nonlinear-forces) lies a one dimensional visual representation of the approach.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/nonlinear_forces_figure.png)](../../_images/nonlinear_forces_figure.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/nonlinear_forces_figure.png)](https://manta-project.gitlab.io/manta/_images/nonlinear_forces_figure.png)
 
 Fig. 122 Non-linear force correction. (a) At step \(n-1\), \(\v{F}^{NL}_{n-1}\) is the
 gap between the elastic prediction \(\v{K}_e \Delta \v{U}_{n-1}\) and the force
@@ -170,7 +170,7 @@ first iterate much closer to the solution: the yellow point instead of the grey 
 
 Some information in this section come from the internal CEA technical report by Ali Mezher [[Mez24](../../references/references.md#id99)].
 
-## [Convergence acceleration approaches](#id19)
+## Convergence acceleration approaches
 
 In MANTA, following work in cast3M [[Ber](../../references/references.md#id100)] and other CEA internal codes ([[MHRamiereE18](../../references/references.md#id101), [RamiereH15](../../references/references.md#id98)]),
 two convergence acceleration algorithms are available. They are both based on the Anderson acceleration approach, described
@@ -264,11 +264,11 @@ is exactly the same as the secant approach: approximating the search direction w
 slope going through the two previous points. It can be a low dimensional visual representation
 of the approach, as shown in Fig. [Fig. 123](#fig-castem-conv-accel).
 
-[![figure](https://manta-project.gitlab.io/manta/_images/1Dact3.png)](../../_images/1Dact3.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/1Dact3.png)](https://manta-project.gitlab.io/manta/_images/1Dact3.png)
 
 Fig. 123 One dimensional visual representation of Anderson approach if depth is 1.
 
-### [Cast3M slight variation of Anderson's approach](#id20)
+### Cast3M slight variation of Anderson's approach
 
 Cast3M's `ACT3` operator differs from the formalism above.
 Let us consider the example of structural mechanics, for which the unknown iterate
@@ -368,7 +368,7 @@ Some details about the specific computation handled in `ACT3` are available in
 [this page](castem_like_newton.md#castem-newton). Furthermore, a rigorous analogy between Anderson method and
 cast3M's specific version is done in the work from B.Michel [[MHRamiereE18](../../references/references.md#id101)].
 
-## [Forced convergence "trick"](#id21)
+## Forced convergence "trick"
 
 (coming soon)
 

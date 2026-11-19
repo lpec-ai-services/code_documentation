@@ -10,9 +10,9 @@ Note
 
 This document is a slightly modified English translation of §2, §3 and §4 of [[Lep97](../../references/references.md#id55)].
 
-## [Perfect gas](#id24)
+## Perfect gas
 
-### [Problem definition and assumptions](#id25)
+### Problem definition and assumptions
 
 The objective is to determine the properties of perfect gas flow through a modeled break at the end of a pipe, discharging into a large reservoir. The following assumptions are made :
 
@@ -27,7 +27,7 @@ Indices are used as follows :
 - Index \(1\) denotes fluid properties upstream of the break
 - Index \(0^-\) denotes properties at the break
 
-[![figure](https://manta-project.gitlab.io/manta/_images/critical_flow_break_schematic.png)](../../_images/critical_flow_break_schematic.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/critical_flow_break_schematic.png)](https://manta-project.gitlab.io/manta/_images/critical_flow_break_schematic.png)
 
 Fig. 113 Schematic of the break
 
@@ -36,7 +36,7 @@ The break is shown in [Fig. 113](#fig-critical-flow-break-schematic). There are 
 - Upstream from \(A_1\) to \(A_0\)
 - Downstream from \(A_{0^+}\) to \(A_2\)
 
-### [Conservation equations](#id26)
+### Conservation equations
 
 In each of these regions and under the previously made assumptions, one can write the following conservation equations :
 
@@ -53,7 +53,7 @@ In each of these regions and under the previously made assumptions, one can writ
 
   Where, for a perfect gas, the entropy is \(s=\frac{P}{\rho^\gamma}\). This is a strong assumption on the flow that implies that the process is reversible and adiabatic.
 
-### [Upstream region](#id27)
+### Upstream region
 
 In the upstream region, it leads to the following equations :
 
@@ -73,7 +73,7 @@ After some mathematical manipulations using Eqs. [(245)](#equation-cenergy0), [(
 
 (250)\[V_{0^-}^2 - V_1^2 = \frac{2\gamma}{\gamma-1} \frac{P_1}{\rho_1} \left[1 - \left(\frac{P_{0^-}}{P_1}\right)^{\frac{\gamma-1}{\gamma}}\right]\]
 
-#### [Looking for the critical regime](#id28)
+#### Looking for the critical regime
 
 Let \(r\) be the opening ratio, defined as the ratio between the area at the outlet and the area of the upstream duct:
 
@@ -198,7 +198,7 @@ Note
 
 The maximum flow rate is not always reached, it depends on the downstream conditions.
 
-### [Downstream region](#id29)
+### Downstream region
 
 The downstream flow conditions are suppoed to be known and we seek to find the flow properties in \(A_0\).
 
@@ -206,7 +206,7 @@ It is possible to apply the same conservation laws than for the upstream region 
 
 This situation can be encountered in the case of nozzles, where the flow passes from medium 1 to medium 2 through a converging and then a diverging section. The conditions at the throat then impose the flow rate.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/tuyere.png)](../../_images/tuyere.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/tuyere.png)](https://manta-project.gitlab.io/manta/_images/tuyere.png)
 
 Fig. 114 Pressure along a convergent-divergent nozzle
 
@@ -223,7 +223,7 @@ Thus, when the downstream pressure \(P_2\) decreases, the upstream pressure \(P_
 - \(P_2 > P_c\) : subsonic regime.
 - \(P_2 \leq P_c\) : supersonic regime.
 
-### [Summary](#id30)
+### Summary
 
 We assume that upstream conditions are known, as well as the downstream pressure and the complete set of geometric characteristics.
 
@@ -260,7 +260,7 @@ Conclusion
 
 In conclusion, analytical formulas for mass flow rates based on upstream and downstream gas conditions, as well as geometric characteristics at the exit, have been established. These are valid assuming the fluid is a perfect gas.
 
-### [Case of low velocities](#id31)
+### Case of low velocities
 
 We take the Barré de Saint-Venant Eq. [(250)](#equation-veldiff) (dropping the "\({0^-}\)" subscript for a simpler "\(0\)" subscript) :
 
@@ -314,7 +314,7 @@ Note
 
 For example, for \(M_0 = 0.2\), the discrepancy between the two formulas [(268)](#equation-lowvel1) and [(268)](#equation-lowvel1) is only 1%. In the case of air under normal conditions (1 bar and 0°C), \(M_0 = 0.2\) corresponds to a velocity \(V_0 \approx 65\text{m/s}\) and a pressure difference of 28 millibars.
 
-## [Two-phase flow](#id32)
+## Two-phase flow
 
 Among the numerous existing models, four models (available in MANTA) will be discussed :
 
@@ -331,7 +331,7 @@ Note
 
 We will present the key points of the Moody model [[Moo65](../../references/references.md#id57)]. The homogeneous and Fauske models [[Fau62](../../references/references.md#id58)] will then be presented as special cases.
 
-### [Problem definition and assumptions](#id33)
+### Problem definition and assumptions
 
 The objective is to determine the properties of two-phase flow through a modeled break at the end of a pipe, discharging into a large reservoir. The following assumptions are made :
 
@@ -343,9 +343,9 @@ The objective is to determine the properties of two-phase flow through a modeled
 - Fluid flow is anular (i.e. a flow characterized by the presence of a liquid film flowing on the pipe wall and with the gas flowing in the gas core)
 - The break orifice is perfect (no additional friction or headloss is considered due to the configuration of the orifice)
 
-### [Moody's model](#id34)
+### Moody's model
 
-[![figure](https://manta-project.gitlab.io/manta/_images/critical_flow_break_schematic2.png)](../../_images/critical_flow_break_schematic2.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/critical_flow_break_schematic2.png)](https://manta-project.gitlab.io/manta/_images/critical_flow_break_schematic2.png)
 
 Fig. 115 Schematic of an anular two-phase flow at the break (velocity is denoted \(u\) instead of \(V\))
 
@@ -493,7 +493,7 @@ Note
 
 The assumption of considering an isentropic (reversible) flow in the upstream section amounts to overestimating the flow rate through the break. This hypothesis allows for conservative estimatation of the effects on the circuit.
 
-### [Fauske's Model](#id35)
+### Fauske's Model
 
 Consider the reaction force associated with the diphasic jet. We have :
 
@@ -549,7 +549,7 @@ Note
 
 The maximum flow rate is then determined in the same way as the previous case, with the Moody hypothesis.
 
-### [Homogeneous Model](#id36)
+### Homogeneous Model
 
 By definition, the homogeneous model assumes that there is no slip between phases:
 
@@ -557,7 +557,7 @@ By definition, the homogeneous model assumes that there is no slip between phase
 
 and once again, we use Moody's expression of Eq. [(277)](#equation-moodyg) to determine the maximum flow rate.
 
-### [Henry-Fauske Model](#id37)
+### Henry-Fauske Model
 
 The Henry-Fauske model was introduced in 1971 by Henry and Fauske
 [[HF71](../../references/references.md#id60)] as an evolution of the Henry
@@ -643,7 +643,7 @@ As for the other two-phase models, the assumption of isentropic flow in the
 upstream region leads to a conservative overestimate of the mass flow rate
 through the break.
 
-## [Pure Liquid](#id38)
+## Pure Liquid
 
 We saw previously that for low velocities, we would have, for an ideal gas :
 
@@ -665,7 +665,7 @@ Note
 
 In MANTA, we have retained these formulas for calculating the head loss associated with the break.
 
-## [References](#id39)
+## References
 
 - [[Lep97](../../references/references.md#id55)]
 - [[Idelcik69](../../references/references.md#id56)]

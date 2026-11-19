@@ -29,7 +29,7 @@ manta-help Constraints
 
 ## Available bricks
 
-[![Link between bricks associated with constraints](https://manta-project.gitlab.io/manta/_images/constraints.svg)](../../../_images/constraints.svg)
+[![Link between bricks associated with constraints](https://manta-project.gitlab.io/manta/_images/constraints.svg)](https://manta-project.gitlab.io/manta/_images/constraints.svg)
 
 ### The `ConstraintsSet` brick
 
@@ -340,7 +340,7 @@ However, since there are 3 nodes per side, the order with which we constrain the
 For this specific example we enforce that the nodes constrained two by two follow
 the geometric order: bottom nodes together, middle nodes together, and top nodes together.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/rela_ex1.svg)](../../../_images/rela_ex1.svg)
+[![figure](https://manta-project.gitlab.io/manta/_images/rela_ex1.svg)](https://manta-project.gitlab.io/manta/_images/rela_ex1.svg)
 
 Using the nomenclature shown above, with `l_right` and `l_left` are constituted respectively by nodes `ptr`, `pmr`, `pbr`
 and `ptl`, `pml`, `pbl`. We can enforce that `ptr`, `ptl`, the top nodes are constrained together,

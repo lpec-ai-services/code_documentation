@@ -30,7 +30,7 @@ skills/
 │   ├── SKILL.md, physics.md, methods.md
 │   └── docs/              # 200 pages + INDEX.md
 ├── salome-medcoupling/    # MEDCoupling/MEDLoader: developer guide (with all snippets), user guide, tutorial
-├── salome-gui/            # SALOME desktop / GUI user guide
+├── salome/                # SALOME 9.16 user docs, all modules: GUI, SHAPER, GEOM, SMESH + plug-ins, YACS, ADAO, HOMARD…
 ├── scivianna/             # CEA visualizer: AGENTS.md, tutorials, API (static), runnable examples
 ├── vtk/                   # VTK in Python: 900 examples (classic + Pythonic API), VTK Textbook, user docs
 ├── uranie/                # Uranie user manual (Python): modules + 985 runnable code blocks
@@ -38,7 +38,8 @@ skills/
 └── c3po/                  # C3PO coupling platform: overview, code integration, API, example couplings
 tools/
 ├── pdf2md.py              # PDF manual  → chapter Markdown + TOC (uses the PDF bookmarks)
-├── sphinx2md.py           # published Sphinx site → page Markdown + INDEX (searchindex.js or a local copy)
+├── sphinx2md.py           # published Sphinx site → page Markdown + INDEX (searchindex.js or a local copy; Doxygen HTML too)
+├── salome_index.py        # top-level module index of the salome skill
 ├── sphinx_src2md.py       # Sphinx *sources* of a Python project → Markdown, API read with ast (no build, no import)
 ├── pdfbook2md.py          # book delivered as one PDF per chapter → one folder per chapter + book TOC
 ├── mdtree2md.py           # Markdown docs kept in a repo → skill docs + INDEX (links .html → .md)
@@ -79,6 +80,8 @@ Check the result in opencode: ask "which skills do you have?" — `tripoli4`, `t
   `python3 tools/sphinx2md.py --base https://tripoli5.asnr.dev/documentation/latest-release/ --local tripoli5.asnr.dev/documentation/latest-release --out skills/tripoli5/docs`.
   Update the version line in `skills/tripoli5/SKILL.md`.
 - New TRIPOLI-4 guide: update the URL in `sync.sh`, then `./sync.sh tripoli4`. From a local copy: `python3 tools/pdf2md.py --pdf guide.pdf --out skills/tripoli4/docs --front-matter-pages 20 --table-pages 552-562` (page options are specific to the v12 guide, so check them for a new edition).
+- New SALOME version: the HTML docs shipped in a binary install (`…/BINARIES-*/DOCUMENTATION/share/doc/salome`, holding `gui/ dev/ main/`) or a wget mirror of `https://docs.salome-platform.org/latest/` (its `latest/` folder):
+  `SALOME_DOC_DIR=/path/to/doc/salome SALOME_VERSION=9.16.0 ./sync.sh salome_docs`, then update the version in `skills/salome/SKILL.md`. Doxygen listing pages (file lists, member indexes, source listings) are skipped; class, namespace and group pages are kept. `./sync.sh salome` regenerates `salome-medcoupling` and `salome/docs/architecture` from GitHub.
 - Commit the regenerated `docs/` so colleagues get them with a `git pull`, without having to sync themselves.
 
 ## Knowledge skills

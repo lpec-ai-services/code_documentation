@@ -12,8 +12,8 @@ This case is a reproduction of the rupt9.dgibi verification test available on Ca
 Note
 
 The following files are required to run the tutorial:
-- [`main.cpp`](../../../_downloads/335c5ac86d18f7c5ef336895e0679a6b/mainGtheta.cpp):
-- [`RUPT9.dgibi`](../../../_downloads/e194950e5c3fd0db7d55506a5b96bd28/rupt9.dgibi):
+- [`main.cpp`](https://manta-project.gitlab.io/manta/_downloads/335c5ac86d18f7c5ef336895e0679a6b/mainGtheta.cpp):
+- [`RUPT9.dgibi`](https://manta-project.gitlab.io/manta/_downloads/e194950e5c3fd0db7d55506a5b96bd28/rupt9.dgibi):
 
 Cast3M is required to run as a mesher to get the rupt9.msh file required to run this example.
 You can find the current version of cast3M on this website: <https://www-cast3m.cea.fr> .
@@ -24,7 +24,7 @@ This is a model of a 2D plate with a 45° inclined crack,
 loaded in traction implying mixed mode crack growth. The assumption of 2D plane strain is adopted,
 with an isotropic linear elastic material, in the context of small strain.
 
-[![figure](https://manta-project.gitlab.io/manta/_images/rupt9.png)](../../../_images/rupt9.png)
+[![figure](https://manta-project.gitlab.io/manta/_images/rupt9.png)](https://manta-project.gitlab.io/manta/_images/rupt9.png)
 
 ### Material's properties :
 
@@ -214,7 +214,7 @@ Then, the `Theta` perturbation field is initialized. It is defined as a circular
 around the crack tip varying from 0 to 1.
 
 The Theta Field is zero outside the circle and given different value in the inner circle and outter circle.
-:   [![figure](https://manta-project.gitlab.io/manta/_images/champsTheta.png)](../../../_images/champsTheta.png)
+:   [![figure](https://manta-project.gitlab.io/manta/_images/champsTheta.png)](https://manta-project.gitlab.io/manta/_images/champsTheta.png)
 
     ```c++
         //here we define the theta field

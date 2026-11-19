@@ -1,0 +1,19 @@
+{
+  "source": "https://docs.salome-platform.org/latest/gui/GMSHPLUGIN/",
+  "generated": "2026-11-19",
+  "pages": [
+    "gmsh_2d_3d_hypo_page",
+    "gmshplugin_python_interface_page",
+    "gmshpluginpy_doc/classGMSHPluginBuilder_1_1GMSH__2D__Algorithm",
+    "gmshpluginpy_doc/classGMSHPluginBuilder_1_1GMSH__3D__Algorithm",
+    "gmshpluginpy_doc/classGMSHPluginBuilder_1_1GMSH__3D__Remote__Algorithm",
+    "gmshpluginpy_doc/classGMSHPluginBuilder_1_1GMSH__Algorithm",
+    "gmshpluginpy_doc/classsmeshBuilder_1_1Mesh",
+    "gmshpluginpy_doc/classsmesh__algorithm_1_1Mesh__Algorithm",
+    "gmshpluginpy_doc/index",
+    "gmshpluginpy_doc/namespaceGMSHPluginBuilder",
+    "gmshpluginpy_doc/namespacesmeshBuilder",
+    "gmshpluginpy_doc/namespacesmesh__algorithm",
+    "index"
+  ]
+}

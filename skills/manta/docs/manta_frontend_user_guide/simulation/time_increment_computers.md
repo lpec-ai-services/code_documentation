@@ -5,7 +5,7 @@
 Time increment computers are helper objects that can be used by a
 simulation object to determine the next time increment.
 
-## [Example of usage](#id2)
+## Example of usage
 
 The following snipppet adds the `MaximumFieldIncrement` time
 increment computer to a simulation to adapt the time step. This time
@@ -19,9 +19,9 @@ s.addTimeIncrementComputer("MaximumFieldIncrement",
                            maximumIncrementValue=1e-4)
 ```
 
-## [List of available time increment computers](#id3)
+## List of available time increment computers
 
-### [`MaximumFieldIncrement`](#id4)
+### `MaximumFieldIncrement`
 
 The `MaximumFieldIncrement` time increment computer tries to
 calculate the next time step such that the increment of a given scalar
@@ -55,7 +55,7 @@ the `Simulation` class also has optional parameters which
 controls (limits) the increase (or decrease) of the time increment
 (with respect to the previous one)
 
-#### [Parameters](#id5)
+#### Parameters
 
 The `MaximumFieldIncrement` inherits the parameters of the
 `MaximumIncrement` curve (see Section
